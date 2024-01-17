@@ -9,7 +9,6 @@ import projects from '../../data/projects'
 
 import ReactPlayer from 'react-player'
 import { Footer } from '../../components/Footer'
-import { AllProjects } from '../../components/Projects/Blogs'
 
 import * as S from '../../styles/project'
 import { ButtonAlt, ButtonSecondary, Title, Description } from '../../styles/styles'
@@ -189,10 +188,6 @@ export default function Projeto({ project }: ProjectProps) {
         </S.Video>
       </S.ContainerVideo>
 
-      <div className="allProjects">
-        <AllProjects title={'View all my projects!!'} />
-      </div>
-      <Link href={'/#projects'} legacyBehavior>
         <ButtonSecondary>
           <a>
             <ArrowLeft
@@ -203,7 +198,6 @@ export default function Projeto({ project }: ProjectProps) {
             Back
           </a>
         </ButtonSecondary>
-      </Link>
     </S.ProjectContainer>
 
     <Footer />

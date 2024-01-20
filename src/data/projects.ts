@@ -6,7 +6,7 @@ const projects = [
     img: '/projects/EmpowerKids/EKBG.png',
     title: 'EmpowerKids',
     type: 'Website',
-    icon: '/projects/EmpowerKids/EKLogo.jpg',
+    icon: '/projects/EmpowerKids/EKlogo.jpg',
     github: 'https://github.com/Saravanakumar2003/EmpowerKids',
     web: 'https://empowerkids.netlify.app/',
     description:
@@ -109,7 +109,7 @@ const projects = [
       },
       {
         name: 'PythonAnywhere',
-        icon: '/icons/pyany.png',
+        icon: '/icons/Pyany.png',
         color: '#635BFF',
         rgb: '99, 91, 255'
       },

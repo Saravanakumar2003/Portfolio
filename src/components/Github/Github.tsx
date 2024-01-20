@@ -92,21 +92,25 @@ export default function Github() {
       }}>
         <BoxWrapper withBackground={true} style={{
           display: 'flex',
-          justifyContent: 'center',
           alignItems: 'center',
-          height: '200px',
-          width: '500px',
+          justifyContent: 'center',
+          flexDirection: 'row',
+          flexWrap: 'wrap',
+          height: '180px',
+          width: '400px',
           border: '1px solid #ffff',
           borderRadius: '5px',
           marginBottom: '3rem',
+          marginLeft: '10px',
+          marginRight: '10px',
         }}>
           <img
             src={user?.avatar_url}
             alt="Saravana's Image"
             style={
               {
-                height: '150px',
-                width: '150px',
+                height: '130px',
+                width: '130px',
                 borderRadius: '50%',
                 display: 'block',
                 marginLeft: '10px',
@@ -115,27 +119,27 @@ export default function Github() {
             }
           />
         <div className="aboutDescription">
-        <Title style={{fontSize: '1rem', textAlign: 'center'}}>
+        <Title style={{fontSize: '0.9rem', textAlign: 'center'}}>
           {user?.login}
         </Title>
 
-        <Text style={{fontSize: '1rem', textAlign: 'center'}}>
+        <Text style={{fontSize: '0.9rem', textAlign: 'center'}}>
           {user?.bio}
         </Text>
         
-        <Text style={{fontSize: '1rem', textAlign: 'center'}} >
+        <Text style={{fontSize: '0.9rem', textAlign: 'center'}} >
           Company : {user?.company}
         </Text>
 
-        <Text style={{fontSize: '1rem', textAlign: 'center'}}>
+        <Text style={{fontSize: '0.9rem', textAlign: 'center'}}>
           Followers : {user?.followers}
         </Text>
 
-        <Text style={{fontSize: '1rem', textAlign: 'center'}}>
+        <Text style={{fontSize: '0.9rem', textAlign: 'center'}}>
          Following : {user?.following}
         </Text>
 
-        <Text style={{fontSize: '1rem', textAlign: 'center'}}>
+        <Text style={{fontSize: '0.9rem', textAlign: 'center'}}>
           Total Stars : {totalStars}
         </Text>
 
@@ -152,14 +156,12 @@ export default function Github() {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          height: 'auto',
-          width: 'auto',
           textAlign: 'center',
           padding: '1rem',    
           }}>
           <GitHubCalendar
             username={GITHUB_USERNAME}
-            blockSize={5}
+            blockSize={4}
             blockMargin={3}
             fontSize={10}
           />

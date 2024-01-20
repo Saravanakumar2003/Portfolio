@@ -105,7 +105,7 @@ export default function About() {
             💻 I am also an avid game developer, enthusiastic volunteer, and public speaker, and I love exploring new opportunities and avenues.
             </p>
             <p style={{ textAlign: 'justify' }}>
-            🎮 As a self-taught game developer, I have spent countless hours sharpening my skills and learning new techniques to bring my ideas to life. I founded Gamecrafters as a passion project, and I am proud to say that its grown into a thriving business with a loyal following.
+            🎮 As a self-taught developer, I have spent countless hours sharpening my skills and learning new techniques to bring my ideas to life. I founded Gamecrafters as a passion project, and I am proud to say that its grown into a thriving business with a loyal following.
             </p>
             <p style={{ textAlign: 'justify' }}>
             🎉 I am proud to be a 100% attendance holder in both school and college, till 2nd year. I take my education seriously and love learning about new topics, especially when it comes to nuclear technology 💥.

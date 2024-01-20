@@ -188,6 +188,7 @@ export default function Projeto({ project }: ProjectProps) {
         </S.Video>
       </S.ContainerVideo>
 
+      <Link href={'/#projects'} legacyBehavior>
         <ButtonSecondary>
           <a>
             <ArrowLeft
@@ -198,6 +199,7 @@ export default function Projeto({ project }: ProjectProps) {
             Back
           </a>
         </ButtonSecondary>
+      </Link>
     </S.ProjectContainer>
 
     <Footer />

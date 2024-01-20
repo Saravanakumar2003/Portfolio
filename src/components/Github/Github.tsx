@@ -51,6 +51,7 @@ export default function Github() {
   const { classes } = useStyles();
   const [loading, setLoading] = useState(true);
   const [totalCommits, setTotalCommits] = useState(0);
+  const [totalStars, setTotalStars] = useState(0);
   const matches = useMediaQuery("(min-width: 630px)");
 
   const fetchData = async () => {
@@ -67,6 +68,13 @@ export default function Github() {
     const data: { total: Object } = await res.json();
     let total = Object.values(data.total).reduce((a: any, b: any) => a + b, 0);
     setTotalCommits(total);
+
+    const res2 = await fetch(
+      `https://api.github.com/users/${GITHUB_USERNAME}/repos`
+    );
+    const data2 = await res2.json();
+    let stars = data2.reduce((a: any, b: any) => a + b.stargazers_count, 0);
+    setTotalStars(stars);
   };
 
   useEffect(() => {
@@ -77,35 +85,87 @@ export default function Github() {
 
   return (
     <section>
-    <Container px="xl" size="lg" style={{ 
-      alignContent: "center", 
-      alignItems: "center", 
-      justifyContent: "center", 
-      textAlign: "center" 
-    }}>
-      <BoxWrapper withBackground={false}>
+    <Container style=
+    {{ 
+      borderRadius: '10px',
+      padding: '1rem',
+      }}>
+        <BoxWrapper withBackground={true} style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '200px',
+          width: '500px',
+          border: '1px solid #ffff',
+          borderRadius: '5px',
+          marginBottom: '3rem',
+        }}>
+          <img
+            src={user?.avatar_url}
+            alt="Saravana's Image"
+            style={
+              {
+                height: '150px',
+                width: '150px',
+                borderRadius: '50%',
+                display: 'block',
+                marginLeft: '10px',
+                marginRight: '10px',
+              }
+            }
+          />
+        <div className="aboutDescription">
+        <Title style={{fontSize: '1rem', textAlign: 'center'}}>
+          {user?.login}
+        </Title>
+
+        <Text style={{fontSize: '1rem', textAlign: 'center'}}>
+          {user?.bio}
+        </Text>
+        
+        <Text style={{fontSize: '1rem', textAlign: 'center'}} >
+          Company : {user?.company}
+        </Text>
+
+        <Text style={{fontSize: '1rem', textAlign: 'center'}}>
+          Followers : {user?.followers}
+        </Text>
+
+        <Text style={{fontSize: '1rem', textAlign: 'center'}}>
+         Following : {user?.following}
+        </Text>
+
+        <Text style={{fontSize: '1rem', textAlign: 'center'}}>
+          Total Stars : {totalStars}
+        </Text>
+
+        </div>
+</BoxWrapper>
+
+<BoxWrapper withBackground={true}>
         <Title style={{fontSize: '2rem', textAlign: 'center'}} order={1}
         >
           {github.contribution}
         </Title>
+
         <BoxWrapper withBackground={true} style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            height: '250px',
-            width: '500px',
-            textAlign: 'center',      
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: 'auto',
+          width: 'auto',
+          textAlign: 'center',
+          padding: '1rem',    
           }}>
           <GitHubCalendar
             username={GITHUB_USERNAME}
-            blockSize={15}
-            blockMargin={5}
-            fontSize={16}
-            style={{ 
-              
-            }}
+            blockSize={5}
+            blockMargin={3}
+            fontSize={10}
           />
         </BoxWrapper>
+
+        
       </BoxWrapper>
     </Container>
     </section>

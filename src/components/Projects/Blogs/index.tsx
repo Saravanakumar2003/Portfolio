@@ -26,7 +26,7 @@ export function AllBlogs({ title }: AllContent) {
                 <Image
                   width={72}
                   height={72}
-                  src="/skills/html.svg"
+                  src="/icons/HTML.png"
                   alt="Html"
                 />
               </div>
@@ -34,7 +34,7 @@ export function AllBlogs({ title }: AllContent) {
                 <Image
                   width={72}
                   height={72}
-                  src="/skills/css.svg"
+                  src="/icons/CSS.png"
                   alt="Css"
                 />
               </div>
@@ -42,7 +42,7 @@ export function AllBlogs({ title }: AllContent) {
                 <Image
                   width={72}
                   height={72}
-                  src="/skills/javascript.svg"
+                  src="/icons/JS.png"
                   alt="JavaScript"
                 />
               </div>

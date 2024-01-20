@@ -26,7 +26,7 @@ export function About() {
             Bachelors degree in Electronics and Communication Engineering and 
             building a solid foundation in technology.
             </li> <li>
-            I am also an avid game developer, enthusiastic volunteer, and public speaker, 
+            I am also an avid developer, enthusiastic volunteer, and public speaker, 
             and I love exploring new opportunities and avenues.
             </li>
 

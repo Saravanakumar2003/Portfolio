@@ -20,6 +20,7 @@ import BoxWrapper from "./BoxWrapper";
 import { GITHUB_USERNAME } from "../config";
 import github from "../../data/github.json";
 import styled from 'styled-components';
+import { Link } from "phosphor-react";
 
 // ----------------------------------------------------------------------------
 
@@ -55,6 +56,9 @@ export default function Github() {
   const [totalStars, setTotalStars] = useState(0);
   const matches = useMediaQuery("(min-width: 630px)");
 
+  const html_url = user?.html_url;
+
+
   const fetchData = async () => {
     const res = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}`);
     const data = await res.json();
@@ -89,35 +93,29 @@ export default function Github() {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
-  margin: 1rem;
-  background: ${({ withBackground }) => withBackground ? '#f2f2f2' : 'transparent'};
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 
   @media (max-width: 630px) {
-    margin: 0.5rem;
+    margin: 1rem;
+
   }
 
   @media (max-width: 450px) {
-    margin: 0.25rem;
+    margin: 1rem;
+
   }
 
   @media (max-width: 350px) {
     margin: 0.125rem;
   }
 
-  @media (max-width: 300px) {
-    margin: 0.0625rem;
-  }
+
 `;
 
 const Text = styled.p`
   font-size: 1rem;
   font-weight: 200;
-  margin: 0.5rem;
   text-align: center;
-  color: white;
+  color: black;
 
   @media (max-width: 630px) {
     font-size: 0.8rem;
@@ -141,23 +139,18 @@ const Title = styled.h1`
   font-weight: 700;
   margin: 0.5rem;
   text-align: center;
-  color: white;
 
-  @media (max-width: 630px) {
-    font-size: 0.9rem;
+  @media (max-width: 1200px) {
+    font-size: 1.5rem;
     font-weight: 600;
   }
 
-  @media (max-width: 450px) {
-    font-size: 0.8rem;
+  @media (max-width: 768px) {
+    font-size: 1.25rem;
     font-weight: 500;
   }
-
-  @media (max-width: 350px) {
-    font-size: 0.75rem;
-    font-weight: 400;
-  }
 `;
+
 
 
   return (
@@ -166,10 +159,11 @@ const Title = styled.h1`
         <BoxWrapper withBackground={true} style={{ flexDirection: "row"}}>
         <BoxWrapper withBackground={true} style={{
             flexDirection: 'row',
-            backgroundColor: 'black',
-            color: 'white',
-            textEmphasisColor: 'white',
+            backgroundColor: 'white',
+            color: 'black',
+            textEmphasisColor: 'black',
             borderRadius: '10px',
+            margin: '1rem',
             padding: '1rem',
           }}>
           <img
@@ -177,12 +171,10 @@ const Title = styled.h1`
             alt="Saravana's Image"
             style={
               {
-                height: '200px',
-                width: '200px',
+                height: '150px',
+                width: '150px',
                 borderRadius: '50%',
                 display: 'block',
-                marginLeft: '10px',
-                marginRight: '10px',
               }
             }
           />    
@@ -190,10 +182,6 @@ const Title = styled.h1`
         <Title>
           {user?.login}
         </Title>
-
-        <Text>
-          {user?.bio}
-        </Text>
 
         <Text>
           Total Followers : {user?.followers}
@@ -206,31 +194,40 @@ const Title = styled.h1`
         <Text>
          Total Stars : {totalStars}
         </Text>
+<Text>
+        <a href={html_url} style={{
+            textDecoration: 'underline', 
+            color: 'black',
+            fontWeight: 'bold',
+            fontSize: '1rem',
+            textAlign: 'center',
+            margin: '1rem',
+          }}>Visit GitHub Profile</a>
+
+</Text>
+
         </div>
         </BoxWrapper>
 </BoxWrapper>
 
-<BoxWrapper withBackground={true}>
  <BoxWrapper withBackground={true} style={{
-            backgroundColor: 'black',
-            color: 'white',
-            textEmphasisColor: 'white',
+            backgroundColor: '$(props => props.theme.colors.dark[0])',
+            color: 'white', 
             borderRadius: '10px',
-            padding: '1rem',
+            margin: '1rem',
           }}>
         <Title>
           {github.contribution}
         </Title>
           <BoxWrapper withBackground={true}>
-          <GitHubCalendar style={{color: '#000'}}
+          <GitHubCalendar
             username={GITHUB_USERNAME}
-            blockSize={matches ? 15 : 5}
-            fontSize={matches ? 14 : 7}
-            blockMargin={matches ? 5 : 2}
+            blockSize={matches ? 14 : 6}
+            fontSize={matches ? 14 : 8}
+            blockMargin={matches ? 6 : 1}
           />
         </BoxWrapper> 
       </BoxWrapper>
-    </BoxWrapper>
     </Container>
     </section>
   );

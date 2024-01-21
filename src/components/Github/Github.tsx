@@ -19,6 +19,7 @@ import BoxWrapper from "./BoxWrapper";
 // _mock & config
 import { GITHUB_USERNAME } from "../config";
 import github from "../../data/github.json";
+import styled from 'styled-components';
 
 // ----------------------------------------------------------------------------
 
@@ -83,92 +84,153 @@ export default function Github() {
     fetchData();
   }, []);
 
+  const BoxWrapper = styled.div<{ withBackground: boolean }>`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  margin: 1rem;
+  background: ${({ withBackground }) => withBackground ? '#f2f2f2' : 'transparent'};
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+  @media (max-width: 630px) {
+    margin: 0.5rem;
+  }
+
+  @media (max-width: 450px) {
+    margin: 0.25rem;
+  }
+
+  @media (max-width: 350px) {
+    margin: 0.125rem;
+  }
+
+  @media (max-width: 300px) {
+    margin: 0.0625rem;
+  }
+`;
+
+const Text = styled.p`
+  font-size: 1rem;
+  font-weight: 200;
+  margin: 0.5rem;
+  text-align: center;
+  color: white;
+
+  @media (max-width: 630px) {
+    font-size: 0.8rem;
+  }
+
+  @media (max-width: 450px) {
+    font-size: 0.7rem;
+  }
+
+  @media (max-width: 350px) {
+    font-size: 0.5rem;
+  }
+
+  @media (max-width: 300px) {
+    font-size: 0.2rem;
+  }
+`;
+
+const Title = styled.h1`
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0.5rem;
+  text-align: center;
+  color: white;
+
+  @media (max-width: 630px) {
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  @media (max-width: 450px) {
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+
+  @media (max-width: 350px) {
+    font-size: 0.75rem;
+    font-weight: 400;
+  }
+`;
+
+
   return (
     <section>
-    <Container style=
-    {{ 
-      borderRadius: '10px',
-      padding: '1rem',
-      }}>
+    <Container>
+        <BoxWrapper withBackground={true} style={{ flexDirection: "row"}}>
         <BoxWrapper withBackground={true} style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          flexDirection: 'row',
-          flexWrap: 'wrap',
-          height: '180px',
-          width: '400px',
-          border: '1px solid #ffff',
-          borderRadius: '5px',
-          marginBottom: '3rem',
-          marginLeft: '10px',
-          marginRight: '10px',
-        }}>
+            flexDirection: 'row',
+            backgroundColor: 'black',
+            color: 'white',
+            textEmphasisColor: 'white',
+            borderRadius: '10px',
+            padding: '1rem',
+          }}>
           <img
             src={user?.avatar_url}
             alt="Saravana's Image"
             style={
               {
-                height: '130px',
-                width: '130px',
+                height: '200px',
+                width: '200px',
                 borderRadius: '50%',
                 display: 'block',
                 marginLeft: '10px',
                 marginRight: '10px',
               }
             }
-          />
+          />    
         <div className="aboutDescription">
-        <Title style={{fontSize: '0.9rem', textAlign: 'center'}}>
+        <Title>
           {user?.login}
         </Title>
 
-        <Text style={{fontSize: '0.9rem', textAlign: 'center'}}>
+        <Text>
           {user?.bio}
         </Text>
-        
-        <Text style={{fontSize: '0.9rem', textAlign: 'center'}} >
-          Company : {user?.company}
+
+        <Text>
+          Total Followers : {user?.followers}
         </Text>
 
-        <Text style={{fontSize: '0.9rem', textAlign: 'center'}}>
-          Followers : {user?.followers}
+        <Text>
+         Total Following : {user?.following}
         </Text>
 
-        <Text style={{fontSize: '0.9rem', textAlign: 'center'}}>
-         Following : {user?.following}
+        <Text>
+         Total Stars : {totalStars}
         </Text>
-
-        <Text style={{fontSize: '0.9rem', textAlign: 'center'}}>
-          Total Stars : {totalStars}
-        </Text>
-
         </div>
+        </BoxWrapper>
 </BoxWrapper>
 
 <BoxWrapper withBackground={true}>
-        <Title style={{fontSize: '2rem', textAlign: 'center'}} order={1}
-        >
+ <BoxWrapper withBackground={true} style={{
+            backgroundColor: 'black',
+            color: 'white',
+            textEmphasisColor: 'white',
+            borderRadius: '10px',
+            padding: '1rem',
+          }}>
+        <Title>
           {github.contribution}
         </Title>
-
-        <BoxWrapper withBackground={true} style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          textAlign: 'center',
-          padding: '1rem',    
-          }}>
-          <GitHubCalendar
+          <BoxWrapper withBackground={true}>
+          <GitHubCalendar style={{color: '#000'}}
             username={GITHUB_USERNAME}
-            blockSize={4}
-            blockMargin={3}
-            fontSize={10}
+            blockSize={matches ? 15 : 5}
+            fontSize={matches ? 14 : 7}
+            blockMargin={matches ? 5 : 2}
           />
-        </BoxWrapper>
-
-        
+        </BoxWrapper> 
       </BoxWrapper>
+    </BoxWrapper>
     </Container>
     </section>
   );

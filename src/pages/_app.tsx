@@ -8,6 +8,14 @@ import { GlobalStyles } from '../styles/global'
 import { defaultTheme } from '../styles/themes/default'
 import { Toaster } from '../components/Toaster'
 import { MantineProvider } from '@mantine/core'
+import { Analytics } from '@vercel/analytics/react';
+import { initGA, logPageView } from '../utils/analytics';
+
+declare global {
+  interface Window {
+    GA_INITIALIZED: boolean;
+  }
+}
 
 function useNormalScrollRoutes() {
   const router = useRouter()
@@ -21,6 +29,15 @@ function useNormalScrollRoutes() {
     })
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+
+  useEffect(() => {
+    if (!window.GA_INITIALIZED) {
+      initGA();
+      window.GA_INITIALIZED = true;
+    }
+
+    logPageView();
+  }, []);
 }
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -30,6 +47,15 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-DEXGX7MVS0"></script>
+        <script>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-DEXGX7MVS0');
+          `}
+        </script>
       </Head>
       <MantineProvider>
       <ThemeProvider theme={defaultTheme}>
@@ -44,6 +70,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Toaster />
         <GlobalStyles />
         <Component {...pageProps} />
+        <Analytics />
       </ThemeProvider>
       </MantineProvider>
     </>

@@ -4,7 +4,7 @@ const education = [
     img: '/education/Vec.png',
     title: 'Velammal Engineering College',
     subTitle: 'Bachelor of Engineering',
-    office: 'Electrical and Electronics Engineering',
+    office: 'Electronics and Communication Engineering',
     description:'To view my academic profile, click the button below. It contains my academic details, syllabus achievements, and projects.',
     date: '24-Nov-21 to Present',
     link: 'https://velammal.edu.in/'

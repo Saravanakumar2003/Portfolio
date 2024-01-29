@@ -31,23 +31,19 @@ const works = [
         url: 'https://youtu.be/MMTdvNh260E',
         urltitle: 'Watch my dance here',
         description:
-          'It was my first time dancing, forgive me if I was a bit odd in a group of excellent dancers.'
+          'It was my first time dancing, forgive me if I was a bit odd in a group of excellent dancers. I was the one in the middle with the white shirt. '
       },
       {
         name: 'GD and Speech winner',
         image: '/Volunteering/NSS/NSS3.jpeg',
-        date: '26th, January 2022',
-        url: 'https://www.instagram.com/p/CY8q8K9JWt6/',
-        urltitle: 'Read my blog here',
+        date: '9th, March 2022',
         description:
           'Group Discussion and Speech winner of the NSS internal competition. I was receiving the award from my General Coordination (2021 to 2022) of NSS, Muralidharan.'
       },
       {
         name: 'Planting Seeds of Change',
         image: '/Volunteering/NSS/NSS4.jpeg',
-        date: '5th, February 2022',
-        url: 'https://www.instagram.com/p/CY8q8K9JWt6/',
-        urltitle: 'Read the impact here',
+        date: '22nd, March 2022',
         description:
           'Participated in a meaningful tree plantation drive as an NSS volunteer.'
       },
@@ -58,14 +54,12 @@ const works = [
         url: 'https://www.youtube.com/watch?v=5nw9oLOoU4Q',
         urltitle: 'Watch my video here',
         description:
-          'My part spanned from 1.29 to 2.10 in the video, and it portrayed the character of Lord Erwin. Watch my video here - https://www.youtube.com/watch?v=5nw9oLOoU4Q'
+          'My part spanned from 1.29 to 2.10 in the video, and it portrayed the character of Lord Erwin.'
       },
       {
         name: 'Independence Day 2023 Host',
         image: '/Volunteering/NSS/NSS6.jpeg',
         date: '15th, August 2023',
-        url: 'https://www.instagram.com/p/CY8q8K9JWt6/',
-        urltitle: 'View the Sample Here',
         description:
         'Privileged to have hosted the Independence Day celebrations as part of my role as an NSS volunteer.'
       }
@@ -73,8 +67,56 @@ const works = [
   },
   {
     id: 2,
+    url: 'Shelter-Service',
+    img: '/Volunteering/Bhumi/Bhumi.png',
+    title: 'Ignite - Kanini',
+    title2: '#Shelter Care',
+    title3: 'Bhumi Volunteer',
+    subTitle: 'Bhumi - Chennai',
+    description:
+      'Ignite is a shelter transformation program that aims to improve the quality of education provided to children in shelter homes. The program focuses on the holistic development of the children by providing them with the necessary support and guidance.',
+    tags: [
+      { name: 'Bhumi Logo', icon: '/Volunteering/Bhumi/BhumiLogo.png' },
+      { name: 'Nakshatra Logo', icon: '/Volunteering/Bhumi/Nakshatra.png' },
+    ],
+    date: 'Jun 2023 - Present',
+    prints: [
+      {
+        name: 'The Induction Program',
+        image: '/Volunteering/Bhumi/prep.jpg',
+        description:
+          'The day (4/6/2023) when my journey as an Bhumi volunteer commenced. I decided to join the Kanini program as I am passionate about teaching kids about Computer Science.' 
+      },
+      {
+        name: 'Kanini Induction Program',
+        image: '/Volunteering/Bhumi/Kanini.jpg',
+        description:
+          'This Induction Program was conducted by the Kanini team. The program was conducted to give us an overview of the program and also to give us an idea of what we are going to do in the program and in which center we are going to teach.'
+      },
+      {
+        name: 'Bhumi Awards 2023',
+        image: '/Volunteering/Bhumi/Awards.jpg',
+        description:
+          'The Bhumi Awards 2023 was conducted on 16th July 2023. The awards were given to the volunteers who have done a great job in the past year. I was a spectator for the event and I was inspiring to see the volunteers getting the awards.'
+      },
+      {
+        name: 'Nakshatra Arts 2023',
+        image: '/Volunteering/Bhumi/NakshatraCerti.jpeg',
+        description:
+          'Nakshatra Arts 2023 was conducted on 9th September 2023. The event was conducted to showcase the talents of the kids. The kids performed various activities such as Dance, Singing, Drawing, etc. The kids were very happy and enjoyed the event.'
+      },
+      {
+        name: 'City Con 2023',
+        image: '/Volunteering/Bhumi/Citycon.jpg',
+        description:
+          'City Con 2023 was a meet within the Chennai city volunteers. The meet was conducted on 17th December 2023. The meet was conducted to discuss the progress of the program and also to discuss the problems faced by the volunteers. The meet was very useful and I got to know a lot of things about the program.'
+      },
+    ]
+  },
+  {
+    id: 3,
     url: 'School-Service',
-    img: '/Volunteering/School/SVBanner.png',
+    img: '/Volunteering/School/Govt.png',
     title: 'Volunteer',
     title2: '#Passion',
     title3: 'Teaching Kids',

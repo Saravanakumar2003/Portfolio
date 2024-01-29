@@ -1,6 +1,6 @@
 const experience = [
   {
-    id: 1,
+    id: 2,
     img: '/experience/tneb.png',
     title: 'TANGEDCO',
     subTitle: 'North Chennai Thermal Power Station',
@@ -12,7 +12,7 @@ const experience = [
     date: '19-Jun-23 to 23-Jun-23'
   },
   {
-    id: 2,
+    id: 1,
     img: '/experience/nsic.png',
     title: 'NSIC',
     subTitle: 'National Small Industries Corporation',

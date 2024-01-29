@@ -14,8 +14,9 @@ import * as S from '../../styles/project'
 import { ButtonAlt, ButtonSecondary, Title, Description } from '../../styles/styles'
 import { ArrowLeft, ChatCenteredText, Image as IconImage,
 YoutubeLogo, Hash } from 'phosphor-react'
-import { FaGithub } from 'react-icons/fa'
+import { FaBlog, FaGithub } from 'react-icons/fa'
 import { BsGlobe } from 'react-icons/bs'
+import blog from '../../data/blogs'
 
 interface ProjectProps {
   project: Project
@@ -61,6 +62,11 @@ export default function Projeto({ project }: ProjectProps) {
               </ButtonAlt>
 
             </Link>
+             <Link href={project.blog}>
+               <ButtonAlt>
+                 Blog <FaBlog size={17} />
+              </ButtonAlt>
+               </Link>
           </div>
         </div>
       </S.Banner>
@@ -224,7 +230,8 @@ export const getStaticProps: GetStaticProps = async ({ params }: any) => {
     year: project.year,
     status: project.status,
     video: project.video,
-    backgroundImage: project.backgroundImage
+    backgroundImage: project.backgroundImage,
+    blog: project.blog
   }))
 
   const idProject = project.find(project => project.link === params.id)

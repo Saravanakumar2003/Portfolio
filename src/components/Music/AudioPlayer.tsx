@@ -25,9 +25,9 @@ const AudioPlayer: React.FC<{ audioSrc: string }> = ({ audioSrc }) => {
             display: 'flex', 
             alignItems: 'center', 
             justifyContent: 'center', 
-            width: '45px', 
-            height: '45px', 
-            borderRadius: '50%', 
+            width: '40px', 
+            height: '40px', 
+            borderRadius: '20%',
             backgroundColor: 'white', 
             color: 'black', 
             cursor: 'pointer'

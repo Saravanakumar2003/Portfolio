@@ -1,5 +1,20 @@
 const blog = [
   {
+    id:2,
+    title: 'EmpowerKids - A Child Complaint Reporting App',
+    url: 'https://saravanakumar2003.hashnode.dev/empowerkids-complaint-portal',
+    description: 'This blog explains the process of creating a complaint portal for children using Firebase and Material UI.',
+    img: '/blog/EKBG.png',
+    date: '28/01/2024',
+    read : '4 minutes',
+    tags: [
+      {name: 'HTML'},
+      {name: 'CSS'},
+      {name: 'JavaScript'},
+      {name: 'Firebase'},
+    ],
+  },
+  {
     id: 1,
     title: 'Dat to CSV Converter',
     url: 'https://saravanakumar2003.hashnode.dev/dat-to-csv-file-converter',

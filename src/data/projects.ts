@@ -8,6 +8,7 @@ const projects = [
     type: 'Website',
     icon: '/projects/EmpowerKids/EKlogo.jpg',
     github: 'https://github.com/Saravanakumar2003/EmpowerKids',
+    blog: 'https://saravanakumar2003.hashnode.dev/empowerkids-complaint-portal',
     web: 'https://empowerkids.netlify.app/',
     description:
       'Empowerkids is a platform that allows children to file complaints regarding issues that affect them. ',
@@ -63,9 +64,9 @@ const projects = [
         img: '/projects/EmpowerKids/EKAdmin.jpeg'
       },
       {
-        name: 'All Complaints',
+        name: 'Contact Us Page',
         description:
-          'Every visitor is able to see all complaints. User can filter complaints according to Resolved, Pending, or Declined. All Data Talbe features are available.',
+          'Contact Us Page features about us, contact details, and a email ID for any queries.',
         img: '/projects/EmpowerKids/EKComplaint.jpeg'
       },
     ],
@@ -84,6 +85,7 @@ const projects = [
     title: 'DAT to CSV Converter',
     type: 'Convertor',
     icon: '/projects/DATtoCSV/DATBG.jpg',
+    blog: 'https://saravanakumar2003.hashnode.dev/dat-to-csv-file-converter',
     github: 'https://github.com/Saravanakumar2003/DAT-to-CSV-Convertor',
     web: 'https://saravanakumar.pythonanywhere.com/',
     description:

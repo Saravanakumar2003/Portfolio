@@ -146,10 +146,10 @@ export const Banner = styled.div`
 export const DescriptionProject = styled.div`
   margin-top: -8rem;
   text-align: center;
-  padding: 0 1rem;
   display: grid;
   justify-items: center;
   align-items: center;
+  padding: 0 1rem;
 
   .description {
     display: flex;
@@ -397,10 +397,10 @@ export const Print = styled.div`
     }
   }
 
-  width: 18rem;
+  width: 25rem;
 
   @media (min-width: 468px) {
-    width: 25rem;
+    width: 30rem;
   }
 
   @media (min-width: 768px) {
@@ -464,7 +464,7 @@ export const Video = styled.div`
   opacity: 1;
 
   @media (min-width: 468px) {
-    width: 25rem;
+    width: 30rem;
     height: 13.3rem;
   }
   @media (min-width: 768px) {

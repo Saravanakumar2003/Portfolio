@@ -9,6 +9,9 @@ export interface Print {
   image: string
   name: string
   description: string
+  date: string
+  url: string
+  urltitle: string
 }
 
 export interface Work {

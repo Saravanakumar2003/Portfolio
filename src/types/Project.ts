@@ -32,4 +32,5 @@ export interface Project {
   status: string
   video: string
   backgroundImage: string
+  blog: string
 }

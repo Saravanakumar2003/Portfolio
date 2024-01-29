@@ -62,7 +62,7 @@ export function Projects() {
         })}
       </ProjectsContainer>
 
-      <AllBlogs title={'Read all of Blogs'} />
+      <AllBlogs title={'Read all of my Blogs'} />
     </Container>
   );
 }

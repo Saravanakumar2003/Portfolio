@@ -18,36 +18,54 @@ const works = [
       {
         name: 'Commencement of my Journey',
         image: '/Volunteering/NSS/NSS1.jpeg',
+        date: '24th, November 2021',
+        url: 'https://www.instagram.com/p/CW3Jqj9Jz1d/',
+        urltitle: 'Read my blog here',
         description:
           'The day (24/11/2021) when my journey as an NSS volunteer at Velammal Engineering College commenced. ' 
       },
       {
         name: 'Republic Day 2022 Dance',
         image: '/Volunteering/NSS/NSS2.jpeg',
+        date: '26th, January 2022',
+        url: 'https://youtu.be/MMTdvNh260E',
+        urltitle: 'Watch my dance here',
         description:
-          'It was my first time dancing, forgive me if I was a bit odd in a group of excellent dancers. Watch my dance here - https://youtu.be/MMTdvNh260E'
+          'It was my first time dancing, forgive me if I was a bit odd in a group of excellent dancers.'
       },
       {
         name: 'GD and Speech winner',
         image: '/Volunteering/NSS/NSS3.jpeg',
+        date: '26th, January 2022',
+        url: 'https://www.instagram.com/p/CY8q8K9JWt6/',
+        urltitle: 'Read my blog here',
         description:
           'Group Discussion and Speech winner of the NSS internal competition. I was receiving the award from my General Coordination (2021 to 2022) of NSS, Muralidharan.'
       },
       {
         name: 'Planting Seeds of Change',
         image: '/Volunteering/NSS/NSS4.jpeg',
+        date: '5th, February 2022',
+        url: 'https://www.instagram.com/p/CY8q8K9JWt6/',
+        urltitle: 'Read the impact here',
         description:
           'Participated in a meaningful tree plantation drive as an NSS volunteer.'
       },
       {
         name: 'Gandhi Jayanthi Short Film 2023',
         image: '/Volunteering/NSS/NSS5.jpeg',
+        date: '2nd, October 2022',
+        url: 'https://www.youtube.com/watch?v=5nw9oLOoU4Q',
+        urltitle: 'Watch my video here',
         description:
           'My part spanned from 1.29 to 2.10 in the video, and it portrayed the character of Lord Erwin. Watch my video here - https://www.youtube.com/watch?v=5nw9oLOoU4Q'
       },
       {
         name: 'Independence Day 2023 Host',
         image: '/Volunteering/NSS/NSS6.jpeg',
+        date: '15th, August 2023',
+        url: 'https://www.instagram.com/p/CY8q8K9JWt6/',
+        urltitle: 'View the Sample Here',
         description:
         'Privileged to have hosted the Independence Day celebrations as part of my role as an NSS volunteer.'
       }

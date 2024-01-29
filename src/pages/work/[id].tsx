@@ -72,7 +72,18 @@ export default function Projeto({ work }: WorkProps) {
                 <div className="workItem" key={print.id}>
                   <div className="text">
                     <h3>{print.name}</h3>
-                    <p>{print.description}</p>
+                    <p style={
+                      {
+                        textAlign: 'justify',
+                      }
+                    }>{print.description}</p>
+                    <span>Date : {print.date}</span>
+                    <a href={print.url} style={
+                      {
+                        textDecorationLine: 'underline',
+                        marginBottom: '1rem',
+                      }
+                    }>{print.urltitle}</a>
                   </div>
                   <Image
                     width={700}

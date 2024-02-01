@@ -1,7 +1,7 @@
 const blog = [
   {
     id:2,
-    title: 'EmpowerKids - A Child Complaint Reporting App',
+    title: 'EmpowerKids',
     url: 'https://saravanakumar2003.hashnode.dev/empowerkids-complaint-portal',
     description: 'This blog explains the process of creating a complaint portal for children using Firebase and Material UI.',
     img: '/blog/EKBG.png',

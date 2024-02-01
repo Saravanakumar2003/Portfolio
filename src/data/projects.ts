@@ -44,13 +44,13 @@ const projects = [
         name: 'Home Page',
         description:
           'The "Home" screen is the landing page, offering a welcoming interface and providing an introduction to the NIWE Dashboard.',
-        img: '/projects/NIWEDashboard/Home.png'
+        img: '/projects/NIWEDashboard/Home.jpg'
       },
       {
         name: 'Add Project',
         description:
           'The "Add Project" screen allows users to input and submit project details, making it easy to add new projects to the system.',
-        img: '/projects/NIWEDashboard/AddPoject.jpg'
+        img: '/projects/NIWEDashboard/Add-Poject.jpg'
       },
       {
         name: 'Project List/Table view',
@@ -92,18 +92,18 @@ const projects = [
     status: 'Completed',
     year: 'January 2024',
     gif: '',
-    backgroundImage: '/projects/NIWEDashboard/NIWE.png',
+    backgroundImage: '/projects/Background.png',
     video:
-      'https://youtu.be/oh0n2WFNn5U'
+      ''
   },
   {
     id: 3,
     url: 'dat_2_csv',
-    banner: '/projects/DATtoCSV/DATBG.jpg',
-    img: '/projects/DATtoCSV/DATBG.jpg',
+    banner: '/projects/DATtoCSV/DATBG.png',
+    img: '/projects/DATtoCSV/DATBG.png',
     title: 'DAT to CSV Converter',
     type: 'Convertor',
-    icon: '/projects/DATtoCSV/DATBG.jpg',
+    icon: '/projects/DATtoCSV/Icon.png',
     blog: 'https://saravanakumar2003.hashnode.dev/dat-to-csv-file-converter',
     github: 'https://github.com/Saravanakumar2003/DAT-to-CSV-Convertor',
     web: 'https://saravanakumar.pythonanywhere.com/',
@@ -158,7 +158,7 @@ const projects = [
     status: 'Completed',
     year: 'December 2023',
     gif: '/projects/DATtoCSV/Promo.mp4',
-    backgroundImage: '/projects/DATtoCSV/DATBG.jpg',
+    backgroundImage: '/projects/Background.png',
     video:
       'https://youtu.be/ggpB_Erkl4k'
   },
@@ -236,7 +236,7 @@ const projects = [
     status: 'Completed',
     year: 'November 2023',
     gif: '',
-    backgroundImage: '/projects/EmpowerKids/EKBG.png',
+    backgroundImage: '/projects/Background.png',
     video:
       'https://youtu.be/oh0n2WFNn5U'
   },
@@ -314,15 +314,15 @@ const projects = [
         name: 'Calendly Integration',
         description:
           'Integration with Calendly allows the user to schedule a meeting with me. The Calendly widget is embedded in the website.',
-        img: '/projects/Portfolio/calendly.png'
+        img: '/projects/Portfolio/calendy.png'
       }
     ],
     status: 'Completed',
     year: 'October 2023',
     gif: '',
-    backgroundImage: '/projects/Portfolio/Portfolio.png',
+    backgroundImage: '/projects/Background.png',
     video:
-      'https://youtu.be/oh0n2WFNn5U'
+      ''
   },
 ]
 

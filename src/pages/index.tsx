@@ -34,7 +34,6 @@ export default function Home() {
         <Work />
         <Achievements />
         <Projects />
-        <Testimonials />
         <CardContact />
       </Section>
 

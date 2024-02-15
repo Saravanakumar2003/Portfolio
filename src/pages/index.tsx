@@ -12,6 +12,7 @@ import { Section } from "../styles/styles";
 import { Work } from "../components/Work";
 import { Education } from "../components/Education";
 import { Achievements } from "../components/Achievements";
+import { Testimonials } from "../components/Testimonials";
 
 export default function Home() {
   return (
@@ -33,6 +34,7 @@ export default function Home() {
         <Work />
         <Achievements />
         <Projects />
+        <Testimonials />
         <CardContact />
       </Section>
 

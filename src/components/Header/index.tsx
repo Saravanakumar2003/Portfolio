@@ -15,7 +15,7 @@ export function Header() {
     setOpen(!open);
   };
 
-  const musicSrc = 'https://preview-downloads.customer.envatousercontent.com/files/311477275/preview.mp3?response-content-disposition=attachment%3Bfilename%3D29263231_at-dubstep_by_zedbadley_preview.mp3&Expires=1706873095&Signature=Z-viT8fTOVEOJA1m-fFnocWAZRwO7qgm2PIo9U5C-pAOP-O3Y6enPh~qdjiwHNFrVRKN3IXpfr1wh0KGauKqFPS6abRmT23c4zBVJTA9mqJIZ5ka9JsWy8R-O0X9wwbZbB2QXhclNGZQE6v2HH62MdtzN2g89D3eHxae9RXj8Oi3bzSBIbgTo2ekprnD5U0rW2k-skQSvYXdrhxF59NPjkEQ3gC-bjfLodvYHs2Iaelsdwh7-mtdguPeHt8eViAjpcJUC7PqDY2LoEX6022FMrdYrYkI0RDfpumKRt~qHQOm5GupeJZRv-gGnXSZDJ6D3CJwB2bs4kBIaEiFZwgl-M3UwJzAf5N8fDZk7QpTOUdGLLabGpYsZEaun24zx1qSdwvGXWgxBNFolERIiQJae6s28BDYIM7h8qA-zq6NDHvkYW1vAitl0g7STsrLvlIsRez-YtI5fyHTn-jlKJ0I-4gIlkPkZ9J4Onfp93qP-yJHA5cBHLOXuXzBcU2nIfnyh7Qe-VViI~vp5J6veQVPPFIMNk2zB1XxrIzKflJbimKKgKMXWspUYUXi0c8PYRz1tFzKFUFL4PgMUqspBWDaHLj-AbH49vUa9Y6YR~BFfnoEC1kRn-uhPy~gDa0NtqDGxM-nKDuhtpLKJeUPUdb5pC80N3tLVAuT8TYahR9D9hQ_&Key-Pair-Id=APKAJRP2AVKNFZOM4BLQ'; 
+  const musicSrc = 'https://cf-media.sndcdn.com/GdA3Nxspc3Dk.128.mp3?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLW1lZGlhLnNuZGNkbi5jb20vR2RBM054c3BjM0RrLjEyOC5tcDMqIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzA4MDExMzYwfX19XX0_&Signature=JxhtZrBPVtat8QCvOzomWtlNJzOsns4D3n4f8NOlyeWpF6CoSSYCVESEVuZaMa4kb5hRxUrqOPHZ6Zpf4NocKYU~sBmKJtyecYec~Y-aEGOtrSheqwrrzT8ir1ktsPEvoSSgww4-q56YqRC9RKFcLujjVP6vwCnjgbaXjsq01QfazyiliYb64r8VVAxAAHtyCcdab2Z3fqI-uifSPjORN-2oJdxh-U3micT17i-tZDF0dWrMv9FlTsqtR8qu7abniw-4Ip2hU~h2UYKLM2uEgoMFz498lHvA7Z2BE1Z5HhjN75fjQx9FcApFhjEiD~M5oPi9aSmz~Y8B5UNtsdD3YQ__&Key-Pair-Id=APKAI6TU7MMXM5DG6EPQ'; 
 
   return (
     <HeaderContainer style={{ position: 'fixed', top: 0, width: '100%', zIndex: 1000 }}>

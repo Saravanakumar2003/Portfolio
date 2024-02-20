@@ -20,7 +20,26 @@ const education = [
     description:
       'Activities and societies: Athletics, Member of the Literary Club, participant in school debates, Model United Nations, and volunteering at local community events. \n\nHSE subjects includes Maths, Physics, Chemistry, Biology, English, and Tamil.',
     date: '03-June-07 to 22-May-21',
-    link: 'https://www.sethubhaskara.edu.in/'
+    link: 'https://www.sethubhaskara.edu.in/',
+    tags: [
+    ],
+    banner: '',
+    type: '',
+    icon: '',
+    print: [
+      {
+        name: '',
+        description:
+          '',
+        img: ''
+      },
+    ],
+    status: '',
+    year: '',
+    gif: '',
+    backgroundImage: '',
+    video:
+      ''
   },
   
   /*

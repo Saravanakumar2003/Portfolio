@@ -4,8 +4,7 @@ export const ContainerEducation = styled.div`
   position: relative;
   width: 100%;
   display: inline-flex;
-  justify-content: center;
-  align-items: center;
+  text-align: justify;
   flex-direction: column;
   padding: 2rem 1.5rem;
 `

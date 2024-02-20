@@ -7,7 +7,7 @@ export const EducationContainer = styled.div`
 
 export const EducationContent = styled.div`
   h1 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: bold;
     color: ${props => props.theme.firstColor};
   }
@@ -19,14 +19,15 @@ export const EducationContent = styled.div`
   }
   
     span {
-      font-size: .9rem;
-      font-weight: 500;
       color: ${props => props.theme.textSecondary};
+      font-size: 1rem;
+      text-align: justify;
     }
 
   p { 
     margin-top: 1.3rem;
     font-size: 1rem;
+    text-align: justify;
   }
 
   ul {
@@ -35,7 +36,6 @@ export const EducationContent = styled.div`
     h3 {
       margin-bottom: .5rem;
       font-size: 1.3rem;
-      color: ${props => props.theme.hover};
     }
 
     .tag{

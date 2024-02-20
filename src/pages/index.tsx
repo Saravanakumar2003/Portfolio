@@ -25,7 +25,7 @@ export default function Home() {
       <ScrollTop />
       <Section>
         <Section>
-          <HomeHero />
+        <HomeHero />
         </Section>
         <About />
         <Skills />
@@ -34,6 +34,7 @@ export default function Home() {
         <Work />
         <Achievements />
         <Projects />
+        <Testimonials />
         <CardContact />
       </Section>
 

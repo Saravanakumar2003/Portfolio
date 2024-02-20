@@ -25,21 +25,24 @@ export function Testimonials() {
           <ChatCenteredText />Testimonials 
         </span>
       </Title>
-      <div style={{
-        width: isLargeScreen ? '100vw' : '100%',
-        height: isLargeScreen ? '50vh' : '100%',
-        }}>
   <iframe
     id='testimonialto-carousel-saravanakumar-r-tag-all-light'
     src="https://embed-v2.testimonial.to/w/saravanakumar-r?animated=on&horizontal=on&theme=dark&shadowColor=ffffff&speed=1&hideDate=on&hideSource&rows=1&tag=all"
     style={{
-      position: 'absolute',
-      width: '100%',
-      height: '100%',
+      width: '100vw',
+      height: '60vh',
+      maxWidth: '100%',
+      border: 'none',
+      overflow: 'hidden',
+      margin: '0',
+      padding: '0',
+      display: 'block',
+      zIndex: 9999,
+      position: 'relative',
     }}
-    frameBorder="0"
+    scrolling='no'
+    frameBorder='0'
   ></iframe>
-</div>
     </Container>
   );
 }

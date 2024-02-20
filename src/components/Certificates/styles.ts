@@ -8,6 +8,7 @@ export const ContainerEducation = styled.div`
   align-items: center;
   flex-direction: column;
   padding: 2rem 1.5rem;
+  
 `
 
 export const EducationContent = styled.div`
@@ -67,6 +68,7 @@ export const ListImage = styled.div`
 
   a {
     font-size: medium;
+    text-align: justify;
   }
 
   p {
@@ -74,9 +76,11 @@ export const ListImage = styled.div`
     gap: .5rem;
     font-size: 1rem;
     color: ${props => props.theme.gray_easy};
+    text-align: justify;
     
     span {
       color: ${props => props.theme.gray};
+      text-align: justify;
     }
   }
 
@@ -86,7 +90,7 @@ export const ListContent = styled.div`
   max-width: 25rem;
 
   h2 {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     font-weight: 800;
     color: ${props => props.theme.firstColor};
   }
@@ -101,6 +105,7 @@ export const ListContent = styled.div`
     white-space: break-spaces;
     font-size: 15px;
     color: ${props => props.theme.text};
+    text-align: justify;
   }
 `
 

@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const ExperienceContainer = styled.div`
   display: flex;
+  text-align: justify;
   background-color: ${props => props.theme.backgroundAlt};
 `
 
@@ -21,12 +22,15 @@ export const ExperienceContent = styled.div`
     span {
       font-size: .9rem;
       font-weight: 500;
+      text-align: justify;
       color: ${props => props.theme.textSecondary};
     }
 
   p { 
     margin-top: 1.3rem;
     font-size: 1rem;
+    text-align: justify;
+
   }
 
   ul {

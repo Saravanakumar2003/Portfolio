@@ -15,8 +15,8 @@ export function Header() {
     setOpen(!open);
   };
 
-  const musicSrc = 'https://cf-media.sndcdn.com/GdA3Nxspc3Dk.128.mp3?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLW1lZGlhLnNuZGNkbi5jb20vR2RBM054c3BjM0RrLjEyOC5tcDMqIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzA4MDExMzYwfX19XX0_&Signature=JxhtZrBPVtat8QCvOzomWtlNJzOsns4D3n4f8NOlyeWpF6CoSSYCVESEVuZaMa4kb5hRxUrqOPHZ6Zpf4NocKYU~sBmKJtyecYec~Y-aEGOtrSheqwrrzT8ir1ktsPEvoSSgww4-q56YqRC9RKFcLujjVP6vwCnjgbaXjsq01QfazyiliYb64r8VVAxAAHtyCcdab2Z3fqI-uifSPjORN-2oJdxh-U3micT17i-tZDF0dWrMv9FlTsqtR8qu7abniw-4Ip2hU~h2UYKLM2uEgoMFz498lHvA7Z2BE1Z5HhjN75fjQx9FcApFhjEiD~M5oPi9aSmz~Y8B5UNtsdD3YQ__&Key-Pair-Id=APKAI6TU7MMXM5DG6EPQ'; 
-
+  const musicSrc = '/others/music.mp3';
+  
   return (
     <HeaderContainer style={{ position: 'fixed', top: 0, width: '100%', zIndex: 1000 }}>
       <div className="mobile-content"  style={{ display: 'flex'}}>

@@ -8,12 +8,6 @@ import { Education } from '../../types/Education'
 import education1 from '../../data/education'
 import ReactPlayer from 'react-player'
 import { Footer } from '../../components/Footer'
-import * as S from "../../styles/education";
-import { ButtonAlt, ButtonSecondary, Title, Description } from '../../styles/styles'
-import { ArrowLeft, ChatCenteredText, Image as IconImage,
-YoutubeLogo, Hash } from 'phosphor-react'
-import { FaBlog, FaGithub } from 'react-icons/fa'
-import { BsGlobe } from 'react-icons/bs'
 
 interface EducationProps {
   education: Education

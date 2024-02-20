@@ -6,13 +6,23 @@ import {
   VerticalTimelineElement
 } from 'react-vertical-timeline-component'
 import 'react-vertical-timeline-component/style.min.css'
-import { Container, Title } from '../../styles/styles'
+import { Button, Container, Title } from '../../styles/styles'
 import { EducationContainer, EducationContent } from './styles'
 import { Books } from 'phosphor-react'
-import { Button } from '../../styles/styles'
-import { margin } from 'polished'
+import Link from "next/link";
+import { useState } from 'react'
  
+export interface EducationProps {
+  target: HTMLInputElement
+}
+
 export function Education() {
+  const [query, setQuery] = useState("");
+
+  const handleChange = (e: EducationProps) => {
+    setQuery(e.target.value);
+  };
+
   const theme = useTheme()
 
   return (
@@ -60,13 +70,17 @@ export function Education() {
                       <h1>{education.title}</h1>
                       <h2>{education.subTitle}</h2>
                       <span>{education.office}</span>
-                      <p>{education.description}</p>
-                      <Button style={{marginTop: '10px'}}>
-                        <a href={education.link} target="_blank">
-                         Know more
-                        </a>
-                      </Button>
-
+                      <p>{education.description.split('\n').map((line, i) => (
+                      <a key={i}>
+                        {line}
+                          <br />
+                           </a>
+                      ))}</p>
+                      {/*<Button style={{ marginTop: '1rem' }}>
+                      <Link legacyBehavior href={`/education/${education.url}`}>
+                        View More
+                      </Link>
+                    </Button>*/}
                     </EducationContent>
                   </EducationContainer>
                 </VerticalTimelineElement>

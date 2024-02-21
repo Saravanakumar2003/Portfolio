@@ -8,15 +8,28 @@ import { Header } from '../components/Header'
 import { Work } from '../components/Work'
 import { ScrollTop } from '../components/ScrollTop'
 import { Certificates } from '../components/Certificates'
-import { Section, Title, Description } from '../styles/styles'
+import { Section, Title, Description, Button } from '../styles/styles'
 import { TabButton, TabContent, TabsContainer } from '../styles/experience'
 import { Briefcase } from 'phosphor-react'
 import works from '../data/experiences'
 import { Education } from '../components/Education'
+import Link from 'next/link'
+import Testimonials from '../components/Testimonials'
+
+
+export interface ExperienceProps {
+  target: HTMLInputElement
+}
 
 export default function Experience() {
   const [tabIndex, setTabIndex] = useState(0)
   let numbering = 0
+
+  const [query, setQuery] = useState("");
+
+  const handleChange = (e: ExperienceProps) => {
+    setQuery(e.target.value);
+  };
 
   return (
     <div>
@@ -98,7 +111,26 @@ export default function Experience() {
                         <h4>{experience.date}</h4>
                       </div>
                     </div>
-                    <p>{experience.description}</p>
+                    <p 
+                    style={{
+                      marginTop: '1rem',
+                      textAlign: 'justify',
+                      maeginBottom: '1rem'
+                    }}>
+                      {experience.description}</p>
+                   {/* <Button style={{ 
+                        marginTop: '1rem',
+                        }}>
+                      <Link legacyBehavior href={`/experience/${experience.url}`}>
+                        View Details
+                      </Link>
+                    </Button> */}
+                    <div className="links">
+                      <a href={experience.link} target="_blank" rel="noreferrer">
+                        <Button>View Report</Button>
+                      </a>
+                    </div>
+
                     <div className="techs">
                       <h3>Techs:</h3>
                       <ul>
@@ -121,8 +153,9 @@ export default function Experience() {
             </TabContent>
           </Tabs>
         </TabsContainer>
-        <Education />
         <Work />
+        <Testimonials />
+        <Education />
         <Certificates />
       </Section>
       <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>

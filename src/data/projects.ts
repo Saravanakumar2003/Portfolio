@@ -103,7 +103,7 @@ const projects = [
     img: '/projects/DATtoCSV/DATBG.png',
     title: 'DAT to CSV Converter',
     type: 'Convertor',
-    icon: '/projects/DATtoCSV/Icon.png',
+    icon: '/projects/DATtoCSV/DATlogo.png',
     blog: 'https://saravanakumar2003.hashnode.dev/dat-to-csv-file-converter',
     github: 'https://github.com/Saravanakumar2003/DAT-to-CSV-Convertor',
     web: 'https://saravanakumar.pythonanywhere.com/',

@@ -1,7 +1,7 @@
 const experience = [
   {
     id: 1,
-    img: '/experience/niwe.png',
+    img: '/experience/NIWE.png',
     title: 'NIWE',
     subTitle: 'National Institute of Wind Energy',
     office: 'Intern (WRA Division)',
@@ -15,7 +15,8 @@ const experience = [
       {name : 'CSS', icon: '/icons/CSS.png' },
       {name : 'JS', icon: '/icons/JS.png' },
     ],
-    date: '23-Jan-23 to 30-Jan-23'
+    date: '23-Jan-23 to 30-Jan-23',
+    link: 'https://drive.google.com/file/d/1b7GSsGtZvycOhRV-JGZXC2gvwYH-9nKj/view?usp=sharing',
   },
   
   {
@@ -29,25 +30,7 @@ const experience = [
       { name: 'Office', icon: '/icons/Office.png' },
     ],
     date: '19-Jun-23 to 23-Jun-23',
-    url: '',
-    banner: '',
-    type: '',
-    icon: '',
-    link: '',
-    print: [
-      {
-        name: '',
-        description:
-          '',
-        img: ''
-      },
-    ],
-    status: '',
-    year: '',
-    gif: '',
-    backgroundImage: '',
-    video:
-      ''
+    link: 'https://drive.google.com/file/d/10u-LsiLDjEdVlTQFXGOE5teaOflUBECz/view?usp=sharing',
   },
   {
     id: 1,
@@ -56,13 +39,14 @@ const experience = [
     subTitle: 'National Small Industries Corporation',
     office: 'Embedded system & IoT trainee',
     description:
-      'In NSIC, I have learned about the basics of embedded systems and IoT. I have also learned about the basics of Arduino and Raspberry Pi. I have also learned about the basics of sensors and actuators. I have also learned about the basics of the Internet of Things. I have also learned about the basics of the cloud.',
+      'In NSIC, I have learned about the basics of embedded systems ,IoT, Arduino and Raspberry Pi.',
     tags: [
       { name: 'Raspberry Pi', icon: '/icons/Pi.png' },
       { name: 'Arduino', icon: '/icons/Arduino.png' },
       { name: 'Cloud', icon: '/icons/Cloud.png' },
     ],
-    date: '23-Jan-23 to 30-Jan-23'
+    date: '23-Jan-23 to 30-Jan-23',
+    link: 'https://drive.google.com/file/d/1b7GSsGtZvycOhRV-JGZXC2gvwYH-9nKj/view?usp=sharing',
   },
 ]
 

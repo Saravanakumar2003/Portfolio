@@ -60,7 +60,7 @@ const works = [
         date: '15th, August 2023',
         description:
         'Privileged to have hosted the Independence Day celebrations as part of my role as an NSS volunteer.'
-      }
+      },
     ]
   },
   {
@@ -95,7 +95,7 @@ const works = [
       },
       {
         name: 'Bhumi Awards 2023',
-        image: '/Volunteering/Bhumi/Award.jpg',
+        image: '/Volunteering/Bhumi/Award.JPG',
         date: '16th, July 2023',
         description:
           'The awards were given to the volunteers who have done a great job in the past year. I was a spectator for the event and I was inspiring to see the volunteers getting the awards.'
@@ -175,6 +175,21 @@ const works = [
         date: '30th, August 2022',
         description:
         'The final exam was conducted on 30th August. The exam was conducted to test the knowledge of the kids. The exam was conducted for 50 marks and the kids were given 1 hour to complete the exam. In the End Exam, The class average was 42% with 0 failures & 5 absentees.'
+      },
+      {
+        name: 'Visit with my NSS Team',
+        image: '/Volunteering/School/Visit.jpg',
+        date: '11th, March 2023',
+        description:
+          'My NSS team visited the school to see the progress of the kids. The kids showed us the drawings they made and also showed us the activities they learned. The kids were very happy and they were very excited to show us their work. My team played with the kids and also taught them a few things. The kids were very happy and they enjoyed the visit. ',
+      },
+      {
+        name: 'Volunteering Documentation', 
+        image: '/Volunteering/School/DriveBanner.png',
+        date: '31st, August 2022',
+        description:"The documentation included the details of the sessions, the topics taught, the activities conducted, and the exam details with corrected papers.",
+        url: 'https://drive.google.com/drive/folders/1iBqFAWdkygWAuBZxrFDmeg0UeGHf84Lo?usp=sharing',
+        urltitle: 'View the documentation here'
       }
     ]
   },

@@ -115,7 +115,7 @@ export default function Experience() {
                     style={{
                       marginTop: '1rem',
                       textAlign: 'justify',
-                      maeginBottom: '1rem'
+                      marginBottom: '1rem'
                     }}>
                       {experience.description}</p>
                    {/* <Button style={{ 

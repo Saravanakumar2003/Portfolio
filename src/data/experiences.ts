@@ -8,7 +8,7 @@ const experience = [
     description:
       'This internship has not only broadened my understanding of wind energy but has also equipped me with practical skills applicable beyond this experience. The report aims to convey the multifaceted nature of my internship, highlighting a commitment to excellence and continuous learning nurtured at NIWE.',
     tags: [
-      { name: 'Python', icon: '/icons/Python.png' },
+      { name: 'Python', icon: '/icons/python.png' },
       { name: 'Flask', icon: '/icons/flask.png' },
       { name: 'Office', icon: '/icons/Office.png' },
       {name : 'HTML', icon: '/icons/HTML.png' },

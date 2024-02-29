@@ -48,6 +48,21 @@ export function CardContact() {
             />
           </ButtonAlt>
         </Link>
+        <Link href="https://forms.visme.co/formsPlayer/kkjne993-saravana-039-s-portfolio" legacyBehavior>
+          <ButtonAlt style={{
+            marginTop: '1rem',
+          }}>
+            Write a feedback{' '}
+            <TelegramLogo
+              style={{
+                marginBottom: '-0.1rem',
+                marginLeft: '0.2rem'
+              }}
+              size={16}
+              weight="bold"
+            />
+          </ButtonAlt>
+        </Link>
       </CardContactContainer>
     </Section>
   );

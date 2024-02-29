@@ -48,6 +48,8 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-DEXGX7MVS0"></script>
+        <div className="visme_d" data-title="Custom Form" data-url="kkjne993-custom-form?fullPage=true" data-domain="forms" data-full-page="true" data-min-height="100vh" data-form-id="32099"></div>
+          <script src="https://static-bundles.visme.co/forms/vismeforms-embed.js"></script>
         <script>
           {`
             window.dataLayer = window.dataLayer || [];

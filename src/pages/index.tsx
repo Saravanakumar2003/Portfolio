@@ -37,8 +37,7 @@ export default function Home() {
         <Testimonials />
         <CardContact />
       </Section>
-      <div className="visme_d" data-title="Custom Form" data-url="kkjne993-custom-form?fullPage=true" data-domain="forms" data-full-page="true" data-min-height="100vh" data-form-id="32099"></div>
-      <script src="https://static-bundles.visme.co/forms/vismeforms-embed.js"></script>
+
       <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
       <script
         src="https://mediafiles.botpress.cloud/7d24b661-c169-4cd5-9dd2-671b3cb8ec48/webchat/config.js"

@@ -17,19 +17,6 @@ declare global {
   }
 }
 
-useEffect(() => {
-  // Adding Visme form script dynamically
-  const script = document.createElement('script');
-  script.src = 'https://static-bundles.visme.co/forms/vismeforms-embed.js';
-  script.async = true;
-  document.body.appendChild(script);
-
-  return () => {
-      // Clean up script on component unmount
-      document.body.removeChild(script);
-  };
-}, []);
-
 function useNormalScrollRoutes() {
   const router = useRouter()
 
@@ -59,7 +46,6 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <div className="visme_d" data-title="Custom Form" data-url="kkjne993-custom-form?fullPage=true" data-domain="forms" data-full-page="true" data-min-height="100vh" data-form-id="32099"></div>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-DEXGX7MVS0"></script>
         <script>

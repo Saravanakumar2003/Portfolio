@@ -43,6 +43,22 @@ export function Testimonials() {
     scrolling='no'
     frameBorder='0'
   ></iframe>
+
+<Link href="https://testimonial.to/saravanakumar-r" legacyBehavior>
+          <ButtonAlt style={{
+            marginTop: '1rem',
+          }}>
+            Write a Testimonial{' '}
+            <TelegramLogo
+              style={{
+                marginBottom: '-0.1rem',
+                marginLeft: '0.2rem'
+              }}
+              size={16}
+              weight="bold"
+            />
+          </ButtonAlt>
+        </Link>
     </Container>
   );
 }

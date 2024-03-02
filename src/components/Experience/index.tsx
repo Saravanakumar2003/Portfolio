@@ -58,7 +58,12 @@ export function Experience() {
                       <h1>{experience.title}</h1>
                       <h2>{experience.subTitle}</h2>
                       <span>{experience.office}</span>
-                      <p>{experience.description}</p>
+                      <p>{experience.description.split('\n').map((line, i) => (
+                      <a key={i}>
+                        {line}
+                          <br />
+                           </a>
+                      ))}</p>
                       <div>
                         <h3>Techs:</h3>
                         <div className="tag">

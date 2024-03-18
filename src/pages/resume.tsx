@@ -8,8 +8,7 @@ import { PageSection } from '../styles/resume'
 import { BsFileText } from 'react-icons/bs'
 
 export default function Resume() {
-  const resumeData =
-    'https://www.canva.com/design/DAF6D3Nsakw/dNk6AuqBjMnMoHJMkbZb9A/edit?utm_content=DAF6D3Nsakw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton'
+  const resumeData = process.env.NEXT_PUBLIC_CANVA_API_KEY
 
   const previewData = `${resumeData.substr(
     0,

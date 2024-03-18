@@ -6,6 +6,7 @@ import { CV } from '../components/CV'
 import { Description, Section, Title } from '../styles/styles'
 import { PageSection } from '../styles/resume'
 import { BsFileText } from 'react-icons/bs'
+import axios from 'axios'
 
 export default function Resume() {
   const resumeData = process.env.NEXT_PUBLIC_CANVA_API_KEY

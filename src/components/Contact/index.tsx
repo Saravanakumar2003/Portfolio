@@ -44,6 +44,7 @@ export function Contact() {
 
             </Link>
           </div>
+          
         </ContactContent>
         <Form />
           <Title style={{ textAlign: "center" }}> Schedule a Meeting </Title>

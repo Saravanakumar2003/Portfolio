@@ -8,10 +8,10 @@ import { PageSection } from '../styles/resume'
 import { BsFileText } from 'react-icons/bs'
 import axios from 'axios'
 
-const canvaApi = process.env.NEXT_PUBLIC_CANVA_API;
+const canvaApi = process.env.NEXT_PUBLIC_CANVA_URL;
 
 export default function Resume() {
-  const resumeData = `${canvaApi}`
+  const resumeData = {canvaApi}
 
   const previewData = `${resumeData.substr(
     0,

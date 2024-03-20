@@ -11,6 +11,8 @@ import { MantineProvider } from '@mantine/core'
 import { Analytics } from '@vercel/analytics/react';
 import { initGA, logPageView } from '../utils/analytics';
 
+const googleAnalyticsUrl = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_URL;
+
 declare global {
   interface Window {
     GA_INITIALIZED: boolean;
@@ -47,7 +49,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-DEXGX7MVS0"></script>
+        <script async src={googleAnalyticsUrl}></script>
         <script>
           {`
             window.dataLayer = window.dataLayer || [];
@@ -71,6 +73,11 @@ function MyApp({ Component, pageProps }: AppProps) {
         <GlobalStyles />
         <Component {...pageProps} />
         <Analytics />
+        <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+      <script
+        src="https://mediafiles.botpress.cloud/7d24b661-c169-4cd5-9dd2-671b3cb8ec48/webchat/config.js"
+        defer
+      ></script>
       </ThemeProvider>
       </MantineProvider>
     </>

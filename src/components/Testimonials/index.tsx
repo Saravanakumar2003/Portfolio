@@ -6,7 +6,7 @@ import Image from 'next/image'
 import { ButtonAlt, Section } from '../../styles/styles'
 import { TelegramLogo } from 'phosphor-react'
 
-const testimonialApi = process.env.NEXT_PUBLIC_TESTIMONIAL_TO_API_KEY;
+const testimonialApi = process.env.NEXT_PUBLIC_TESTIMONIAL_URL;
 
 export function Testimonials() {
   const [isLargeScreen, setIsLargeScreen] = useState(false);
@@ -36,7 +36,7 @@ export function Testimonials() {
         src={testimonialApi}
         style={{
           width: '100vw',
-          height: '60vh',
+          height: '80vh',
           maxWidth: '100%',
           border: 'none',
           overflow: 'hidden',

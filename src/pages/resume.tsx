@@ -8,13 +8,15 @@ import { PageSection } from '../styles/resume'
 import { BsFileText } from 'react-icons/bs'
 import axios from 'axios'
 
+const canvaApi = process.env.NEXT_PUBLIC_CANVA_API;
+
 export default function Resume() {
-  const resumeData = process.env.NEXT_PUBLIC_CANVA_API_KEY
+  const resumeData = `{canvaApi}`
 
   const previewData = `${resumeData.substr(
     0,
     resumeData.lastIndexOf('/') + 1
-  )}view?embed`
+  )}view?embed`;
 
   return (
     <>

@@ -50,7 +50,7 @@ export function CardContact() {
             />
           </ButtonAlt>
         </Link>
-        <Link href={vismeApi} legacyBehavior>
+        <Link href= {vismeApi} legacyBehavior>
           <ButtonAlt style={{
             marginTop: '1rem',
           }}>

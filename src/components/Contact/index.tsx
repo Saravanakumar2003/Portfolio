@@ -6,8 +6,6 @@ import { ContainerContact, ContactContent } from './styles'
 import { BsWhatsapp } from 'react-icons/bs'
 import { Envelope, TelegramLogo } from 'phosphor-react'
 
-const calendlyApi = process.env.NEXT_PUBLIC_CALENDLY_URL;
-
 export function Contact() {
   return (
     <Section>
@@ -53,7 +51,7 @@ export function Contact() {
           <Description style={{ textAlign: "center", marginTop: "3px" }}>This is powered by Calendy. Hence, it may take some time for loading. 
           (Note: You have to accept the cookies by Calendy in order to Schedule a meet)</Description>          
           <iframe
-            src= {calendlyApi}
+            src="https://calendly.com/saravanakumar2003/"
             width="100%"
             height="800px"
             frameBorder="0"

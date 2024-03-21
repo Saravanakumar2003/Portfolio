@@ -6,7 +6,7 @@ import Image from 'next/image'
 import { ButtonAlt, Section } from '../../styles/styles'
 import { TelegramLogo } from 'phosphor-react'
 
-const testimonialApi = process.env.NEXT_PUBLIC_TESTIMONIAL_URL;
+const testimonialApi = process.env.NEXT_PUBLIC_TESTIMONIAL_TO_API_KEY
 
 export function Testimonials() {
   const [isLargeScreen, setIsLargeScreen] = useState(false);
@@ -31,40 +31,40 @@ export function Testimonials() {
           <ChatCenteredText />Testimonials 
         </span>
       </Title>
-      <iframe
-        id='testimonialto-carousel-saravanakumar-r-tag-all-light'
-        src={testimonialApi}
-        style={{
-          width: '100vw',
-          height: '80vh',
-          maxWidth: '100%',
-          border: 'none',
-          overflow: 'hidden',
-          margin: '0',
-          padding: '0',
-          display: 'block',
-          zIndex: 9999,
-          position: 'relative',
-        }}
-        scrolling='no'
-        frameBorder='0'
-      ></iframe>
+  <iframe
+    id='testimonialto-carousel-saravanakumar-r-tag-all-light'
+    src="https://embed-v2.testimonial.to/w/saravanakumar-r?animated=on&horizontal=on&theme=dark&shadowColor=ffffff&speed=1&hideDate=on&hideSource&rows=1&tag=all"
+    style={{
+      width: '100vw',
+      height: '80vh',
+      maxWidth: '100%',
+      border: 'none',
+      overflow: 'hidden',
+      margin: '0',
+      padding: '0',
+      display: 'block',
+      zIndex: 9999,
+      position: 'relative',
+    }}
+    scrolling='no'
+    frameBorder='0'
+  ></iframe>
 
-      <Link href="https://testimonial.to/saravanakumar-r" legacyBehavior>
-        <ButtonAlt style={{
-          marginTop: '1rem',
-        }}>
-          Write a Testimonial{' '}
-          <TelegramLogo
-            style={{
-              marginBottom: '-0.1rem',
-              marginLeft: '0.2rem'
-            }}
-            size={16}
-            weight="bold"
-          />
-        </ButtonAlt>
-      </Link>
+<Link href="https://testimonial.to/saravanakumar-r" legacyBehavior>
+          <ButtonAlt style={{
+            marginTop: '1rem',
+          }}>
+            Write a Testimonial{' '}
+            <TelegramLogo
+              style={{
+                marginBottom: '-0.1rem',
+                marginLeft: '0.2rem'
+              }}
+              size={16}
+              weight="bold"
+            />
+          </ButtonAlt>
+        </Link>
     </Container>
   );
 }

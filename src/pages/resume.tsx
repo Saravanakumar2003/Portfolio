@@ -8,15 +8,13 @@ import { PageSection } from '../styles/resume'
 import { BsFileText } from 'react-icons/bs'
 import axios from 'axios'
 
-const canvaApi = process.env.NEXT_PUBLIC_CANVA_URL;
-
 export default function Resume() {
-  const resumeData = {canvaApi}
+  const resumeData = 'https://www.canva.com/design/DAF6D3Nsakw/dNk6AuqBjMnMoHJMkbZb9A/edit?utm_content=DAF6D3Nsakw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton'
 
   const previewData = `${resumeData.substr(
     0,
     resumeData.lastIndexOf('/') + 1
-  )}view?embed`;
+  )}view?embed`
 
   return (
     <>

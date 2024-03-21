@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 
-const instagramApi = process.env.NEXT_PUBLIC_BEHOLD_API_KEY;
 
 export function Instagram() {
  
@@ -18,6 +17,6 @@ export function Instagram() {
   }, []); // Empty array means this effect runs once on mount and clean up on unmount
 
   return (
-    <figure data-behold-id={instagramApi}></figure>
+    <figure data-behold-id="RaeXfCYMpTHhkZYtjy73"></figure>
   );
 }

@@ -71,6 +71,8 @@ function MyApp({ Component, pageProps }: AppProps) {
         <GlobalStyles />
         <Component {...pageProps} />
         <Analytics />
+        <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+        <script src="https://mediafiles.botpress.cloud/7d24b661-c169-4cd5-9dd2-671b3cb8ec48/webchat/config.js" defer></script>
       </ThemeProvider>
       </MantineProvider>
     </>

@@ -43,7 +43,12 @@ export function Certificates() {
 
                       </Link>
                     </h3>
-                    <p>{certificates.description}</p>
+                    <p>{certificates.description.split('\n').map((line, i) => (
+                      <a key={i}>
+                        {line}
+                          <br />
+                           </a>
+                      ))}</p>
                   </S.ListContent>
                 </S.List>
               );

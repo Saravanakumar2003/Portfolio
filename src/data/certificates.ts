@@ -1,5 +1,15 @@
 const certificates = [
   {
+    id: 5,
+    title: 'Google Advanced Data Analytics',
+    subTitle: 'Click here to see certificate',
+    status: 'Completed',
+    level: 'March 2024',
+    link: '',
+    description: 'Credentials ID: \n\n Skills Accquired: \n\n',
+    logo: '/certi/coursera_logo.jpeg',
+  },
+  {
     id: 4,
     title: 'Google IT Support',
     subTitle: 'Click here to see certificate',

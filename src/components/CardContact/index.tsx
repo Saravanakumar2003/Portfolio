@@ -4,8 +4,6 @@ import { ButtonAlt, Section } from '../../styles/styles'
 import { CardContactContainer, CardContactContent } from './styles'
 import { TelegramLogo } from 'phosphor-react'
 
-const vismeApi = process.env.NEXT_PUBLIC_VISME_URL;
-
 export function CardContact() {
   return (
     <Section>
@@ -50,7 +48,7 @@ export function CardContact() {
             />
           </ButtonAlt>
         </Link>
-        <Link href= {vismeApi} legacyBehavior>
+        <Link href="https://forms.visme.co/formsPlayer/kkjne993-saravana-039-s-portfolio" legacyBehavior>
           <ButtonAlt style={{
             marginTop: '1rem',
           }}>

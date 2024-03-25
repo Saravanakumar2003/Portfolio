@@ -1,14 +1,11 @@
 import styled, { css } from 'styled-components'
 
 export const HeaderContainer = styled.header`
-  position: fixed;
   width: 100%;
   top: 0;
   height: 3.5rem;
   font-weight: 600;
   font-size: 1.2rem;
-  position: relative;
-  z-index: 10;
   background: ${props => props.theme.background};
 
   a {

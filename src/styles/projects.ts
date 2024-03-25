@@ -110,6 +110,7 @@ export const ProjectsItem = styled.div`
 
   .description {
     max-width: 30rem;
+    text-align: justify;
 
     p {
       margin: 1.5rem 0;

@@ -120,6 +120,8 @@ export const EducationImage = styled.div`
   .education-logo {
     @media(max-width: 994px) {
       display: none;
+      align-items: center;
+      position: absolute;
     }
 
     display: block;

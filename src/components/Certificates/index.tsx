@@ -25,7 +25,13 @@ export function Certificates() {
               return (
                 <S.List key={certificates.id}>
                   <S.ListImage>
-                    <img src={certificates.logo} alt={certificates.subTitle} />
+                    <img style={{
+                      width: '150px',
+                      height: '150px',
+                      borderRadius: '50%',
+                      objectFit: 'cover',
+                    }}
+                    src={certificates.logo} alt={certificates.subTitle} />
                     <p>
                       Date: <span>{certificates.level} </span>
                     </p>

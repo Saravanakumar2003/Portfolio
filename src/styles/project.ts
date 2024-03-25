@@ -145,14 +145,16 @@ export const Banner = styled.div`
 
 export const DescriptionProject = styled.div`
   margin-top: -8rem;
-  text-align: center;
+  text-align: justify;
   display: grid;
   justify-items: center;
   align-items: center;
   padding: 0 1rem;
 
+
   .description {
     display: flex;
+    align-items = justify;
     flex-direction: column;
     gap: 2rem;
 

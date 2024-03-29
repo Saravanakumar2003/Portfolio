@@ -53,9 +53,9 @@ export default class MyDocument extends Document {
           />
           <meta name="copyright" content="Saravanakumar 2023" />
           <meta name="robots" content="index, follow" />
-          <meta name="language" content="pt-BR" />
+          <meta name="language" content="pt-EN" />
           <meta name="rating" content="general" />
-          <link rel="canonical" href="https://www.saravanakumar.me/" />
+          <link rel="canonical" href="https://saravana.vercel.app/" />
 
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -64,7 +64,7 @@ export default class MyDocument extends Document {
             rel="stylesheet"
           />
 
-          <meta property="og:url" content="https://www.saravanakumar.me/" />
+          <meta property="og:url" content="https://saravana.vercel.app/" />
           <meta property="og:type" content="website" />
           <meta property="og:site_name" content="Saravanakumar" />
           <meta property="og:title" content={meta.title} />

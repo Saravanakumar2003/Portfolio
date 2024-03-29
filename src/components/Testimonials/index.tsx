@@ -4,9 +4,9 @@ import { Container, Title } from '../../styles/styles';
 import Link from 'next/link'
 import Image from 'next/image'
 import { ButtonAlt, Section } from '../../styles/styles'
-import { TelegramLogo } from 'phosphor-react'
+import { Heart } from 'phosphor-react'
 
-const testimonialApi = process.env.NEXT_PUBLIC_TESTIMONIAL_TO_API_KEY
+const testimonial = process.env.NEXT_PUBLIC_TESTIMONIAL_URL;
 
 export function Testimonials() {
   const [isLargeScreen, setIsLargeScreen] = useState(false);
@@ -33,10 +33,10 @@ export function Testimonials() {
       </Title>
   <iframe
     id='testimonialto-carousel-saravanakumar-r-tag-all-light'
-    src="https://embed-v2.testimonial.to/w/saravanakumar-r?animated=on&horizontal=on&theme=dark&shadowColor=ffffff&speed=1&hideDate=on&hideSource&rows=1&tag=all"
+    src={testimonial}
     style={{
       width: '100vw',
-      height: '80vh',
+      height: '75vh',
       maxWidth: '100%',
       border: 'none',
       overflow: 'hidden',
@@ -54,8 +54,8 @@ export function Testimonials() {
           <ButtonAlt style={{
             marginTop: '1rem',
           }}>
-            Write a Testimonial{' '}
-            <TelegramLogo
+            Write your Testimonial{' '}
+            <Heart
               style={{
                 marginBottom: '-0.1rem',
                 marginLeft: '0.2rem'

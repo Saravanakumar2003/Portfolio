@@ -13,6 +13,8 @@ import { FaSearch } from "react-icons/fa";
 import { ArrowRight } from "phosphor-react";
 import Github from "../components/Github/Github";
 
+const botkey = process.env.NEXT_PUBLIC_BOTKEY_URL;
+
 interface ProjectsProps {
   target: HTMLInputElement;
 }
@@ -144,7 +146,7 @@ export default function Projects() {
       </T.Section>
       <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
       <script
-        src="https://mediafiles.botpress.cloud/7d24b661-c169-4cd5-9dd2-671b3cb8ec48/webchat/config.js"
+        src={botkey}
         defer
       ></script>
       <Footer />

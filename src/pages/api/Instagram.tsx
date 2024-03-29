@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-
+const behold = process.env.NEXT_PUBLIC_BEHOLD_URL;
 export function Instagram() {
  
   useEffect(() => {
@@ -17,6 +17,6 @@ export function Instagram() {
   }, []); // Empty array means this effect runs once on mount and clean up on unmount
 
   return (
-    <figure data-behold-id="RaeXfCYMpTHhkZYtjy73"></figure>
+    <figure data-behold-id={behold}></figure>
   );
 }

@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { ButtonAlt, Section } from '../../styles/styles'
 import { CardContactContainer, CardContactContent } from './styles'
-import { TelegramLogo } from 'phosphor-react'
+import { Pen, TelegramLogo } from 'phosphor-react'
 
 export function CardContact() {
   return (
@@ -53,7 +53,7 @@ export function CardContact() {
             marginTop: '1rem',
           }}>
             Write a feedback{' '}
-            <TelegramLogo
+            <Pen
               style={{
                 marginBottom: '-0.1rem',
                 marginLeft: '0.2rem'

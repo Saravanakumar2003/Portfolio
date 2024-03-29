@@ -8,13 +8,19 @@ import { PageSection } from '../styles/resume'
 import { BsFileText } from 'react-icons/bs'
 import axios from 'axios'
 
-export default function Resume() {
-  const resumeData = 'https://www.canva.com/design/DAF6D3Nsakw/dNk6AuqBjMnMoHJMkbZb9A/edit?utm_content=DAF6D3Nsakw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton'
+const botkey = process.env.NEXT_PUBLIC_BOTKEY_URL;
+const canva = process.env.NEXT_PUBLIC_CANVA_URL;
 
-  const previewData = `${resumeData.substr(
-    0,
-    resumeData.lastIndexOf('/') + 1
-  )}view?embed`
+export default function Resume() {
+  const resumeData = {canva}
+  
+  let previewData = '';
+  if (resumeData.canva) {
+    previewData = `${resumeData.canva.substr(
+      0,
+      resumeData.canva.lastIndexOf('/') + 1
+    )}view?embed`;
+  }
 
   return (
     <>
@@ -60,7 +66,7 @@ export default function Resume() {
         </PageSection>
       </Section>
       <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
-      <script src="https://mediafiles.botpress.cloud/7d24b661-c169-4cd5-9dd2-671b3cb8ec48/webchat/config.js" defer></script>
+      <script src={botkey} defer></script>
       <Footer />
     </>
   )

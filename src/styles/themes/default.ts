@@ -5,7 +5,7 @@ export const defaultTheme = {
   dark: '#030712',
 
   firstColor: '#00d9ff',
-  secondColor: '#5252e0',
+  secondColor: '#3887BE',
 
   cyan: '#22abfa',
   cyan_400: '#22d3ee',

@@ -13,6 +13,8 @@ import * as S from '../styles/about'
 import { ButtonAlt, Section, Title, ButtonSecondary } from '../styles/styles'
 import { Instagram } from './api/Instagram'
 
+const botkey = process.env.NEXT_PUBLIC_BOTKEY_URL;
+
 interface DashboardPageProps {
   fallback: any;
 }
@@ -147,7 +149,7 @@ export default function About() {
       </Link>
     </Section>
     <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
-    <script src="https://mediafiles.botpress.cloud/7d24b661-c169-4cd5-9dd2-671b3cb8ec48/webchat/config.js" defer></script>
+    <script src={botkey} defer></script>
     <Footer />
   </>;
 }

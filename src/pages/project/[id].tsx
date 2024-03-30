@@ -72,7 +72,6 @@ export default function Projeto({ project }: ProjectProps) {
       </S.Banner>
 
       <S.DescriptionProject>
-        <div className="description">
           <Title>
             Project
             <span>
@@ -80,7 +79,6 @@ export default function Projeto({ project }: ProjectProps) {
             </span>
           </Title>
           <p style={{ textAlign: "justify" }}>{project.description}</p>
-        </div>
       </S.DescriptionProject>
 
       <S.Tags>

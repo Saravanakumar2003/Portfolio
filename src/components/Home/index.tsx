@@ -37,9 +37,9 @@ export function HomeHero() {
           </h2>
 
           <div className="button">
-            <Link href={'#projects'}>
+            <Link href="https://storyofsaravana.vercel.app/">
               <ButtonPrimary>
-                  <b>See my Portfolio</b>
+                  <b>See my Story</b>
                   <FiArrowRight style={{ marginBottom: '-0.3rem' }} size={20} />
               </ButtonPrimary>
             </Link>

@@ -75,7 +75,7 @@ http://localhost:3000
 2. Create an email template and obtain the Service ID, Template ID and Public Access Code.
 3. Use these credentials in your portfolio code for EmailJS integration.
 
-### Instagram Wedige
+### Instagram Widget
 
 1. Create a developer account on [behold.so](https://app.behold.so/).
 2. Set up a widget and obtain an Access Token for Instagram.

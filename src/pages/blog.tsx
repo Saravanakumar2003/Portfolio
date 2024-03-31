@@ -11,6 +11,7 @@ import * as T from '../styles/styles'
 import { HiOutlineDesktopComputer } from 'react-icons/hi'
 import { FaSearch } from 'react-icons/fa'
 import { ArrowRight } from 'phosphor-react'
+import { Publications } from '../components/Publications'
 
 const botkey = process.env.NEXT_PUBLIC_BOTKEY_URL;
 
@@ -127,6 +128,7 @@ export default function Blog() {
         </S.BlogContent>
       </S.BlogContainer>
     </T.Section>
+    <Publications />
     <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
     <script src={botkey} defer></script>
     <Footer />

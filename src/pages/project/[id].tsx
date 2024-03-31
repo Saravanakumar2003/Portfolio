@@ -72,13 +72,15 @@ export default function Projeto({ project }: ProjectProps) {
       </S.Banner>
 
       <S.DescriptionProject>
-          <Title>
+      <Title>
             Project
             <span>
               <ChatCenteredText /> Description
             </span>
           </Title>
+        <div className="description">
           <p style={{ textAlign: "justify" }}>{project.description}</p>
+        </div>
       </S.DescriptionProject>
 
       <S.Tags>

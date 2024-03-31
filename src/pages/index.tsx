@@ -13,6 +13,7 @@ import { Work } from "../components/Work";
 import { Education } from "../components/Education";
 import { Achievements } from "../components/Achievements";
 import { Testimonials } from "../components/Testimonials";
+import { Publications } from "../components/Publications";
 
 const botkey = process.env.NEXT_PUBLIC_BOTKEY_URL;
 
@@ -35,6 +36,7 @@ export default function Home() {
         <Experience />
         <Work />
         <Achievements />
+        <Publications />
         <Projects />
         <Testimonials />
         <CardContact />

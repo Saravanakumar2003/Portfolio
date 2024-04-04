@@ -1,4 +1,3 @@
-// Data for my publication component
 
 const publications = [
     {

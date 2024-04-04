@@ -33,6 +33,7 @@ export function Achievements() {
                 <div className="title">
                   <h2>{achievements.name}</h2>
                   <h3>{achievements.year}</h3>
+                  <span>Prize: {achievements.prize}</span>
                 </div>
                 <div className="img">
                   <Image

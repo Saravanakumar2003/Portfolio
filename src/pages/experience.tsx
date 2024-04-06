@@ -118,7 +118,12 @@ export default function Experience() {
                       textAlign: 'justify',
                       marginBottom: '1rem'
                     }}>
-                      {experience.description}</p>
+                    {experience.description.split('\n').map((line, i) => (
+                      <a key={i}>
+                        {line}
+                          <br />
+                           </a>
+                      ))}</p>
                    {/* <Button style={{ 
                         marginTop: '1rem',
                         }}>
@@ -126,7 +131,10 @@ export default function Experience() {
                         View Details
                       </Link>
                     </Button> */}
-                    <div className="links">
+                    <div style={{
+                      marginTop: '1rem',
+                      marginBottom: '1rem'
+                    }} className="links">
                       <a href={experience.link} target="_blank" rel="noreferrer">
                         <Button>View Report</Button>
                       </a>

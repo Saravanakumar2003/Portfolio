@@ -33,7 +33,11 @@ export function Achievements() {
                 <div className="title">
                   <h2>{achievements.name}</h2>
                   <h3>{achievements.year}</h3>
-                  <h4 href={achievements.url}>View the Certficate</h4>
+                  <h4>
+                      <Link href={certificates.link} target="_blank">
+                      View the Certificate
+                      </Link>
+                    </h4>
                   <span>Prize: {achievements.prize}</span>
                 </div>
                 <div className="img">

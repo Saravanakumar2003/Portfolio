@@ -6,7 +6,7 @@ const Achievements = [
         image: '/achieve/award3.jpg',
         year: 'April 2024',
         prize: 'Rs.5000 & Certificate',
-        url: ''
+        url: 'https://drive.google.com/file/d/1DEgYalgGcs5j5ZRcRZ7Wdfnw37ww3b4Z/view?usp=sharing'
     },
     {
         id: 2,
@@ -15,7 +15,7 @@ const Achievements = [
         image: '/achieve/award1.png',
         year: 'October 2022',
         prize:  'Rs.15000 & Certificate',
-        url: 'https://drive.google.com/drive/folders/1cz9xwEOPR8lORpbI0JXQMPAUTzb8DRlx?usp=drive_link'
+        url: 'https://drive.google.com/file/d/1xvUpa02LIx7qYksSwhkdhP_xJPRvlnfx/view?usp=sharing'
     },
     {
         id: 3,
@@ -24,7 +24,7 @@ const Achievements = [
         image: '/achieve/award2.jpg',
         year: 'Feburary 2021',
         prize: 'Certificate and Shield',
-        url: 'https://drive.google.com/drive/folders/1ThHi7meOeffb16gFKi6fJ1TqX98mtYEN?usp=drive_link'
+        url: 'https://drive.google.com/file/d/1ZbK0MuuLRjvQWeVqNK7L7OnDAz4lPguK/view?usp=sharing'
     },
 ];
 

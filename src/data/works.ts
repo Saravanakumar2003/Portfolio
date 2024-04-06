@@ -59,8 +59,44 @@ const works = [
         image: '/Volunteering/NSS/NSS6.jpeg',
         date: '15th, August 2023',
         description:
-        'Privileged to have hosted the Independence Day celebrations as part of my role as an NSS volunteer.'
+        'I was privileged to have hosted the Independence Day celebrations as part of my role as an NSS volunteer. This is the last event of my volunteering period in NSS.'
       },
+      {
+        name: 'Technical Team Head (2023-24)',
+        image: '/Volunteering/NSS/NSS7.jpg',
+        date: '9th, September 2023',
+        description:
+          'I was honoured to be appointed Technical Team Head by Dr.R. Karthik Sir (NSS, Program Officer), extending my volunteer period for an additional year starting September 9, 2023. This role acknowledges my dedication and technical prowess demonstrated over the past two years within the National Service Scheme (NSS), fostering innovation and excellence in our projects and events.'
+      },
+      {
+        name: 'Conducted GD for Juniors',        
+        image: '/Volunteering/NSS/NSS8.jpg',
+        date: '23rd, September 2023',
+        description:
+          'I conducted a Group Discussion for the juniors on the occasion of NSS Day. The topic was "Social Media - Boon or Bane". The juniors were very active and they participated very well in the discussion.'
+      },
+      {
+        name: 'NSS RD Parade Selection in Trichy',
+        image: '/Volunteering/NSS/NSS9.jpg',
+        date: '31st, December 2023',
+        description:
+          'I proudly represented NSS at the RD Parade Selection in Trichy, showcasing my commitment to national service and leadership potential. The event was a great learning experience and an opportunity to meet like-minded individuals.'
+      },
+      {
+        name: 'Besant Nagar Beach Cleaning',
+        image: '/Volunteering/NSS/NSS10.jpg',
+        date: '28th, January 2024',
+        description:
+          'I participated with my NSS Squad in a beach cleaning drive at Besant Nagar Beach, Chennai, as part of my ongoing commitment to environmental conservation and community service. The event was a great success, and I was delighted to contribute to the cleanliness of our city.'
+      },
+      {
+        name: 'NSS Glaucathon Rally',
+        image: '/Volunteering/NSS/NSS11.jpg',
+        date: '16th, March 2024',
+        description:
+          'I participated in the NSS Glaucathon Rally, an initiative to raise awareness about glaucoma and promote eye health. The rally started at Dunlop and ended at Vasan Eye Care Hospital, Chennai. It was a great opportunity to contribute to a noble cause and spread awareness about eye health.'
+      }
+
     ]
   },
   {

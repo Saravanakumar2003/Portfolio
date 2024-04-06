@@ -34,7 +34,7 @@ export function Achievements() {
                   <h2>{achievements.name}</h2>
                   <h3>{achievements.year}</h3>
                   <h4>
-                      <Link href={certificates.link} target="_blank">
+                      <Link href={achievements.url} target="_blank">
                       View the Certificate
                       </Link>
                     </h4>

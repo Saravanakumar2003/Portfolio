@@ -36,6 +36,7 @@ export function Achievements() {
                       View the Certificate
                       </Link>
                   </h4>
+                  <span>Prize: {achievements.prize}</span>
                 </div>
                 <div className="img">
                   <Image
@@ -45,7 +46,6 @@ export function Achievements() {
                     height={200}
                   />
                 </div>
-                <span>Prize: {achievements.prize}</span>
                 <div className="description">
                   <span>{achievements.description}</span>
                 </div>              

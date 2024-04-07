@@ -60,15 +60,15 @@ export const AchievementsContent = styled.div`
     padding: 20px;
     color: ${props => props.theme.firstColor};
 
-    h1 {
-      font-size: 1rem;
+    h2{
+      font-size: 1.5rem;
       margin-bottom: 10px;
       
       color: ${props => props.theme.textSecondary};
     }
 
     h3 {
-      font-size: 2rem;
+      font-size: 1.2rem;
       margin-top: 10px;
       color: ${props => props.theme.textSecondary};
     }

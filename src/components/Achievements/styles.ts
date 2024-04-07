@@ -68,7 +68,7 @@ export const AchievementsContent = styled.div`
     }
 
     h3 {
-      font-size: 1rem;
+      font-size: 2rem;
       margin-top: 10px;
       color: ${props => props.theme.textSecondary};
     }

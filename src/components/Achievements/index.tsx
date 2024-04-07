@@ -27,8 +27,6 @@ export function Achievements() {
       <AchievementsContainer>
         {achievements.slice(0, 9).map(achievements => {
           return (
-            (<Link href={achievements.url} key={achievements.id} passHref>
-
               <AchievementsContent>
                 <div className="title">
                   <h2>{achievements.name}</h2>
@@ -37,8 +35,7 @@ export function Achievements() {
                       <Link href={achievements.url} target="_blank">
                       View the Certificate
                       </Link>
-                    </h4>
-                  <span>Prize: {achievements.prize}</span>
+                  </h4>
                 </div>
                 <div className="img">
                   <Image
@@ -48,12 +45,11 @@ export function Achievements() {
                     height={200}
                   />
                 </div>
+                <span>Prize: {achievements.prize}</span>
                 <div className="description">
                   <span>{achievements.description}</span>
                 </div>              
               </AchievementsContent>
-
-            </Link>)
           );
         })}
       </AchievementsContainer>

@@ -37,7 +37,6 @@ export default function Resume() {
         />
       </Head>
 
-      <Header />
       <ScrollTop />
       <Section>
         <Title>

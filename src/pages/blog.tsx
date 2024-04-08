@@ -36,7 +36,6 @@ export default function Blog() {
       <meta property="og:title" content="Projects | Saravanakumar" />
     </Head>
 
-    <Header />
     <ScrollTop />
     <T.Section>
       <T.Title>

@@ -45,7 +45,6 @@ export default function Projects() {
         />
       </Head>
 
-      <Header />
       <ScrollTop />
       <T.Section>
         <T.Title>

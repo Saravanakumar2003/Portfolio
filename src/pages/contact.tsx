@@ -24,7 +24,6 @@ export default function Contacts() {
         
       </Head>
 
-      <Header />
       <ScrollTop />
       <Contact />
       <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>

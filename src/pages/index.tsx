@@ -23,8 +23,6 @@ export default function Home() {
       <Head>
         <title>Saravanakumar Portfolio</title>
       </Head>
-
-      <Header />
       <ScrollTop />
       <Section>
         <Section>

@@ -3,6 +3,7 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import { ThemeProvider } from 'styled-components'
+import { Header } from '../components/Header';
 import NextNprogress from 'nextjs-progressbar'
 import { GlobalStyles } from '../styles/global'
 import { defaultTheme } from '../styles/themes/default'
@@ -72,6 +73,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
         <Toaster />
         <GlobalStyles />
+        <Header />
         <Component {...pageProps} />
         <Analytics />
         <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>

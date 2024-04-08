@@ -47,7 +47,6 @@ export default function Experience() {
         />
       </Head>
 
-      <Header />
       <ScrollTop />
       <Section>
         <Title>

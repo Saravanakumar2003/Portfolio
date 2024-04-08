@@ -52,25 +52,25 @@ export const AchievementsContent = styled.div`
   background-color: ${props => props.theme.background};
   border: 3px solid ${props => props.theme.border};
 
-  &:hover {
-    transform: scale(1.02);
-  }
-
   .title {
     padding: 20px;
     color: ${props => props.theme.firstColor};
 
-    h2{
-      font-size: 1.5rem;
+    h1{
+      font-size: 1rem;
       margin-bottom: 10px;
-      
       color: ${props => props.theme.textSecondary};
+    }
+    h2 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
     }
 
     h3 {
-      font-size: 1.2rem;
+      font-size: 0.8rem;
       margin-top: 10px;
-      color: ${props => props.theme.textSecondary};
+      color: ${props => props.theme.firstColor};
+      text-decoration: underline;
     }
 
     span {

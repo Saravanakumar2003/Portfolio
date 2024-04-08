@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/alt-text */
-/* eslint-disable @next/next/no-img-element */
 import { GetStaticProps, GetStaticPaths } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
@@ -13,7 +11,8 @@ import { Footer } from '../../components/Footer'
 import * as S from '../../styles/project'
 import { ButtonAlt, ButtonSecondary, Title, Description } from '../../styles/styles'
 import { ArrowLeft, ChatCenteredText, Image as IconImage,
-YoutubeLogo, Hash } from 'phosphor-react'
+YoutubeLogo, Hash, 
+ToiletPaper} from 'phosphor-react'
 import { FaBlog, FaGithub } from 'react-icons/fa'
 import { BsGlobe } from 'react-icons/bs'
 import blog from '../../data/blogs'
@@ -37,7 +36,7 @@ export default function Projeto({ project }: ProjectProps) {
 
     <S.ProjectContainer>
       <S.Banner>
-        <img className="bannerUrl" src={project.banner} alt={project.title} />
+        <img className="bannerUrl" style={{marginTop: '5rem'}} src={project.banner} alt={project.title} />
         <div className="bannerContainer">
           <div className="bannerContent">
             <img src={project.icon} alt={project.title} />

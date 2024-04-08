@@ -33,7 +33,6 @@ export default function About() {
       />
     </Head>
 
-    <Header />
     <ScrollTop />
     <Section>
       <S.AboutContainer>

@@ -6,7 +6,7 @@ const experience = [
     subTitle: 'National Institute of Wind Energy',
     office: 'Intern (WRA Division)',
     description:
-      'Developed impactful software tools including a .dat to .csv converter and NIWE dashboard, enhancing operational efficiency. \n\nApplied advanced data analytics techniques to contribute to various research projects, elevating research outcomes. \n\nFostered positive team dynamics through adaptability, professionalism, and effective communication. \n\nMaintained comprehensive documentation to streamline knowledge sharing within the team. \n\nDemonstrated dedication to continuous learning and professionalism, ready to tackle new challenges in a professional capacity.      ',
+      '✯ Developed impactful software tools including a .dat to .csv converter and NIWE dashboard, enhancing operational efficiency. \n\n✯ Applied advanced data analytics techniques to contribute to various research projects, elevating research outcomes. \n\n✯ Fostered positive team dynamics through adaptability, professionalism, and effective communication. \n\n✯ Maintained comprehensive documentation to streamline knowledge sharing within the team. \n\n✯ Demonstrated dedication to continuous learning and professionalism, ready to tackle new challenges in a professional capacity.',
       tags: [
       { name: 'Python', icon: '/icons/python.png' },
       { name: 'Flask', icon: '/icons/flask.png' },
@@ -25,7 +25,7 @@ const experience = [
     title: 'TANGEDCO',
     subTitle: 'North Chennai Thermal Power Station',
     office: 'In-plant Trainee',
-    description:'Completed 1-week in-plant training at NCTPS-2 across Maintenance, Instrumentation, Efficiency, and Communication Engineering departments. \n\nParticipated in equipment inspections, troubleshooting, and routine maintenance, gaining insights into thermal power generation. \n\nConducted power output calculations and emphasized safety and proactive learning. \n\nEnhanced technical skills, problem-solving, and teamwork abilities in a real-world power plant environment.',
+    description:'✯ Completed 1-week in-plant training at NCTPS-2 across Maintenance, Instrumentation, Efficiency, and Communication Engineering departments. \n\n✯ Participated in equipment inspections, troubleshooting, and routine maintenance, gaining insights into thermal power generation. \n\n✯ Conducted power output calculations and emphasized safety and proactive learning. \n\n✯ Enhanced technical skills, problem-solving, and teamwork abilities in a real-world power plant environment.',
     tags: [
       { name: 'Office', icon: '/icons/Office.png' },
     ],
@@ -38,7 +38,7 @@ const experience = [
     title: 'NSIC',
     subTitle: 'National Small Industries Corporation',
     office: 'Embedded system & IoT trainee',
-    description:'Finished 1 week of training in Embedded system & IoT at NSIC, Chennai. \n\nLearned about the basics of Embedded system & IoT, and its applications in the real world. \n\nDone Basic circuit design and interfacing of sensors with microcontrollers.',
+    description:'✯ Finished 1 week of training in Embedded system & IoT at NSIC, Chennai. \n\n✯ Learned about the basics of Embedded system & IoT, and its applications in the real world. \n\n✯ Done Basic circuit design and interfacing of sensors with microcontrollers.',
     tags: [
       { name: 'Raspberry Pi', icon: '/icons/Pi.png' },
       { name: 'Arduino', icon: '/icons/Arduino.png' },

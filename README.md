@@ -53,19 +53,29 @@ http://localhost:3000
 
 3. **TypeScript:** A typed superset of JavaScript, enhancing code maintainability and catching errors during development.
 
-4. **GitHub:** Integration with GitHub allows dynamic fetching and display of GitHub-related data, such as followers, following, total stars and contributions.
+4. **Tailwind CSS:** A utility-first CSS framework for creating custom designs with minimal CSS code.
 
-5. **EmailJS:** Integration with EmailJS facilitates sending emails directly from the portfolio website. API keys and setup instructions can be obtained from the [EmailJS website](https://www.emailjs.com/).
+### Integrations
 
-6. **Hashnode Blog:** Integration with Hashnode for blogging features, connecting the portfolio to a Hashnode blog. Configure the integration through Hashnode's documentation.
+1. **GitHub:** Integration with GitHub allows dynamic fetching and display of GitHub-related data, such as followers, following, total stars and contributions.
 
-7. **Instagram Widget:** Embedding an Instagram widget to display recent posts. Obtain the required code or API key from the [Behold.so](https://app.behold.so/).
+2. **EmailJS:** Integration with EmailJS facilitates sending emails directly from the portfolio website. API keys and setup instructions can be obtained from the [EmailJS website](https://www.emailjs.com/).
 
-8. **Canva Iframe:** Integrating Canva through an iframe allows showcasing designs and graphics. To embed Canva content, obtain the embed code from the Canva platform.
+3. **Hashnode Blog:** Integration with Hashnode for blogging features, connecting the portfolio to a Hashnode blog. Configure the integration through Hashnode's documentation.
 
-9. **Calendly Iframe:** Embedding Calendly through an iframe enables users to schedule appointments. To include a Calendly scheduling widget, get the embed code from the Calendly website.
+4. **Instagram Widget:** Embedding an Instagram widget to display recent posts. Obtain the required code or API key from the [Behold.so](https://app.behold.so/).
 
-10. **Analytics:** Analytics for this personal portfolio are managed using Vercel and Google Analytics to gather insights into visitor behaviour and engagement. 
+5.  **Canva Iframe:** Integrating Canva through an iframe allows showcasing designs and graphics. To embed Canva content, obtain the embed code from the Canva platform.
+
+6. **Calendly Iframe:** Embedding Calendly through an iframe enables users to schedule appointments. To include a Calendly scheduling widget, get the embed code from the Calendly website.
+
+7. **Analytics:** Analytics for this personal portfolio are managed using Vercel and Google Analytics to gather insights into visitor behaviour and engagement. 
+
+8. **Testimonials.to:** Integration with Testimonials.to allows displaying testimonials from clients and users. Obtain the required code from the Testimonials.to platform.
+
+9. **Visme Feedback Form:** A feedback form powered by Visme is included in the portfolio for collecting user feedback and suggestions.
+
+10.  **AI Chatbot:** An AI chatbot is integrated into the portfolio to provide interactive communication and assistance. 
 
 ## How to Obtain API Keys and Embed Codes
 
@@ -107,6 +117,15 @@ http://localhost:3000
 2. Create a new property for your portfolio website.
 3. Obtain the tracking code provided by Google Analytics.
 4. Insert the tracking code into your website. In a Next.js project, this is often done in the `<Head>` section of the layout or using a dedicated library.
+
+### Testimonials.to
+
+1. Create an account on [Testimonials.to](https://testimonials.to/).
+2. Add testimonials and obtain the provided code.
+3. Use the code in your portfolio to display testimonials.
+4. Customize the appearance and layout of the testimonials as needed.
+5. Testimonials.to provides a simple and effective way to showcase client feedback and reviews.
+
 
 # Deployment
 
@@ -162,6 +181,12 @@ Thank you for exploring my personal portfolio project! If you find it interestin
 - **Star:** If you find this project useful or inspiring, show your appreciation by starring it.
 
 Your support encourages continuous improvement and fuels the motivation to create more exciting projects!
+
+### Acknowledgements
+
+The initial design and code structure for this portfolio project were inspired by the [Evander Inacio Portfolio](https://github.com/EvanderInacio/Portfolio) repository. Special thanks to Evander Inacio for providing a foundation for this project.
+
+Later all the above modifications and enhancements were made to personalize the portfolio and add new features. The project continues to evolve with additional sections, integrations, and improvements.
 
 ## Author
 

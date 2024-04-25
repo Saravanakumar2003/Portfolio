@@ -20,7 +20,7 @@ interface Achievements {
 
 export function Achievements() {
   return (
-    <Container id="Achievements">
+    <Container>
       <Title>
       Accolades!
         <span>

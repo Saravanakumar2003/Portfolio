@@ -6,7 +6,7 @@ import { AchievementsContainer, AchievementsContent } from './styles'
 import { Container, Title } from '../../styles/styles'
 import { HiOutlineDesktopComputer } from 'react-icons/hi'
 import { Carousel } from 'react-responsive-carousel';
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import "react-responsive-carousel/lib/styles/carousel.min.css"; 
 import { Key } from 'react'
 
 interface Achievements {
@@ -20,8 +20,8 @@ interface Achievements {
 
 export function Achievements() {
   return (
-    <Container id="Achievements">
-      <Title>
+    <Container>
+      <Title style={{ marginBottom: '3rem' }}>
       Accolades!
         <span>
           <HiOutlineDesktopComputer />Outstanding

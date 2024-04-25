@@ -10,9 +10,7 @@ const experience = [
       tags: [
       { name: 'Python', icon: '/icons/python.png' },
       { name: 'Flask', icon: '/icons/flask.png' },
-      { name: 'Word', icon: '/icons/word.png' },
-      { name: 'Excel', icon: '/icons/excel.png' },
-      { name: 'PowerPoint', icon: '/icons/powerpoint.png' },
+      { name: 'Office', icon: '/icons/Office.png' },
       {name : 'HTML', icon: '/icons/HTML.png' },
       {name : 'CSS', icon: '/icons/CSS.png' },
       {name : 'JS', icon: '/icons/JS.png' },
@@ -29,9 +27,7 @@ const experience = [
     office: 'In-plant Trainee',
     description:'✯Completed 1-week in-plant training at NCTPS-2 across Maintenance, Instrumentation, Efficiency, and Communication Engineering departments. \n\n✯Participated in equipment inspections, troubleshooting, and routine maintenance, gaining insights into thermal power generation. \n\n✯Conducted power output calculations and emphasized safety and proactive learning. \n\n✯Enhanced technical skills, problem-solving, and teamwork abilities in a real-world power plant environment.',
     tags: [
-      { name: 'Word', icon: '/icons/word.png' },
-      { name: 'Excel', icon: '/icons/excel.png' },
-      { name: 'PowerPoint', icon: '/icons/powerpoint.png' },
+      { name: 'Office', icon: '/icons/Office.png' },
     ],
     date: '19-Jun-23 to 23-Jun-23',
     link: 'https://drive.google.com/file/d/10u-LsiLDjEdVlTQFXGOE5teaOflUBECz/view?usp=sharing',
@@ -44,7 +40,6 @@ const experience = [
     office: 'Embedded system & IoT trainee',
     description:'✯Finished 1 week of training in Embedded system & IoT at NSIC, Chennai. \n\n✯Learned about the basics of Embedded system & IoT, and its applications in the real world. \n\n✯Done Basic circuit design and interfacing of sensors with microcontrollers.',
     tags: [
-      { name: 'Word', icon: '/icons/word.png' },
       { name: 'Raspberry Pi', icon: '/icons/Pi.png' },
       { name: 'Arduino', icon: '/icons/Arduino.png' },
       { name: 'Cloud', icon: '/icons/Cloud.png' },

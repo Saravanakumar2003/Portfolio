@@ -26,27 +26,27 @@ const cardSkills = [
   },
   {
     id: 5,
-    title: 'React',
-    img: '/icons/react.png',
-    color: '#61DAFB'
+    title: 'Unity',
+    img: '/icons/unity2.png',
+    color: '#626262'
   },
   {
     id: 6,
-    title: 'Python',
-    img: '/icons/python.png',
-    color: '#3776AB'
+    title: 'Canva',
+    img: '/icons/Canva.png',
+    color: '#4169e1'
   },
   {
     id: 7,
-    title: 'C',
-    img: '/icons/C.png',
-    color: '#A8B9CC'
+    title: 'Azure',
+    img: '/icons/Azure.png',
+    color: '#007FFF'
   },
   {
     id: 8,
-    title: 'Flask',
-    img: '/icons/flask.png',
-    color: '#000000'
+    title: 'Figma',
+    img: '/icons/Figma.png',
+    color: '#b67148'
   },
   {
     id: 9,
@@ -68,28 +68,11 @@ const cardSkills = [
   },
   {
     id: 12,
-    title: 'Word',
-    img: '/icons/word.png',
-    color: '#2B579A'
+    title: 'Office',
+    img: '/icons/Office.png',
+    color: '#de4736'
   },
-  {
-    id: 13,
-    title: 'PowerPoint',
-    img: '/icons/powerpoint.png',
-    color: '#B7472A'
-  },
-  {
-    id: 14,
-    title: 'Excel',
-    img: '/icons/excel.png',
-    color: '#217346'
-  },
-  {
-    id: 15,
-    title: 'Canva',
-    img: '/icons/Canva.png',
-    color: '#00C4CC'
-  }
+
 ]
 
 export default cardSkills

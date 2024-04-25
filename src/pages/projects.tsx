@@ -1,5 +1,9 @@
 import { useState } from "react";
+import Head from "next/head";
+import Link from "next/link";
+import Image from "next/image";
 import projects from "../data/projects";
+import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import { ScrollTop } from "../components/ScrollTop";
 import * as S from "../styles/projects";

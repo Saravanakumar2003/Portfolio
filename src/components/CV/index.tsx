@@ -7,7 +7,7 @@ export function CV() {
   return (
     <Container>
       <CVContainer>
-        <Title>
+        <Title style={{ marginBottom: '3rem' }}>
           <span>
             <FiDownload /> Download
           </span>

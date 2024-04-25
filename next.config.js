@@ -1,11 +1,13 @@
 /** @type {import('next').NextConfig} */
-
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   compiler: {
     // Enables the styled-components SWC transform
     styledComponents: true
+  },
+  audio: {
+    modules: ['mp3', 'aac', 'wav', 'ogg', 'm4a', 'flac'],
   },
   images: {
     remotePatterns: [

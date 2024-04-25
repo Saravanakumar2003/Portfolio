@@ -1,3 +1,5 @@
+import { url } from "inspector"
+
 const works = [
   {
     id: 1,
@@ -95,6 +97,26 @@ const works = [
         date: '16th, March 2024',
         description:
           'I participated in the NSS Glaucathon Rally, an initiative to raise awareness about glaucoma and promote eye health. The rally started at Dunlop and ended at Vasan Eye Care Hospital, Chennai. It was a great opportunity to contribute to a noble cause and spread awareness about eye health.'
+      },
+
+
+      {
+        name: 'NSS Image Gallery',
+        image: '/Volunteering/Banners/NSSJourney.png',
+        date: '24th, November 2021 - Present',
+        url: 'https://photos.app.goo.gl/Md3BTQYZeA37NPSj9',
+        urltitle: 'View the images here',
+        description:
+          'A collection of images from my NSS journey at Velammal Engineering College, showcasing my participation in various events, competitions, and initiatives.'
+      },
+      {
+        name: 'NSS Journey Documentation',
+        image: '/Volunteering/Banners/NSSDocumentation.png',
+        date: '24th, November 2021 - Present',
+        url: 'https://drive.google.com/drive/folders/1Zjb4FVAGb8vq1X2Lo_-o8tZAbOaPNzcg?usp=drive_link',
+        urltitle: 'View the documentation here',
+        description:
+          'A comprehensive documentation of my NSS journey containing Newsletters, Host Scripts, Certificates, Contributions and other important documents.'
       }
 
     ]
@@ -150,6 +172,36 @@ const works = [
         description:
           'City Con 2023 was a meet within the Chennai city volunteers. The meet was conducted to discuss the progress of the program and also to discuss the problems faced by the volunteers. The meet was very useful and I got to know a lot of things about the program.'
       },
+      {
+        name: 'Seeds of Change',
+        image: '/Volunteering/Bhumi/Seeds.png',
+        date: '14th, April 2024',
+        description:
+          'Participated in a meaningful tree plantation drive as a Bhumi volunteer conducted by Eco-Champs Team of Bhumi.'
+      },
+
+
+      
+      {
+        name: 'Bhumi Image Gallery',
+        image: '/Volunteering/Banners/BhumiJourney.png',
+        date: '4th, June 2023 - Present',
+        url: 'https://photos.app.goo.gl/9MBDG7vz87Bczgy19',
+        urltitle: 'View the images here',
+        description:
+          'A collection of images from my Kanini journey at Bhumi, showcasing my participation in various events, competitions, and initiatives.'
+      },
+      {
+        name: 'Bhumi Documentation',
+        image: '/Volunteering/Banners/BhumiDocumentation.png',
+        date: '4th, June 2023 - Present',
+        url: 'https://drive.google.com/drive/folders/14V1WOJlykj97yWppdx2ESnuK1U-yhafC?usp=sharing',
+        urltitle: 'View the documentation here',
+        description:
+          'A comprehensive documentation of my Kanini journey at Bhumi, highlighting my participation in events, competitions, and initiatives.'
+      },
+
+
     ]
   },
   {
@@ -193,7 +245,7 @@ const works = [
         name: 'Awarness Video in English',
         image: '/Volunteering/School/2.jpg',
         date: '12th, August 2022',
-        url: 'https:',
+        url: 'https://drive.google.com/file/d/1cdWwjy40xD6y7-vs74b3F8vrTB1WTowh/view?usp=sharing',
         urltitle: 'Watch the video here',
         description:
           'Awareness Video On International Youth Day (12th Aug), An awareness video was created on the topic given by the United Nations Ageism. The 5th Grade students spoke 1 Min about ageism in English. The video was uploaded on Drive and the link was shared below.'
@@ -221,7 +273,7 @@ const works = [
       },
       {
         name: 'Volunteering Documentation', 
-        image: '/Volunteering/School/DriveBanner.png',
+        image: '/Volunteering/Banners/GovtDocumentation.png',
         date: '31st, August 2022',
         description:"The documentation included the details of the sessions, the topics taught, the activities conducted, and the exam details with corrected papers.",
         url: 'https://drive.google.com/drive/folders/1iBqFAWdkygWAuBZxrFDmeg0UeGHf84Lo?usp=sharing',

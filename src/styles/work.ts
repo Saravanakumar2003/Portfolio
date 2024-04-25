@@ -10,7 +10,7 @@ export const WorkContainer = styled.section`
   gap: 5rem;
   align-items: center;
   justify-content: center;
-  margin-bottom: 5rem;
+  margin-bottom: 3rem;
 `
 
 export const WorkBanner = styled.div<WorkProps>`
@@ -92,10 +92,12 @@ export const WorkDescription = styled.div``
 
 export const WorkContent = styled.div`
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
   gap: 5rem;
-  margin-bottom: 5rem;
-  position: relative;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3rem;
+  
 
   @media (min-width: 1000px) {
     margin-bottom: 15rem;
@@ -108,6 +110,7 @@ export const WorkContent = styled.div`
     justify-content: center;
     background-size: cover;
     border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 0 1rem;
     position: relative;
 
@@ -125,8 +128,7 @@ export const WorkContent = styled.div`
       display: flex;
       flex-direction: column;
       align-items: center;
-      font-align: justify;
-      justify-content: center;
+
 
       h3 {
         color: ${props => props.theme.firstColor};
@@ -158,19 +160,6 @@ export const WorkContent = styled.div`
         border-radius: 3px;
         padding: 1rem;
         text-align: justify;
-      }
-    }
-  }
-
-  &:nth-child(even) {
-    flex-direction: row-reverse;
-    align-items: center;
-
-    .workItem {
-      .text {
-        align-items: right;
-        right: 0;
-        left: -10rem;
       }
     }
   }

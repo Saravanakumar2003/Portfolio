@@ -3,6 +3,10 @@ import { Container, Title } from '../../styles/styles'
 import { Figure, Box } from "./style";
 
 export function Wakatime() {
+  const currentDate = new Date();
+  const lastWeekDate = new Date();
+  lastWeekDate.setDate(currentDate.getDate() - 7);
+
   return (
     <Container>
       <Title>
@@ -11,6 +15,24 @@ export function Wakatime() {
           <Code />Coding
         </span>
       </Title>
+
+      <div style={{
+  margin: '2rem 0',
+}}>
+  <h1>My coding stats from</h1>
+  <div style={{
+    margin: '1rem 0',
+    border: '2px solid lightblue',
+    borderRadius: '5px',
+    padding: '10px',
+    color: 'lightblue',
+    fontWeight: 'bold',
+    display: 'inline-block',
+  }}>
+    {` ${lastWeekDate.toLocaleDateString('en-IN')} - ${currentDate.toLocaleDateString('en-IN')}`}
+  </div>
+</div>
+
       <Figure>
         <iframe
           src="https://wakatime.com/share/@Saravanakumar2003/329dcf8c-6405-44e8-9355-32c07448883c.svg"

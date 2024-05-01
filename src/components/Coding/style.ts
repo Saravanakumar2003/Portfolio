@@ -44,14 +44,14 @@ export const Box = styled.div`
 
   img {
     width: 150px;
-    height: 50px;
+    height: 40px;
   }
 
   @media (min-width: 768px) {
     flex-direction: row;
     img {
-      width: 200px;
-      height: 50px;
+      width: 150px;
+      height: 40px;
 
     }
   }

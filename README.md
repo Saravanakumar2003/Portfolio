@@ -53,8 +53,6 @@ http://localhost:3000
 
 3. **TypeScript:** A typed superset of JavaScript, enhancing code maintainability and catching errors during development.
 
-4. **Tailwind CSS:** A utility-first CSS framework for creating custom designs with minimal CSS code.
-
 ### Integrations
 
 1. **GitHub:** Integration with GitHub allows dynamic fetching and display of GitHub-related data, such as followers, following, total stars and contributions.

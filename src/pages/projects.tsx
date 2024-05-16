@@ -100,9 +100,9 @@ export default function Projects() {
                       </div>
                       <div className="description">
                         <p>{project.description}</p>
-
+                        <h4 style={{marginBottom:"1rem"}} className="date">Tech Stack:</h4>
                         <div className="tags">
-                          {project.tags.map((tag) => {
+                          {project.tech.map((tag) => {
                             return <span key={tag.name}>{tag.name}</span>;
                           })}
                         </div>

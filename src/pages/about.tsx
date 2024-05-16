@@ -21,7 +21,7 @@ interface DashboardPageProps {
 export default function About() {
   return <>
     <Head>
-      <title>About | Saravanakumar </title>
+      <title>About | Saravanakumar</title>
       <meta
         name="description"
         content="I am Saravanakumar, a proud student of Velammal Engineering College, where I am pursuing a Bachelors degree in Electronics and Communication Engineering and building a solid foundation in technology."

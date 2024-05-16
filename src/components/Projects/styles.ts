@@ -105,3 +105,42 @@ export const ProjectsContent = styled.div`
 
   max-width: 24rem;
 `
+export const TagButton = styled.button<{ selected: boolean }>`
+  background: ${props => props.theme.firstColor};
+  color: white;
+  padding: .5rem 1rem;
+  border-radius: 5px;
+  margin-right: .5rem;
+  margin-bottom: .5rem;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  transform: ${props => props.selected ? 'scale(1.1)' : 'none'}; // scale up when selected
+  box-shadow: ${props => props.selected ? '0 0 10px rgba(0,0,0,0.5)' : 'none'}; // add shadow when selected
+
+  &:hover {
+    background: ${props => props.theme.secondColor};
+  }
+
+  ${props => props.selected && `
+    background: ${props.theme.firstColor};
+    color: red; 
+  `}
+
+  @media(min-width: 768px) {
+    margin-right: 1rem;
+    padding: .75rem 1.25rem; // increase padding on larger screens
+  }
+
+  @media(min-width: 1200px) {
+    margin-right: 1.5rem;
+    padding: 1rem 1.5rem; // increase padding on even larger screens
+  }
+`;
+
+export const TagContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+`;

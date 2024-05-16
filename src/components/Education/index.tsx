@@ -11,7 +11,7 @@ import { EducationContainer, EducationContent } from './styles'
 import { Books } from 'phosphor-react'
 import Link from "next/link";
 import { useState } from 'react'
- 
+
 export interface EducationProps {
   target: HTMLInputElement
 }
@@ -71,22 +71,23 @@ export function Education() {
                       <h2>{education.subTitle}</h2>
                       <span>{education.office}</span>
                       <p>{education.description.split('\n').map((line, i) => (
-                      <a key={i}>
-                        {line}
+                        <a key={i}>
+                          {line}
                           <br />
-                           </a>
+                        </a>
                       ))}</p>
-                      <Button>
-                        <Link legacyBehavior href={education.link}>
-                          <a target="_blank">Website</a>
-                        </Link>
-                    </Button>
-                    <Button>
-                        <Link legacyBehavior href={education.link}>
-                          <a target="_blank">Website</a>
-                        </Link>
-                    </Button>
-
+                      <div style={{ display: 'flex', gap:"1rem", marginTop:"1rem" }}>
+                        <Button>
+                          <Link legacyBehavior href={education.link}>
+                            <a target="_blank">Website</a>
+                          </Link>
+                        </Button>
+                        <Button>
+                          <Link legacyBehavior href={education.link2 ?? ''}>
+                            <a target="_blank">Syllabus</a>
+                          </Link>
+                        </Button>
+                      </div>
                     </EducationContent>
                   </EducationContainer>
                 </VerticalTimelineElement>

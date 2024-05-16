@@ -7,6 +7,14 @@ export interface Tag {
   rgb: string
 }
 
+export interface Tech {
+  id: string
+  name: string
+  icon: string
+  color: string
+  rgb: string
+}
+
 export interface Print {
   id: string
   img: string
@@ -33,4 +41,5 @@ export interface Project {
   video: string
   backgroundImage: string
   blog: string
+  tech: Tech[]
 }

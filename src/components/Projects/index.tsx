@@ -74,7 +74,7 @@ export function Projects() {
                   <h2>{project.title}</h2>
                   <span>{project.type}</span>
                   <div className="tags">
-                    {project.tags.map(tag => (
+                    {project.tech.map(tag => (
                       <Image width={32} height={32} key={tag.name} src={tag.icon} alt={tag.name} />
                     ))}
                   </div>

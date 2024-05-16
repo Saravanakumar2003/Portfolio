@@ -15,7 +15,6 @@ YoutubeLogo, Hash,
 ToiletPaper} from 'phosphor-react'
 import { FaBlog, FaGithub } from 'react-icons/fa'
 import { BsGlobe } from 'react-icons/bs'
-import blog from '../../data/blogs'
 
 interface ProjectProps {
   project: Project
@@ -95,25 +94,25 @@ export default function Projeto({ project }: ProjectProps) {
         </Description>
 
         <S.TagsContainer>
-          {project.tags &&
-            project.tags.map(tag => {
+          {project.tech &&
+            project.tech.map(tech => {
               return (
-                <S.TagsContent key={tag.id} color={tag.color}>
+                <S.TagsContent key={tech.id} color={tech.color}>
                   <div
                     className="card-icon"
                     style={{
-                      backgroundColor: `rgba(${tag.rgb}, .1)`,
-                      border: `1px solid ${tag.color}`
+                      backgroundColor: `rgba(${tech.rgb}, .1)`,
+                      border: `1px solid ${tech.color}`
                     }}
                   >
                     <Image
-                      src={tag.icon}
-                      alt={tag.name}
+                      src={tech.icon}
+                      alt={tech.name}
                       width={50}
                       height={50}
                     />
                   </div>
-                  <h3>{tag.name}</h3>
+                  <h3>{tech.name}</h3>
                 </S.TagsContent>
               )
             })}
@@ -229,6 +228,7 @@ export const getStaticProps: GetStaticProps = async ({ params }: any) => {
     year: project.year,
     status: project.status,
     video: project.video,
+    tech: project.tech,
     backgroundImage: project.backgroundImage,
     blog: project.blog
   }))

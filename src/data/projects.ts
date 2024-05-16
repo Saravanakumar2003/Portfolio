@@ -13,6 +13,10 @@ const projects = [
     description:
       'This is a powerful management system made for NIWE (National Institue of Wind Energy) during my internship. The system is designed to simplify and enhance project management, making it efficient.',
     tags: [
+      {name: 'NIWE Projects'},
+    ],
+
+    tech: [
       {
         name: 'HTML',
         icon: '/icons/HTML.png',
@@ -110,6 +114,11 @@ const projects = [
     description:
       'This project is a Python-based .dat to .csv file converter initially developed during my internship tenure at the National Institute of Wind Energy (NIWE). The objective was to address the challenge of converting .dat files to .csv format efficiently.',
     tags: [
+      {name: 'NIWE Projects'},
+      {name: 'Special Projects'}
+    ],
+
+    tech: [
       {
         name: 'HTML',
         icon: '/icons/HTML.png',
@@ -117,10 +126,10 @@ const projects = [
         rgb: '255, 255, 255'
       },
       {
-        name: 'Flask',
-        icon: '/icons/flask.png',
-        color: '#3178C6',
-        rgb: '49, 120, 198'
+        name: 'PythonAnywhere',
+        icon: '/icons/Pyany.png',
+        color: '#635BFF',
+        rgb: '99, 91, 255'
       },
       {
         name: 'Python',
@@ -129,12 +138,13 @@ const projects = [
         rgb: '56, 189, 248'
       },
       {
-        name: 'PythonAnywhere',
-        icon: '/icons/Pyany.png',
-        color: '#635BFF',
-        rgb: '99, 91, 255'
+        name: 'Flask',
+        icon: '/icons/flask.png',
+        color: '#38BDF8',
+        rgb: '56, 189, 248'
       },
     ],
+
     print: [
       {
         name: 'Home Page',
@@ -176,6 +186,10 @@ const projects = [
     description:
       'Empowerkids is a platform that allows children to file complaints regarding issues that affect them. ',
     tags: [
+      {name: 'Hackathon Projects'},
+    ],
+
+    tech: [
       {
         name: 'HTML',
         icon: '/icons/HTML.png',
@@ -183,10 +197,10 @@ const projects = [
         rgb: '255, 255, 255'
       },
       {
-        name: 'CSS',
-        icon: '/icons/CSS.png',
-        color: '#3178C6',
-        rgb: '49, 120, 198'
+        name: 'Firebase',
+        icon: '/icons/Firebase.png',
+        color: '#38BDF8',
+        rgb: '56, 189, 248'
       },
       {
         name: 'JavaScript',
@@ -195,12 +209,13 @@ const projects = [
         rgb: '56, 189, 248'
       },
       {
-        name: 'Firebase',
-        icon: '/icons/Firebase.png',
+        name: 'CSS',
+        icon: '/icons/CSS.png',
         color: '#38BDF8',
         rgb: '56, 189, 248'
       },
     ],
+
     print: [
       {
         name: 'Home Page',
@@ -254,6 +269,10 @@ const projects = [
     description:
       'It is built using Next.js, a React framework that enables server-side rendering and other powerful features. The website is designed to showcase my skills, projects, and other relevant information.',
     tags: [
+      {name: 'Special Projects'},
+    ],
+
+    tech: [
       {
         name: 'Next.js',
         icon: '/icons/nextjs.png',
@@ -261,10 +280,16 @@ const projects = [
         rgb: '255, 255, 255'
       },
       {
+        name: 'Vercel',
+        icon: '/icons/vercel.png',
+        color: '#38BDF8',
+        rgb: '56, 189, 248'
+      },
+      {
         name: 'TypeScript',
         icon: '/icons/TS.png',
-        color: '#3178C6',
-        rgb: '49, 120, 198'
+        color: '#38BDF8',
+        rgb: '56, 189, 248'
       },
       {
         name: 'React',
@@ -272,13 +297,8 @@ const projects = [
         color: '#38BDF8',
         rgb: '56, 189, 248'
       },
-      {
-        name: 'Vercel',
-        icon: '/icons/vercel.png',
-        color: '#38BDF8',
-        rgb: '56, 189, 248'
-      },
     ],
+
     print: [
       {
         name: 'Home Page',

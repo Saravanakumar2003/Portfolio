@@ -19,7 +19,7 @@ export function Wakatime() {
       <div style={{
   margin: '2rem 0',
 }}>
-  <h1>My coding stats from</h1>
+  <h1 style={{textAlign:"center"}}>My coding stats from</h1>
   <div style={{
     margin: '1rem 0',
     border: '2px solid lightblue',
@@ -29,8 +29,8 @@ export function Wakatime() {
     fontWeight: 'bold',
     display: 'inline-block',
   }}>
-    {` ${lastWeekDate.toLocaleDateString('en-IN')} - ${currentDate.toLocaleDateString('en-IN')}`}
-  </div>
+  {` ${lastWeekDate.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' })} to ${currentDate.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' })}`}
+</div>
 </div>
 
       <Figure>

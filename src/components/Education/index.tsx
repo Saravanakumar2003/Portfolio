@@ -76,11 +76,17 @@ export function Education() {
                           <br />
                            </a>
                       ))}</p>
-                      {/*<Button style={{ marginTop: '1rem' }}>
-                      <Link legacyBehavior href={`/education/${education.url}`}>
-                        View More
-                      </Link>
-                    </Button>*/}
+                      <Button>
+                        <Link legacyBehavior href={education.link}>
+                          <a target="_blank">Website</a>
+                        </Link>
+                    </Button>
+                    <Button>
+                        <Link legacyBehavior href={education.link}>
+                          <a target="_blank">Website</a>
+                        </Link>
+                    </Button>
+
                     </EducationContent>
                   </EducationContainer>
                 </VerticalTimelineElement>

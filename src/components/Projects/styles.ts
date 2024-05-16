@@ -124,17 +124,15 @@ export const TagButton = styled.button<{ selected: boolean }>`
 
   ${props => props.selected && `
     background: ${props.theme.firstColor};
-    color: red; 
+    color: ${props.theme.secondColor}; 
   `}
 
   @media(min-width: 768px) {
     margin-right: 1rem;
-    padding: .75rem 1.25rem; // increase padding on larger screens
   }
 
   @media(min-width: 1200px) {
     margin-right: 1.5rem;
-    padding: 1rem 1.5rem; // increase padding on even larger screens
   }
 `;
 

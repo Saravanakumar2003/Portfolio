@@ -1,3 +1,6 @@
+import { link } from "fs"
+import certificates from "./certificate_img"
+
 const experience = [
   {
     id: 1,
@@ -19,6 +22,8 @@ const experience = [
     ],
     date: '23-Jan-23 to 30-Jan-23',
     link: 'https://drive.google.com/file/d/1b7GSsGtZvycOhRV-JGZXC2gvwYH-9nKj/view?usp=sharing',
+    link2: 'https://niwe.res.in/',
+    certificate: 'https://drive.google.com/file/d/1at_R9nQVm3805JuvF-xBaeQqRrT9LYeS/view?usp=sharing'
   },
   
   {
@@ -35,6 +40,8 @@ const experience = [
     ],
     date: '19-Jun-23 to 23-Jun-23',
     link: 'https://drive.google.com/file/d/10u-LsiLDjEdVlTQFXGOE5teaOflUBECz/view?usp=sharing',
+    link2: 'https://www.tangedco.gov.in/',
+    certificate: 'https://drive.google.com/file/d/1V8mbI67LRc6mE2qsPo_bCUT7nKqqdATC/view?usp=sharing',
   },
   {
     id: 1,
@@ -51,6 +58,8 @@ const experience = [
     ],
     date: '23-Jan-23 to 30-Jan-23',
     link: 'https://drive.google.com/file/d/1b7GSsGtZvycOhRV-JGZXC2gvwYH-9nKj/view?usp=sharing',
+    link2: 'https://www.nsic.co.in/',
+    certificate: 'https://drive.google.com/file/d/1xk5TXeFoiTtnW_H43f4KYQ5OmmXsUeoF/view?usp=sharing'
   },
 ]
 

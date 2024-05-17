@@ -4,6 +4,8 @@ import {
   VerticalTimeline,
   VerticalTimelineElement
 } from 'react-vertical-timeline-component'
+import Link from 'next/link'
+import { Button } from '../../styles/styles'
 import 'react-vertical-timeline-component/style.min.css'
 import { Container, Title } from '../../styles/styles'
 import { ExperienceContainer, ExperienceContent } from './styles'
@@ -64,6 +66,18 @@ export function Experience() {
                           <br />
                            </a>
                       ))}</p>
+                       <div style={{ display: 'flex', gap:"1rem", marginTop:"1rem", marginBottom:"1rem" }}>
+                        <Button>
+                          <Link legacyBehavior href={experience.certificate ?? ''}>
+                            <a target="_blank">Certificate</a>
+                          </Link>
+                        </Button>
+                        <Button>
+                          <Link legacyBehavior href={experience.link2 ?? ''}>
+                            <a target="_blank">Website</a>
+                          </Link>
+                        </Button>
+                      </div>
                       <div>
                         <h3>Techs:</h3>
                         <div className="tag">

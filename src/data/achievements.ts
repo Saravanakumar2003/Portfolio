@@ -2,7 +2,7 @@ const Achievements = [
     {
         id: 1,
         name: 'Winners - Velammal Hackathon 1.0',
-        description: 'Our Project, EmpowerKids is a gamified platform designed to educate children aged 8 to 16 about their rights in India.',
+        description: 'Our Project, EmpowerKids is a platform designed to empower children aged 8 to 16 to claim their rights in India.',
         image: ['/achieve/award3.jpg','/achieve/Award3_2.jpg','/achieve/Award3_3.jpg'],
         year: 'April 2024',
         prize: 'Rs.5000 & Certificate',

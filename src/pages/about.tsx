@@ -81,7 +81,7 @@ export default function About() {
                   target="_blank"
                   aria-label="email">
 
-                  <GrMail size={25} />@hello@saravanakumar.engineer
+                  <GrMail size={25} />hello@saravanakumar.engineer
                 </Link>
               </ul>
             </div>

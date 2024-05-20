@@ -76,12 +76,12 @@ export default function About() {
                   <RiWhatsappFill size={25} />+91 8838416187
                 </Link>
                 <Link
-                  href={'mailto:saravanaramaswamy2003@gmail.com'}
+                  href={'mailto:hello@saravanakumar.engineer'}
                   className="email"
                   target="_blank"
                   aria-label="email">
 
-                  <GrMail size={25} />@saravanaramaswamy2003@gmail.com
+                  <GrMail size={25} />@hello@saravanakumar.engineer
                 </Link>
               </ul>
             </div>

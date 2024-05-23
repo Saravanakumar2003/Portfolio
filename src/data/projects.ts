@@ -101,10 +101,10 @@ const projects = [
     ],
     status: 'Completed',
     year: 'May 2024',
-    gif: '',
+    gif: '/projects/Portfolio/Cool.mp4',
     backgroundImage: '/projects/Background.png',
     video:
-      ''
+      'https://youtu.be/WzlVRtlzjSM'
   },
   {
     id: 4,
@@ -202,10 +202,10 @@ const projects = [
     ],
     status: 'Completed',
     year: 'January 2024',
-    gif: '',
+    gif: '/projects/Portfolio/Cool.mp4',
     backgroundImage: '/projects/Background.png',
     video:
-      ''
+      'https://youtu.be/WzlVRtlzjSM'
   },
   {
     id: 3,
@@ -274,7 +274,7 @@ const projects = [
     ],
     status: 'Completed',
     year: 'December 2023',
-    gif: '/projects/DATtoCSV/Promo.mp4',
+    gif: '/projects/Portfolio/Cool.mp4',
     backgroundImage: '/projects/Background.png',
     video:
       'https://youtu.be/ggpB_Erkl4k'
@@ -357,7 +357,7 @@ const projects = [
     ],
     status: 'Completed',
     year: 'November 2023',
-    gif: '',
+    gif: '/projects/Portfolio/Cool.mp4',
     backgroundImage: '/projects/Background.png',
     video:
       'https://youtu.be/oh0n2WFNn5U'
@@ -446,10 +446,10 @@ const projects = [
     ],
     status: 'Completed',
     year: 'October 2023',
-    gif: '',
+    gif: '/projects/Portfolio/Cool.mp4',
     backgroundImage: '/projects/Background.png',
     video:
-      ''
+      'https://youtu.be/WzlVRtlzjSM'
   },
 ]
 

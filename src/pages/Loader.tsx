@@ -12,15 +12,6 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 
-const fireworks = keyframes`
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-`;
-
 const LoaderContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -33,14 +24,12 @@ const LoaderContainer = styled.div`
 
 const Logo = styled.img`
   width: 120px;
-  height: 120px;
-  animation: ${fireworks} 1s ease-in-out infinite;
+  height: 120px
 `;
 
 const Name = styled.h1`
   font-size: 2em;
   color: #00D9FF;
-  animation: ${fireworks} 1s ease-in-out infinite;
 `;
 
 const Loader = () => {

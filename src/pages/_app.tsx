@@ -13,6 +13,9 @@ import { Analytics } from '@vercel/analytics/react';
 import { initGA, logPageView } from '../utils/analytics';
 import { useState } from 'react';
 import Loader from './Loader';
+import NProgress from 'nprogress';
+
+
 const botkey = process.env.NEXT_PUBLIC_BOTKEY_URL;
 const google = process.env.NEXT_PUBLIC_GA_ID;
 
@@ -34,6 +37,7 @@ function useNormalScrollRoutes() {
     })
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+  
 
   useEffect(() => {
     if (!window.GA_INITIALIZED) {
@@ -47,6 +51,7 @@ function useNormalScrollRoutes() {
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [isLoading, setIsLoading] = useState(true);
+  const [isFirstLoad, setIsFirstLoad] = useState(true);
   const router = useRouter();
 
   useEffect(() => {
@@ -71,10 +76,19 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, [router]);
 
   useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 6000);
-  }, []);
+  if (!isLoading) {
+    NProgress.done();
+  }
+}, [isLoading]);
+
+  useEffect(() => {
+    if (isFirstLoad) {
+      setTimeout(() => {
+        setIsLoading(false);
+        setIsFirstLoad(false);
+      }, 6000);
+    }
+  }, [isFirstLoad]);
 
 
   useNormalScrollRoutes()

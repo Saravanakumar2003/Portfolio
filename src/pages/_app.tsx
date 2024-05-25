@@ -11,10 +11,6 @@ import { Toaster } from '../components/Toaster'
 import { MantineProvider } from '@mantine/core'
 import { Analytics } from '@vercel/analytics/react';
 import { initGA, logPageView } from '../utils/analytics';
-import { useState } from 'react';
-import Loader from './Loader';
-import NProgress from 'nprogress';
-
 
 const botkey = process.env.NEXT_PUBLIC_BOTKEY_URL;
 const google = process.env.NEXT_PUBLIC_GA_ID;
@@ -37,7 +33,6 @@ function useNormalScrollRoutes() {
     })
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
-  
 
   useEffect(() => {
     if (!window.GA_INITIALIZED) {
@@ -50,86 +45,43 @@ function useNormalScrollRoutes() {
 }
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const [isLoading, setIsLoading] = useState(true);
-  const [isFirstLoad, setIsFirstLoad] = useState(true);
-  const router = useRouter();
-
-  useEffect(() => {
-    const handleStart = () => {
-      setIsLoading(true);
-      document.documentElement.classList.add('normal-scroll');
-    };
-    const handleComplete = () => {
-      setIsLoading(false);
-      document.documentElement.classList.remove('normal-scroll');
-    };
-
-    router.events.on('routeChangeStart', handleStart);
-    router.events.on('routeChangeComplete', handleComplete);
-    router.events.on('routeChangeError', handleComplete);
-
-    return () => {
-      router.events.off('routeChangeStart', handleStart);
-      router.events.off('routeChangeComplete', handleComplete);
-      router.events.off('routeChangeError', handleComplete);
-    };
-  }, [router]);
-
-  useEffect(() => {
-  if (!isLoading) {
-    NProgress.done();
-  }
-}, [isLoading]);
-
-  useEffect(() => {
-    if (isFirstLoad) {
-      setTimeout(() => {
-        setIsLoading(false);
-        setIsFirstLoad(false);
-      }, 6000);
-    }
-  }, [isFirstLoad]);
-
-
   useNormalScrollRoutes()
 
   return (
     <>
-     {isLoading ? (
-        <Loader />
-     ) : (
-      <><Head>
-            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-            <script async src={google}></script>
-            <script>
-              {`
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script async src={google}></script>
+        <script>
+          {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'G-DEXGX7MVS0');
           `}
-            </script>
-          </Head><MantineProvider>
-              <ThemeProvider theme={defaultTheme}>
-                <NextNprogress
-                  color={defaultTheme.firstColor}
-                  startPosition={0.3}
-                  stopDelayMs={300}
-                  height={3}
-                  showOnShallow />
+        </script>
+      </Head>
+      <MantineProvider>
+      <ThemeProvider theme={defaultTheme}>
+        <NextNprogress
+          color={defaultTheme.firstColor}
+          startPosition={0.3}
+          stopDelayMs={300}
+          height={3}
+          showOnShallow
+        />
 
-                <Toaster />
-                <GlobalStyles />
-                <Header />
-                <Component {...pageProps} />
-                <Analytics />
-                <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
-                <script src={botkey} defer></script>
-              </ThemeProvider>
-            </MantineProvider></>
-     )}
+        <Toaster />
+        <GlobalStyles />
+        <Header />
+        <Component {...pageProps} />
+        <Analytics />
+        <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+        <script src={botkey} defer></script>
+      </ThemeProvider>
+      </MantineProvider>
     </>
-  );
+  )
 }
 
 export default MyApp

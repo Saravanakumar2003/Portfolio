@@ -1,9 +1,28 @@
-import { link } from "fs"
-import certificates from "./certificate_img"
-
 const experience = [
   {
-    id: 1,
+    id: 4,
+    img: '/experience/BARC.png',
+    title: 'BARC',
+    subTitle: 'Bhabha Atomic Research Centre',
+    office: 'Project Trainee (Electronics Division)',
+    description:
+     '✯ Onging Internship (Info will be updated soon)',
+    tags: [
+      { name: 'Python', icon: '/icons/python.png' },
+      { name: 'PyQt5', icon: '/icons/pngegg.png'},
+      { name: 'PyQt Designer', icon: '/icons/qtdesign.png'},
+      { name: 'Flask', icon: '/icons/flask.png' },
+      { name: 'Word', icon: '/icons/word.png' },
+      { name: 'Excel', icon: '/icons/excel.png' },
+      { name: 'PowerPoint', icon: '/icons/powerpoint.png' },
+    ],
+    date: '03-Jun-24 to Present',
+    link: '',
+    link2: 'https://www.barc.gov.in/',
+    certificate: 'https://drive.google.com/file/d/1at_R9nQVm3805JuvF-xBaeQqRrT9LYeS/view?usp=sharing' 
+  },
+  {
+    id: 3,
     img: '/experience/NIWE.png',
     title: 'NIWE',
     subTitle: 'National Institute of Wind Energy',
@@ -19,6 +38,7 @@ const experience = [
       {name : 'HTML', icon: '/icons/HTML.png' },
       {name : 'CSS', icon: '/icons/CSS.png' },
       {name : 'JS', icon: '/icons/JS.png' },
+      {name : 'React', icon: '/icons/React.png'},
     ],
     date: '23-Jan-23 to 30-Jan-23',
     link: 'https://drive.google.com/file/d/1b7GSsGtZvycOhRV-JGZXC2gvwYH-9nKj/view?usp=sharing',
@@ -52,9 +72,9 @@ const experience = [
     description:'✯Finished 1 week of training in Embedded system & IoT at NSIC, Chennai. \n\n✯Learned about the basics of Embedded system & IoT, and its applications in the real world. \n\n✯Done Basic circuit design and interfacing of sensors with microcontrollers.',
     tags: [
       { name: 'Word', icon: '/icons/word.png' },
+      { name: 'PowerPoint', icon: '/icons/powerpoint.png' },
       { name: 'Raspberry Pi', icon: '/icons/Pi.png' },
-      { name: 'Arduino', icon: '/icons/Arduino.png' },
-      { name: 'Cloud', icon: '/icons/Cloud.png' },
+      { name: 'Python', icon: '/icons/python.png' },
     ],
     date: '23-Jan-23 to 30-Jan-23',
     link: 'https://drive.google.com/file/d/1b7GSsGtZvycOhRV-JGZXC2gvwYH-9nKj/view?usp=sharing',

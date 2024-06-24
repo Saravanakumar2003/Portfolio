@@ -82,7 +82,7 @@ export function Experience() {
                         <h3>Techs:</h3>
                         <div className="tag">
                           {experience.tags.map(tag => (
-                            <Image
+                            <Image style={{ margin: '0.2rem'}}
                               key={tag.name}
                               width={50}
                               height={50}

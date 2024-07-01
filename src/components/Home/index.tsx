@@ -42,6 +42,7 @@ export function HomeHero() {
                 height={200}
                 src="/vectors/triangle.svg"
                 alt="triangle"
+                loading='lazy'
               />
             </span>
           </h1>

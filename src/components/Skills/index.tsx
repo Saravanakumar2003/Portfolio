@@ -39,6 +39,7 @@ export function Skills() {
               height={60} 
               src={skill.img} 
               alt={skill.title}
+              loading='lazy'
               />
               <h4>{skill.title}</h4>
             <span className='border'></span>

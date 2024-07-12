@@ -1,5 +1,15 @@
 const certificates = [
   {
+    id: 6,
+    title: 'CS50x Introduction to Computer Science',
+    subTitle: 'Click here to see certificate',
+    status: 'Completed',
+    level: 'July 2024',
+    link: 'https://cs50.harvard.edu/certificates/33a06466-faff-4691-be1f-d37257bc35b6',
+    description: 'Credentials ID: 33a06466-faff-4691-be1f-d37257bc35b6 \n\nSkills Accquired: C, Python, SQL, HTML, CSS, JavaScript, Flask\n\n',
+    logo: '/certi/harvard.png',
+  },
+  {
     id: 5,
     title: 'Google Data Analytics Specialization',
     subTitle: 'Click here to see certificate',

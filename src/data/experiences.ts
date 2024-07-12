@@ -1,12 +1,12 @@
 const experience = [
   {
-    id: 4,
+    id: 3,
     img: '/experience/BARC.png',
     title: 'BARC',
     subTitle: 'Bhabha Atomic Research Centre',
-    office: 'Project Trainee (Electronics Division)',
+    office: 'Project Trainee (Electronics Division, ECIL)',
     description:
-     '✯ Onging Internship (Info will be updated soon)',
+     '✯ Developed a comprehensive muon track reconstruction software utilizing Python, PyQt5, and 3+ scientific libraries, enabling simulation of up to 1000+ drift tubes simultaneously. \n\n✯ Implemented real-time simulation of muon interactions with configurable drift tube arrays such stacks, rows, columns.  \n\n✯Created an auto-calibration feature that reduces least squares error by up to 99.99%, optimizing measured data against true values.  \n\n✯Designed an intuitive user interface with interactive visualization tools and 6 debugging options, enhancing data analysis capabilities.  \n\n✯ Integrated a Flask API for displaying random muon facts, demonstrating full-stack development skills and improving user engagement.',
     tags: [
       { name: 'Python', icon: '/icons/python.png' },
       { name: 'PyQt5', icon: '/icons/pngegg.png'},
@@ -19,10 +19,10 @@ const experience = [
     date: '03-Jun-24 to Present',
     link: '',
     link2: 'https://www.barc.gov.in/',
-    certificate: 'https://drive.google.com/file/d/1at_R9nQVm3805JuvF-xBaeQqRrT9LYeS/view?usp=sharing' 
+    certificate: '' 
   },
   {
-    id: 3,
+    id: 2,
     img: '/experience/NIWE.png',
     title: 'NIWE',
     subTitle: 'National Institute of Wind Energy',
@@ -47,7 +47,7 @@ const experience = [
   },
   
   {
-    id: 2,
+    id: 1,
     img: '/experience/tneb.png',
     title: 'TANGEDCO',
     subTitle: 'North Chennai Thermal Power Station',
@@ -63,24 +63,24 @@ const experience = [
     link2: 'https://www.tangedco.gov.in/',
     certificate: 'https://drive.google.com/file/d/1V8mbI67LRc6mE2qsPo_bCUT7nKqqdATC/view?usp=sharing',
   },
-  {
-    id: 1,
-    img: '/experience/nsic.png',
-    title: 'NSIC',
-    subTitle: 'National Small Industries Corporation',
-    office: 'Embedded system & IoT trainee',
-    description:'✯Finished 1 week of training in Embedded system & IoT at NSIC, Chennai. \n\n✯Learned about the basics of Embedded system & IoT, and its applications in the real world. \n\n✯Done Basic circuit design and interfacing of sensors with microcontrollers.',
-    tags: [
-      { name: 'Word', icon: '/icons/word.png' },
-      { name: 'PowerPoint', icon: '/icons/powerpoint.png' },
-      { name: 'Raspberry Pi', icon: '/icons/Pi.png' },
-      { name: 'Python', icon: '/icons/python.png' },
-    ],
-    date: '23-Jan-23 to 30-Jan-23',
-    link: 'https://drive.google.com/file/d/1b7GSsGtZvycOhRV-JGZXC2gvwYH-9nKj/view?usp=sharing',
-    link2: 'https://www.nsic.co.in/',
-    certificate: 'https://drive.google.com/file/d/1xk5TXeFoiTtnW_H43f4KYQ5OmmXsUeoF/view?usp=sharing'
-  },
+  // {
+  //   id: 1,
+  //   img: '/experience/nsic.png',
+  //   title: 'NSIC',
+  //   subTitle: 'National Small Industries Corporation',
+  //   office: 'Embedded system & IoT trainee',
+  //   description:'✯Finished 1 week of training in Embedded system & IoT at NSIC, Chennai. \n\n✯Learned about the basics of Embedded system & IoT, and its applications in the real world. \n\n✯Done Basic circuit design and interfacing of sensors with microcontrollers.',
+  //   tags: [
+  //     { name: 'Word', icon: '/icons/word.png' },
+  //     { name: 'PowerPoint', icon: '/icons/powerpoint.png' },
+  //     { name: 'Raspberry Pi', icon: '/icons/Pi.png' },
+  //     { name: 'Python', icon: '/icons/python.png' },
+  //   ],
+  //   date: '23-Jan-23 to 30-Jan-23',
+  //   link: 'https://drive.google.com/file/d/1b7GSsGtZvycOhRV-JGZXC2gvwYH-9nKj/view?usp=sharing',
+  //   link2: 'https://www.nsic.co.in/',
+  //   certificate: 'https://drive.google.com/file/d/1xk5TXeFoiTtnW_H43f4KYQ5OmmXsUeoF/view?usp=sharing'
+  // },
 ]
 
 export default experience

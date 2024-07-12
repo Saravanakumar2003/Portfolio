@@ -15,15 +15,15 @@ const certificates = [
     image:'/certi/Azure.png',
   },
   {
-    id: 4,
-    name: 'Particle Physics: an Introduction',
-    image:'/certi/Particle.png',
-  },
-  {
     id: 5,
     name: 'English for Carrer Development',
     image:'/certi/English.png',
   },
+  {
+    id: 6,
+    name: 'CS50x Introduction to Computer Science',
+    image:'/certi/CS50x.png',
+  }
 ]
 
 export default certificates

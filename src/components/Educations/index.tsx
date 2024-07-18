@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */ 
 import Image from 'next/image'
 import Link from 'next/link'
-import educations from '../../data/educations'
 import certificates from '../../data/certificates'
 import certificate_img from '../../data/certificate_img'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
@@ -21,30 +20,30 @@ export function Educations() {
       </Title>
       <S.EducationContent>
         <S.EducationList>
-          {educations &&
-            educations.map(education => {
+          {certificates &&
+            certificates.map(certificates => {
               return (
-                <S.List key={education.id}>
+                <S.List key={certificates.id}>
                   <S.ListImage>
-                    <img src={education.logo} alt={education.subTitle} />
+                    <img src={certificates.logo} alt={certificates.subTitle} />
                     <p>
-                      Date: <span>{education.level} </span>
+                      Date: <span>{certificates.level} </span>
                     </p>
                     <p>
-                      Status: <span>{education.status}</span>
+                      Status: <span>{certificates.status}</span>
                     </p>
                   </S.ListImage>
 
                   <S.ListContent>
-                    <h2>{education.title}</h2>
+                    <h2>{certificates.title}</h2>
                     <h3>
-                      <Link href={education.link} target="_blank">
+                      <Link href={certificates.link} target="_blank">
 
-                        {education.subTitle}
+                        {certificates.subTitle}
 
                       </Link>
                     </h3>
-                    <p>{education.description}</p>
+                    <p>{certificates.description}</p>
                   </S.ListContent>
                 </S.List>
               );

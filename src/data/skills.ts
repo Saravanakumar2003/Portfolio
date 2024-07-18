@@ -45,7 +45,7 @@ const cardSkills = [
   {
     id: 8,
     title: 'Flask',
-    img: '/icons/flask.png',
+    img: '/icons/flask.jpg',
     color: '#000000'
   },
   {
@@ -62,30 +62,24 @@ const cardSkills = [
   },
   {
     id: 11,
-    title: 'After Effects',
-    img: '/icons/AE.png',
-    color: '#CF96FD'
-  },
-  {
-    id: 12,
     title: 'Word',
     img: '/icons/word.png',
     color: '#2B579A'
   },
   {
-    id: 13,
+    id: 12,
     title: 'PowerPoint',
     img: '/icons/powerpoint.png',
     color: '#B7472A'
   },
   {
-    id: 14,
+    id: 13,
     title: 'Excel',
     img: '/icons/excel.png',
     color: '#217346'
   },
   {
-    id: 15,
+    id: 14,
     title: 'Canva',
     img: '/icons/Canva.png',
     color: '#00C4CC'

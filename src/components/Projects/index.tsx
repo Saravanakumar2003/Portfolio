@@ -46,7 +46,6 @@ export function Projects() {
         justifyContent: 'center',
         flexWrap: 'wrap',
         gap: '0.5rem'
-
       }}
       className="tag-selection">
       {tags.map(tag => (

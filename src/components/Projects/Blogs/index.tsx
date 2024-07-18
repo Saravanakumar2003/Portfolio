@@ -50,8 +50,8 @@ export function AllBlogs({ title }: AllContent) {
                 <Image
                   width={72}
                   height={72}
-                  src="/icons/unity2.png"
-                  alt="Unity"
+                  src="/icons/python.png"
+                  alt="Python"
                 />
               </div>
               <div className="face5">

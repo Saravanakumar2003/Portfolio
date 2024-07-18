@@ -107,7 +107,7 @@ export const ProjectsContent = styled.div`
 `
 export const TagButton = styled.button<{ selected: boolean }>`
   background: ${props => props.theme.firstColor};
-  color: white;
+  color: black;
   padding: .5rem 1rem;
   border-radius: 5px;
   margin-right: .5rem;
@@ -115,6 +115,7 @@ export const TagButton = styled.button<{ selected: boolean }>`
   border: none;
   cursor: pointer;
   transition: 0.3s;
+  font-weight: 700;
   transform: ${props => props.selected ? 'scale(1.1)' : 'none'}; // scale up when selected
   box-shadow: ${props => props.selected ? '0 0 10px rgba(0,0,0,0.5)' : 'none'}; // add shadow when selected
 

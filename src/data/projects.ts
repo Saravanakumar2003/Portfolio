@@ -14,7 +14,6 @@ const projects = [
       'The Muon Track Reconstruction software is a sophisticated simulation and analysis tool designed for studying muon interactions with customizable drift tube arrays. This project showcases advanced skills in particle physics simulation, data analysis, and software development, combining complex algorithms with an intuitive user interface to provide researchers with a powerful tool for muon detection experiments.',
     tags: [
       {name: 'BARC Projects'},
-      {name: 'Special Projects'}
     ],
     tech: [
       {
@@ -35,27 +34,33 @@ const projects = [
         color: '#38BDF8',
         rgb: '56, 189, 248'
       },
+      {
+        name: 'Flask',
+        icon: '/icons/flask.jpg',
+        color: '#38BDF8',
+        rgb: '56, 189, 248'
+      }
     ],
 
     print: [
-      {
-        name: 'Main Window',
-        description:
-          'The main window of the Muon Track Reconstruction software serves as the central interface for setting up and running muon track simulations. It provides various input fields, controls, and visualisations to help users configure drift tubes, initiate simulations, and observe the results',
-        img: '/projects/Muon/Main_Window.png'
-      },
-      {
-        name: 'Drift Tube Array Configuration',
-        description:
-          'Each drift tube has their own data such as Timing Histogram, Coarse RT, Measure RT, True RT and Tube ID. All these can seen or accessed by pressing double click on the drift tube you want to see. Then a secondary window will pop up (This is the dtstauswindow). Where do you have all the information about that particular drift tube.',
-        img: '/projects/Muon/Drift_tubes.png'
-      },
-      {
-        name: 'DT status window',
-        description:
-          'The DT Status Window is a crucial part of the Muon Track Reconstruction software. It provides detailed information about the status of the particular drift tubes during the simulation process. This window allows users to monitor the current state of the drift tube, track counts, TrueRT, MeasureRt, CoarseRT and timing Histogram.',
-        img: '/projects/Muon/dt_status_window.png'
-      },
+      // {
+      //   name: 'Main Window',
+      //   description:
+      //     'The main window of the Muon Track Reconstruction software serves as the central interface for setting up and running muon track simulations. It provides various input fields, controls, and visualisations to help users configure drift tubes, initiate simulations, and observe the results',
+      //   img: '/projects/Muon/Main_Window.png'
+      // },
+      // {
+      //   name: 'Drift Tube Array Configuration',
+      //   description:
+      //     'Each drift tube has their own data such as Timing Histogram, Coarse RT, Measure RT, True RT and Tube ID. All these can seen or accessed by pressing double click on the drift tube you want to see. Then a secondary window will pop up (This is the dtstauswindow). Where do you have all the information about that particular drift tube.',
+      //   img: '/projects/Muon/Drift_tubes.png'
+      // },
+      // {
+      //   name: 'DT status window',
+      //   description:
+      //     'The DT Status Window is a crucial part of the Muon Track Reconstruction software. It provides detailed information about the status of the particular drift tubes during the simulation process. This window allows users to monitor the current state of the drift tube, track counts, TrueRT, MeasureRt, CoarseRT and timing Histogram.',
+      //   img: '/projects/Muon/dt_status_window.png'
+      // },
     ],
 
     status: 'In Progress',
@@ -79,7 +84,7 @@ const projects = [
     description:
       'NSSVEC is a platform that allows students to register, login, event/photo/video uploads, view & upload newsletters, notifications, volunteer/teacher lists, admin controls, and batch details. It was developed for the National Service Scheme (NSS) unit of Velammal Engineering College.',
     tags: [
-      {name: 'Special Projects'}
+      {name: 'Personal Projects'}
     ],
 
     tech: [
@@ -287,8 +292,7 @@ const projects = [
     description:
       'This project is a Python-based .dat to .csv file converter initially developed during my internship tenure at the National Institute of Wind Energy (NIWE). The objective was to address the challenge of converting .dat files to .csv format efficiently.',
     tags: [
-      {name: 'NIWE Projects'},
-      {name: 'Special Projects'}
+      {name: 'NIWE Projects'}
     ],
 
     tech: [
@@ -442,7 +446,7 @@ const projects = [
     description:
       'It is built using Next.js, a React framework that enables server-side rendering and other powerful features. The website is designed to showcase my skills, projects, and other relevant information.',
     tags: [
-      {name: 'Special Projects'},
+      {name: 'Personal Projects'},
     ],
 
     tech: [

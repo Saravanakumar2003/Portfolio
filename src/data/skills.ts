@@ -57,7 +57,7 @@ const cardSkills = [
    {
      id: 10,
      title: 'Github',
-     img: '/icons/Github.png',
+     img: '/icons/Github.jpg',
      color: '#ffffff'
   },
   {

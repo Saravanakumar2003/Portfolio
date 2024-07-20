@@ -125,7 +125,7 @@ export const TagButton = styled.button<{ selected: boolean }>`
 
   ${props => props.selected && `
     background: ${props.theme.firstColor};
-    color: red; 
+    color: black; 
   `}
 
   @media(min-width: 768px) {

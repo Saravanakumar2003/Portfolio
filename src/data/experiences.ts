@@ -12,7 +12,7 @@ const experience = [
       { name: 'Python', icon: '/icons/python.png' },
       { name: 'PyQt5', icon: '/icons/pngegg.png'},
       { name: 'PyQt Designer', icon: '/icons/qtdesign.png'},
-      { name: 'Flask', icon: '/icons/flask.png' },
+      { name: 'Flask', icon: '/icons/flask.jpg' },
       { name: 'Word', icon: '/icons/word.png' },
       { name: 'Excel', icon: '/icons/excel.png' },
       { name: 'PowerPoint', icon: '/icons/powerpoint.png' },

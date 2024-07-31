@@ -45,7 +45,7 @@ export default function Blog() {
         </span>
       </T.Title>
       <T.Description>
-      My blogs are powered by Hashnode website. If you click on "View Blog", you'll be redirected to Hashnode Blog Site. In order to like or comment you need to login!
+      My blogs are powered by Hashnode website. If you click on "View Blog", you'll be redirected to Hashnode Blog Site. In order to like or comment you need to login on Hashnode!
       </T.Description>
 
       <S.BlogContainer>

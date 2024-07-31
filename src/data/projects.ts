@@ -8,8 +8,8 @@ const projects = [
     type: 'Software',
     icon: '/projects/Muon/icon.png',
     blog: 'https://saravanakumar2003.hashnode.dev/muon-track-reconstruction',
-    github: '',
-    web: '',
+    github: 'https://github.com/Saravanakumar2003/Muon-Track-Reconstruction',
+    web: 'https://muon-api.onrender.com/',
     description:
       'The Muon Track Reconstruction software is a sophisticated simulation and analysis tool designed for studying muon interactions with customizable drift tube arrays. This project showcases advanced skills in particle physics simulation, data analysis, and software development, combining complex algorithms with an intuitive user interface to provide researchers with a powerful tool for muon detection experiments.',
     tags: [

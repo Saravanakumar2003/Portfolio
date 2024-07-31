@@ -1,7 +1,22 @@
 const blog = [
   {
+    id: 3,
+    title: 'My Experience: Struggles with English',
+    url: 'https://blog.saravanakumar.engineer/my-experience-of-overcoming-conflict',
+    description: 'As a non-native English speaker, I have always struggled with fluency in the language. I have faced numerous challenges in my journey to learn English, but I have also learned valuable lessons along the way.',
+    img: '/blog/BLOG3.png',
+    date: '31/05/2024',
+    read : '4 minutes',
+    tags: [
+      {name: 'English'},
+      {name: 'Fluency'},
+      {name: 'Communication'},
+      {name: 'Challenges'},
+    ],
+  },
+  {
     id:2,
-    title: 'Compiler vs Interpreter: Python and PyPy',
+    title: 'Compiler vs Interpreter: C, Python and PyPy',
     url: 'https://blog.saravanakumar.engineer/compiler-vs-interpreter-a-deep-dive-with-python-and-pypy-installation-guide',
     description: 'The world of programming is vast and varied, with a multitude of languages and tools available to developers. One of the most fundamental distinctions in programming is the difference between compilers and interpreters.',
     img: '/blog/BLOG2.png',

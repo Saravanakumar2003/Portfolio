@@ -6,8 +6,8 @@ const experience = [
     subTitle: 'Bhabha Atomic Research Centre',
     office: 'Project Trainee (Electronics Division, ECIL)',
     description:
-    'On-going Intership (Info will be updated soon).',
-    //  '✯ Developed a comprehensive muon track reconstruction software utilizing Python, PyQt5, and 3+ scientific libraries, enabling simulation of up to 1000+ drift tubes simultaneously. \n\n✯ Implemented real-time simulation of muon interactions with configurable drift tube arrays such stacks, rows, columns.  \n\n✯Created an auto-calibration feature that reduces least squares error by up to 99.99%, optimizing measured data against true values.  \n\n✯Designed an intuitive user interface with interactive visualization tools and 6 debugging options, enhancing data analysis capabilities.  \n\n✯ Integrated a Flask API for displaying random muon facts, demonstrating full-stack development skills and improving user engagement.',
+    // 'On-going Intership (Info will be updated soon).',
+     '✯ Developed a comprehensive muon track reconstruction software utilizing Python, PyQt5, and 3+ scientific libraries, enabling simulation of up to 1000+ drift tubes simultaneously. \n\n✯ Implemented real-time simulation of muon interactions with configurable drift tube arrays such stacks, rows, columns.  \n\n✯Created an auto-calibration feature that reduces least squares error by up to 99.99%, optimizing measured data against true values.  \n\n✯Designed an intuitive user interface with interactive visualization tools and 6 debugging options, enhancing data analysis capabilities.  \n\n✯ Integrated a Flask API for displaying random muon facts, demonstrating full-stack development skills and improving user engagement.',
     tags: [
       { name: 'Python', icon: '/icons/python.png' },
       { name: 'PyQt5', icon: '/icons/pngegg.png'},
@@ -18,9 +18,9 @@ const experience = [
       { name: 'PowerPoint', icon: '/icons/powerpoint.png' },
     ],
     date: '03-Jun-24 to Present',
-    link: '',
+    link: 'https://drive.google.com/file/d/1YJ7BeX5BpPyxI_3cpHKylPA5uMWApt2B/view?usp=sharing',
     link2: 'https://www.barc.gov.in/',
-    certificate: '' 
+    certificate: 'https://drive.google.com/file/d/14ycBaF9U54wz3Jb1mJRyiRAl5fE7TpLS/view?usp=sharing' 
   },
   {
     id: 2,

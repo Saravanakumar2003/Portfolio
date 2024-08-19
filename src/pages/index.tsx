@@ -15,6 +15,7 @@ import { Achievements } from "../components/Achievements";
 import { Testimonials } from "../components/Testimonials";
 import { Publications } from "../components/Publications";
 import { Wakatime } from "../components/Coding/Wakatime";
+import { Certificates } from "../components/Certificates/index";
 
 const botkey = process.env.NEXT_PUBLIC_BOTKEY_URL;
 
@@ -36,6 +37,7 @@ export default function Home() {
         <Work />
         <Achievements />
         <Publications />
+        <Certificates />
         <Projects />
         <Wakatime />
         <Testimonials />

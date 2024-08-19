@@ -7,7 +7,7 @@ const experience = [
     office: 'Project Trainee (Electronics Division, ECIL)',
     description:
     // 'On-going Intership (Info will be updated soon).',
-     '✯ Developed a comprehensive muon track reconstruction software utilizing Python, PyQt5, and 3+ scientific libraries, enabling simulation of up to 1000+ drift tubes simultaneously. \n\n✯ Implemented real-time simulation of muon interactions with configurable drift tube arrays such stacks, rows, columns.  \n\n✯Created an auto-calibration feature that reduces least squares error by up to 99.99%, optimizing measured data against true values.  \n\n✯Designed an intuitive user interface with interactive visualization tools and 6 debugging options, enhancing data analysis capabilities.  \n\n✯ Integrated a Flask API for displaying random muon facts, demonstrating full-stack development skills and improving user engagement.',
+     '✯Developed a comprehensive muon track reconstruction software utilizing Python and PyQt5, enabling simulation of up to 100+ drift tubes simultaneously. \n\n✯Implemented real-time simulation and auto-calibration of muon interactions with configurable drift tube arrays such stacks, rows, columns.  \n\n✯Created an auto-calibration feature that reduces least squares error by up to 99.99%, optimizing measured data against true values.  \n\n✯Designed an intuitive user interface with interactive visualization tools and 6 debugging options, enhancing data analysis capabilities.  \n\n✯Integrated a Flask API for displaying random muon facts, demonstrating full-stack development skills and improving user engagement.',
     tags: [
       { name: 'Python', icon: '/icons/python.png' },
       { name: 'PyQt5', icon: '/icons/pngegg.png'},

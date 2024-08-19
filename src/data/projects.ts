@@ -43,24 +43,24 @@ const projects = [
     ],
 
     print: [
-      // {
-      //   name: 'Main Window',
-      //   description:
-      //     'The main window of the Muon Track Reconstruction software serves as the central interface for setting up and running muon track simulations. It provides various input fields, controls, and visualisations to help users configure drift tubes, initiate simulations, and observe the results',
-      //   img: '/projects/Muon/Main_Window.png'
-      // },
-      // {
-      //   name: 'Drift Tube Array Configuration',
-      //   description:
-      //     'Each drift tube has their own data such as Timing Histogram, Coarse RT, Measure RT, True RT and Tube ID. All these can seen or accessed by pressing double click on the drift tube you want to see. Then a secondary window will pop up (This is the dtstauswindow). Where do you have all the information about that particular drift tube.',
-      //   img: '/projects/Muon/Drift_tubes.png'
-      // },
-      // {
-      //   name: 'DT status window',
-      //   description:
-      //     'The DT Status Window is a crucial part of the Muon Track Reconstruction software. It provides detailed information about the status of the particular drift tubes during the simulation process. This window allows users to monitor the current state of the drift tube, track counts, TrueRT, MeasureRt, CoarseRT and timing Histogram.',
-      //   img: '/projects/Muon/dt_status_window.png'
-      // },
+      {
+        name: 'Main Window',
+        description:
+          'The main window of the Muon Track Reconstruction software serves as the central interface for setting up and running muon track simulations. It provides various input fields, controls, and visualisations to help users configure drift tubes, initiate simulations, and observe the results',
+        img: '/projects/Muon/Main_Window.png'
+      },
+      {
+        name: 'Drift Tube Array Configuration',
+        description:
+          'Each drift tube has their own data such as Timing Histogram, Coarse RT, Measure RT, True RT and Tube ID. All these can seen or accessed by pressing double click on the drift tube you want to see. Then a secondary window will pop up (This is the dtstauswindow). Where do you have all the information about that particular drift tube.',
+        img: '/projects/Muon/Drift_tubes.png'
+      },
+      {
+        name: 'DT status window',
+        description:
+          'The DT Status Window is a crucial part of the Muon Track Reconstruction software. It provides detailed information about the status of the particular drift tubes during the simulation process. This window allows users to monitor the current state of the drift tube, track counts, TrueRT, MeasureRt, CoarseRT and timing Histogram.',
+        img: '/projects/Muon/dt_status_window.png'
+      },
     ],
 
     status: 'In Progress',

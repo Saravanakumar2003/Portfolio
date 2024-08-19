@@ -1,6 +1,83 @@
 import styled from 'styled-components'
 import { rgba } from 'polished'
 
+export const FiltersContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  select {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid ${props => props.theme.border};
+    background: ${props => props.theme.dark};
+    color: ${props => props.theme.firstColor};
+  }
+
+  .date-filters,
+  .read-time-filters {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    label {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      color: ${props => props.theme.firstColor};
+
+      input,
+      select {
+        padding: 0.5rem;
+        border-radius: 5px;
+        border: 1px solid ${props => props.theme.border};
+        background: ${props => props.theme.dark};
+        color: ${props => props.theme.firstColor};
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    .date-filters,
+    .read-time-filters {
+      flex-direction: row;
+      align-items: center;
+
+      label {
+        flex-direction: row;
+        align-items: center;
+        gap: 0.5rem;
+      }
+    }
+  }
+`;
+
+export const BButton = styled.button`
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: darkred;
+  }
+
+  &:active {
+    background-color: crimson;
+  }
+`;
+
 export const BlogContainer = styled.section`
   position: relative;
 `

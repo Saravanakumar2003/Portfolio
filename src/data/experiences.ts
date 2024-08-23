@@ -17,7 +17,7 @@ const experience = [
       { name: 'Excel', icon: '/icons/excel.png' },
       { name: 'PowerPoint', icon: '/icons/powerpoint.png' },
     ],
-    date: '03-Jun-24 to Present',
+    date: '03-Jun-24 to 02-Aug-2024',
     link: 'https://drive.google.com/file/d/1YJ7BeX5BpPyxI_3cpHKylPA5uMWApt2B/view?usp=sharing',
     link2: 'https://www.barc.gov.in/',
     certificate: 'https://drive.google.com/file/d/14ycBaF9U54wz3Jb1mJRyiRAl5fE7TpLS/view?usp=sharing' 

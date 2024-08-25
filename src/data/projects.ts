@@ -1,3 +1,5 @@
+import { time } from "console"
+
 const projects = [
   {
     id: 6,
@@ -81,6 +83,8 @@ const projects = [
     blog: 'https://saravanakumar2003.hashnode.dev/nssvec-website',
     github: 'https://github.com/Saravanakumar2003/NSS',
     web: 'https://nssvec.vercel.app/',
+    trelloboard: 'https://trello.com/b/u5HVK2LE.html',
+    trelloedit: 'https://trello.com/b/u5HVK2LE',
     description:
       'NSSVEC is a platform that allows students to register, login, event/photo/video uploads, view & upload newsletters, notifications, volunteer/teacher lists, admin controls, and batch details. It was developed for the National Service Scheme (NSS) unit of Velammal Engineering College.',
     tags: [
@@ -170,12 +174,23 @@ const projects = [
         img: '/projects/NSS/9.png'
        },
     ],
+    team: [
+      {
+        id: '1',
+        name: 'Saravanakumar',
+        role: 'Developer',
+        img: '/Saravana.jpg',
+        github: 'https://github.com/Saravanakumar2003',
+        linkedin: 'https://www.linkedin.com/in/saravanakumar2003/',
+        twitter: 'https://twitter.com/Saravana2003',
+        instagram: 'https://www.instagram.com/saravana2003/'
+      },
+    ],
     status: 'Completed',
     year: 'May 2024',
     gif: '/projects/Portfolio/Cool.mp4',
     backgroundImage: '/projects/Background.png',
-    video:
-      'https://youtu.be/WzlVRtlzjSM'
+    video:'https://youtu.be/WzlVRtlzjSM'
   },
   {
     id: 4,

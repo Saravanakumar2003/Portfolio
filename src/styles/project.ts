@@ -482,3 +482,86 @@ export const Video = styled.div`
     height: 32.1rem;
   }
 `
+
+export const Trelloboard = styled.div`
+
+  .trello-board-container {
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+
+
+  }
+
+  .trello-board {
+    width: 100%;
+    height: 600px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 20px;
+
+    @media (min-width: 468px) {
+    margin-top: 100px;
+  }
+  @media (min-width: 768px) {
+    margin-top: 10px;
+  }
+  }
+
+
+  .edit-trello-board {
+    margin-top: 50px;
+    text-align: center;
+    margin-bottom: 200px;
+  }
+
+  .edit-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0079bf;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+
+  .edit-link:hover {
+    background-color: #005a8c;
+  }
+`
+
+export const Team = styled.div`
+  margin: 20px 0;
+  padding: 10px;
+  border-radius: 8px;
+`;
+
+export const TeamContent = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+`;
+
+export const TeamMember = styled.div`
+  text-align: center;
+  margin: 10px;
+  width: 150px;
+
+  .social-links {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    a {
+      color: #fff;
+      transition: color 0.3s;
+
+      &:hover {
+        color: #0079bf; /* Change to your preferred hover color */
+      }
+    }
+  }
+`;
+
+

@@ -22,6 +22,17 @@ export interface Print {
   description: string
 }
 
+export interface Team {
+  id: string
+  name: string
+  role: string
+  img: string
+  github: string
+  linkedin: string
+  twitter: string
+  instagram: string
+}
+
 export interface Project {
   icon: string
   banner: string
@@ -33,13 +44,16 @@ export interface Project {
   github: string
   web: string
   url: string
-  tags: Tag[]
-  print: Print[]
   gif: string
   year: string
   status: string
   video: string
   backgroundImage: string
   blog: string
+  trelloboard: string
+  trelloedit: string
   tech: Tech[]
+  tags: Tag[]
+  print: Print[]
+  team: Team[]
 }

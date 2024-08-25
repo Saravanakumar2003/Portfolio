@@ -4,16 +4,12 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Project } from '../../types/Project'
 import projects from '../../data/projects'
-
 import ReactPlayer from 'react-player'
 import { Footer } from '../../components/Footer'
-
 import * as S from '../../styles/project'
 import { ButtonAlt, ButtonSecondary, Title, Description } from '../../styles/styles'
-import { ArrowLeft, ChatCenteredText, Image as IconImage,
-YoutubeLogo, Hash, 
-ToiletPaper} from 'phosphor-react'
-import { FaBlog, FaGithub } from 'react-icons/fa'
+import { ArrowLeft, ChatCenteredText, Image as IconImage, YoutubeLogo, Hash, ChalkboardSimple,UsersThree, Clock } from 'phosphor-react'
+import { FaBlog, FaGithub, FaInstagram, FaLinkedin, FaTrello, FaTwitter } from 'react-icons/fa'
 import { BsGlobe } from 'react-icons/bs'
 
 interface ProjectProps {
@@ -35,7 +31,7 @@ export default function Projeto({ project }: ProjectProps) {
 
     <S.ProjectContainer>
       <S.Banner>
-        <img className="bannerUrl" style={{marginTop: '5rem'}} src={project.banner} alt={project.title} />
+        <img className="bannerUrl" style={{ marginTop: '5rem' }} src={project.banner} alt={project.title} />
         <div className="bannerContainer">
           <div className="bannerContent">
             <img src={project.icon} alt={project.title} />
@@ -47,35 +43,31 @@ export default function Projeto({ project }: ProjectProps) {
 
           <div className="link">
             <Link href={project.web} target="_blank">
-
               <ButtonAlt>
                 Website <BsGlobe size={15} />
               </ButtonAlt>
-
             </Link>
             <Link href={project.github} target="_blank">
-
               <ButtonAlt>
                 Repository <FaGithub size={17} />
               </ButtonAlt>
-
             </Link>
-             <Link href={project.blog}>
-               <ButtonAlt>
-                 Blog <FaBlog size={17} />
+            <Link href={project.blog}>
+              <ButtonAlt>
+                Blog <FaBlog size={17} />
               </ButtonAlt>
-               </Link>
+            </Link>
           </div>
         </div>
       </S.Banner>
 
       <S.DescriptionProject>
-      <Title>
-            Project
-            <span>
-              <ChatCenteredText /> Description
-            </span>
-          </Title>
+        <Title>
+          Project
+          <span>
+            <ChatCenteredText /> Description
+          </span>
+        </Title>
         <div className="description">
           <p style={{ textAlign: "justify" }}>{project.description}</p>
         </div>
@@ -90,7 +82,7 @@ export default function Projeto({ project }: ProjectProps) {
         </Title>
 
         <Description style={{ textAlign: 'center' }}>
-        Technologies used in the development of the project.
+          Technologies used in the development of the project.
         </Description>
 
         <S.TagsContainer>
@@ -165,6 +157,43 @@ export default function Projeto({ project }: ProjectProps) {
         </S.PrintContent>
       </S.PrintContainer>
 
+      <S.Trelloboard>
+        <S.DescriptionProject>
+          <Title>
+            Project Board
+            <span>
+              <FaTrello /> Trello
+            </span>
+          </Title>
+          <div className="description">
+            <p style={{ textAlign: "justify" }}> The Trello Board is integrated into this project section to provide a transparent view of the project's status and progress. If you have any suggestions or features you'd like to see added, please feel free to edit the Trello board using the button below.
+              <br /> <br /> <strong>Note:</strong> The Trello board is updated occasionally and may not reflect the current status of the project.
+            </p>
+          </div>
+        </S.DescriptionProject>
+        <div className="trello-board">
+          <iframe
+            src={project.trelloboard}
+            width="100%"
+            height="600"
+            placeholder='Trello Board'
+            frameBorder="100"
+            title="Trello Board"
+          ></iframe>
+        </div>
+
+        <div className="edit-trello-board">
+          <a
+            href={project.trelloedit}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="edit-link"
+          >
+            Edit Trello Board
+          </a>
+        </div>
+      </S.Trelloboard>
+
       <S.ContainerVideo>
         <div className="imageVideo">
           <img src={project.backgroundImage} alt={project.title} />
@@ -191,6 +220,54 @@ export default function Projeto({ project }: ProjectProps) {
           />
         </S.Video>
       </S.ContainerVideo>
+
+      <S.DescriptionProject>
+      <Title>
+          Contributers
+          <span>
+            <UsersThree /> Project
+          </span>
+        </Title>
+        </S.DescriptionProject>'
+        <S.Team>
+        <S.TeamContent>
+          {project.team &&
+            project.team.map((team: any) => (
+              <S.TeamMember key={team.id}>
+                <Image
+                  src={team.img}
+                  alt={team.name}
+                  width={100}
+                  height={100}
+                />
+                <h3>{team.name}</h3>
+                <p>{team.role}</p>
+                <div className="social-links">
+                  {team.github && (
+                    <a href={team.github} target="_blank" rel="noopener noreferrer">
+                      <FaGithub size={20} />
+                    </a>
+                  )}
+                  {team.linkedin && (
+                    <a href={team.linkedin} target="_blank" rel="noopener noreferrer">
+                      <FaLinkedin size={20} />
+                    </a>
+                  )}
+                  {team.twitter && (
+                    <a href={team.twitter} target="_blank" rel="noopener noreferrer">
+                      <FaTwitter size={20} />
+                    </a>
+                  )}
+                  {team.instagram && (
+                    <a href={team.instagram} target="_blank" rel="noopener noreferrer">
+                      <FaInstagram size={20} />
+                    </a>
+                  )}
+                </div>
+              </S.TeamMember>
+            ))}
+        </S.TeamContent>
+      </S.Team>
 
       <Link href={'/#projects'} legacyBehavior>
         <ButtonSecondary>
@@ -230,7 +307,10 @@ export const getStaticProps: GetStaticProps = async ({ params }: any) => {
     video: project.video,
     tech: project.tech,
     backgroundImage: project.backgroundImage,
-    blog: project.blog
+    blog: project.blog,
+    trelloboard: project.trelloboard,
+    trelloedit: project.trelloedit,
+    team: project.team
   }))
 
   const idProject = project.find(project => project.link === params.id)

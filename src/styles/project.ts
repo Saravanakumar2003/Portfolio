@@ -539,7 +539,7 @@ export const Team = styled.div`
 export const TeamContent = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
 `;
 
 export const TeamMember = styled.div`

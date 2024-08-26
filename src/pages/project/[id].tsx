@@ -9,7 +9,7 @@ import { Footer } from '../../components/Footer'
 import * as S from '../../styles/project'
 import { ButtonAlt, ButtonSecondary, Title, Description } from '../../styles/styles'
 import { ArrowLeft, ChatCenteredText, Image as IconImage, YoutubeLogo, Hash, ChalkboardSimple,UsersThree, Clock } from 'phosphor-react'
-import { FaBlog, FaGithub, FaInstagram, FaLinkedin, FaTrello, FaTwitter } from 'react-icons/fa'
+import { FaAddressBook, FaBlog, FaGithub, FaGoogle, FaInstagram, FaLinkedin, FaTrello, FaTwitter } from 'react-icons/fa'
 import { BsGlobe } from 'react-icons/bs'
 
 interface ProjectProps {
@@ -228,7 +228,7 @@ export default function Projeto({ project }: ProjectProps) {
             <UsersThree /> Project
           </span>
         </Title>
-        </S.DescriptionProject>'
+        </S.DescriptionProject>
         <S.Team>
         <S.TeamContent>
           {project.team &&
@@ -263,7 +263,12 @@ export default function Projeto({ project }: ProjectProps) {
                       <FaInstagram size={20} />
                     </a>
                   )}
-                </div>
+                  {team.email && (
+                    <a href={`mailto:${team.email}`} target="_blank" rel="noopener noreferrer">
+                      <FaGoogle size={20} />
+                    </a>
+                  )}
+                  </div>
               </S.TeamMember>
             ))}
         </S.TeamContent>

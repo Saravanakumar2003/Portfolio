@@ -64,11 +64,32 @@ const projects = [
         img: '/projects/Muon/dt_status_window.png'
       },
     ],
-
+    team: [
+      {
+        id: '2',
+        name: 'Saikat Das',
+        role: 'Scientfic Officer, BARC (Mentor)',
+        img: '/projects/Teams/Saikat Sir.jpeg',
+        linkedin: 'https://www.linkedin.com/in/saikat-das-87924136/',
+        email: 'saikatd@barc.gov.in'
+      },
+      {
+        id: '1',
+        name: 'Saravanakumar',
+        role: 'Project Trainee, BARC',
+        img: '/projects/Teams/Saravana.jpg',
+        github: 'https://github.com/Saravanakumar2003',
+        linkedin: 'https://www.linkedin.com/in/saravanakumar2003/',
+        twitter: 'https://twitter.com/Saravana2003',
+        instagram: 'https://www.instagram.com/saravana2003/'
+      },
+    ],
     status: 'In Progress',
     year: 'July 2024',
     gif: '/projects/Portfolio/Cool.mp4',
     backgroundImage: '/projects/Background.png',
+    trelloboard: 'https://trello.com/b/0dMB7E3v.html',
+    trelloedit: 'https://trello.com/invite/b/66cbe2fe748f3b64368ff451/ATTIad41d26f953647f4b43d142f7571391d93E88338/portfolio-board',
     video:
       'https://youtu.be/WzlVRtlzjSM'
   },
@@ -179,7 +200,7 @@ const projects = [
         id: '1',
         name: 'Saravanakumar',
         role: 'Developer',
-        img: '/Saravana.jpg',
+        img: '/projects/Teams/Saravana.jpg',
         github: 'https://github.com/Saravanakumar2003',
         linkedin: 'https://www.linkedin.com/in/saravanakumar2003/',
         twitter: 'https://twitter.com/Saravana2003',
@@ -286,10 +307,31 @@ const projects = [
         img: '/projects/NIWEDashboard/Contact-Us.jpg'
       }
     ],
+    team: [
+      {
+        id: '2',
+        name: 'Dr. K. Boopathi',
+        role: 'Director/Divison Head WRA, NIWE (Mentor)',
+        img: '/projects/Teams/Boopathi Sir.png',
+        email: 'boopathi@niwe.res.in'
+      },
+      {
+        id: '1',
+        name: 'Saravanakumar',
+        role: 'WRA Intern, NIWE',
+        img: '/projects/Teams/Saravana.jpg',
+        github: 'https://github.com/Saravanakumar2003',
+        linkedin: 'https://www.linkedin.com/in/saravanakumar2003/',
+        twitter: 'https://twitter.com/Saravana2003',
+        instagram: 'https://www.instagram.com/saravana2003/'
+      },
+    ],
     status: 'Completed',
     year: 'January 2024',
     gif: '/projects/Portfolio/Cool.mp4',
-    backgroundImage: '/projects/Background.png',
+    backgroundImage: '/projects/Background.png',    
+    trelloboard: 'https://trello.com/b/0dMB7E3v.html',
+    trelloedit: 'https://trello.com/invite/b/66cbe2fe748f3b64368ff451/ATTIad41d26f953647f4b43d142f7571391d93E88338/portfolio-board',
     video:
       'https://youtu.be/WzlVRtlzjSM'
   },
@@ -357,10 +399,31 @@ const projects = [
         img: '/projects/DATtoCSV/DatOutput.jpeg'
       },
     ],
+    team: [
+      {
+        id: '2',
+        name: 'Dr. K. Boopathi',
+        role: 'Director/Divison Head WRA, NIWE (Mentor)',
+        img: '/projects/Teams/Boopathi Sir.png',
+        email: 'boopathi@niwe.res.in'
+      },
+      {
+        id: '1',
+        name: 'Saravanakumar',
+        role: 'Developer',
+        img: '/projects/Teams/Saravana.jpg',
+        github: 'https://github.com/Saravanakumar2003',
+        linkedin: 'https://www.linkedin.com/in/saravanakumar2003/',
+        twitter: 'https://twitter.com/Saravana2003',
+        instagram: 'https://www.instagram.com/saravana2003/'
+      },
+    ],
     status: 'Completed',
     year: 'December 2023',
     gif: '/projects/Portfolio/Cool.mp4',
     backgroundImage: '/projects/Background.png',
+    trelloboard: 'https://trello.com/b/0dMB7E3v.html',
+    trelloedit: 'https://trello.com/invite/b/66cbe2fe748f3b64368ff451/ATTIad41d26f953647f4b43d142f7571391d93E88338/portfolio-board',
     video:
       'https://youtu.be/ggpB_Erkl4k'
   },
@@ -407,6 +470,18 @@ const projects = [
         rgb: '56, 189, 248'
       },
     ],
+    team: [
+      {
+        id: '1',
+        name: 'Saravanakumar',
+        role: 'Student',
+        img: '/projects/Teams/Saravana.jpg',
+        github: 'https://github.com/Saravanakumar2003',
+        linkedin: 'https://www.linkedin.com/in/saravanakumar2003/',
+        twitter: 'https://twitter.com/Saravana2003',
+        instagram: 'https://www.instagram.com/saravana2003/'
+      },
+    ],
 
     print: [
       {
@@ -443,7 +518,9 @@ const projects = [
     status: 'Completed',
     year: 'November 2023',
     gif: '/projects/Portfolio/Cool.mp4',
-    backgroundImage: '/projects/Background.png',
+    backgroundImage: '/projects/Background.png',    
+    trelloboard: 'https://trello.com/b/0dMB7E3v.html',
+    trelloedit: 'https://trello.com/invite/b/66cbe2fe748f3b64368ff451/ATTIad41d26f953647f4b43d142f7571391d93E88338/portfolio-board',
     video:
       'https://youtu.be/oh0n2WFNn5U'
   },
@@ -529,10 +606,24 @@ const projects = [
         img: '/projects/Portfolio/calendy.png'
       }
     ],
+    team: [
+      {
+        id: '1',
+        name: 'Saravanakumar',
+        role: 'Student',
+        img: '/projects/Teams/Saravana.jpg',
+        github: 'https://github.com/Saravanakumar2003',
+        linkedin: 'https://www.linkedin.com/in/saravanakumar2003/',
+        twitter: 'https://twitter.com/Saravana2003',
+        instagram: 'https://www.instagram.com/saravana2003/'
+      },
+    ],
     status: 'Completed',
     year: 'October 2023',
     gif: '/projects/Portfolio/Cool.mp4',
     backgroundImage: '/projects/Background.png',
+    trelloboard: 'https://trello.com/b/0dMB7E3v.html',
+    trelloedit: 'https://trello.com/invite/b/66cbe2fe748f3b64368ff451/ATTIad41d26f953647f4b43d142f7571391d93E88338/portfolio-board',
     video:
       'https://youtu.be/WzlVRtlzjSM'
   },

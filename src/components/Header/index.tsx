@@ -5,21 +5,28 @@ import { HeaderContainer, MobileIcon, NavMenu, Icons } from './styles'
 import { List, X } from 'phosphor-react'
 import { FiGithub, FiLinkedin, FiInstagram } from 'react-icons/fi'
 import { FaWhatsapp } from 'react-icons/fa'
+import { Button } from '../../styles/styles'
+import { useContext } from 'react'
+import { ThemeContext } from '../../context/ThemeContext'
+import { FaSun, FaMoon } from 'react-icons/fa';
+
 
 import AudioPlayer from '../Music/AudioPlayer';
 
 export function Header() {
   const [open, setOpen] = useState(false);
 
+  const { toggleTheme, theme } = useContext(ThemeContext);
+
   const handleOpen = () => {
     setOpen(!open);
   };
 
   const musicSrc = '/others/music.mp3';
-  
+
   return (
     <HeaderContainer style={{ position: 'fixed', top: 0, width: '100%', zIndex: 1000 }}>
-      <div className="mobile-content"  style={{ display: 'flex'}}>
+      <div className="mobile-content" style={{ display: 'flex' }}>
         <Link href={'/'}>
           <div className="logo">
             <Image
@@ -52,6 +59,18 @@ export function Header() {
           )}
         </MobileIcon>
       </div>
+
+      <button onClick={toggleTheme}
+          style={{
+            width: '40px',
+            height: '40px',
+            borderRadius: '20%',
+            backgroundColor: 'white',
+            color: 'black',
+            cursor: 'pointer'
+          }}>
+          {theme === 'light' ? <FaMoon /> : <FaSun />}
+        </button>
 
       <NavMenu onClick={handleOpen} open={open}>
         <ul>
@@ -111,6 +130,7 @@ export function Header() {
             </Link>
           </li>
         </ul>
+        
 
         <Icons>
           <Link
@@ -130,14 +150,14 @@ export function Header() {
 
           </Link>
 
-          <Link 
-           href={'https://www.instagram.com/saravanakumar.me?utm_source=qr'}
-           target="_blank" 
-           aria-label="Instagram">
-            
-          <FiInstagram />
-          
-        </Link>
+          <Link
+            href={'https://www.instagram.com/saravanakumar.me?utm_source=qr'}
+            target="_blank"
+            aria-label="Instagram">
+
+            <FiInstagram />
+
+          </Link>
 
           <Link
             href={'https://api.whatsapp.com/send?phone=918838416187'}

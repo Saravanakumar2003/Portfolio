@@ -104,8 +104,6 @@ const projects = [
     blog: 'https://saravanakumar2003.hashnode.dev/nssvec-website',
     github: 'https://github.com/Saravanakumar2003/NSS',
     web: 'https://nssvec.vercel.app/',
-    trelloboard: 'https://trello.com/b/u5HVK2LE.html',
-    trelloedit: 'https://trello.com/b/u5HVK2LE',
     description:
       'NSSVEC is a platform that allows students to register, login, event/photo/video uploads, view & upload newsletters, notifications, volunteer/teacher lists, admin controls, and batch details. It was developed for the National Service Scheme (NSS) unit of Velammal Engineering College.',
     tags: [

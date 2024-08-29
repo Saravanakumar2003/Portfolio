@@ -15,11 +15,11 @@ html.normal-scroll {
   scroll-behavior: auto;
 }
 
-body {
-  background: ${props => props.theme.background};
-  color: ${props => props.theme.textPrimary};
-  font-family: 'Poppins', sans-serif;
-}
+  body {
+    background: ${props => props.theme.background};
+    color: ${props => props.theme.textPrimary};
+    font-family: 'Poppins', sans-serif;
+  }
 
 ul {
   list-style: none;

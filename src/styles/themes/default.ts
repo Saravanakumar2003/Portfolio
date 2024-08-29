@@ -1,11 +1,13 @@
-export const defaultTheme = {
-  background: '#020617',
-  backgroundSecond: '#080D1F',
-  backgroundAlt: '#070D1E',
-  dark: '#030712',
+import { DefaultTheme } from 'styled-components';
 
-  firstColor: '#00d9ff',
-  secondColor: '#3887BE',
+export const defaultTheme: DefaultTheme = {
+  background: '#FFFFFF', // Light background
+  backgroundSecond: '#F0F0F0', // Slightly darker light background
+  backgroundAlt: '#E0E0E0', // Alternative light background
+  dark: '#000000', // Dark color for contrast
+
+  firstColor: '#9C27B0', // Purple
+  secondColor: '#7B1FA2', // Darker Purple
 
   cyan: '#22abfa',
   cyan_400: '#22d3ee',
@@ -15,18 +17,18 @@ export const defaultTheme = {
 
   blue: '#208CFC',
   color: 'rgb(29 78 216)',
-  white: '#f6f2f2',
-  text: '#EFF0F7',
-  textPrimary: '#d6d6dc',
-  textSecondary: '#a9a9a9',
-  hover: 'rgb(0, 217, 255, 0.7)',
-  hoverSecond: 'rgb(80, 82, 224, 0.7)',
+  white: '#FFFFFF', // White color for text and elements
+  text: '#212121', // Dark text color for readability
+  textPrimary: '#212121', // Primary text color
+  textSecondary: '#757575', // Secondary text color
+  hover: 'rgba(156, 39, 176, 0.7)', // Purple hover color
+  hoverSecond: 'rgba(123, 31, 162, 0.7)', // Darker purple hover color
 
-  gray: '#b1bcdc',
-  gray_light: '#b2bbcf',
-  gray_easy: '#7b89a8',
-  gray_medium: '#767c85',
+  gray: '#BDBDBD', // Light gray
+  gray_light: '#E0E0E0', // Lighter gray
+  gray_easy: '#EEEEEE', // Easiest gray
+  gray_medium: '#9E9E9E', // Medium gray
 
-  border: '#262338',
-  borderSecond: '#1e1e25'
-} as const
+  border: '#E0E0E0', // Light border color
+  borderSecond: '#BDBDBD', // Secondary border color
+};

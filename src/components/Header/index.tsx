@@ -22,7 +22,7 @@ export function Header() {
     setOpen(!open);
   };
 
-  const musicSrc = '/others/music.mp3';
+  const musicSrc = '/music/in-slow-motion-inspiring-ambient-lounge-219592.mp3';
 
   return (
     <HeaderContainer style={{ position: 'fixed', top: 0, width: '100%', zIndex: 1000 }}>
@@ -60,7 +60,7 @@ export function Header() {
         </MobileIcon>
       </div>
 
-      <button onClick={toggleTheme}
+      {/* <button onClick={toggleTheme}
           style={{
             width: '40px',
             height: '40px',
@@ -70,7 +70,7 @@ export function Header() {
             cursor: 'pointer'
           }}>
           {theme === 'light' ? <FaMoon /> : <FaSun />}
-        </button>
+        </button> */}
 
       <NavMenu onClick={handleOpen} open={open}>
         <ul>

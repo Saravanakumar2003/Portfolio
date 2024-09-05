@@ -60,7 +60,7 @@ export function Header() {
         </MobileIcon>
       </div>
 
-      <button onClick={toggleTheme}
+      {/* <button onClick={toggleTheme}
           style={{
             width: '40px',
             height: '40px',
@@ -70,7 +70,7 @@ export function Header() {
             cursor: 'pointer'
           }}>
           {theme === 'light' ? <FaMoon /> : <FaSun />}
-        </button>
+        </button> */}
 
       <NavMenu onClick={handleOpen} open={open}>
         <ul>

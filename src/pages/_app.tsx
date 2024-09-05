@@ -9,6 +9,7 @@ import { GlobalStyles } from '../styles/global';
 import { Toaster } from '../components/Toaster'
 import { MantineProvider } from '@mantine/core'
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { initGA, logPageView } from '../utils/analytics';
 import { defaultTheme } from '../styles/themes/default';
 
@@ -75,6 +76,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           <GlobalStyles />
           <Component {...pageProps} />
           <Analytics />
+          <SpeedInsights />
           <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
           <script src={botkey} defer></script>
         </MantineProvider>

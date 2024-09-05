@@ -209,6 +209,8 @@ const projects = [
     year: 'May 2024',
     gif: '/projects/Portfolio/Cool.mp4',
     backgroundImage: '/projects/Background.png',
+    trelloboard: 'https://trello.com/b/0dMB7E3v.html',
+    trelloedit: 'https://trello.com/invite/b/66cbe2fe748f3b64368ff451/ATTIad41d26f953647f4b43d142f7571391d93E88338/portfolio-board',
     video:'https://youtu.be/WzlVRtlzjSM'
   },
   {

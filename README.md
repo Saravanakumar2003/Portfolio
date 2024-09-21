@@ -75,56 +75,6 @@ http://localhost:3000
 
 10.  **AI Chatbot:** An AI chatbot is integrated into the portfolio to provide interactive communication and assistance. 
 
-## How to Obtain API Keys and Embed Codes
-
-### EmailJS
-
-1. Sign up for an account on [EmailJS](https://www.emailjs.com/).
-2. Create an email template and obtain the Service ID, Template ID and Public Access Code.
-3. Use these credentials in your portfolio code for EmailJS integration.
-
-### Instagram Widget
-
-1. Create a developer account on [behold.so](https://app.behold.so/).
-2. Set up a widget and obtain an Access Token for Instagram.
-3. Use the Access Token in your portfolio code for Instagram integration.
-
-### Canva Iframe
-
-1. Create or log in to your Canva account.
-2. Design your content, then click on the "Share" button.
-3. Copy the provided embed code.
-4. Use the embed code in your portfolio to showcase Canva designs.
-
-### Calendly Iframe
-
-1. Sign up or log in to [Calendly](https://calendly.com/).
-2. Create a new event or appointment type.
-3. Copy the provided embed code.
-4. Use the embed code in your portfolio to embed the Calendly scheduling widget.
-
-### GitHub Integration
-
-1. Create a Github Account and copy your username.
-2. To integrate GitHub just your Username is enough.
-3. Use the Username in your portfolio to showcase your Github Contribution.
-
-### How to Set Up Google Analytics
-
-1. Sign in to your [Google Analytics](https://analytics.google.com/) account or create a new one.
-2. Create a new property for your portfolio website.
-3. Obtain the tracking code provided by Google Analytics.
-4. Insert the tracking code into your website. In a Next.js project, this is often done in the `<Head>` section of the layout or using a dedicated library.
-
-### Testimonials.to
-
-1. Create an account on [Testimonials.to](https://testimonials.to/).
-2. Add testimonials and obtain the provided code.
-3. Use the code in your portfolio to display testimonials.
-4. Customize the appearance and layout of the testimonials as needed.
-5. Testimonials.to provide a simple and effective way to showcase client feedback and reviews.
-
-
 # Deployment
 
 This personal portfolio is deployed using Vercel, providing a seamless and scalable hosting solution. Below are details on how the deployment is managed.

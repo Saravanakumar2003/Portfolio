@@ -17,10 +17,10 @@ export function Skills() {
     <Container>
       <Vector>
         <div className='js'>
-          <Image width={100} height={100} src="/vectors/js.svg" alt="" />
+          <Image width={100} height={100} src="/vectors/js.svg" alt="" loading="lazy" />
         </div>
         <div className='html'>
-          <Image width={85} height={85} src="/vectors/html.svg" alt="" />
+          <Image width={85} height={85} src="/vectors/html.svg" alt="" loading="lazy" />
         </div>
       </Vector>
       <Title>
@@ -40,6 +40,7 @@ export function Skills() {
               src={skill.img} 
               alt={skill.title}
               loading='lazy'
+              layout="responsive"
               />
               <h4>{skill.title}</h4>
             <span className='border'></span>

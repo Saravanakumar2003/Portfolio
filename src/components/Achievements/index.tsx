@@ -45,7 +45,7 @@ export function Achievements() {
                   <Carousel showArrows={true} showThumbs={false} infiniteLoop={true} showStatus={true} showIndicators={true} autoPlay={true} transitionTime={1000}>
                     {achievements.image.map((image: any, index: Key | null | undefined) => (
                       <div key={index}>
-                        <Image src={image} alt={achievements.name} width={300} height={300} />
+                        <Image src={image} alt={achievements.name} width={300} height={300} loading="lazy"/>
                       </div>
                     ))}
                   </Carousel>

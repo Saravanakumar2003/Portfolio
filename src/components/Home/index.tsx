@@ -152,6 +152,7 @@ export function HomeHero() {
               height={150}
               src="/vectors/dino.svg"
               alt="dinossauro"
+              loading="lazy"
             />
           </div>
         </ImgHome>

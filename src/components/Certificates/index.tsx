@@ -86,6 +86,7 @@ export function Certificates() {
                     key={certificate_img.id}
                     src={certificate_img.image}
                     alt={certificate_img.name}
+                    loading="lazy"
                   />
                   )
               })}

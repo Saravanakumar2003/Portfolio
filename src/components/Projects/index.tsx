@@ -68,13 +68,13 @@ export function Projects() {
           .map(project => (
             <Link href={`/project/${project.url}`} key={project.id}>
               <ProjectsContent>
-                <Image width={400} height={210} src={project.img} alt={project.title} />
+                <Image width={400} height={210} src={project.img} alt={project.title} loading="lazy" />
                 <div className="title">
                   <h2>{project.title}</h2>
                   <span>{project.type}</span>
                   <div className="tags">
                     {project.tech.map(tag => (
-                      <Image width={32} height={32} key={tag.name} src={tag.icon} alt={tag.name} />
+                      <Image width={32} height={32} key={tag.name} src={tag.icon} alt={tag.name} loading="lazy" />
                     ))}
                   </div>
                 </div>

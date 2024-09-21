@@ -14,6 +14,7 @@ export function CardContact() {
           height={410} 
           src="/vectors/circles.svg"
           alt="circles"
+          loading="lazy"
         />
         </div>
         <CardContactContent>
@@ -31,6 +32,7 @@ export function CardContact() {
               height={500} 
               src="/contact.svg" 
               alt="imagem de contato" 
+              loading="lazy"
             />
           </div>
         </CardContactContent>

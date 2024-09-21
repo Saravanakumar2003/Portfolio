@@ -56,6 +56,7 @@ export function Education() {
                       height={60}
                       src={education.img}
                       alt={education.title}
+                      loading="lazy"
                     />
                   }
                   iconStyle={{

@@ -46,6 +46,7 @@ export function Experience() {
                       height={60}
                       src={experience.img}
                       alt={experience.title}
+                      loading="lazy"
                     />
                   }
                   iconStyle={{
@@ -88,6 +89,7 @@ export function Experience() {
                               height={50}
                               src={tag.icon}
                               alt={tag.name}
+                              loading="lazy"
                             />
                           ))} 
                         </div>

@@ -29,7 +29,6 @@ export function Work() {
               <button type="button">
                 <Link href={`/work/${work.url}`}>
                   Learn more<AiOutlineRightCircle />
-
                 </Link>
               </button>
             </WorkContent>

@@ -15,6 +15,7 @@ export function About() {
             className="AboutImg"
             src="/Professional_edited.jpg"
             alt="Saravana's Image"
+            loading="lazy"
           />
         </div>
 

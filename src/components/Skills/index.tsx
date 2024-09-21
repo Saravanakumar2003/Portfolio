@@ -40,7 +40,6 @@ export function Skills() {
               src={skill.img} 
               alt={skill.title}
               loading='lazy'
-              layout="responsive"
               />
               <h4>{skill.title}</h4>
             <span className='border'></span>

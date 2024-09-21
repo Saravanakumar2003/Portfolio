@@ -73,7 +73,10 @@ http://localhost:3000
 
 9. **Visme Feedback Form:** A feedback form powered by Visme is included in the portfolio for collecting user feedback and suggestions.
 
-10.  **AI Chatbot:** An AI chatbot is integrated into the portfolio to provide interactive communication and assistance. 
+10.  **AI Chatbot:** An AI chatbot is integrated into the portfolio to provide interactive communication and assistance.
+
+11. **Waka Time:** Integration with WakaTime embeded code allows displaying coding activity and statistics.
+
 
 # Deployment
 

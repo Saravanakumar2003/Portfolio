@@ -9,6 +9,7 @@ import { Button } from '../../styles/styles'
 import { useContext } from 'react'
 import { ThemeContext } from '../../context/ThemeContext'
 import { FaSun, FaMoon } from 'react-icons/fa';
+import LanguageSwitcher from '../Language/index'
 
 
 import AudioPlayer from '../Music/AudioPlayer';
@@ -70,7 +71,9 @@ export function Header() {
             cursor: 'pointer'
           }}>
           {theme === 'light' ? <FaMoon /> : <FaSun />}
-        </button> */}
+        </button>
+
+      <LanguageSwitcher /> */}
 
       <NavMenu onClick={handleOpen} open={open}>
         <ul>

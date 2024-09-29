@@ -8,11 +8,12 @@ import { Content, ImgHome, HomeText } from './styles'
 import { FiArrowRight } from 'react-icons/fi'
 import { useState } from 'react';
 import Modal from 'react-modal';
-
+import { useTranslation } from 'react-i18next';
 
 Modal.setAppElement('#__next');
 
 export function HomeHero() {
+  const { t } = useTranslation('common');
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   function openModal() {
@@ -32,10 +33,10 @@ export function HomeHero() {
       <Content>
         <HomeText>
           <p>
-            <span>👋🏻</span> Hello, my name is
+            <span>👋🏻</span> {t('Hello, my name is')}
           </p>
           <h1>
-            Saravanakumar R
+            {t('title')}  
             <span className="animation">
               <Image
                 width={200}

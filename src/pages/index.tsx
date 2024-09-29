@@ -16,14 +16,19 @@ import { Testimonials } from "../components/Testimonials";
 import { Publications } from "../components/Publications";
 import { Wakatime } from "../components/Coding/Wakatime";
 import { Certificates } from "../components/Certificates/index";
+import { useTranslation } from 'react-i18next';
+import { GetStaticProps } from 'next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
 
 const botkey = process.env.NEXT_PUBLIC_BOTKEY_URL;
 
 export default function Home() {
+  const { t } = useTranslation('common');
   return (
     <>
       <Head>
-        <title>Saravanakumar Portfolio</title>
+        <title>Saravanakumar's Portfolio</title>
       </Head>
       <ScrollTop />
       <Section>
@@ -53,3 +58,10 @@ export default function Home() {
     </>
   );
 }
+
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ['common'])),
+  },
+});

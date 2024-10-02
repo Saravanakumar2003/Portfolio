@@ -18,7 +18,7 @@ const AudioPlayer: React.FC<{ audioSrc: string }> = ({ audioSrc }) => {
 
   return (
     <div style={{ display: 'flex', alignItems: 'center' }}>
-      <audio ref={audioRef} src={audioSrc} style={{ flex: 1 }} />
+      <audio ref={audioRef} src={audioSrc} style={{ flex: 1 }} loop={true}/>
       <button 
         onClick={togglePlay} 
         style={{ 

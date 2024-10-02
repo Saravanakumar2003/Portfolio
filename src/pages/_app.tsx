@@ -1,18 +1,17 @@
-import type { AppProps } from 'next/app';
-import Head from 'next/head';
-import { useRouter } from 'next/router';
-import { useEffect } from 'react';
+import type { AppProps } from 'next/app'
+import Head from 'next/head'
+import { useRouter } from 'next/router'
+import { useEffect } from 'react'
 import { Header } from '../components/Header';
-import NextNprogress from 'nextjs-progressbar';
+import NextNprogress from 'nextjs-progressbar'
 import { ThemeContextProvider } from '../context/ThemeContext';
 import { GlobalStyles } from '../styles/global';
-import { Toaster } from '../components/Toaster';
-import { MantineProvider } from '@mantine/core';
+import { Toaster } from '../components/Toaster'
+import { MantineProvider } from '@mantine/core'
 import { Analytics } from '@vercel/analytics/react';
-import { SpeedInsights } from "@vercel/speed-insights/next";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { initGA, logPageView } from '../utils/analytics';
 import { defaultTheme } from '../styles/themes/default';
-import { appWithTranslation } from 'next-i18next';
 
 const botkey = process.env.NEXT_PUBLIC_BOTKEY_URL;
 const google = process.env.NEXT_PUBLIC_GA_ID;
@@ -24,17 +23,17 @@ declare global {
 }
 
 function useNormalScrollRoutes() {
-  const router = useRouter();
+  const router = useRouter()
 
   useEffect(() => {
     router.events.on('routeChangeStart', () => {
-      document.documentElement.classList.add('normal-scroll');
-    });
+      document.documentElement.classList.add('normal-scroll')
+    })
     router.events.on('routeChangeComplete', () => {
-      document.documentElement.classList.remove('normal-scroll');
-    });
+      document.documentElement.classList.remove('normal-scroll')
+    })
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [])
 
   useEffect(() => {
     if (!window.GA_INITIALIZED) {
@@ -83,7 +82,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         </MantineProvider>
       </ThemeContextProvider>
     </>
-  );
+  )
 }
 
-export default appWithTranslation(MyApp);
+export default MyApp

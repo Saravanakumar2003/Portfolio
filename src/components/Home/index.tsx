@@ -36,7 +36,7 @@ export function HomeHero() {
             <span>👋🏻</span> {t('Hello, my name is')}
           </p>
           <h1>
-            {t('title')}  
+            {t('Saravanakumar R')}  
             <span className="animation">
               <Image
                 width={200}

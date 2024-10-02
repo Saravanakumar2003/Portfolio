@@ -142,9 +142,9 @@ export const TabContent = styled.div`
     }
     
     .office {
-      font-size: 1rem;
+      margin-top: 0.5rem;
+      font-size: 0.8rem;
       font-style: italic;
-      font-weight: 700;
       align-items: end;
       color: ${props => props.theme.gray_easy};
     }

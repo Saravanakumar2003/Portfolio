@@ -15,36 +15,31 @@ import works from '../data/experiences'
 import { Education } from '../components/Education'
 import Link from 'next/link'
 import Testimonials from '../components/Testimonials'
+import { useTranslation } from 'react-i18next'
+import { useRouter } from 'next/router'
+import { useEffect } from 'react'
+import React from 'react'
 
 const botkey = process.env.NEXT_PUBLIC_BOTKEY_URL;
 
-export interface ExperienceProps {
-  target: HTMLInputElement
-}
-
 export default function Experience() {
-  const [tabIndex, setTabIndex] = useState(0)
-  let numbering = 0
+  const [tabIndex, setTabIndex] = useState(0);
+  let numbering = 0;
 
   const [query, setQuery] = useState("");
+  const { t, i18n } = useTranslation('common');
+  const router = useRouter();
+  const [currentLang, setCurrentLang] = useState<'en' | 'ta'>('en');
 
-  const handleChange = (e: ExperienceProps) => {
-    setQuery(e.target.value);
-  };
+  useEffect(() => {
+    const { locale } = router;
+    setCurrentLang(locale as 'en' | 'ta');
+  }, [router.locale]);
 
   return (
     <div>
       <Head>
-        <title>Experience | Saravanakumar </title>
-        <meta
-          name="description"
-          content="My experience"
-        />
-        <meta property="og:title" content="Experience | Saravanakumar" />
-        <meta
-          property="og:description"
-          content="My experience"
-        />
+        <title> Experience | Saravanakumar</title>
       </Head>
 
       <ScrollTop />
@@ -74,67 +69,66 @@ export default function Experience() {
           >
             <TabButton>
               <TabList className="tab__list">
-                {works.map(experience => {
-                  if (experience.id) {
-                    numbering += 1
-                    return (
-                      <>
-                        <h2 key={experience.id}>
-                          {numbering >= 0 && numbering <= 10
-                            ? `0${numbering - 1}`
-                            : `${numbering - 1}`}
-                        </h2>
-                        <Tab className="tab">
-                          <button>{experience.title}</button>
-                        </Tab>
-                      </>
-                    )
-                  }
-                })}
+                {works &&
+                  works.map(exp => {
+                    const description = exp.description[currentLang];
+                    if (exp.id) {
+                      numbering += 1;
+                      return (
+                        <React.Fragment key={exp.id}>
+                          <h2>
+                            {numbering >= 0 && numbering <= 10
+                              ? `0${numbering - 1}`
+                              : `${numbering - 1}`}
+                          </h2>
+                          <Tab className="tab">
+                            <button>{exp.title[currentLang]}</button>
+                          </Tab>
+                        </React.Fragment>
+                      );
+                    }
+                    return null;
+                  })}
               </TabList>
             </TabButton>
-
             <TabContent>
-              {works.map(experience => {
-                return (
-                  <TabPanel className="tab__panel" key={experience.id}>
+                {works.map(exp => (
+                  <TabPanel className="tab__panel" key={exp.id}>
                     <div className="title-container">
                       <div className="title-content">
                         <div className="title">
-                          <h1>{experience.title}</h1>
+                          <h1>{exp.title[currentLang]}</h1>
                           <div className="sub"></div>
-                          <h2>{experience.subTitle}</h2>
+                          <h2>{exp.subTitle[currentLang]}</h2>
                         </div>
                       </div>
                       <div className="office">
-                        <h3>{experience.office}</h3>
-                        <h4>{experience.date}</h4>
+                        <h3>{exp.office[currentLang]}</h3>
+                        <h4>{exp.date}</h4>
                       </div>
                     </div>
-                    <p 
-                    style={{
-                      marginTop: '1rem',
-                      textAlign: 'justify',
-                      marginBottom: '1rem'
-                    }}>
-                    {experience.description.split('\n').map((line, i) => (
-                      <a key={i}>
-                        {line}
-                          <br />
-                           </a>
-                      ))}</p>
-                   {/* <Button style={{ 
+                    <p
+                      style={{
                         marginTop: '1rem',
-                        }}>
-                      <Link legacyBehavior href={`/experience/${experience.url}`}>
-                        View Details
-                      </Link>
-                    </Button> */}
-                    <div style={{
-                      marginTop: '1rem',
-                      marginBottom: '1rem'
-                    }} className="links">
-                      <a href={experience.link} target="_blank" rel="noreferrer">
+                        textAlign: 'justify',
+                        marginBottom: '1rem'
+                      }}
+                    >
+                      {exp.description[currentLang] ? exp.description[currentLang].split('\n').map((line, i) => (
+                        <React.Fragment key={i}>
+                          {line}
+                          <br />
+                        </React.Fragment>
+                      )) : 'Description not available'}
+                    </p>
+                    <div
+                      style={{
+                        marginTop: '1rem',
+                        marginBottom: '1rem'
+                      }}
+                      className="links"
+                    >
+                      <a href={exp.link} target="_blank" rel="noreferrer">
                         <Button>View Report</Button>
                       </a>
                     </div>
@@ -142,7 +136,7 @@ export default function Experience() {
                     <div className="techs">
                       <h3>Techs:</h3>
                       <ul>
-                        {experience.tags.map(tag => (
+                        {exp.tags.map(tag => (
                           <div className="tags" key={tag.name}>
                             <Image
                               width={50}
@@ -156,8 +150,7 @@ export default function Experience() {
                       </ul>
                     </div>
                   </TabPanel>
-                )
-              })}
+                ))}
             </TabContent>
           </Tabs>
         </TabsContainer>
@@ -170,5 +163,5 @@ export default function Experience() {
       <script src={botkey} defer></script>
       <Footer />
     </div>
-  )
+  );
 }

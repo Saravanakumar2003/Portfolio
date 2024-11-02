@@ -145,14 +145,14 @@ export function HomeHero() {
           </div>
         </HomeText>
         <ImgHome>
-          <img className="home-img" src="/home.png" alt="Imagem da Home" />
+          <img className="home-img" src="/home.png" alt="Image Home" />
 
           <div className="code">
             <Image
               width={150}
               height={150}
               src="/vectors/dino.svg"
-              alt="dinossauro"
+              alt="dino"
               loading="lazy"
             />
           </div>

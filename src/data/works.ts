@@ -15,7 +15,7 @@ const works = [
       { name: 'NSS Logo', icon: '/experience/Nss.png' },
       { name: 'VEC Logo', icon: '/education/Vec.png' },
     ],
-    date: 'Dec 2021 - Present',
+    date: 'Dec 2021 - Aug 2024',
     prints: [
       {
         name: 'Commencement of my Journey',
@@ -99,11 +99,31 @@ const works = [
           'I participated in the NSS Glaucathon Rally, an initiative to raise awareness about glaucoma and promote eye health. The rally started at Dunlop and ended at Vasan Eye Care Hospital, Chennai. It was a great opportunity to contribute to a noble cause and spread awareness about eye health.'
       },
 
-
+      {
+        name: 'NSS Blood Donation Camp',
+        image: '/Volunteering/NSS/NSS14.jpg',
+        date: '26th, March 2024',
+        description:
+          'I volunteered at the NSS Blood Donation Camp, an initiative to promote voluntary blood donation and save lives. The camp was organized at Velammal Engineering College, and I was delighted to contribute to this noble cause.'
+      },
+      {
+        name: ' My Co-Ordinators team',
+        image: '/Volunteering/NSS/NSS12.jpg',
+        date: '15th, August 2024',
+        description:
+          'Being part of the NSS Co-ordinator team for 2023-24 was an incredible honor. Led by the inspiring Dr. R. Karthik Sir, we united as passionate volunteers to organize impactful events, creating lasting memories and deepening our commitment to service and community. Together, we worked tirelessly to foster a culture of social responsibility and make a positive impact on society.'
+      },
+      {
+        name: 'Our Panel Handover Ceremony',
+        image: '/Volunteering/NSS/NSS13.jpg',
+        date: '29th, August 2024',
+        description:
+          'The NSS Panel Handover Ceremony was a memorable event where the outgoing panel handed over the responsibilities to the incoming panel. It was a moment of pride and gratitude as we reflected on our achievements and passed on the baton to the next generation of NSS leaders.'
+      },
       {
         name: 'NSS Image Gallery',
         image: '/Volunteering/Banners/NSSJourney.png',
-        date: '24th, November 2021 - Present',
+        date: '24th, November 2021 - 29th, August 2024',
         url: 'https://photos.app.goo.gl/Md3BTQYZeA37NPSj9',
         urltitle: 'View the images here',
         description:
@@ -112,7 +132,7 @@ const works = [
       {
         name: 'NSS Journey Documentation',
         image: '/Volunteering/Banners/NSSDocumentation.png',
-        date: '24th, November 2021 - Present',
+        date: '24th, November 2021 - 29th, August 2024',
         url: 'https://drive.google.com/drive/folders/1Zjb4FVAGb8vq1X2Lo_-o8tZAbOaPNzcg?usp=drive_link',
         urltitle: 'View the documentation here',
         description:

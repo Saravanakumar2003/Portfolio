@@ -1,33 +1,48 @@
-import Image from 'next/image'
-import { useTheme } from 'styled-components'
+import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
+import { useTheme } from 'styled-components';
 import {
   VerticalTimeline,
   VerticalTimelineElement
-} from 'react-vertical-timeline-component'
-import Link from 'next/link'
-import { Button } from '../../styles/styles'
-import 'react-vertical-timeline-component/style.min.css'
-import { Container, Title } from '../../styles/styles'
-import { ExperienceContainer, ExperienceContent } from './styles'
-import { Briefcase } from 'phosphor-react'
-import experience from '../../data/experiences'
+} from 'react-vertical-timeline-component';
+import Link from 'next/link';
+import { Button } from '../../styles/styles';
+import 'react-vertical-timeline-component/style.min.css';
+import { Container, Title } from '../../styles/styles';
+import { ExperienceContainer, ExperienceContent } from './styles';
+import { Briefcase } from 'phosphor-react';
+import { useTranslation } from 'react-i18next';
+import { useRouter } from 'next/router';
+import experience from '../../data/experiences';
 
 export function Experience() {
-  const theme = useTheme()
+  const theme = useTheme();
+  const { t, i18n } = useTranslation('common'); // Use the 'common' namespace
+  const router = useRouter();
+  const [currentLang, setCurrentLang] = useState<'en' | 'ta'>('en');
+
+  useEffect(() => {
+    const { locale } = router;
+    setCurrentLang(locale as 'en' | 'ta');
+  }, [router.locale]);
+
+  useEffect(() => {
+  }, [currentLang]);
 
   return (
     <Container>
       <Title>
-      Experience
+        {t('experience')}
         <span>
-          <Briefcase /> Work 
+          <Briefcase /> {t('work')}
         </span>
       </Title>
 
       <div>
         <VerticalTimeline lineColor={theme.firstColor}>
           {experience &&
-            experience.map(experience => {
+            experience.map(exp => {
+              const description = exp.description[currentLang];
               return (
                 <VerticalTimelineElement
                   contentStyle={{
@@ -38,14 +53,14 @@ export function Experience() {
                   contentArrowStyle={{
                     borderRight: `10px solid ${theme.backgroundAlt}`
                   }}
-                  date={experience.date}
+                  date={exp.date}
                   icon={
                     <Image
                       style={{ position: 'relative', width: '100%', height: '100%', borderRadius: '60%' }}
                       width={60}
                       height={60}
-                      src={experience.img}
-                      alt={experience.title}
+                      src={exp.img}
+                      alt={exp.title.en} // Default to English
                       loading="lazy"
                     />
                   }
@@ -54,36 +69,36 @@ export function Experience() {
                     background: theme.backgroundAlt,
                     color: theme.firstColor
                   }}
-                  key={experience.id}
+                  key={exp.id}
                 >
                   <ExperienceContainer>
                     <ExperienceContent>
-                      <h1>{experience.title}</h1>
-                      <h2>{experience.subTitle}</h2>
-                      <span>{experience.office}</span>
-                      <p>{experience.description.split('\n').map((line, i) => (
-                      <a key={i}>
-                        {line}
+                      <h1>{exp.title[currentLang]}</h1>
+                      <h2>{exp.subTitle[currentLang]}</h2>
+                      <span>{exp.office[currentLang]}</span>
+                      <p>{description ? description.split('\n').map((line, i) => (
+                        <span key={i}>
+                          {line}
                           <br />
-                           </a>
-                      ))}</p>
-                       <div style={{ display: 'flex', gap:"1rem", marginTop:"1rem", marginBottom:"1rem" }}>
+                        </span>
+                      )) : t('description_not_available')}</p>
+                      <div style={{ display: 'flex', gap: "1rem", marginTop: "1rem", marginBottom: "1rem" }}>
                         <Button>
-                          <Link legacyBehavior href={experience.certificate ?? ''}>
-                            <a target="_blank">Certificate</a>
+                          <Link legacyBehavior href={exp.certificate ?? ''}>
+                            <a target="_blank">{t('certificate')}</a>
                           </Link>
                         </Button>
                         <Button>
-                          <Link legacyBehavior href={experience.link2 ?? ''}>
-                            <a target="_blank">Website</a>
+                          <Link legacyBehavior href={exp.link2 ?? ''}>
+                            <a target="_blank">{t('website')}</a>
                           </Link>
                         </Button>
                       </div>
                       <div>
-                        <h3>Techs:</h3>
+                        <h3>{currentLang === 'ta' ? 'தொழில்நுட்பங்கள்:' : 'Techs:'}</h3>
                         <div className="tag">
-                          {experience.tags.map(tag => (
-                            <Image style={{ margin: '0.2rem'}}
+                          {exp.tags.map(tag => (
+                            <Image style={{ margin: '0.2rem' }}
                               key={tag.name}
                               width={50}
                               height={50}
@@ -91,16 +106,16 @@ export function Experience() {
                               alt={tag.name}
                               loading="lazy"
                             />
-                          ))} 
+                          ))}
                         </div>
                       </div>
                     </ExperienceContent>
                   </ExperienceContainer>
                 </VerticalTimelineElement>
-              )
+              );
             })}
         </VerticalTimeline>
       </div>
     </Container>
-  )
+  );
 }

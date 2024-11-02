@@ -4,14 +4,14 @@ import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import { Header } from '../components/Header';
 import NextNprogress from 'nextjs-progressbar'
-import { ThemeContextProvider } from '../context/ThemeContext';
+import { ThemeProvider } from '../context/ThemeContext';
 import { GlobalStyles } from '../styles/global';
 import { Toaster } from '../components/Toaster'
 import { MantineProvider } from '@mantine/core'
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { initGA, logPageView } from '../utils/analytics';
-import { defaultTheme } from '../styles/themes/default';
+import { lightTheme } from '../styles/themes/default';
 
 const botkey = process.env.NEXT_PUBLIC_BOTKEY_URL;
 const google = process.env.NEXT_PUBLIC_GA_ID;
@@ -62,10 +62,10 @@ function MyApp({ Component, pageProps }: AppProps) {
           `}
         </script>
       </Head>
-      <ThemeContextProvider>
+      <ThemeProvider>
         <MantineProvider>
           <NextNprogress
-            color={defaultTheme.firstColor}
+            color={lightTheme.firstColor}
             startPosition={0.3}
             stopDelayMs={300}
             height={3}
@@ -80,7 +80,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
           <script src={botkey} defer></script>
         </MantineProvider>
-      </ThemeContextProvider>
+      </ThemeProvider>
     </>
   )
 }

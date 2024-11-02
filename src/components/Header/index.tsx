@@ -7,17 +7,16 @@ import { FiGithub, FiLinkedin, FiInstagram } from 'react-icons/fi'
 import { FaWhatsapp } from 'react-icons/fa'
 import { Button } from '../../styles/styles'
 import { useContext } from 'react'
-import { ThemeContext } from '../../context/ThemeContext'
+import { useThemeContext } from '../../context/ThemeContext'
 import { FaSun, FaMoon } from 'react-icons/fa';
-import LanguageSwitcher from '../Language/index'
-
-
+import LanguageSwitcher from '../Language/index';
+import Settings from '../Settings/SettingsButton';
 import AudioPlayer from '../Music/AudioPlayer';
+
 
 export function Header() {
   const [open, setOpen] = useState(false);
-
-  const { toggleTheme, theme } = useContext(ThemeContext);
+  const { currentTheme, toggleTheme } = useThemeContext(); 
 
   const handleOpen = () => {
     setOpen(!open);
@@ -45,133 +44,100 @@ export function Header() {
           <AudioPlayer audioSrc={musicSrc} />
         </div>
         <style jsx>{`
-        .audio-player {
-          margin: 5px 20px;
-          flex-grow: 1; 
-          max-width: 600px; 
-        }
-          `}</style>
+          .audio-player {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            padding-left: 0.5rem;
+            margin: 0 0.5rem;
+          }
+        `}</style>
+
+        <div className="settings">
+          <Settings toggleTheme={toggleTheme} currentTheme={currentTheme} />
+        </div>
+        <style jsx>{`
+          .settings {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            padding-left: 0.5rem;
+            margin: 0 0.5rem;
+          }
+        `}</style>
+
 
         <MobileIcon onClick={handleOpen}>
           {open ? (
-            <X size={25} weight="bold" />
+            <X size={30} weight="bold" />
           ) : (
-            <List size={25} weight="bold" />
+            <List size={30} weight="bold" />
           )}
         </MobileIcon>
       </div>
-
-      {/* <button onClick={toggleTheme}
-          style={{
-            width: '40px',
-            height: '40px',
-            borderRadius: '20%',
-            backgroundColor: 'white',
-            color: 'black',
-            cursor: 'pointer'
-          }}>
-          {theme === 'light' ? <FaMoon /> : <FaSun />}
-        </button>
-
-      <LanguageSwitcher /> */}
 
       <NavMenu onClick={handleOpen} open={open}>
         <ul>
           <li>
             <Link href={'/'}>
-
               <span>Home</span>
-
             </Link>
           </li>
-
           <li>
             <Link href={'/about'}>
-
               <span>About</span>
-
             </Link>
           </li>
-
           <li>
             <Link href={'/experience'}>
-
               <span>Experience</span>
-
             </Link>
           </li>
-
           <li>
             <Link href={'/blog'}>
-
               <span>Blogs</span>
-
             </Link>
           </li>
-
           <li>
             <Link href={'/projects'}>
-
               <span>Projects</span>
-
             </Link>
           </li>
-
           <li>
             <Link href={'/resume'}>
-
               <span>Resume</span>
-
             </Link>
           </li>
-
           <li>
             <Link href={'/contact'}>
-
               <span>Contact</span>
-
             </Link>
           </li>
         </ul>
-        
 
         <Icons>
           <Link
             href={'https://github.com/Saravanakumar2003'}
             target="_blank"
             aria-label="Github">
-
             <FiGithub />
-
           </Link>
           <Link
             href={'https://www.linkedin.com/in/saravanaramaswamy2003/'}
             target="_blank"
             aria-label="Linkedin">
-
             <FiLinkedin />
-
           </Link>
-
           <Link
             href={'https://www.instagram.com/saravanakumar.me?utm_source=qr'}
             target="_blank"
             aria-label="Instagram">
-
             <FiInstagram />
-
           </Link>
-
           <Link
             href={'https://api.whatsapp.com/send?phone=918838416187'}
             target="_blank"
             aria-label="Whatsapp">
-
             <FaWhatsapp />
-
           </Link>
-
-
         </Icons>
       </NavMenu>
     </HeaderContainer>

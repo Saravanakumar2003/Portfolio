@@ -37,7 +37,6 @@ export const ContactContent = styled.div`
     }
 
     span {
-      color: ${props => props.theme.gray};
       &:hover {
         color: ${props => props.theme.firstColor};
       }
@@ -72,14 +71,12 @@ export const FormContent = styled.form`
     background: ${props => props.theme.backgroundSecond};
     padding: 1rem;
     font-size: 1rem;
-    color: ${props => props.theme.text};
     transition: border 150ms cubic-bezier(0.4, 0, 0.2, 1);
   }
   .user-label {
     position: absolute;
     text-align: center;
     left: 15px;
-    color: ${props => props.theme.gray};
     pointer-events: none;
     transform: translateY(1rem);
     transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);

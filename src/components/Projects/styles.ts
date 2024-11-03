@@ -106,8 +106,8 @@ export const ProjectsContent = styled.div`
   max-width: 24rem;
 `
 export const TagButton = styled.button<{ selected: boolean }>`
-  background: ${props => props.theme.firstColor};
-  color: black;
+  background: ${props => props.theme.secondColor};
+  color: ${props => props.theme.text};
   padding: .5rem 1rem;
   border-radius: 5px;
   margin-right: .5rem;

@@ -32,9 +32,9 @@ export function Experience() {
   return (
     <Container>
       <Title>
-        {t('experience')}
+        {currentLang === 'ta' ? 'அனுபவம்' : 'Experience'}  
         <span>
-          <Briefcase /> {t('work')}
+          <Briefcase /> {currentLang === 'ta' ? 'வேலை' : 'Works'}
         </span>
       </Title>
 
@@ -85,12 +85,12 @@ export function Experience() {
                       <div style={{ display: 'flex', gap: "1rem", marginTop: "1rem", marginBottom: "1rem" }}>
                         <Button>
                           <Link legacyBehavior href={exp.certificate ?? ''}>
-                            <a target="_blank">{t('certificate')}</a>
+                            <a target="_blank">{currentLang === 'ta' ? 'சான்றிதழ்' : 'Certificate'}</a>
                           </Link>
                         </Button>
                         <Button>
                           <Link legacyBehavior href={exp.link2 ?? ''}>
-                            <a target="_blank">{t('website')}</a>
+                            <a target="_blank">{currentLang === 'ta' ? 'வலைத்தளம்' : 'Website'}</a>
                           </Link>
                         </Button>
                       </div>

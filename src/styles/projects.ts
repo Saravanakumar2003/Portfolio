@@ -19,7 +19,6 @@ export const ProjectsContent = styled.section`
     max-width: 650px;
 
     p {
-      color: ${props => props.theme.gray_easy};
       margin-bottom: 1rem;
     }
 
@@ -30,20 +29,16 @@ export const ProjectsContent = styled.section`
       align-items: center;
       padding: 1rem;
       border-radius: 10px;
-      background: ${props => props.theme.backgroundSecond};
       border: solid 2px ${props => props.theme.gray_easy};
-      color: ${props => props.theme.gray_easy};
 
       input {
         width: 100%;
         font-size: 1rem;
-        color: ${props => props.theme.gray};
         background: none;
         outline: none;
         border: none;
 
         ::placeholder {
-          color: ${props => props.theme.gray_easy};
         }
       }
     }
@@ -63,14 +58,11 @@ export const ProjectsContent = styled.section`
   .github{
     text-align: center;
     margin-top: 5rem;
-    color: ${props => props.theme.gray};
 
     a {
-      color: ${props => props.theme.firstColor};
       border-bottom: 1px solid ${props => props.theme.firstColor};
 
       &:hover {
-        color: ${props => props.theme.hover};
         border-bottom: 1px solid ${props => props.theme.hover};
       }
     }
@@ -104,7 +96,6 @@ export const ProjectsItem = styled.div`
     h2 {
       font-size: 1.5rem;
       font-weight: 700;
-      color: ${props => props.theme.white};
     }
   }
 
@@ -114,8 +105,6 @@ export const ProjectsItem = styled.div`
 
     p {
       margin: 1.5rem 0;
-      color: ${props => props.theme.gray_easy};
-
       overflow: hidden;
       display: -webkit-box;
       -webkit-box-orient: vertical;
@@ -132,7 +121,6 @@ export const ProjectsItem = styled.div`
       span {
         background: ${props => rgba(props.theme.color, 0.8)};
         padding: 0.25rem 0.75rem;
-        color: ${props => props.theme.text};
         border-radius: 0.5rem;
         font-size: 0.875rem;
         line-height: 1.25rem;

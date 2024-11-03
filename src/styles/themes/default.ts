@@ -2,33 +2,34 @@ import { DefaultTheme } from 'styled-components';
 
 export const lightTheme: DefaultTheme = {
   background: '#FFFFFF', // Light background
-  backgroundSecond: '#F0F0F0', // Slightly darker light background
-  backgroundAlt: '#E0E0E0', // Alternative light background
-  dark: '#000000', // Dark color for contrast
+  backgroundSecond: '#E0E0E0', // Slightly darker light background
+  backgroundAlt: '#E9ECEF', // Alternative light background
+  dark: '#343A40', // Dark color for contrast
 
-  firstColor: '#9C27B0', // Purple
-  secondColor: '#7B1FA2', // Darker Purple
+  firstColor: '#57007F', // Blue
+  secondColor: '#B200FF', // Indigo
 
-  cyan: '#22abfa',
-  cyan_400: '#22d3ee',
-  cyan_500: '#06b6d4',
+  cyan: '#17A2B8',
+  cyan_400: '#20C997',
+  cyan_500: '#0DCAF0',
 
-  emerald_400: 'rgb(52 211 153)',
+  emerald_400: 'rgb(40, 167, 69)',
 
-  blue: '#208CFC',
-  color: 'rgb(29 78 216)',
+  blue: '#007BFF',
+  color: 'rgb(0, 123, 255)',
   white: '#FFFFFF', // White color for text and elements
-  text: '#212121', // Dark text color for readability
-  textPrimary: '#212121', // Primary text color
-  textSecondary: '#757575', // Secondary text color
-  hover: 'rgba(156, 39, 176, 0.7)', // Purple hover color
-  hoverSecond: 'rgba(123, 31, 162, 0.7)', // Darker purple hover color
+  text: '#FFFFFF', // Dark text color for readability
+  textPrimary: '#212529', // Primary text color
+  textSecondary: '#6C757D', // Secondary text color
+  hover: 'rgba(0, 123, 255, 0.7)', // Blue hover color
+  hoverSecond: 'rgba(102, 16, 242, 0.7)', // Indigo hover color
 
-  gray: '#BDBDBD', // Light gray
-  gray_light: '#E0E0E0', // Lighter gray
-  gray_easy: '#EEEEEE', // Easiest gray
-  gray_medium: '#9E9E9E', // Medium gray
+  gray: '#495057', // Darker gray for better visibility
+  gray_light: '#6C757D', // Light gray with better contrast
+  gray_easy: '#ADB5BD', // Slightly darker light gray
+  gray_medium: '#343A40', // Dark gray for strong contrast
 
-  border: '#E0E0E0', // Light border color
-  borderSecond: '#BDBDBD', // Secondary border color
+  border: '#B0B7BD', // Light border color
+  borderSecond: '#A1A8AE', // Secondary border color
+
 };

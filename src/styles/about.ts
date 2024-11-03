@@ -124,7 +124,6 @@ export const AboutDescription = styled.div`
     text-align: start;
     margin-bottom: 1.5rem;
     max-width: 31rem;
-    color: ${props => props.theme.text};
   }
 
 `

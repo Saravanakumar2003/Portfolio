@@ -219,7 +219,7 @@ export const ButtonSecondary = styled.button`
   color: ${props => props.theme.text};
   font-size: 1rem;
   font-weight: 700;
-  background-color: transparent;
+  background-color: black;
   border-radius: 1em;
   outline: none;
   box-shadow: 0 0 1em 0.25em ${props => props.theme.secondColor},
@@ -270,7 +270,7 @@ export const ButtonAlt = styled.button`
   color: ${props => props.theme.text};
   font-size: 1rem;
   font-weight: 700;
-  background-color: transparent;
+  background-color: #000000;
   border-radius: 1em;
   outline: none;
   position: relative;
@@ -293,7 +293,7 @@ export const ButtonSecondAlt = styled.button`
   font-size: 1rem;
   font-weight: 700;
   gap: 5px;
-  background: transparent;
+  background: black;
   border: 0.25em solid ${props => props.theme.firstColor};
   border-radius: 10px;
   color: ${props => props.theme.white};

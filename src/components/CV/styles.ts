@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const CVContainer = styled.div`
-  background: ${props => props.theme.dark};
+  background: ${props => props.theme.background};
   border-radius: 10px;
   text-align: center;
 `
@@ -10,7 +10,7 @@ export const CVContent = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  background: ${props => props.theme.dark};
+  background: ${props => props.theme.background};
   border-radius: 10px;
   padding: 1rem;
 

@@ -42,8 +42,8 @@ export const List = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  border: 1px solid ${props => props.theme.border};
-  background-color: ${props => props.theme.dark};
+  background-color: ${props => props.theme.backgroundSecond};
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   border-radius: 8px;
   padding: 2rem;
   margin-bottom: 2rem;
@@ -104,7 +104,6 @@ export const ListContent = styled.div`
   p {
     white-space: break-spaces;
     font-size: 15px;
-    color: ${props => props.theme.text};
     text-align: justify;
   }
 `

@@ -71,7 +71,6 @@ export const TabButton = styled.div`
     border: 2px solid ${props => props.theme.secondColor};
     border-radius: 7px;
     background: none;
-    color: ${props => props.theme.text};
     width: 100%;
     font-size: 1rem;
     font-weight: 600;
@@ -146,7 +145,7 @@ export const TabContent = styled.div`
       font-size: 0.8rem;
       font-style: italic;
       align-items: end;
-      color: ${props => props.theme.gray_easy};
+      color: ${props => props.theme.gray};
     }
 
   }
@@ -156,7 +155,6 @@ export const TabContent = styled.div`
     max-width: 40rem;
     font-size: 1.1rem;
     margin-bottom: 1.5rem;
-    color: ${props => props.theme.text};
   }
 
   .techs {

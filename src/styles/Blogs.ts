@@ -17,8 +17,6 @@ export const FiltersContainer = styled.div`
     padding: 0.5rem;
     border-radius: 5px;
     border: 1px solid ${props => props.theme.border};
-    background: ${props => props.theme.dark};
-    color: ${props => props.theme.firstColor};
   }
 
   .date-filters,
@@ -31,15 +29,12 @@ export const FiltersContainer = styled.div`
       display: flex;
       flex-direction: column;
       gap: 0.25rem;
-      color: ${props => props.theme.firstColor};
 
       input,
       select {
         padding: 0.5rem;
         border-radius: 5px;
         border: 1px solid ${props => props.theme.border};
-        background: ${props => props.theme.dark};
-        color: ${props => props.theme.firstColor};
       }
     }
   }
@@ -96,7 +91,6 @@ export const BlogContent = styled.section`
     max-width: 650px;
 
     p {
-      color: ${props => props.theme.gray_easy};
       margin-bottom: 1rem;
     }
 
@@ -109,7 +103,6 @@ export const BlogContent = styled.section`
       border-radius: 10px;
       background: ${props => props.theme.backgroundSecond};
       border: solid 2px ${props => props.theme.gray_easy};
-      color: ${props => props.theme.gray_easy};
 
       input {
         width: 100%;
@@ -120,7 +113,6 @@ export const BlogContent = styled.section`
         border: none;
 
         ::placeholder {
-          color: ${props => props.theme.gray_easy};
         }
       }
     }
@@ -181,7 +173,6 @@ export const BlogItem = styled.div`
     h2 {
       font-size: 1.5rem;
       font-weight: 700;
-      color: ${props => props.theme.white};
     }
   }
 
@@ -190,7 +181,6 @@ export const BlogItem = styled.div`
 
     p {
       margin: 1.5rem 0;
-      color: ${props => props.theme.gray_easy};
 
       overflow: hidden;
       display: -webkit-box;

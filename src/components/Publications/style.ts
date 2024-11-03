@@ -9,6 +9,7 @@ export const PublicationContainer = styled.div`
   margin-left: 8rem;
   margin-right: 8rem;
   padding: 0 10px;
+
   
   @media (max-width: 768px) {
     display: grid;
@@ -20,7 +21,7 @@ export const PublicationContainer = styled.div`
 
 export const PublicationCardContainer = styled.div`
   padding: 2rem;
-  border: 1px solid #eaeaea;
+  border: 1px solid ${({ theme }) => theme.firstColor};
   border-radius: 5px;
 
   @media (max-width: 768px) {

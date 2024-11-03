@@ -71,7 +71,6 @@ export const Banner = styled.div`
     }
 
     h1 {
-      color: ${props => props.theme.text};
       font-weight: 800;
       font-size: 2rem;
 
@@ -190,7 +189,6 @@ export const DescriptionProject = styled.div`
 
     h4 {
       font-size: 1.5rem;
-      color: ${props => props.theme.firstColor};
       font-weight: 800;
       margin-bottom: 1.5rem;
 
@@ -277,10 +275,6 @@ export const TagsContent = styled.div`
     }
   }
 
-  h3 {
-    
-    color: ${(props) => props.color};
-  }
 `
 
 export const PrintContainer = styled.div`
@@ -437,7 +431,7 @@ export const ContainerVideo = styled.div`
   }
 
   .imageVideo {
-    @media(max-width: 468px) {
+    @media(max-width: 396px) {
       display: none;
     }
     img {

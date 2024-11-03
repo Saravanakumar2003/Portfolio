@@ -33,10 +33,10 @@ export function Certificates() {
                     }}
                     src={certificates.logo} alt={certificates.subTitle} />
                     <p>
-                      Date: <span>{certificates.level} </span>
+                      <span><strong>Date:</strong> {certificates.level} </span>
                     </p>
                     <p>
-                      Status: <span>{certificates.status}</span>
+                      <span><strong>Status:</strong> {certificates.status}</span>
                     </p>
                   </S.ListImage>
 

@@ -35,11 +35,11 @@ export function Publications() {
         {publications.map((publication, index) => (
           <div key={index}>
             <PublicationCard
-              title={publication.title}
-              description={publication.description}
-              authors={publication.authors}
-              publicationDate={publication.publicationDate}
-              source={publication.source}
+              title={publication.title[currentLang]}
+              description={publication.description[currentLang]}
+              authors={publication.authors[currentLang]}
+              publicationDate={publication.publicationDate[currentLang]}
+              source={publication.source[currentLang]}
               link={publication.link} 
               id={publication.id}           
             />

@@ -16,7 +16,10 @@ import { Testimonials } from "../components/Testimonials";
 import { Publications } from "../components/Publications";
 import { Wakatime } from "../components/Coding/Wakatime";
 import { Certificates } from "../components/Certificates/index";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next'
+import { useRouter } from 'next/router'
+import { useEffect, useState } from 'react'
+import React from 'react'
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
@@ -24,11 +27,20 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 const botkey = process.env.NEXT_PUBLIC_BOTKEY_URL;
 
 export default function Home() {
-  const { t } = useTranslation('common');
+  const { t, i18n } = useTranslation('common'); // Use the 'common' namespace
+  const router = useRouter();
+  const [currentLang, setCurrentLang] = useState<'en' | 'ta'>('en');
+
+  useEffect(() => {
+    const { locale } = router;
+    setCurrentLang(locale as 'en' | 'ta');
+  }, [router.locale]);
+
+
   return (
     <>
       <Head>
-        <title>Saravanakumar's Portfolio</title>
+        <title>{currentLang === 'ta' ? 'சரவணகுமாரின் போர்ட்ஃபோலியோ' : ' Saravanakumar\'s Portfolio'} </title>
       </Head>
       <ScrollTop />
       <Section>

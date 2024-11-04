@@ -4,6 +4,10 @@ import cardSkills from '../../data/skills'
 import { Container, Title } from '../../styles/styles'
 import { SkillsContainer, SkillsContent, Vector } from './styles'
 import { BsCodeSquare } from 'react-icons/bs'
+import { useTranslation } from 'react-i18next'
+import { useRouter } from 'next/router'
+import { useEffect, useState } from 'react'
+import React from 'react'
 
 interface Skills {
   title: string,
@@ -13,6 +17,15 @@ interface Skills {
 }
 
 export function Skills() {
+  const { t, i18n } = useTranslation('common'); // Use the 'common' namespace
+  const router = useRouter();
+  const [currentLang, setCurrentLang] = useState<'en' | 'ta'>('en');
+
+  useEffect(() => {
+    const { locale } = router;
+    setCurrentLang(locale as 'en' | 'ta');
+  }, [router.locale]);
+
   return (
     <Container>
       <Vector>
@@ -38,10 +51,10 @@ export function Skills() {
               width={60}
               height={60} 
               src={skill.img} 
-              alt={skill.title}
+              alt={skill.title[currentLang]}
               loading='lazy'
               />
-              <h4>{skill.title}</h4>
+              <h4>{skill.title[currentLang]}</h4>
             <span className='border'></span>
           </SkillsContent>
         )

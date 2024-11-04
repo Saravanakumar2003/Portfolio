@@ -104,7 +104,7 @@ export function Header() {
           </li>
           <li>
             <Link href={'/blog'}>
-              <span>{currentLang === 'ta' ? 'பதிவுகள்' : 'Blogs'}</span>
+              <span>{currentLang === 'ta' ? 'பதிவு' : 'Blogs'}</span>
             </Link>
           </li>
           <li>

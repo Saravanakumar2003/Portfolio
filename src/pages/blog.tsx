@@ -75,7 +75,7 @@ export default function Blog() {
 
   const filteredBlogs = blog
     .filter(blog => {
-      const matchesQuery = blog.title.toLowerCase().includes(query.toLowerCase());
+      const matchesQuery = blog.title[currentLang].toLowerCase().includes(query.toLowerCase());
       return matchesQuery;
     })
     .filter(blog => {
@@ -83,7 +83,7 @@ export default function Blog() {
       return matchesCategory;
     })
     .filter(blog => {
-      const [day, month, year] = blog.date.split('/').map(Number);
+      const [day, month, year] = blog.date[currentLang].split('/').map(Number);
       const blogDate = new Date(year, month - 1, day).getTime();
       const start = startDate ? new Date(startDate).getTime() : -Infinity;
       const end = endDate ? new Date(endDate).getTime() : Infinity;
@@ -91,7 +91,7 @@ export default function Blog() {
       return matchesDate;
     })
     .filter(blog => {
-      const readTimeValue = parseInt(blog.read);
+      const readTimeValue = parseInt(blog.read[currentLang]);
       const readTimeFilter = readTime ? parseInt(readTime) : -Infinity;
       const matchesReadTime = readTimeFilter === -Infinity || readTimeValue === readTimeFilter;
       return matchesReadTime;
@@ -99,17 +99,17 @@ export default function Blog() {
 
   const sortedBlogs = filteredBlogs.sort((a, b) => {
     if (sortCriteria === 'date') {
-      const [dayA, monthA, yearA] = a.date.split('/').map(Number);
-      const [dayB, monthB, yearB] = b.date.split('/').map(Number);
+      const [dayA, monthA, yearA] = a.date[currentLang].split('/').map(Number);
+      const [dayB, monthB, yearB] = b.date[currentLang].split('/').map(Number);
       return new Date(yearB, monthB - 1, dayB).getTime() - new Date(yearA, monthA - 1, dayA).getTime();
     }
-    return a.title.localeCompare(b.title);
+    return a.title[currentLang].localeCompare(b.title[currentLang]);
   });
 
   return (
     <>
       <Head>
-        <title>{currentLang === 'ta' ? 'வலைப்பதிவுகள் | சரவணகுமார்' : 'Blogs | Saravanakumar'}</title>
+        <title>{currentLang === 'ta' ? 'பதிவுகள் | சரவணகுமார்' : 'Blogs | Saravanakumar'}</title>
         <meta property="og:title" content={currentLang === 'ta' ? 'வலைப்பதிவுகள் | சரவணகுமார்' : 'Blogs | Saravanakumar'} />
       </Head>
 
@@ -171,7 +171,7 @@ export default function Blog() {
                   {currentLang === 'ta' ? 'வாசிப்பு நேரம்:' : 'Read Time:'}
                   <select onChange={handleReadTimeChange} value={readTime}>
                     <option value="">{currentLang === 'ta' ? 'அனைத்து வாசிப்பு நேரங்கள்' : 'All Read Times'}</option>
-                    {Array.from(new Set(blog.map(blog => blog.read))).map(time => (
+                    {Array.from(new Set(blog.map(blog => blog.read[currentLang]))).map(time => (
                       <option key={time} value={time}>{time}</option>
                     ))}
                   </select>
@@ -196,17 +196,17 @@ export default function Blog() {
                       width={500}
                       height={300}
                       src={blog.img}
-                      alt={blog.title}
+                      alt={blog.title[currentLang]}
                     />
                   </div>
                   <div>
                     <div className="title">
-                      <h2>{blog.title}</h2>
+                      <h2>{blog.title[currentLang]}</h2>
                     </div>
                     <div className="description">
-                      <p>{blog.description}</p>
-                      <p className="date">{currentLang === 'ta' ? 'வெளியிடப்பட்ட தேதி :' : 'Date Published :'} {blog.date}</p>
-                      <p className="read">{currentLang === 'ta' ? 'வாசிப்பு நேரம் :' : 'Reading Time :'} {blog.read}</p>
+                      <p>{blog.description[currentLang]}</p>
+                      <p className="date">{currentLang === 'ta' ? 'வெளியிடப்பட்ட தேதி :' : 'Date Published :'} {blog.date[currentLang]}</p>
+                      <p className="read">{currentLang === 'ta' ? 'வாசிப்பு நேரம் :' : 'Reading Time :'} {blog.read[currentLang]}</p>
                       <div className="tags">
                         {blog.tags.map(tag => (
                           <span key={tag.name}>{tag.name}</span>

@@ -43,26 +43,26 @@ export function Achievements() {
           return (
             <AchievementsContent>
               <div className="title">
-                <h2>{achievements.name}</h2>
-                <h1>{achievements.year}</h1>
+                <h2>{achievements.name[currentLang]}</h2>
+                <h1>{achievements.year[currentLang]}</h1>
                 <h3>
                   <Link href={achievements.url} target="_blank">
                     {currentLang === 'ta' ? 'சான்றிதழைப் பார்க்கவும்' : 'View the Certificate'}
                   </Link>
                 </h3>
-                <span>{currentLang === 'ta' ? 'பரிசு:' : 'Prize:'} {achievements.prize}</span>
+                <span>{currentLang === 'ta' ? 'பரிசு:' : 'Prize:'} {achievements.prize[currentLang]}</span>
               </div>
               <div className="image">
                 <Carousel showArrows={true} showThumbs={false} infiniteLoop={true} showStatus={true} showIndicators={true} autoPlay={true} transitionTime={1000}>
                   {achievements.image.map((image: any, index: Key | null | undefined) => (
                     <div key={index}>
-                      <Image src={image} alt={achievements.name} width={300} height={300} loading="lazy"/>
+                      <Image src={image} alt={achievements.name[currentLang]} width={300} height={300} loading="lazy"/>
                     </div>
                   ))}
                 </Carousel>
               </div>
               <div className="description">
-                <span>{achievements.description}</span>
+                <span>{achievements.description[currentLang]}</span>
               </div>              
             </AchievementsContent>
           );

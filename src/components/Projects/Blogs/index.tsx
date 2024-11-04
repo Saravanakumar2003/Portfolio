@@ -88,4 +88,4 @@ export function AllBlogs({ title }: AllContent) {
       </AllContent>
     </AllContainer>
   );
-}
+} 

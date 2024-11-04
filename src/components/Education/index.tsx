@@ -58,14 +58,14 @@ export function Education() {
                   contentArrowStyle={{
                     borderRight: `10px solid ${theme.backgroundAlt}`
                   }}
-                  date={education.date}
+                  date={education.date[currentLang]}
                   icon={
                     <Image
                       style={{ position: 'relative', width: '100%', height: '100%', borderRadius: '60%' }}
                       width={60}
                       height={60}
                       src={education.img}
-                      alt={education.title}
+                      alt={education.title[currentLang]}
                       loading="lazy"
                     />
                   }
@@ -78,10 +78,10 @@ export function Education() {
                 >
                   <EducationContainer>
                     <EducationContent>
-                      <h1>{education.title}</h1>
-                      <h2>{education.subTitle}</h2>
-                      <span>{education.office}</span>
-                      <p>{education.description.split('\n').map((line, i) => (
+                      <h1>{education.title[currentLang]}</h1>
+                      <h2>{education.subTitle[currentLang]}</h2>
+                      <span>{education.office[currentLang]}</span>
+                      <p>{education.description[currentLang].split('\n').map((line, i) => (
                         <a key={i}>
                           {line}
                           <br />
@@ -90,12 +90,12 @@ export function Education() {
                       <div style={{ display: 'flex', gap:"1rem", marginTop:"1rem" }}>
                         <Button>
                           <Link legacyBehavior href={education.link}>
-                            <a target="_blank">{currentLang === 'ta' ? 'இணையதளம்' : 'Website'}</a>
+                            <a target="_blank">{currentLang === 'ta' ? 'தளம்' : 'Website'}</a>
                           </Link>
                         </Button>
                         <Button>
                           <Link legacyBehavior href={education.link2 ?? ''}>
-                            <a target="_blank">{currentLang === 'ta' ? 'பாடத்திட்டம்' : 'Syllabus'}</a>
+                            <a target="_blank">{currentLang === 'ta' ? 'பாடம்' : 'Syllabus'}</a>
                           </Link>
                         </Button>
                       </div>

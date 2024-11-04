@@ -43,23 +43,23 @@ export function Certificates() {
                       borderRadius: '50%',
                       objectFit: 'cover',
                     }}
-                    src={certificates.logo} alt={certificates.subTitle} />
+                    src={certificates.logo} alt={certificates.subTitle[currentLang]} />
                     <p>
-                      <span><strong>{currentLang === 'ta' ? 'தேதி:' : 'Date:'}</strong> {certificates.level} </span>
+                      <span><strong>{currentLang === 'ta' ? 'தேதி:' : 'Date:'}</strong> {certificates.level[currentLang]} </span>
                     </p>
                     <p>
-                      <span><strong>{currentLang === 'ta' ? 'நிலை:' : 'Status:'}</strong> {certificates.status}</span>
+                      <span><strong>{currentLang === 'ta' ? 'நிலை:' : 'Status:'}</strong> {certificates.status[currentLang]}</span>
                     </p>
                   </S.ListImage>
 
                   <S.ListContent>
-                    <h2>{certificates.title}</h2>
+                    <h2>{certificates.title[currentLang]}</h2>
                     <h3>
                       <Link href={certificates.link} target="_blank">
-                        {certificates.subTitle}
+                        {certificates.subTitle[currentLang]}
                       </Link>
                     </h3>
-                    <p>{certificates.description.split('\n').map((line, i) => (
+                    <p>{certificates.description[currentLang].split('\n').map((line, i) => (
                       <a key={i}>
                         {line}
                         <br />
@@ -95,7 +95,7 @@ export function Certificates() {
                     className="carousel"
                     key={certificate_img.id}
                     src={certificate_img.image}
-                    alt={certificate_img.name}
+                    alt={certificate_img.name[currentLang]}
                     loading="lazy"
                   />
                 )

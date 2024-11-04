@@ -37,23 +37,23 @@ export function Educations() {
               return (
                 <S.List key={certificates.id}>
                   <S.ListImage>
-                    <img src={certificates.logo} alt={certificates.subTitle} />
+                    <img src={certificates.logo} alt={certificates.subTitle[currentLang]} />
                     <p>
-                      {currentLang === 'ta' ? 'தேதி:' : 'Date:'} <span>{certificates.level} </span>
+                      {currentLang === 'ta' ? 'தேதி:' : 'Date:'} <span>{certificates.level[currentLang]} </span>
                     </p>
                     <p>
-                      {currentLang === 'ta' ? 'நிலை:' : 'Status:'} <span>{certificates.status}</span>
+                      {currentLang === 'ta' ? 'நிலை:' : 'Status:'} <span>{certificates.status[currentLang]}</span>
                     </p>
                   </S.ListImage>
 
                   <S.ListContent>
-                    <h2>{certificates.title}</h2>
+                    <h2>{certificates.title[currentLang]}</h2>
                     <h3>
                       <Link href={certificates.link} target="_blank">
-                        {certificates.subTitle}
+                        {certificates.subTitle[currentLang]}
                       </Link>
                     </h3>
-                    <p>{certificates.description}</p>
+                    <p>{certificates.description[currentLang]}</p>
                   </S.ListContent>
                 </S.List>
               );
@@ -84,7 +84,7 @@ export function Educations() {
                     className="carousel"
                     key={certificate_img.id}
                     src={certificate_img.image}
-                    alt={certificate_img.name}
+                    alt={certificate_img.name[currentLang]}
                     loading="lazy"
                   />
                 )

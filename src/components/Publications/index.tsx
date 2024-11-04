@@ -8,15 +8,26 @@ import * as S from './style';
 import { FaOrcid, FaResearchgate } from 'react-icons/fa';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-
+import { useTranslation } from 'react-i18next';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 
 export function Publications() {
+  const { t, i18n } = useTranslation('common');
+  const router = useRouter();
+  const [currentLang, setCurrentLang] = useState<'en' | 'ta'>('en');
+
+  useEffect(() => {
+    const { locale } = router;
+    setCurrentLang(locale as 'en' | 'ta');
+  }, [router.locale]);
+
   return (
     <Container>
       <Title>
-        Publications
+        {currentLang === 'ta' ? 'வெளியீடுகள்' : 'Publications'}
         <span>
-          <FaOrcid size={60} /> Research
+          <FaOrcid size={60} /> {currentLang === 'ta' ? 'ஆராய்ச்சி' : 'Research'}
         </span>
       </Title>
       <S.PublicationContainer>

@@ -107,8 +107,8 @@ export const Title = styled.h2`
 export const Description = styled.h4`
   margin-top: -5rem;
   margin-bottom: 3rem;
-  max-width: 35rem;
-  text-align: start;
+  max-width: 50rem;
+  text-align: justify;
   padding: 0 1rem;
   color: ${props => props.theme.gray};
 `

@@ -4,14 +4,26 @@ import { Container, Title } from '../../styles/styles'
 import { WorkContainer, WorkContent } from './styles'
 import { AiOutlineRightCircle } from 'react-icons/ai'
 import { BiBarChartSquare } from 'react-icons/bi'
+import { useTranslation } from 'react-i18next'
+import { useRouter } from 'next/router'
+import { useEffect, useState } from 'react'
 
 export function Work() {
+  const { t, i18n } = useTranslation('common');
+  const router = useRouter();
+  const [currentLang, setCurrentLang] = useState<'en' | 'ta'>('en');
+
+  useEffect(() => {
+    const { locale } = router;
+    setCurrentLang(locale as 'en' | 'ta');
+  }, [router.locale]);
+
   return (
     <Container id="work">
       <Title>
-      Journey
+        {currentLang === 'ta' ? 'பயணம்' : 'Journey'}
         <span>
-          <BiBarChartSquare />Volunteering
+          <BiBarChartSquare />{currentLang === 'ta' ? 'தன்னார்வம்' : 'Volunteering'}
         </span>
       </Title>
 
@@ -28,7 +40,7 @@ export function Work() {
               </div>
               <button type="button">
                 <Link href={`/work/${work.url}`}>
-                  Learn more<AiOutlineRightCircle />
+                  {currentLang === 'ta' ? 'மேலும் அறிக' : 'Learn more'}<AiOutlineRightCircle />
                 </Link>
               </button>
             </WorkContent>

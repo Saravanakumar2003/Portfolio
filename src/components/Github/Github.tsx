@@ -7,20 +7,22 @@ import {
   Container,
   Group,
   Skeleton,
-  Text,
-  Title,
+  Text as MantineText,
+  Title as MantineTitle,
 } from "@mantine/core";
 import { Grid } from "@mantine/core";
 import { createStyles } from "@mantine/styles";
 import { useMediaQuery } from "@mantine/hooks";
 // Components
 import GitHubCalendar from "react-github-calendar";
-import BoxWrapper from "./BoxWrapper";
+import styled from 'styled-components';
+import { Link } from "phosphor-react";
+import { useTranslation } from 'react-i18next';
+import { useRouter } from 'next/router';
+
 // _mock & config
 import { GITHUB_USERNAME } from "../config";
 import github from "../../data/github.json";
-import styled from 'styled-components';
-import { Link } from "phosphor-react";
 
 // ----------------------------------------------------------------------------
 
@@ -56,8 +58,16 @@ export default function Github() {
   const [totalStars, setTotalStars] = useState(0);
   const matches = useMediaQuery("(min-width: 630px)");
 
-  const html_url = user?.html_url;
+  const { t, i18n } = useTranslation('common');
+  const router = useRouter();
+  const [currentLang, setCurrentLang] = useState<'en' | 'ta'>('en');
 
+  useEffect(() => {
+    const { locale } = router;
+    setCurrentLang(locale as 'en' | 'ta');
+  }, [router.locale]);
+
+  const html_url = user?.html_url;
 
   const fetchData = async () => {
     const res = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}`);
@@ -89,146 +99,142 @@ export default function Github() {
   }, []);
 
   const BoxWrapper = styled.div<{ withBackground: boolean }>`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-  @media (max-width: 630px) {
-    margin: 1rem;
+    @media (max-width: 630px) {
+      margin: 1rem;
+    }
 
-  }
+    @media (max-width: 450px) {
+      margin: 1rem;
+    }
 
-  @media (max-width: 450px) {
-    margin: 1rem;
+    @media (max-width: 350px) {
+      margin: 0.125rem;
+    }
+  `;
 
-  }
+  const Text = styled.p`
+    font-size: 1rem;
+    font-weight: 200;
+    text-align: center;
+    color: black;
 
-  @media (max-width: 350px) {
-    margin: 0.125rem;
-  }
+    @media (max-width: 630px) {
+      font-size: 0.8rem;
+    }
 
+    @media (max-width: 450px) {
+      font-size: 0.7rem;
+    }
 
-`;
+    @media (max-width: 350px) {
+      font-size: 0.5rem;
+    }
 
-const Text = styled.p`
-  font-size: 1rem;
-  font-weight: 200;
-  text-align: center;
-  color: black;
+    @media (max-width: 300px) {
+      font-size: 0.2rem;
+    }
+  `;
 
-  @media (max-width: 630px) {
-    font-size: 0.8rem;
-  }
+  const Title = styled.h1`
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0.5rem;
+    text-align: center;
 
-  @media (max-width: 450px) {
-    font-size: 0.7rem;
-  }
+    @media (max-width: 1200px) {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
 
-  @media (max-width: 350px) {
-    font-size: 0.5rem;
-  }
-
-  @media (max-width: 300px) {
-    font-size: 0.2rem;
-  }
-`;
-
-const Title = styled.h1`
-  font-size: 2rem;
-  font-weight: 700;
-  margin: 0.5rem;
-  text-align: center;
-
-  @media (max-width: 1200px) {
-    font-size: 1.5rem;
-    font-weight: 600;
-  }
-
-  @media (max-width: 768px) {
-    font-size: 1.25rem;
-    font-weight: 500;
-  }
-`;
-
-
+    @media (max-width: 768px) {
+      font-size: 1.25rem;
+      font-weight: 500;
+    }
+  `;
 
   return (
     <section>
-    <Container>
-        <BoxWrapper withBackground={true} style={{ flexDirection: "row"}}>
-        <BoxWrapper withBackground={true} style={{
-            flexDirection: 'row',
-            backgroundColor: 'white',
-            color: 'black',
-            textEmphasisColor: 'black',
-            borderRadius: '10px',
-            margin: '1rem',
-            padding: '1rem',
-          }}>
-          <img
-            src={user?.avatar_url}
-            alt="Saravana's Image"
-            style={
-              {
+      <Container>
+        <BoxWrapper withBackground={true} style={{ flexDirection: "row" }}>
+          <BoxWrapper
+            withBackground={true}
+            style={{
+              flexDirection: 'row',
+              backgroundColor: 'white',
+              color: 'black',
+              textEmphasisColor: 'black',
+              borderRadius: '10px',
+              margin: '1rem',
+              padding: '1rem',
+            }}
+          >
+            <img
+              src={user?.avatar_url}
+              alt="Saravana's Image"
+              style={{
                 height: '150px',
                 width: '150px',
                 borderRadius: '50%',
                 display: 'block',
-              }
-            }
-          />    
-        <div className="aboutDescription">
-        <Title>
-          {user?.login}
-        </Title>
+              }}
+            />
+            <div className="aboutDescription">
+              <Title>
+                {user?.login}
+              </Title>
 
-        <Text>
-          Total Followers : {user?.followers}
-        </Text>
+              <Text>
+                {currentLang === 'ta' ? 'மொத்த பின்தொடர்பவர்கள் :' : 'Total Followers :'} {user?.followers}
+              </Text>
 
-        <Text>
-         Total Following : {user?.following}
-        </Text>
+              <Text>
+                {currentLang === 'ta' ? 'மொத்தம் பின்தொடர்கிறது :' : 'Total Following :'} {user?.following}
+              </Text>
 
-        <Text>
-         Total Stars : {totalStars}
-        </Text>
-<Text>
-        <a href={html_url} style={{
-            textDecoration: 'underline', 
-            color: 'black',
-            fontWeight: 'bold',
-            fontSize: '1rem',
-            textAlign: 'center',
-            margin: '1rem',
-          }}>Visit GitHub Profile</a>
-
-</Text>
-
-        </div>
+              <Text>
+                {currentLang === 'ta' ? 'மொத்த நட்சத்திரங்கள் :' : 'Total Stars :'} {totalStars}
+              </Text>
+              <Text>
+                <a href={html_url} style={{
+                  textDecoration: 'underline',
+                  color: 'black',
+                  fontWeight: 'bold',
+                  fontSize: '1rem',
+                  textAlign: 'center',
+                  margin: '1rem',
+                }}>{currentLang === 'ta' ? 'கிட்ஹப் சுயவிவரத்தைப் பார்வையிடவும்' : 'Visit GitHub Profile'}</a>
+              </Text>
+            </div>
+          </BoxWrapper>
         </BoxWrapper>
-</BoxWrapper>
 
- <BoxWrapper withBackground={true} style={{
+        <BoxWrapper
+          withBackground={true}
+          style={{
             backgroundColor: '$(props => props.theme.colors.dark[0])',
-            color: 'white', 
+            color: 'white',
             borderRadius: '10px',
             margin: '1rem',
-          }}>
-        <Title>
-          {github.contribution}
-        </Title>
+          }}
+        >
+          <Title>
+            {currentLang === 'ta' ? 'கிட்ஹப் பங்களிப்பு' : github.contribution}
+          </Title>
           <BoxWrapper withBackground={true}>
-          <GitHubCalendar
-            username={GITHUB_USERNAME}
-            blockSize={matches ? 14 : 6}
-            fontSize={matches ? 14 : 8}
-            blockMargin={matches ? 6 : 1}
-          />
-        </BoxWrapper> 
-      </BoxWrapper>
-    </Container>
+            <GitHubCalendar
+              username={GITHUB_USERNAME}
+              blockSize={matches ? 14 : 6}
+              fontSize={matches ? 14 : 8}
+              blockMargin={matches ? 6 : 1}
+            />
+          </BoxWrapper>
+        </BoxWrapper>
+      </Container>
     </section>
   );
 }

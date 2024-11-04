@@ -10,7 +10,9 @@ import { Button, Container, Title } from '../../styles/styles'
 import { EducationContainer, EducationContent } from './styles'
 import { Books } from 'phosphor-react'
 import Link from "next/link";
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
+import { useRouter } from 'next/router'
 
 export interface EducationProps {
   target: HTMLInputElement
@@ -18,6 +20,14 @@ export interface EducationProps {
 
 export function Education() {
   const [query, setQuery] = useState("");
+  const { t, i18n } = useTranslation('common');
+  const router = useRouter();
+  const [currentLang, setCurrentLang] = useState<'en' | 'ta'>('en');
+
+  useEffect(() => {
+    const { locale } = router;
+    setCurrentLang(locale as 'en' | 'ta');
+  }, [router.locale]);
 
   const handleChange = (e: EducationProps) => {
     setQuery(e.target.value);
@@ -28,9 +38,9 @@ export function Education() {
   return (
     <Container>
       <Title>
-        History
+        {currentLang === 'ta' ? 'வரலாறு' : 'History'}
         <span>
-          <Books /> Academic
+          <Books /> {currentLang === 'ta' ? 'கல்வி' : 'Academic'}
         </span>
       </Title>
 
@@ -80,12 +90,12 @@ export function Education() {
                       <div style={{ display: 'flex', gap:"1rem", marginTop:"1rem" }}>
                         <Button>
                           <Link legacyBehavior href={education.link}>
-                            <a target="_blank">Website</a>
+                            <a target="_blank">{currentLang === 'ta' ? 'இணையதளம்' : 'Website'}</a>
                           </Link>
                         </Button>
                         <Button>
                           <Link legacyBehavior href={education.link2 ?? ''}>
-                            <a target="_blank">Syllabus</a>
+                            <a target="_blank">{currentLang === 'ta' ? 'பாடத்திட்டம்' : 'Syllabus'}</a>
                           </Link>
                         </Button>
                       </div>

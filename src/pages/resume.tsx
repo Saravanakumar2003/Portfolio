@@ -7,12 +7,15 @@ import { Description, Section, Title } from '../styles/styles'
 import { PageSection } from '../styles/resume'
 import { BsFileText } from 'react-icons/bs'
 import axios from 'axios'
+import { useTranslation } from 'react-i18next'
+import { useRouter } from 'next/router'
+import { useEffect, useState } from 'react'
 
 const botkey = process.env.NEXT_PUBLIC_BOTKEY_URL;
 const canva = process.env.NEXT_PUBLIC_CANVA_URL;
 
 export default function Resume() {
-  const resumeData = {canva}
+  const resumeData = { canva }
   
   let previewData = '';
   if (resumeData.canva) {
@@ -22,34 +25,41 @@ export default function Resume() {
     )}view?embed`;
   }
 
+  const { t, i18n } = useTranslation('common');
+  const router = useRouter();
+  const [currentLang, setCurrentLang] = useState<'en' | 'ta'>('en');
+
+  useEffect(() => {
+    const { locale } = router;
+    setCurrentLang(locale as 'en' | 'ta');
+  }, [router.locale]);
+
   return (
     <>
       <Head>
-        <title>Resume | Saravanakumar </title>
+        <title>{currentLang === 'ta' ? 'சுயவிவரம் | சரவணகுமார்' : 'Resume | Saravanakumar'}</title>
         <meta
           name="description"
-          content="This is my updated resume, you can see or download it."
+          content={currentLang === 'ta' ? 'இது எனது புதுப்பிக்கப்பட்ட சுயவிவரம், நீங்கள் அதை காணலாம் அல்லது பதிவிறக்கம் செய்யலாம்.' : 'This is my updated resume, you can see or download it.'}
         />
-        <meta property="og:title" content="Resume | Saravanakumar" />
+        <meta property="og:title" content={currentLang === 'ta' ? 'சுயவிவரம் | சரவணகுமார்' : 'Resume | Saravanakumar'} />
         <meta
           property="og:description"
-          content=" This is my updated resume, you can see or download it."
+          content={currentLang === 'ta' ? 'இது எனது புதுப்பிக்கப்பட்ட சுயவிவரம், நீங்கள் அதை காணலாம் அல்லது பதிவிறக்கம் செய்யலாம்.' : 'This is my updated resume, you can see or download it.'}
         />
       </Head>
 
       <ScrollTop />
       <Section>
         <Title>
-          <p>../curriculum</p>
-          Curriculam Vitae
+          <p>../{currentLang === 'ta' ? 'சுயவிவரம்' : 'curriculum'}</p>
+          {currentLang === 'ta' ? 'சுயவிவரம்' : 'Curriculum Vitae'}
           <span>
-            <BsFileText /> Resume
+            <BsFileText /> {currentLang === 'ta' ? 'சுயவிவரம்' : 'Resume'}
           </span>
         </Title>
         <Description style={{width:'100%', textAlign: 'center', marginBottom: '1px'}}>
-          This is my updated resume, powered by Canva website. 
-          <br />
-          You can download my professional resume by clicking on the download button below.
+          {currentLang === 'ta' ? 'இது எனது புதுப்பிக்கப்பட்ட சுயவிவரம், Canva இணையதளத்தால் இயக்கப்படுகிறது. கீழே உள்ள பதிவிறக்க பொத்தானைக் கிளிக் செய்வதன் மூலம் எனது தொழில்முறை சுயவிவரத்தை நீங்கள் பதிவிறக்கம் செய்யலாம்.' : 'This is my updated resume, powered by Canva website. You can download my professional resume by clicking on the download button below.'}
         </Description>
 
         <PageSection>

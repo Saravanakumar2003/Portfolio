@@ -5,21 +5,33 @@ import { Description, Section, Title } from '../../styles/styles'
 import { ContainerContact, ContactContent } from './styles'
 import { BsWhatsapp } from 'react-icons/bs'
 import { Envelope, TelegramLogo } from 'phosphor-react'
+import { useTranslation } from 'react-i18next'
+import { useRouter } from 'next/router'
+import { useEffect, useState } from 'react'
 
 const calendy = process.env.NEXT_PUBLIC_CALENDLY_URL;
 
 export function Contact() {
+  const { t, i18n } = useTranslation('common');
+  const router = useRouter();
+  const [currentLang, setCurrentLang] = useState<'en' | 'ta'>('en');
+
+  useEffect(() => {
+    const { locale } = router;
+    setCurrentLang(locale as 'en' | 'ta');
+  }, [router.locale]);
+
   return (
     <Section>
       <Title>
         <p>../contact</p>
-        Contact Form
+        {currentLang === 'ta' ? 'தொடர்பு படிவம்' : 'Contact Form'}
         <span>
-          <Envelope /> Contact
+          <Envelope /> {currentLang === 'ta' ? 'தொடர்பு' : 'Contact'}
         </span>
       </Title>
       <Description>
-      So if you are looking for someone hardworking, authentic and always up for a good challenge, look no further than yours truly! Lets connect and see how we can make a difference together:)
+        {currentLang === 'ta' ? 'எனவே நீங்கள் கடினமாக உழைக்கும், உண்மையான மற்றும் நல்ல சவாலுக்கு எப்போதும் தயாராக இருக்கும் ஒருவரைத் தேடுகிறீர்கள் என்றால், உண்மையானவர்களைத் தவிர வேறு எதையும் பார்க்க வேண்டாம்! நாம் இணைந்து எப்படி மாற்றத்தை ஏற்படுத்த முடியும் என்று பார்க்கலாம்:)' : 'So if you are looking for someone hardworking, authentic and always up for a good challenge, look no further than yours truly! Lets connect and see how we can make a difference together:)'}
       </Description>
 
       <ContainerContact>
@@ -29,9 +41,7 @@ export function Contact() {
               <BsWhatsapp size={22} color="#00fffb" /> WhatsApp{' '}
             </h4>
             <Link href="https://api.whatsapp.com/send?phone=918838416187" target="_blank">
-
               <span>+91 8838416187</span>
-
             </Link>
           </div>
 
@@ -41,24 +51,24 @@ export function Contact() {
               <TelegramLogo size={22} color="#00fffb" /> Email{' '}
             </h4>
             <Link href="mailto:hello@saravanakumar.engineer" target="_blank">
-
               <span>hello@saravanakumar.engineer</span>
-
             </Link>
           </div>
-          
         </ContactContent>
         <Form />
-          <Title style={{ textAlign: "center" }}> Schedule a Meeting </Title>
-          <Description style={{ textAlign: "center", marginTop: "3px" }}>This is powered by Calendy. Hence, it may take some time for loading. 
-          (Note: You have to accept the cookies by Calendy in order to Schedule a meet)</Description>          
-          <iframe
-            src={calendy}
-            width="100%"
-            height="800px"
-            frameBorder="0"
-            title="Calendly"
-          ></iframe>     
+        <Title style={{ textAlign: "center" }}>
+          {currentLang === 'ta' ? 'ஒரு சந்திப்பை திட்டமிடுங்கள்' : 'Schedule a Meeting'}
+        </Title>
+        <Description style={{ textAlign: "center", marginTop: "3px" }}>
+          {currentLang === 'ta' ? 'இது Calendy மூலம் இயக்கப்படுகிறது. எனவே, ஏற்றுவதற்கு சில நேரம் ஆகலாம். (குறிப்பு: சந்திப்பை திட்டமிட நீங்கள் Calendy குக்கீகளை ஏற்க வேண்டும்)' : 'This is powered by Calendy. Hence, it may take some time for loading. (Note: You have to accept the cookies by Calendy in order to Schedule a meet)'}
+        </Description>
+        <iframe
+          src={calendy}
+          width="100%"
+          height="800px"
+          frameBorder="0"
+          title="Calendly"
+        ></iframe>
       </ContainerContact>
     </Section>
   );

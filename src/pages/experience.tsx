@@ -39,23 +39,22 @@ export default function Experience() {
   return (
     <div>
       <Head>
-        <title> Experience | Saravanakumar</title>
+        <title>{currentLang === 'ta' ? 'அனுபவம் | சரவணகுமார்' : 'Experience | Saravanakumar'}</title>
       </Head>
 
       <ScrollTop />
       <Section>
         <Title>
-          <p>../experience</p>
-          Experience
+          <p>../{currentLang === 'ta' ? 'அனுபவம்' : 'experience'}</p>
+          {currentLang === 'ta' ? 'அனுபவம்' : 'Experience'}
           <span>
-            <Briefcase /> Work
+            <Briefcase /> {currentLang === 'ta' ? 'வேலை' : 'Work'}
           </span>
         </Title>
 
         <Description>
           <p>
-            I have been working as a developer for over 2 years. I have worked on many projects, from small to large
-            scale, and I have experience working with many different technologies.
+            {currentLang === 'ta' ? 'நான் 2 ஆண்டுகளுக்கும் மேலாக டெவலப்பராக பணியாற்றி வருகிறேன். நான் சிறிய அளவிலிருந்து பெரிய அளவிலான பல திட்டங்களில் பணியாற்றியுள்ளேன், மேலும் பல்வேறு தொழில்நுட்பங்களுடன் பணியாற்றும் அனுபவம் எனக்கு உள்ளது.' : 'I have been working as a developer for over 2 years. I have worked on many projects, from small to large scale, and I have experience working with many different technologies.'}
           </p>
         </Description>
 
@@ -129,12 +128,12 @@ export default function Experience() {
                       className="links"
                     >
                       <a href={exp.link} target="_blank" rel="noreferrer">
-                        <Button>View Report</Button>
+                        <Button>{currentLang === 'ta' ? 'அறிக்கையைப் பார்க்கவும்' : 'View Report'}</Button>
                       </a>
                     </div>
 
                     <div className="techs">
-                      <h3>Techs:</h3>
+                      <h3>{currentLang === 'ta' ? 'தொழில்நுட்பங்கள்:' : 'Techs:'}</h3>
                       <ul>
                         {exp.tags.map(tag => (
                           <div className="tags" key={tag.name}>

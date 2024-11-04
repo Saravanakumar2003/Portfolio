@@ -13,6 +13,9 @@ import { FaSearch } from 'react-icons/fa';
 import { ArrowRight } from 'phosphor-react';
 import { Publications } from '../components/Publications';
 import { Button } from '@mantine/core';
+import { useTranslation } from 'react-i18next';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
 const botkey = process.env.NEXT_PUBLIC_BOTKEY_URL;
 
@@ -27,6 +30,15 @@ export default function Blog() {
   const [startDate, setStartDate] = useState(''); // Start date for filtering
   const [endDate, setEndDate] = useState(''); // End date for filtering
   const [readTime, setReadTime] = useState(''); // Single read time for filtering
+
+  const { t, i18n } = useTranslation('common');
+  const router = useRouter();
+  const [currentLang, setCurrentLang] = useState<'en' | 'ta'>('en');
+
+  useEffect(() => {
+    const { locale } = router;
+    setCurrentLang(locale as 'en' | 'ta');
+  }, [router.locale]);
 
   const handleChange = (e: BlogProps) => {
     setQuery(e.target.value);
@@ -61,17 +73,13 @@ export default function Blog() {
     setReadTime('');
   };
 
-  // console.log('Initial Blogs:', blog);
-
   const filteredBlogs = blog
     .filter(blog => {
       const matchesQuery = blog.title.toLowerCase().includes(query.toLowerCase());
-      // console.log(`Blog "${blog.title}" matches query "${query}":`, matchesQuery);
       return matchesQuery;
     })
     .filter(blog => {
       const matchesCategory = selectedCategory === '' || blog.tags.some(tag => tag.name === selectedCategory);
-      // console.log(`Blog "${blog.title}" matches category "${selectedCategory}":`, matchesCategory);
       return matchesCategory;
     })
     .filter(blog => {
@@ -80,18 +88,14 @@ export default function Blog() {
       const start = startDate ? new Date(startDate).getTime() : -Infinity;
       const end = endDate ? new Date(endDate).getTime() : Infinity;
       const matchesDate = blogDate >= start && blogDate <= end;
-      // console.log(`Blog "${blog.title}" matches date range "${startDate}" to "${endDate}":`, matchesDate);
       return matchesDate;
     })
     .filter(blog => {
       const readTimeValue = parseInt(blog.read);
       const readTimeFilter = readTime ? parseInt(readTime) : -Infinity;
       const matchesReadTime = readTimeFilter === -Infinity || readTimeValue === readTimeFilter;
-      // console.log(`Blog "${blog.title}" matches read time "${readTime}":`, matchesReadTime);
       return matchesReadTime;
     });
-
-  // console.log('Filtered Blogs:', filteredBlogs);
 
   const sortedBlogs = filteredBlogs.sort((a, b) => {
     if (sortCriteria === 'date') {
@@ -102,37 +106,35 @@ export default function Blog() {
     return a.title.localeCompare(b.title);
   });
 
-  // console.log('Sorted Blogs:', sortedBlogs);
-
   return (
     <>
       <Head>
-        <title>Blogs | Saravanakumar </title>
-        <meta property="og:title" content="Projects | Saravanakumar" />
+        <title>{currentLang === 'ta' ? 'வலைப்பதிவுகள் | சரவணகுமார்' : 'Blogs | Saravanakumar'}</title>
+        <meta property="og:title" content={currentLang === 'ta' ? 'வலைப்பதிவுகள் | சரவணகுமார்' : 'Blogs | Saravanakumar'} />
       </Head>
 
       <ScrollTop />
       <T.Section>
         <T.Title>
-          <p>../blogs</p>
-          Posts
+          <p>../{currentLang === 'ta' ? 'வலைப்பதிவுகள்' : 'blogs'}</p>
+          {currentLang === 'ta' ? 'பதிவுகள்' : 'Posts'}
           <span>
-            <HiOutlineDesktopComputer />Blog
+            <HiOutlineDesktopComputer />{currentLang === 'ta' ? 'வலைப்பதிவு' : 'Blog'}
           </span>
         </T.Title>
         <T.Description>
-          My blogs are powered by Hashnode website. If you click on "View Blog", you'll be redirected to Hashnode Blog Site. In order to like or comment you need to login on Hashnode!
+          {currentLang === 'ta' ? 'எனது வலைப்பதிவுகள் ஹாஷ்நோட் இணையதளத்தால் இயக்கப்படுகின்றன. "வலைப்பதிவைப் பார்க்க" கிளிக் செய்தால், நீங்கள் ஹாஷ்நோட் வலைப்பதிவு தளத்திற்கு மாற்றப்படுவீர்கள். விருப்பம் அல்லது கருத்து தெரிவிக்க ஹாஷ்நோடில் உள்நுழைய வேண்டும்!' : 'My blogs are powered by Hashnode website. If you click on "View Blog", you\'ll be redirected to Hashnode Blog Site. In order to like or comment you need to login on Hashnode!'}
         </T.Description>
 
         <S.BlogContainer>
           <S.BlogContent>
             <div className="search">
-              <p>Search by Blog name</p>
+              <p>{currentLang === 'ta' ? 'வலைப்பதிவு பெயரால் தேடுங்கள்' : 'Search by Blog name'}</p>
               <div className="input">
                 <input
                   type="text"
                   name="search"
-                  placeholder="Type here..."
+                  placeholder={currentLang === 'ta' ? 'இங்கே தட்டச்சு செய்யவும்...' : 'Type here...'}
                   value={query}
                   onChange={handleChange}
                 />
@@ -142,12 +144,12 @@ export default function Blog() {
 
             <FiltersContainer>
               <select onChange={handleSortChange} value={sortCriteria}>
-                <option value="date">Sort by Date</option>
-                <option value="title">Sort by Title</option>
+                <option value="date">{currentLang === 'ta' ? 'தேதியின்படி வரிசைப்படுத்து' : 'Sort by Date'}</option>
+                <option value="title">{currentLang === 'ta' ? 'தலைப்பின்படி வரிசைப்படுத்து' : 'Sort by Title'}</option>
               </select>
 
               <select onChange={handleCategoryChange} value={selectedCategory}>
-                <option value="">All Categories</option>
+                <option value="">{currentLang === 'ta' ? 'அனைத்து வகைகளும்' : 'All Categories'}</option>
                 {Array.from(new Set(blog.flatMap(blog => blog.tags.map(tag => tag.name)))).map(category => (
                   <option key={category} value={category}>{category}</option>
                 ))}
@@ -155,20 +157,20 @@ export default function Blog() {
 
               <div className="date-filters">
                 <label>
-                  From:
+                  {currentLang === 'ta' ? 'இருந்து:' : 'From:'}
                   <input type="date" value={startDate} onChange={handleStartDateChange} />
                 </label>
                 <label>
-                  To:
+                  {currentLang === 'ta' ? 'வரை:' : 'To:'}
                   <input type="date" value={endDate} onChange={handleEndDateChange} />
                 </label>
               </div>
 
               <div className="read-time-filters">
                 <label>
-                  Read Time:
+                  {currentLang === 'ta' ? 'வாசிப்பு நேரம்:' : 'Read Time:'}
                   <select onChange={handleReadTimeChange} value={readTime}>
-                    <option value="">All Read Times</option>
+                    <option value="">{currentLang === 'ta' ? 'அனைத்து வாசிப்பு நேரங்கள்' : 'All Read Times'}</option>
                     {Array.from(new Set(blog.map(blog => blog.read))).map(time => (
                       <option key={time} value={time}>{time}</option>
                     ))}
@@ -178,11 +180,11 @@ export default function Blog() {
             </FiltersContainer>
 
             <BButton onClick={handleClearFilters}>
-              Clear Filters
+              {currentLang === 'ta' ? 'வடிப்பான்களை அழிக்கவும்' : 'Clear Filters'}
             </BButton>
 
             {!sortedBlogs.length && (
-              <h3 className="not-found">Blog not found 🙁</h3>
+              <h3 className="not-found">{currentLang === 'ta' ? 'வலைப்பதிவு கிடைக்கவில்லை 🙁' : 'Blog not found 🙁'}</h3>
             )}
 
             {sortedBlogs.map(blog => (
@@ -203,8 +205,8 @@ export default function Blog() {
                     </div>
                     <div className="description">
                       <p>{blog.description}</p>
-                      <p className="date">Date Published : {blog.date}</p>
-                      <p className="read">Reading Time : {blog.read}</p>
+                      <p className="date">{currentLang === 'ta' ? 'வெளியிடப்பட்ட தேதி :' : 'Date Published :'} {blog.date}</p>
+                      <p className="read">{currentLang === 'ta' ? 'வாசிப்பு நேரம் :' : 'Reading Time :'} {blog.read}</p>
                       <div className="tags">
                         {blog.tags.map(tag => (
                           <span key={tag.name}>{tag.name}</span>
@@ -213,7 +215,7 @@ export default function Blog() {
                     </div>
                     <Link href={blog.url}>
                       <T.ButtonAlternatives>
-                        View Blog
+                        {currentLang === 'ta' ? 'வலைப்பதிவைப் பார்க்க' : 'View Blog'}
                         <ArrowRight
                           style={{ marginBottom: '-0.1rem' }}
                           weight="bold"
@@ -227,8 +229,8 @@ export default function Blog() {
             ))}
 
             <p className="github">
-              Hey, hey, hey... I have even more on{' '}
-              <a href="https://saravanakumar2003.hashnode.dev/">here</a>!!
+              {currentLang === 'ta' ? 'ஏய், ஏய், ஏய்... எனக்கு இன்னும் அதிகம் உள்ளது ' : 'Hey, hey, hey... I have even more on '}
+              <a href="https://saravanakumar2003.hashnode.dev/">{currentLang === 'ta' ? 'இங்கே' : 'here'}</a>!!
             </p>
           </S.BlogContent>
         </S.BlogContainer>

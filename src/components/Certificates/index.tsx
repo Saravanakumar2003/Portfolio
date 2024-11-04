@@ -8,14 +8,26 @@ import { Carousel } from 'react-responsive-carousel'
 import { Title } from '../../styles/styles'
 import * as S from './styles'
 import { GraduationCap } from 'phosphor-react'
+import { useTranslation } from 'react-i18next'
+import { useRouter } from 'next/router'
+import { useEffect, useState } from 'react'
 
 export function Certificates() {
+  const { t, i18n } = useTranslation('common');
+  const router = useRouter();
+  const [currentLang, setCurrentLang] = useState<'en' | 'ta'>('en');
+
+  useEffect(() => {
+    const { locale } = router;
+    setCurrentLang(locale as 'en' | 'ta');
+  }, [router.locale]);
+
   return (
     <S.ContainerEducation>
       <Title>
-        Highlights
+        {currentLang === 'ta' ? 'முக்கிய நிகழ்வுகள்' : 'Highlights'}
         <span>
-          <GraduationCap /> Certification
+          <GraduationCap /> {currentLang === 'ta' ? 'சான்றிதழ்' : 'Certification'}
         </span>
       </Title>
       <S.EducationContent>
@@ -33,10 +45,10 @@ export function Certificates() {
                     }}
                     src={certificates.logo} alt={certificates.subTitle} />
                     <p>
-                      <span><strong>Date:</strong> {certificates.level} </span>
+                      <span><strong>{currentLang === 'ta' ? 'தேதி:' : 'Date:'}</strong> {certificates.level} </span>
                     </p>
                     <p>
-                      <span><strong>Status:</strong> {certificates.status}</span>
+                      <span><strong>{currentLang === 'ta' ? 'நிலை:' : 'Status:'}</strong> {certificates.status}</span>
                     </p>
                   </S.ListImage>
 
@@ -44,17 +56,15 @@ export function Certificates() {
                     <h2>{certificates.title}</h2>
                     <h3>
                       <Link href={certificates.link} target="_blank">
-
                         {certificates.subTitle}
-
                       </Link>
                     </h3>
                     <p>{certificates.description.split('\n').map((line, i) => (
                       <a key={i}>
                         {line}
-                          <br />
-                           </a>
-                      ))}</p>
+                        <br />
+                      </a>
+                    ))}</p>
                   </S.ListContent>
                 </S.List>
               );
@@ -65,7 +75,7 @@ export function Certificates() {
           <img
             className="education-logo"
             src="/education/education.svg"
-            alt="menino no computador"
+            alt={currentLang === 'ta' ? 'கணினியில் சிறுவன்' : 'boy on computer'}
           />
 
           <Carousel
@@ -88,7 +98,7 @@ export function Certificates() {
                     alt={certificate_img.name}
                     loading="lazy"
                   />
-                  )
+                )
               })}
           </Carousel>
         </S.EducationImage>

@@ -8,14 +8,26 @@ import { Carousel } from 'react-responsive-carousel'
 import { Title } from '../../styles/styles'
 import * as S from './styles'
 import { GraduationCap } from 'phosphor-react'
+import { useTranslation } from 'react-i18next'
+import { useRouter } from 'next/router'
+import { useEffect, useState } from 'react'
 
 export function Educations() {
+  const { t, i18n } = useTranslation('common');
+  const router = useRouter();
+  const [currentLang, setCurrentLang] = useState<'en' | 'ta'>('en');
+
+  useEffect(() => {
+    const { locale } = router;
+    setCurrentLang(locale as 'en' | 'ta');
+  }, [router.locale]);
+
   return (
     <S.ContainerEducation>
       <Title>
-        Highlights
+        {currentLang === 'ta' ? 'முக்கிய நிகழ்வுகள்' : 'Highlights'}
         <span>
-          <GraduationCap /> Certification
+          <GraduationCap /> {currentLang === 'ta' ? 'சான்றிதழ்' : 'Certification'}
         </span>
       </Title>
       <S.EducationContent>
@@ -27,10 +39,10 @@ export function Educations() {
                   <S.ListImage>
                     <img src={certificates.logo} alt={certificates.subTitle} />
                     <p>
-                      Date: <span>{certificates.level} </span>
+                      {currentLang === 'ta' ? 'தேதி:' : 'Date:'} <span>{certificates.level} </span>
                     </p>
                     <p>
-                      Status: <span>{certificates.status}</span>
+                      {currentLang === 'ta' ? 'நிலை:' : 'Status:'} <span>{certificates.status}</span>
                     </p>
                   </S.ListImage>
 
@@ -38,9 +50,7 @@ export function Educations() {
                     <h2>{certificates.title}</h2>
                     <h3>
                       <Link href={certificates.link} target="_blank">
-
                         {certificates.subTitle}
-
                       </Link>
                     </h3>
                     <p>{certificates.description}</p>
@@ -54,7 +64,7 @@ export function Educations() {
           <img
             className="education-logo"
             src="/education/education.svg"
-            alt="menino no computador"
+            alt={currentLang === 'ta' ? 'கணினியில் சிறுவன்' : 'boy on computer'}
           />
 
           <Carousel
@@ -75,8 +85,9 @@ export function Educations() {
                     key={certificate_img.id}
                     src={certificate_img.image}
                     alt={certificate_img.name}
+                    loading="lazy"
                   />
-                  )
+                )
               })}
           </Carousel>
         </S.EducationImage>

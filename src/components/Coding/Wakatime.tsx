@@ -1,8 +1,20 @@
 import { Code } from "phosphor-react";
 import { Container, Title } from '../../styles/styles'
 import { Figure, Box } from "./style";
+import { useTranslation } from 'react-i18next'
+import { useRouter } from 'next/router'
+import { useEffect, useState } from 'react'
 
 export function Wakatime() {
+  const { t, i18n } = useTranslation('common');
+  const router = useRouter();
+  const [currentLang, setCurrentLang] = useState<'en' | 'ta'>('en');
+
+  useEffect(() => {
+    const { locale } = router;
+    setCurrentLang(locale as 'en' | 'ta');
+  }, [router.locale]);
+
   const currentDate = new Date();
   const lastWeekDate = new Date();
   lastWeekDate.setDate(currentDate.getDate() - 7);
@@ -10,28 +22,30 @@ export function Wakatime() {
   return (
     <Container>
       <Title>
-        Stats
+        {currentLang === 'ta' ? 'புள்ளிவிவரங்கள்' : 'Stats'}
         <span>
-          <Code />Coding
+          <Code /> {currentLang === 'ta' ? 'கோடிங்' : 'Coding'}
         </span>
       </Title>
 
       <div style={{
-  margin: '2rem 0',
-}}>
-  <h1 style={{textAlign:"center"}}>My coding stats from</h1>
-  <div style={{
-    margin: '1rem 0',
-    border: '2px solid lightblue',
-    borderRadius: '5px',
-    padding: '10px',
-    color: 'lightblue',
-    fontWeight: 'bold',
-    display: 'inline-block',
-  }}>
-  {` ${lastWeekDate.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' })} to ${currentDate.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' })}`}
-</div>
-</div>
+        margin: '2rem 0',
+      }}>
+        <h1 style={{ textAlign: "center" }}>
+          {currentLang === 'ta' ? 'எனது கோடிங் புள்ளிவிவரங்கள்' : 'My coding stats from'}
+        </h1>
+        <div style={{
+          margin: '1rem 0',
+          border: '2px solid lightblue',
+          borderRadius: '5px',
+          padding: '10px',
+          color: 'lightblue',
+          fontWeight: 'bold',
+          display: 'inline-block',
+        }}>
+          {` ${lastWeekDate.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' })} to ${currentDate.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' })}`}
+        </div>
+      </div>
 
       <Figure>
         <iframe
@@ -48,7 +62,7 @@ export function Wakatime() {
 
       <h1 style={{
         margin: '2rem 0',
-      }}>Coding Platforms, you can find me on:</h1>
+      }}>{currentLang === 'ta' ? 'குறியீட்டு தளங்கள், நீங்கள் என்னை இதில் காணலாம்:' : 'Coding Platforms, you can find me on:'}</h1>
 
       <Box>
         <a href="http://www.skillrack.com/profile/381703/7d59d9d0ed57993adcca4f71e60bcc308c4abf09" target="_blank" rel="noopener noreferrer">

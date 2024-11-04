@@ -3,6 +3,10 @@ import Link from 'next/link'
 import styled from 'styled-components'
 import { ArrowLeft } from 'phosphor-react'
 import { ButtonAlt } from '../styles/styles'
+import { useTranslation } from 'react-i18next'
+import { useRouter } from 'next/router'
+import { useEffect, useState } from 'react'
+import React from 'react'
 
 const botkey = process.env.NEXT_PUBLIC_BOTKEY_URL;
 
@@ -64,6 +68,15 @@ const Content = styled.div`
 `
 
 export default function Error() {
+  const { t, i18n } = useTranslation('common'); // Use the 'common' namespace
+  const router = useRouter();
+  const [currentLang, setCurrentLang] = useState<'en' | 'ta'>('en');
+
+  useEffect(() => {
+    const { locale } = router;
+    setCurrentLang(locale as 'en' | 'ta');
+  }, [router.locale]);
+
   return <>
     <Head>
       <title>404</title>
@@ -78,15 +91,15 @@ export default function Error() {
     <Styles404>
     <img src="/vectors/404.svg" alt="404" width={500} height={300}/>
       <Content>
-        <span>Hey! Looks like you are lost :((</span>
+        <span> {currentLang === 'ta' ? 'ஏய்! நீங்கள் தொலைந்துவிட்டீர்கள் போல் தெரிகிறது :((' : 'Hey! Looks like you are lost :(('}  </span>
         <h1>
           {' '}
-          404 <br /> Page not found
+          404 <br />  {currentLang === 'ta' ? 'பக்கம் கிடைக்கவில்லை' : 'Page not found'}  
         </h1>
         <Link href={'/'} legacyBehavior>
           <ButtonAlt>
             <ArrowLeft weight="bold" size={18} />
-            Go Back
+            {currentLang === 'ta' ? 'திரும்பி செல்' : 'Go Back'}  
           </ButtonAlt>
         </Link>
       </Content>

@@ -101,21 +101,21 @@ const works = [
 
       {
         name: 'NSS Blood Donation Camp',
-        image: '/Volunteering/NSS/NSS14.jpg',
+        image: '/Volunteering/NSS/NSS14.JPG',
         date: '26th, March 2024',
         description:
           'I volunteered at the NSS Blood Donation Camp, an initiative to promote voluntary blood donation and save lives. The camp was organized at Velammal Engineering College, and I was delighted to contribute to this noble cause.'
       },
       {
         name: ' My Co-Ordinators team',
-        image: '/Volunteering/NSS/NSS12.jpg',
+        image: '/Volunteering/NSS/NSS12.JPG',
         date: '15th, August 2024',
         description:
           'Being part of the NSS Co-ordinator team for 2023-24 was an incredible honor. Led by the inspiring Dr. R. Karthik Sir, we united as passionate volunteers to organize impactful events, creating lasting memories and deepening our commitment to service and community. Together, we worked tirelessly to foster a culture of social responsibility and make a positive impact on society.'
       },
       {
         name: 'Our Panel Handover Ceremony',
-        image: '/Volunteering/NSS/NSS13.jpg',
+        image: '/Volunteering/NSS/NSS13.JPG',
         date: '29th, August 2024',
         description:
           'The NSS Panel Handover Ceremony was a memorable event where the outgoing panel handed over the responsibilities to the incoming panel. It was a moment of pride and gratitude as we reflected on our achievements and passed on the baton to the next generation of NSS leaders.'

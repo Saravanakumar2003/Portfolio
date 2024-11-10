@@ -24,8 +24,6 @@ export function Header() {
     setOpen(!open);
   };
 
-  const musicSrc = '/music/in-slow-motion-inspiring-ambient-lounge-219592.mp3';
-
   const { t, i18n } = useTranslation('common');
   const router = useRouter();
   const [currentLang, setCurrentLang] = useState<'en' | 'ta'>('en');
@@ -51,25 +49,13 @@ export function Header() {
           {'Saravanakumar'}
         </Link>
 
-        <div className="audio-player">
-          <AudioPlayer audioSrc={musicSrc} />
-        </div>
-        <style jsx>{`
-          .audio-player {
-            padding-top: 0.5rem;
-            padding-bottom: 0.5rem;
-            padding-left: 0.5rem;
-            margin: 0 0.5rem;
-          }
-        `}</style>
-
         <div className="settings">
           <Settings toggleTheme={toggleTheme} currentTheme={currentTheme} />
         </div>
         <style jsx>{`
           .settings {
-            padding-top: 0.5rem;
-            padding-bottom: 0.5rem;
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
             padding-left: 0.5rem;
             margin: 0 0.5rem;
           }

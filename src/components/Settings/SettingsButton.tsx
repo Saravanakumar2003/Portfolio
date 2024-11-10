@@ -3,6 +3,7 @@ import { FaSun, FaMoon } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import { useRouter } from 'next/router';
+import AudioPlayer from '../Music/AudioPlayer';
 
 interface SettingsProps {
   toggleTheme: () => void;
@@ -11,10 +12,12 @@ interface SettingsProps {
 
 
 const SettingsContainer = styled.div`
-  position: absolute;
-  flex-direction: column;
-  align-items: center;
+  position: fixed;
+  display: inline-block;
   z-index: 1000;
+  margin-right: 1rem;
+  align-self: center;
+  
 `;
 
 const SettingsButton = styled.button`
@@ -24,7 +27,6 @@ const SettingsButton = styled.button`
   border-radius: 50%;
   width: 40px;
   height: 40px;
-  display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -36,12 +38,16 @@ const Dropdown = styled.div`
   color: ${({ theme }) => theme.firstColor};
   border: 1px solid ${({ theme }) => theme.firstColor};
   border-radius: 5px;
-  margin-top: 0.5rem;
   padding: 0.5rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+  hr {
+    border: 0.5px solid ${({ theme }) => theme.firstColor};
+    margin: 0.5rem 0;
+  }
 `;
+
 
 const LanguageButton = styled.button`
   background: none;
@@ -49,25 +55,48 @@ const LanguageButton = styled.button`
   color: ${({ theme }) => theme.firstColor};
   cursor: pointer;
   margin: 0.5rem 0;
+  font-size: 0.7rem;
 `;
 
 const ThemeButton = styled.button`
-  background: none;
   border: none;
+  background-color: ${({ theme }) => theme.backgroundAlt};
   color: ${({ theme }) => theme.firstColor};
   cursor: pointer;
-  margin: 0.5rem 0;
+  border-radius: 5px;
+  padding: 0.3rem 0.3rem;
+`;
+
+const Text = styled.p`
+  color: ${({ theme }) => theme.firstColor};
+  font-size: 0.8rem;
+`;
+
+const AudioToggleButton = styled.button`
+  background-color: ${({ theme }) => theme.backgroundAlt};
+  color: ${({ theme }) => theme.firstColor};
+  border: 1px solid ${({ theme }) => theme.firstColor};
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  &:hover {
+    background-color: ${({ theme }) => theme.background};
+  }
 `;
 
 const Settings: React.FC<SettingsProps> = ({ toggleTheme, currentTheme }) => {
-    const { t } = useTranslation();
-    const router = useRouter();
-    const [open, setOpen] = useState(false);
-  
-    const changeLanguage = (lang: string) => {
-      router.push(router.pathname, router.asPath, { locale: lang });
-    };
-  
+  const { t } = useTranslation();
+  const router = useRouter();
+  const [open, setOpen] = useState(false);
+  const [audioVisible, setAudioVisible] = useState(false);
+
+  const changeLanguage = (lang: string) => {
+    router.push(router.pathname, router.asPath, { locale: lang });
+  };
+
+  const musicSrc = '/music/in-slow-motion-inspiring-ambient-lounge-219592.mp3';
 
   return (
     <SettingsContainer>
@@ -76,13 +105,27 @@ const Settings: React.FC<SettingsProps> = ({ toggleTheme, currentTheme }) => {
       </SettingsButton>
       {open && (
         <Dropdown>
-            <p>Settings</p>
+          <p style={{ textAlign: 'center' }}>Settings</p>
+          <hr />
+          <Text style={{ textAlign: 'center' }}>Play Music</Text>
+          <AudioToggleButton onClick={() => setAudioVisible(!audioVisible)}>
+              {audioVisible ? 'Hide Player' : 'Show Player'}
+          </AudioToggleButton>
+          <hr />
+          <Text style={{ textAlign: 'center' }}>Change Theme</Text>
           <ThemeButton onClick={toggleTheme}>
             {currentTheme === 'light' ? <FaMoon /> : <FaSun />}
           </ThemeButton>
+          <hr />
+          <Text style={{ textAlign: 'center' }}>Change Language</Text>
           <LanguageButton onClick={() => changeLanguage('en')}>English</LanguageButton>
           <LanguageButton onClick={() => changeLanguage('ta')}>தமிழ்</LanguageButton>
         </Dropdown>
+      )}
+      {audioVisible && (
+        <ThemeButton style={{ alignSelf: 'center', margin: '' }}>
+          <AudioPlayer audioSrc={musicSrc} />
+        </ThemeButton>
       )}
     </SettingsContainer>
   );

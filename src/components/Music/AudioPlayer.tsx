@@ -22,7 +22,6 @@ const AudioPlayer: React.FC<{ audioSrc: string }> = ({ audioSrc }) => {
       <button 
         onClick={togglePlay} 
         style={{ 
-            display: 'flex', 
             alignItems: 'center', 
             justifyContent: 'center', 
             width: '40px', 

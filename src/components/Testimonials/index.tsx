@@ -48,12 +48,12 @@ export function Testimonials() {
           width: '100vw',
           height: '75vh',
           maxWidth: '100%',
+          backgroundColor: '#020617',
           border: 'none',
           overflow: 'hidden',
           margin: '0',
           padding: '0',
           display: 'block',
-          zIndex: 9999,
           position: 'relative',
         }}
         scrolling='no'

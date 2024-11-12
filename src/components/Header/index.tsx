@@ -40,8 +40,8 @@ export function Header() {
           <div className="logo">
             <Image
               className="logo"
-              width={45}
-              height={45}
+              width={40}
+              height={40}
               src="/Logo1.png"
               alt="logo"
             />

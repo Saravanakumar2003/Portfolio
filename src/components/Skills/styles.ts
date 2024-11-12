@@ -9,9 +9,9 @@ export const SkillsContainer = styled.div`
   margin-left: 1rem;
   margin-right: 1rem;
 
-  @media (min-width: 280px) {
+  @media (min-width: 420px) {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
 
   @media (min-width: 468px) {

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { HeaderContainer, MobileIcon, NavMenu, Icons } from './styles'
@@ -6,7 +6,6 @@ import { List, X } from 'phosphor-react'
 import { FiGithub, FiLinkedin, FiInstagram } from 'react-icons/fi'
 import { FaWhatsapp } from 'react-icons/fa'
 import { Button } from '../../styles/styles'
-import { useContext } from 'react'
 import { useThemeContext } from '../../context/ThemeContext'
 import { FaSun, FaMoon } from 'react-icons/fa';
 import LanguageSwitcher from '../Language/index';
@@ -14,20 +13,16 @@ import Settings from '../Settings/SettingsButton';
 import AudioPlayer from '../Music/AudioPlayer';
 import { useTranslation } from 'react-i18next'
 import { useRouter } from 'next/router'
-import { useEffect } from 'react'
 
 export function Header() {
   const [open, setOpen] = useState(false);
   const { currentTheme, toggleTheme } = useThemeContext(); 
-
   const handleOpen = () => {
     setOpen(!open);
   };
-
   const { t, i18n } = useTranslation('common');
   const router = useRouter();
   const [currentLang, setCurrentLang] = useState<'en' | 'ta'>('en');
-
   useEffect(() => {
     const { locale } = router;
     setCurrentLang(locale as 'en' | 'ta');
@@ -48,7 +43,6 @@ export function Header() {
           </div>
           {'Saravanakumar'}
         </Link>
-
         <div className="settings">
           <Settings toggleTheme={toggleTheme} currentTheme={currentTheme} />
         </div>
@@ -60,8 +54,6 @@ export function Header() {
             margin: 0 0.5rem;
           }
         `}</style>
-
-
         <MobileIcon onClick={handleOpen}>
           {open ? (
             <X size={30} weight="bold" />
@@ -70,7 +62,6 @@ export function Header() {
           )}
         </MobileIcon>
       </div>
-
       <NavMenu onClick={handleOpen} open={open}>
         <ul>
           <li>
@@ -109,7 +100,6 @@ export function Header() {
             </Link>
           </li>
         </ul>
-
         <Icons>
           <Link
             href={'https://github.com/Saravanakumar2003'}

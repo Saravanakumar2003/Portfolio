@@ -62,7 +62,7 @@ export const MobileIcon = styled.div`
   @media (max-width: 994px) {
     display: block;
     position: absolute;
-    top: 1.1rem;
+    top: 1.2rem;
     right: 1rem;
     cursor: pointer;
     z-index: 20;

@@ -29,7 +29,10 @@ const AudioPlayer: React.FC<{ audioSrc: string }> = ({ audioSrc }) => {
             borderRadius: '20%',
             backgroundColor: 'white', 
             color: 'black', 
-            cursor: 'pointer'
+            cursor: 'pointer',
+            position: 'fixed',
+            bottom: '6.5rem',
+            left: '3.5rem',
         }}
       >
         {isPlaying ? <FaPause /> : <FaPlay />}

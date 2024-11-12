@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaSun, FaMoon } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
@@ -10,14 +10,12 @@ interface SettingsProps {
   currentTheme: 'light' | 'dark';
 }
 
-
 const SettingsContainer = styled.div`
   position: fixed;
   display: inline-block;
   z-index: 1000;
   margin-right: 1rem;
   align-self: center;
-  
 `;
 
 const SettingsButton = styled.button`
@@ -41,30 +39,39 @@ const Dropdown = styled.div`
   padding: 0.5rem;
   display: flex;
   flex-direction: column;
-}
   hr {
     border: 0.5px solid ${({ theme }) => theme.firstColor};
-    margin: 0.5rem 0;
   }
 `;
 
-
 const LanguageButton = styled.button`
-  background: none;
-  border: none;
+  background-color: ${({ theme }) => theme.backgroundAlt};
   color: ${({ theme }) => theme.firstColor};
+  border: 1px solid ${({ theme }) => theme.firstColor};
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
   cursor: pointer;
-  margin: 0.5rem 0;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  &:hover {
+    background-color: ${({ theme }) => theme.background};
+  }
 `;
 
 const ThemeButton = styled.button`
-  border: none;
   background-color: ${({ theme }) => theme.backgroundAlt};
   color: ${({ theme }) => theme.firstColor};
-  cursor: pointer;
+  border: 1px solid ${({ theme }) => theme.firstColor};
   border-radius: 5px;
-  padding: 0.3rem 0.3rem;
+  padding: 0.5rem 5rem;
+  cursor: pointer;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  &:hover {
+    background-color: ${({ theme }) => theme.background};
+  }
 `;
 
 const Text = styled.p`
@@ -73,6 +80,21 @@ const Text = styled.p`
 `;
 
 const AudioToggleButton = styled.button`
+  background-color: ${({ theme }) => theme.backgroundAlt};
+  color: ${({ theme }) => theme.firstColor};
+  border: 1px solid ${({ theme }) => theme.firstColor};
+  border-radius: 5px;
+  padding: 0.5rem 5rem;
+  cursor: pointer;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  &:hover {
+    background-color: ${({ theme }) => theme.background};
+  }
+`;
+
+const FontSizeButton = styled.button`
   background-color: ${({ theme }) => theme.backgroundAlt};
   color: ${({ theme }) => theme.firstColor};
   border: 1px solid ${({ theme }) => theme.firstColor};
@@ -86,17 +108,44 @@ const AudioToggleButton = styled.button`
   }
 `;
 
+const FontSizeContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+`;
+
 const Settings: React.FC<SettingsProps> = ({ toggleTheme, currentTheme }) => {
   const { t } = useTranslation();
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const [audioVisible, setAudioVisible] = useState(false);
+  const [fontSize, setFontSize] = useState(16);
 
   const changeLanguage = (lang: string) => {
     router.push(router.pathname, router.asPath, { locale: lang });
   };
 
+  const increaseFontSize = () => {
+    setFontSize(prevSize => prevSize + 2);
+    document.documentElement.style.fontSize = `${fontSize + 2}px`;
+  };
+
+  const decreaseFontSize = () => {
+    setFontSize(prevSize => (prevSize > 10 ? prevSize - 2 : prevSize));
+    document.documentElement.style.fontSize = `${fontSize - 2}px`;
+  };
+
+  const resetFontSize = () => {
+    setFontSize(16);
+    document.documentElement.style.fontSize = '16px';
+  };
+
   const musicSrc = '/music/in-slow-motion-inspiring-ambient-lounge-219592.mp3';
+
+  useEffect(() => {
+    document.documentElement.style.fontSize = `${fontSize}px`;
+  }, [fontSize]);
 
   return (
     <SettingsContainer>
@@ -107,9 +156,9 @@ const Settings: React.FC<SettingsProps> = ({ toggleTheme, currentTheme }) => {
         <Dropdown>
           <p style={{ textAlign: 'center' }}>Settings</p>
           <hr />
-          <Text style={{ textAlign: 'center' }}>Play Music</Text>
+          <Text style={{ textAlign: 'center' }}>Play some music</Text>
           <AudioToggleButton onClick={() => setAudioVisible(!audioVisible)}>
-              {audioVisible ? 'Hide Player' : 'Show Player'}
+            {audioVisible ? 'Hide Player' : 'Show Player'}
           </AudioToggleButton>
           <hr />
           <Text style={{ textAlign: 'center' }}>Change Theme</Text>
@@ -120,12 +169,17 @@ const Settings: React.FC<SettingsProps> = ({ toggleTheme, currentTheme }) => {
           <Text style={{ textAlign: 'center' }}>Change Language</Text>
           <LanguageButton onClick={() => changeLanguage('en')}>English</LanguageButton>
           <LanguageButton onClick={() => changeLanguage('ta')}>தமிழ்</LanguageButton>
+          <hr />
+          <Text style={{ textAlign: 'center' }}>Font Size</Text>
+          <FontSizeContainer>
+            <FontSizeButton onClick={decreaseFontSize}>-</FontSizeButton>
+            <FontSizeButton onClick={resetFontSize}>Default</FontSizeButton>
+            <FontSizeButton onClick={increaseFontSize}>+</FontSizeButton>
+          </FontSizeContainer>
         </Dropdown>
       )}
       {audioVisible && (
-        <ThemeButton style={{ alignSelf: 'center', margin: '' }}>
-          <AudioPlayer audioSrc={musicSrc} />
-        </ThemeButton>
+      <AudioPlayer audioSrc={musicSrc} />
       )}
     </SettingsContainer>
   );

@@ -33,6 +33,7 @@ const AudioPlayer: React.FC<{ audioSrc: string }> = ({ audioSrc }) => {
             position: 'fixed',
             bottom: '6.5rem',
             left: '3.5rem',
+            zIndex: '1000',
         }}
       >
         {isPlaying ? <FaPause /> : <FaPlay />}

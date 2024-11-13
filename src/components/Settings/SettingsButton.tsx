@@ -14,7 +14,6 @@ const SettingsContainer = styled.div`
   position: fixed;
   display: inline-block;
   z-index: 1000;
-  margin-right: 1rem;
   align-self: center;
 `;
 
@@ -39,6 +38,15 @@ const Dropdown = styled.div`
   padding: 0.5rem;
   display: flex;
   flex-direction: column;
+  @media (max-width: 500px) {
+    position: fixed;
+    top: 3.5rem;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    padding: 1rem;
+  }
   hr {
     border: 0.5px solid ${({ theme }) => theme.firstColor};
   }
@@ -113,6 +121,8 @@ const FontSizeContainer = styled.div`
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  margin-bottom: 0.5rem;
+
 `;
 
 const Settings: React.FC<SettingsProps> = ({ toggleTheme, currentTheme }) => {
@@ -176,6 +186,7 @@ const Settings: React.FC<SettingsProps> = ({ toggleTheme, currentTheme }) => {
             <FontSizeButton onClick={resetFontSize}>Default</FontSizeButton>
             <FontSizeButton onClick={increaseFontSize}>+</FontSizeButton>
           </FontSizeContainer>
+          <hr />
         </Dropdown>
       )}
       {audioVisible && (

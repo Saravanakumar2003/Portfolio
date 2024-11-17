@@ -33,35 +33,6 @@ const experience = [
     certificate: 'https://drive.google.com/file/d/14ycBaF9U54wz3Jb1mJRyiRAl5fE7TpLS/view?usp=sharing',
   },
   {
-    id: 1,
-    img: '/experience/tneb.png',
-    title: {
-      en: 'TANGEDCO',
-      ta: 'TANGEDCO',
-    },
-    subTitle: {
-      en: 'North Chennai Thermal Power Station',
-      ta: 'வட சென்னை வெப்ப மின்நிலையம்',
-    },
-    office: {
-      en: 'In-plant Trainee',
-      ta: 'உற்பத்தி பயிற்சியாளர்',
-    },
-    description: {
-      en: '✯Completed 1-week in-plant training at NCTPS-2 across Maintenance, Instrumentation, Efficiency, and Communication Engineering departments. \n\n✯Participated in equipment inspections, troubleshooting, and routine maintenance, gaining insights into thermal power generation. \n\n✯Conducted power output calculations and emphasized safety and proactive learning. \n\n✯Enhanced technical skills, problem-solving, and teamwork abilities in a real-world power plant environment.',
-      ta: '✯பராமரிப்பு, கருவி அமைப்பு, செயல்திறன் மற்றும் தொடர்பு பொறியியல் பிரிவுகளில் NCTPS-2ல் ஒரு வார உற்பத்தி பயிற்சியை முடித்தேன். \n\n✯சாதனங்களின் ஆய்வு, பிழைத்திருத்தம் மற்றும் வழக்கமான பராமரிப்பு நடவடிக்கைகளில் பங்கேற்று வெப்ப மின் உற்பத்தி குறித்த அறிவு பெற்றேன். \n\n✯மின் உற்பத்தி கணக்கீடுகளை மேற்கொண்டு பாதுகாப்பு மற்றும் முன்கூட்டியே கற்றல் மீது கவனம் செலுத்தினேன். \n\n✯வாழ்க்கைப் பாவனைக் கிடங்கில் தொழில்நுட்ப திறன்கள், சிக்கல் தீர்க்கும் திறன்கள் மற்றும் குழு வேலை திறன்களை மேம்படுத்தினேன்.',
-    },
-    tags: [
-      { name: 'Word', icon: '/icons/word.png' },
-      { name: 'Excel', icon: '/icons/excel.png' },
-      { name: 'PowerPoint', icon: '/icons/powerpoint.png' },
-    ],
-    date: '19-Jun-23 to 23-Jun-23',
-    link: 'https://drive.google.com/file/d/10u-LsiLDjEdVlTQFXGOE5teaOflUBECz/view?usp=sharing',
-    link2: 'https://www.tangedco.gov.in/',
-    certificate: 'https://drive.google.com/file/d/1V8mbI67LRc6mE2qsPo_bCUT7nKqqdATC/view?usp=sharing',
-  },
-  {
     id: 2,
     img: '/experience/NIWE.png',
     title: {
@@ -91,10 +62,39 @@ const experience = [
       { name: 'JS', icon: '/icons/JS.png' },
       { name: 'React', icon: '/icons/react.png' },
     ],
-    date: '23-Jan-23 to 30-Jan-23',
+    date: '04-Dec-23 to 07-Feb-04',
     link: 'https://drive.google.com/file/d/1b7GSsGtZvycOhRV-JGZXC2gvwYH-9nKj/view?usp=sharing',
     link2: 'https://niwe.res.in/',
     certificate: 'https://drive.google.com/file/d/1at_R9nQVm3805JuvF-xBaeQqRrT9LYeS/view?usp=sharing',
+  },
+  {
+    id: 1,
+    img: '/experience/tneb.png',
+    title: {
+      en: 'TANGEDCO',
+      ta: 'TANGEDCO',
+    },
+    subTitle: {
+      en: 'North Chennai Thermal Power Station',
+      ta: 'வட சென்னை வெப்ப மின்நிலையம்',
+    },
+    office: {
+      en: 'In-plant Trainee',
+      ta: 'உற்பத்தி பயிற்சியாளர்',
+    },
+    description: {
+      en: '✯Completed 1-week in-plant training at NCTPS-2 across Maintenance, Instrumentation, Efficiency, and Communication Engineering departments. \n\n✯Participated in equipment inspections, troubleshooting, and routine maintenance, gaining insights into thermal power generation. \n\n✯Conducted power output calculations and emphasized safety and proactive learning. \n\n✯Enhanced technical skills, problem-solving, and teamwork abilities in a real-world power plant environment.',
+      ta: '✯பராமரிப்பு, கருவி அமைப்பு, செயல்திறன் மற்றும் தொடர்பு பொறியியல் பிரிவுகளில் NCTPS-2ல் ஒரு வார உற்பத்தி பயிற்சியை முடித்தேன். \n\n✯சாதனங்களின் ஆய்வு, பிழைத்திருத்தம் மற்றும் வழக்கமான பராமரிப்பு நடவடிக்கைகளில் பங்கேற்று வெப்ப மின் உற்பத்தி குறித்த அறிவு பெற்றேன். \n\n✯மின் உற்பத்தி கணக்கீடுகளை மேற்கொண்டு பாதுகாப்பு மற்றும் முன்கூட்டியே கற்றல் மீது கவனம் செலுத்தினேன். \n\n✯வாழ்க்கைப் பாவனைக் கிடங்கில் தொழில்நுட்ப திறன்கள், சிக்கல் தீர்க்கும் திறன்கள் மற்றும் குழு வேலை திறன்களை மேம்படுத்தினேன்.',
+    },
+    tags: [
+      { name: 'Word', icon: '/icons/word.png' },
+      { name: 'Excel', icon: '/icons/excel.png' },
+      { name: 'PowerPoint', icon: '/icons/powerpoint.png' },
+    ],
+    date: '19-Jun-23 to 23-Jun-23',
+    link: 'https://drive.google.com/file/d/10u-LsiLDjEdVlTQFXGOE5teaOflUBECz/view?usp=sharing',
+    link2: 'https://www.tangedco.gov.in/',
+    certificate: 'https://drive.google.com/file/d/1V8mbI67LRc6mE2qsPo_bCUT7nKqqdATC/view?usp=sharing',
   },
   // {
   //   id: 1,

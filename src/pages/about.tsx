@@ -160,7 +160,7 @@ export default function About() {
         </ButtonSecondary>
       </Link>
     </Section>
-    <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+    <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
     <script src={botkey} defer></script>
     <Footer />
   </>;

@@ -236,7 +236,7 @@ export default function Blog() {
         </S.BlogContainer>
       </T.Section>
       <Publications />
-      <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+      <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
       <script src={botkey} defer></script>
       <Footer />
     </>

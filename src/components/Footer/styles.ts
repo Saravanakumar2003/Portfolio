@@ -4,11 +4,11 @@ export const FooterContainer = styled.footer`
   margin-top: 5rem;
   border-top: 1px solid ${props => props.theme.gray_easy};
   padding: 1.4rem 0;
+  gap: 5px;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 8px;
   align-items: center;
 
   @media (min-width: 768px) {
@@ -24,7 +24,7 @@ export const FooterContainer = styled.footer`
   .links {
     cursor: pointer;
     display: flex;
-    gap: 9px;
+    gap: 8px;
     font-size: 1.4rem;
     color: ${props => props.theme.gray};
 

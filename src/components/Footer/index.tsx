@@ -19,6 +19,12 @@ export function Footer() {
   return (
     <FooterContainer>
       <h4> &copy; {new Date().getFullYear()} Saravanakumar Ramaswamy</h4>
+      <Link href={'/privacypolicy'} aria-label={currentLang === 'ta' ? 'தனியுரிமைக் கொள்கை' : 'Privacy Policy'} legacyBehavior>
+        {currentLang === 'ta' ? 'தனியுரிமைக் கொள்கை' : 'Privacy Policy'}
+        </Link>
+        <Link href={'/terms&condition'} aria-label={currentLang === 'ta' ? 'விதிமுறைகள் மற்றும் நிபந்தனைகள்' : 'Terms and Conditions'} legacyBehavior>
+        {currentLang === 'ta' ? 'விதிமுறைகள் மற்றும் நிபந்தனைகள்' : 'Terms and Conditions'}
+        </Link>
       <div className="links">
         <Link
           href={'https://github.com/Saravanakumar2003'}

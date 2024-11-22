@@ -44,9 +44,7 @@ export default function Home() {
       </Head>
       <ScrollTop />
       <Section>
-        <Section>
         <HomeHero />
-        </Section>
         <About />
         <Skills />
         <Education />

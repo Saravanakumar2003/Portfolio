@@ -393,9 +393,13 @@ export const Print = styled.div`
     }
   }
 
-  width: 25rem;
+  width: 20rem;
 
-  @media (min-width: 468px) {
+  @media (min-width: 400px) {
+    width: 25rem;
+  }
+
+  @media (min-width: 500px) {
     width: 30rem;
   }
 

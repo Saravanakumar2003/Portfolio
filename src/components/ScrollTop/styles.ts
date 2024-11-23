@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Scroll = styled.div`
   button {
     position: fixed;
-    bottom: 3.3rem;
+    bottom: 1.5rem;
     left: 3.5rem;
     font-size: 1.2rem;
     background: ${props => props.theme.secondColor};

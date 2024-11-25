@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FaSun, FaMoon } from 'react-icons/fa';
+import { FaSun, FaMoon, FaCog, FaTimes } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import { useRouter } from 'next/router';
@@ -18,16 +18,11 @@ const SettingsContainer = styled.div`
 `;
 
 const SettingsButton = styled.button`
-  background-color: ${({ theme }) => theme.firstColor};
   color: ${({ theme }) => theme.firstColor};
-  border: none;
   border-radius: 50%;
   width: 40px;
   height: 40px;
-  align-items: center;
-  justify-content: center;
   cursor: pointer;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
 `;
 
 const Dropdown = styled.div`
@@ -85,6 +80,7 @@ const ThemeButton = styled.button`
 const Text = styled.p`
   color: ${({ theme }) => theme.firstColor};
   font-size: 0.8rem;
+  margin-top: 0.5rem;
 `;
 
 const AudioToggleButton = styled.button`
@@ -122,7 +118,14 @@ const FontSizeContainer = styled.div`
   align-items: center;
   gap: 1rem;
   margin-bottom: 0.5rem;
+`;
 
+const Small = styled.small`
+  color: ${({ theme }) => theme.secondColor};
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
+  font-size: 0.5rem;
+  text-align: center;
 `;
 
 const Settings: React.FC<SettingsProps> = ({ toggleTheme, currentTheme }) => {
@@ -160,16 +163,18 @@ const Settings: React.FC<SettingsProps> = ({ toggleTheme, currentTheme }) => {
   return (
     <SettingsContainer>
       <SettingsButton onClick={() => setOpen(!open)}>
-        ⚙️
+      {open ? <FaTimes size={20} /> : <FaCog size={20} />}
       </SettingsButton>
       {open && (
         <Dropdown>
           <p style={{ textAlign: 'center' }}>Settings</p>
+          <Small>Click the setting button to close this window</Small>
           <hr />
           <Text style={{ textAlign: 'center' }}>Play some music</Text>
           <AudioToggleButton onClick={() => setAudioVisible(!audioVisible)}>
             {audioVisible ? 'Hide Player' : 'Show Player'}
           </AudioToggleButton>
+          <Small>Player will be visible in the left bottom of the screen</Small>
           <hr />
           <Text style={{ textAlign: 'center' }}>Change Theme</Text>
           <ThemeButton onClick={toggleTheme}>
@@ -190,7 +195,7 @@ const Settings: React.FC<SettingsProps> = ({ toggleTheme, currentTheme }) => {
         </Dropdown>
       )}
       {audioVisible && (
-      <AudioPlayer audioSrc={musicSrc} />
+        <AudioPlayer audioSrc={musicSrc} />
       )}
     </SettingsContainer>
   );

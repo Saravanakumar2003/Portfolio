@@ -552,8 +552,7 @@ export const TeamMember = styled.div`
     gap: 10px;
 
     a {
-      color: #fff;
-      transition: color 0.3s;
+      color: ${props => props.theme.firstColor};
 
       &:hover {
         color: #0079bf; /* Change to your preferred hover color */

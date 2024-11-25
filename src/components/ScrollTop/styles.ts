@@ -4,7 +4,7 @@ export const Scroll = styled.div`
   button {
     position: fixed;
     bottom: 1.5rem;
-    left: 3.5rem;
+    left: 2rem;
     font-size: 1.2rem;
     background: ${props => props.theme.secondColor};
     padding: .5rem .7rem;

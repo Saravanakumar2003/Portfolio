@@ -32,7 +32,7 @@ const AudioPlayer: React.FC<{ audioSrc: string }> = ({ audioSrc }) => {
             cursor: 'pointer',
             position: 'fixed',
             bottom: '4.5rem',
-            left: '3.55rem',
+            left: '2.05rem',
             zIndex: '1000',
         }}
       >

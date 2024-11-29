@@ -10,10 +10,10 @@ export default function TermsAndConditions() {
         <title>Terms and Conditions | Saravanakumar</title>
       </Head>
       <TermsAndConditionsContainer>
-        <br/><br/>
+        <br /><br />
         <h1>Terms and Conditions</h1>
-        
-        <h2>Last Updated: November 22, 2024</h2>
+
+        <h2>Last Updated: November 29, 2024</h2>
 
         <p>Welcome to Saravanakumar.engineer. By accessing or using this website, you agree to comply with and be bound by the following terms and conditions. If you do not agree with these terms, please do not use this site.</p>
 
@@ -26,9 +26,10 @@ export default function TermsAndConditions() {
         <h3>3. Ownership and Attribution</h3>
         <p>Saravanakumar.engineer is based on the project <strong>Evander Inacio Portfolio</strong>, which was originally developed and publicly shared on GitHub by Evander Inacio.</p>
         <p>The project <strong>Evander Inacio Portfolio</strong> is <strong>not open-source</strong>, and its use and distribution are subject to the original creator's terms.</p>
+        <p>Special thanks to Evander Inacio for <strong>granting permission to use and build upon his project.</strong> This project has since evolved with numerous enhancements and new features while maintaining proper attribution to the original creator.</p>
         <p>Modifications and additional features to the site were made by <strong>Saravana Kumar R</strong> for personal use and are not intended for redistribution or commercial use without proper authorization.</p>
         <p><strong>Disclaimer:</strong> The creator of Saravanakumar.engineer does not claim ownership of the original "Evander Inacio" project or its intellectual property. All rights to the original code are retained by the original creator.</p>
-
+        
         <h3>4. User Responsibilities</h3>
         <p>When using forms or interacting with the website, you agree to:</p>
         <ul>
@@ -47,6 +48,7 @@ export default function TermsAndConditions() {
           <li><strong>Vercel Analytics</strong>: For performance monitoring.</li>
           <li><strong>Botpress</strong>: For AI-based chat interactions.</li>
           <li><strong>Visme Forms</strong>: For feedback collection.</li>
+          <li><strong>Testimonial.to</strong> For testimonial submissions.</li>
         </ul>
         <p>These services operate under their respective terms and policies. We are not responsible for their data collection or handling practices.</p>
 
@@ -56,7 +58,7 @@ export default function TermsAndConditions() {
         <p>We disclaim liability for any damages resulting from the use of this website or third-party services.</p>
 
         <h3>8. Intellectual Property</h3>
-        <p>All intellectual property related to the original "Evander Inacio" project, including code, design, and content, remains the property of the original creator.</p>
+        <p>All intellectual property related to the original project, including code, design, and content, remains the property of the original creator.</p>
         <p>Modifications made to the site by <strong>Saravana Kumar R</strong> are for personal, non-commercial use only. Unauthorized use is prohibited outside the scope of personal use.</p>
 
         <h3>9. Changes to Terms and Conditions</h3>
@@ -67,7 +69,7 @@ export default function TermsAndConditions() {
 
         <h3>11. Contact Information</h3>
         <p>For questions about these Terms and Conditions or the original project attribution, contact:</p>
-        <p><strong>Saravana Kumar R</strong><br />
+        <p><strong>Saravanakumar R</strong><br />
           Email: hello@saravanakumar.engineer<br />
           Website: <a href="https://Saravanakumar.engineer">Saravanakumar.engineer</a>
         </p>

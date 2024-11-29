@@ -13,7 +13,7 @@ export default function PrivacyPolicy() {
         <br/><br/>
         <h1>Privacy Policy</h1>
 
-        <h2>Last Updated: November 22, 2024</h2>
+        <h2>Last Updated: November 29, 2024</h2>
 
         <p>Your privacy is important to us. This Privacy Policy explains how Saravanakumar.engineer collects, uses, and protects your information when you interact with our website.</p>
 
@@ -39,6 +39,7 @@ export default function PrivacyPolicy() {
           <li><strong>Vercel Analytics:</strong> Monitors website performance.</li>
           <li><strong>Botpress:</strong> Powers the AI chatbot for interactive communication.</li>
           <li><strong>Visme Forms:</strong> Manages feedback submissions and collects data.</li>
+          <li><strong>Testimonial.to</strong> Manages testimonial submissions and collects data.</li>
         </ul>
         <p>These third-party services may collect, use, and store your data according to their respective privacy policies.</p>
 
@@ -64,7 +65,7 @@ export default function PrivacyPolicy() {
 
         <h3>9. Contact Information</h3>
         <p>If you have questions or concerns about this Privacy Policy, contact us at:</p>
-        <p><strong>Saravana Kumar R</strong><br />
+        <p><strong>Saravanakumar R</strong><br />
           Email: hello@saravanakumar.engineer<br />
           Website: <a href="https://saravanakumar.enginner">saravanakumar.engineer</a>
         </p>

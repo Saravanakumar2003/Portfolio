@@ -134,7 +134,7 @@ Your support encourages continuous improvement and fuels the motivation to creat
 
 ### Acknowledgements
 
-This portfolio project's initial design and code structure were inspired by the [Evander Inacio Portfolio](https://github.com/EvanderInacio/Portfolio) repository. Special thanks to Evander Inacio for providing a foundation for this project.
+This portfolio project's initial design and code structure were inspired by the [Evander Inacio Portfolio](https://github.com/EvanderInacio/Portfolio) repository. Permission to use and modify the code was graciously granted by the author, Evander Inacio, via email correspondence. Proper credit has been attributed to the original creator in accordance with their consent.
 
 Later all the above modifications and enhancements were made to personalize the portfolio and add new features. The project continues to evolve with additional sections, integrations, and improvements.
 

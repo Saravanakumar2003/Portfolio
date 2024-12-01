@@ -85,7 +85,7 @@ export const MarkdownContainer = styled.div`
     margin: 1rem 0;
 
     th, td {
-      border: 1px solid ${({ theme }) => theme.borderColor};
+      border: 1px solid ${({ theme }) => theme.textPrimary};
       padding: 0.5rem;
       text-align: left;
     }

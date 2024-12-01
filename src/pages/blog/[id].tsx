@@ -10,17 +10,18 @@ import { MarkdownContainer, CenteredContainer } from '../../styles/markdown';
 import Link from 'next/link';
 import { ButtonSecondary } from '../../styles/styles';
 import { ArrowLeft } from 'phosphor-react';
-import { useTranslation } from 'react-i18next'
-import { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next';
+import { useEffect, useState } from 'react';
 
 interface BlogProps {
   htmlContent: string;
+  title: string;
 }
 
-export default function BlogDetail({ htmlContent }: BlogProps) {
+export default function BlogDetail({ htmlContent, title }: BlogProps) {
   const router = useRouter();
   const { id } = router.query;
-  const { t, i18n } = useTranslation('common'); // Use the 'common' namespace
+  const { t, i18n } = useTranslation('common');
   const [currentLang, setCurrentLang] = useState<'en' | 'ta'>('en');
 
   useEffect(() => {
@@ -31,7 +32,7 @@ export default function BlogDetail({ htmlContent }: BlogProps) {
   return (
     <>
       <Head>
-        <title>Saravanakumar's Blogs || {id}</title>
+        <title>{title}</title>
       </Head>
       <ScrollTop />
       <br /> <br /> <br />
@@ -56,7 +57,7 @@ export default function BlogDetail({ htmlContent }: BlogProps) {
 }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const { id } = context.params;
+  const { id } = context.params as { id: string };
 
   try {
     const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/api/blog/${id}`);
@@ -75,6 +76,9 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     // Parse the HTML content
     const dom = new JSDOM(markdownContent);
     const document = dom.window.document;
+
+    const titleElement = document.querySelector('h1');
+    const title = titleElement ? titleElement.textContent : 'Saravanakumar\'s Blogs';
 
     // Remove the header and footer elements
     const header = document.querySelector('header');
@@ -101,6 +105,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     return {
       props: {
         htmlContent,
+        title,
       },
     };
   } catch (error) {

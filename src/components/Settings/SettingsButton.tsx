@@ -168,7 +168,6 @@ const Settings: React.FC<SettingsProps> = ({ toggleTheme, currentTheme }) => {
       {open && (
         <Dropdown>
           <p style={{ textAlign: 'center' }}>Settings</p>
-          <Small>Click the setting button to close this window</Small>
           <hr />
           <Text style={{ textAlign: 'center' }}>Play some music</Text>
           <AudioToggleButton onClick={() => setAudioVisible(!audioVisible)}>

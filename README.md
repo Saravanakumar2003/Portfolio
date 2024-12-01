@@ -77,6 +77,7 @@ http://localhost:3000
 
 11. **Waka Time:** Integration with WakaTime embeded code allows displaying coding activity and statistics.
 
+12. **Trello Intergration:** Integration with Trello embeded code allows displaying Trello boards and tasks. 
 
 # Deployment
 
@@ -116,27 +117,15 @@ If you'd like to contribute to the project, follow these steps:
 4. Push to the branch: ```git push origin feature/new-feature```
 5. Submit a pull request.
 
-## License
-
-This project is licensed under the [MIT License](LICENSE), allowing for open collaboration and sharing.
-
 # Final Notes
 
-Thank you for exploring my personal portfolio project! If you find it interesting or helpful, consider supporting by following, forking, and starring this repository.
-
-## Show Your Support <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Beating%20Heart.png" alt="Beating Heart" width="25" height="25" />
-
-- **Follow:** Stay updated with the latest developments and projects by [following me on GitHub](https://github.com/Saravanakumar2003).
-- **Fork:** Contribute to the project by forking it. Feel free to make your modifications and enhancements.
-- **Star:** If you find this project useful or inspiring, show your appreciation by starring it.
-
-Your support encourages continuous improvement and fuels the motivation to create more exciting projects!
+Thank you for exploring my personal portfolio project! I hope you found it insightful and engaging. Feel free to provide feedback or suggestions to help enhance the portfolio further. Your support and input are greatly appreciated!
 
 ### Acknowledgements
 
-This portfolio project's initial design and code structure were inspired by the [Evander Inacio Portfolio](https://github.com/EvanderInacio/Portfolio) repository. Permission to use and modify the code was graciously granted by the author, Evander Inacio, via email correspondence. Proper credit has been attributed to the original creator in accordance with their consent.
+This portfolio project's initial design and code structure were inspired by the [Evander Inacio Portfolio](https://github.com/EvanderInacio/Portfolio) repository. Permission to use and modify the code was graciously granted by the author, <strong>Evander Inacio</strong>, via email correspondence. Proper credit has been attributed to the original creator in accordance with their consent.
 
-Later all the above modifications and enhancements were made to personalize the portfolio and add new features. The project continues to evolve with additional sections, integrations, and improvements.
+Later all the several above modifications and enhancements were made to personalize the portfolio. The project continues to evolve with additional sections, integrations, and improvements.
 
 ## Author
 

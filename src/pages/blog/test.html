@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang=\"en\" data-theme=\"dark\" class=\"dark\">
+
+<head>
+    <meta charSet=\"UTF-8\" />
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\" />
+    <meta name=\"image\" property=\"og:image\"
+        content=\"https://hashnode.com/utility/r?url=https%3A%2F%2Fcdn.hashnode.com%2Fres%2Fhashnode%2Fimage%2Fupload%2Fv1721498910714%2Fa53ce52c-214b-4e46-884d-4bbb6a7a06af.png%3Fw%3D1200%26auto%3Dcompress%2Cformat%26format%3Dwebp%26fm%3Dpng\" />
+    <link rel=\"canonical\"
+        href=\"https://blog.saravanakumar.engineer/compiler-vs-interpreter-a-deep-dive-with-python-and-pypy-installation-guide\" />
+    <title>Compiler vs Interpreter: A Deep Dive with Python and PyPy Installation Guide</title>
+    <meta name=\"description\" content=\"Compiler vs Interpreter: A Deep Dive with Python and PyPy Installation
+        Guide\nWhen diving into programming languages, understanding the difference between compilers and interpreters
+        is crucial. This blog will explain these concepts, particularly in th...\" />
+    <meta property=\"og:title\" content=\"Compiler vs Interpreter: A Deep Dive with Python and PyPy Installation
+        Guide\" />
+    <meta property=\"og:description\" content=\"Compiler vs Interpreter: A Deep Dive with Python and PyPy Installation
+        Guide\nWhen diving into programming languages, understanding the difference between compilers and interpreters
+        is crucial. This blog will explain these concepts, particularly in th...\" />
+    <meta property=\"og:site_name\" content=\" Saravanakumar R&#x27;s blog\" />
+    <meta property=\"og:type\" content=\"article\" />
+    <meta property=\"og:url\"
+        content=\"https://blog.saravanakumar.engineer/compiler-vs-interpreter-a-deep-dive-with-python-and-pypy-installation-guide\" />
+    <meta name=\"author\" content=\"Saravanakumar R\" />
+    <meta property=\"article:author\" content=\"https://hashnode.com/@Saravanakumar2003\" />
+    <link rel=\"author\" href=\"https://hashnode.com/@Saravanakumar2003\" />
+    <link rel=\"apple-touch-icon\" sizes=\"180x180\"
+        href=\"https://cdn.hashnode.com/res/hashnode/image/upload/v1611242155728/W3_BYVVVh.png\" />
+    <link rel=\"icon\" type=\"image/png\" sizes=\"32x32\"
+        href=\"https://cdn.hashnode.com/res/hashnode/image/upload/v1611242173172/AOX1gE2jc.png\" />
+    <link rel=\"icon\" type=\"image/png\" sizes=\"16x16\"
+        href=\"https://cdn.hashnode.com/res/hashnode/image/upload/v1611242187756/TRTNYp32O.png\" />
+    <link rel=\"mask-icon\" href=\"/static/images/brand/safari-pinned-tab-new.svg\" color=\"#2962ff\" />
+    <meta name=\"msapplication-TileColor\" content=\"#ffffff\" />
+    <meta name=\"theme-color\" content=\"#800080\" />
+    <meta property=\"twitter:card\" content=\"summary_large_image\" />
+    <meta property=\"twitter:title\" content=\"Compiler vs Interpreter: A Deep Dive with Python and PyPy Installation
+        Guide\" />
+    <meta property=\"twitter:description\" content=\"Compiler vs Interpreter: A Deep Dive with Python and PyPy
+        Installation Guide\nWhen diving into programming languages, understanding the difference between compilers and
+        interpreters is crucial. This blog will explain these concepts, particularly in th...\" />
+    <meta property=\"twitter:image\"
+        content=\"https://hashnode.com/utility/r?url=https%3A%2F%2Fcdn.hashnode.com%2Fres%2Fhashnode%2Fimage%2Fupload%2Fv1721498910714%2Fa53ce52c-214b-4e46-884d-4bbb6a7a06af.png%3Fw%3D1200%26auto%3Dcompress%2Cformat%26format%3Dwebp%26fm%3Dpng\" />
+    <meta property=\"twitter:creator\" content=\"@Saravana2003_me\" />
+    <style>
+        /* Monkai theme */
+        \n .hljs {
+            display: block;
+            overflow-x: auto;
+            padding: .5em;
+            background: #23241f
+        }
+
+        .hljs,
+        .hljs-subst,
+        .hljs-tag {
+            color: #f8f8f2
+        }
+
+        .hljs-emphasis,
+        .hljs-strong {
+            color: #a8a8a2
+        }
+
+        .hljs-bullet,
+        .hljs-link,
+        .hljs-literal,
+        .hljs-number,
+        .hljs-quote,
+        .hljs-regexp {
+            color: #ae81ff
+        }
+
+        .hljs-code,
+        .hljs-section,
+        .hljs-selector-class,
+        .hljs-title {
+            color: #a6e22e
+        }
+
+        .hljs-strong {
+            font-weight: 700
+        }
+
+        .hljs-emphasis {
+            font-style: italic
+        }
+
+        .hljs-attr,
+        .hljs-keyword,
+        .hljs-name,
+        .hljs-selector-tag {
+            color: #f92672
+        }
+
+        .hljs-attribute,
+        .hljs-symbol {
+            color: #66d9ef
+        }
+
+        .hljs-class .hljs-title,
+        .hljs-params {
+            color: #f8f8f2
+        }
+
+        .hljs-addition,
+        .hljs-built_in,
+        .hljs-builtin-name,
+        .hljs-selector-attr,
+        .hljs-selector-id,
+        .hljs-selector-pseudo,
+        .hljs-string,
+        .hljs-template-variable,
+        .hljs-type,
+        .hljs-variable {
+            color: #e6db74
+        }
+
+        .hljs-comment,
+        .hljs-deletion,
+        .hljs-meta {
+            color: #75715e
+        }
+
+        \n
+        /* Monkai theme ends */
+    </style>
+    <style>
+        :root < !-- --> {
+            --color-custom-header: #800080;
+        }
+    </style>
+    <link rel=\"alternate\" type=\"application/rss+xml\" title=\"RSS Feed for Compiler vs Interpreter: A Deep Dive with
+        Python and PyPy Installation Guide\"
+        href=\"https://blog.saravanakumar.engineer/compiler-vs-interpreter-a-deep-dive-with-python-and-pypy-installation-guide/rss.xml\" />
+    <link rel=\"preload\" as=\"image\"
+        href=\"https://cdn.hashnode.com/res/hashnode/image/upload/v1721498916646/ce3ad81b-31cb-42c1-b93d-f9d73eefd5b9.png?w=1600&amp;h=840&amp;fit=crop&amp;crop=entropy&amp;auto=compress,format&amp;format=webp\" />
+    <meta name=\"next-head-count\" content=\"29\" />
+    <style>
+        #nprogress {
+            pointer-events: none
+        }
+
+        #nprogress .bar {
+            background: #29d;
+            position: fixed;
+            z-index: 1031;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px
+        }
+
+        #nprogress .peg {
+            display: block;
+            position: absolute;
+            right: 0;
+            width: 100px;
+            height: 100%;
+            box-shadow: 0 0 10px #29d, 0 0 5px #29d;
+            opacity: 1;
+            -webkit-transform: rotate(3deg) translate(0, -4px);
+            -ms-transform: rotate(3deg) translate(0, -4px);
+            transform: rotate(3deg) translate(0, -4px)
+        }
+
+        #nprogress .spinner {
+            display: block;
+            position: fixed;
+            z-index: 1031;
+            top: 15px;
+            right: 15px
+        }
+
+        #nprogress .spinner-icon {
+            width: 18px;
+            height: 18px;
+            box-sizing: border-box;
+            border: solid 2px transparent;
+            border-top-color: #29d;
+            border-left-color: #29d;
+            border-radius: 50%;
+            -webkit-animation: nprogress-spinner .4s linear infinite;
+            animation: nprogress-spinner .4s linear infinite
+        }
+
+        .nprogress-custom-parent {
+            overflow: hidden;
+            position: relative
+        }
+
+        .nprogress-custom-parent #nprogress .bar,
+        .nprogress-custom-parent #nprogress .spinner {
+            position: absolute
+        }
+
+        @-webkit-keyframes nprogress-spinner {
+            0% {
+                -webkit-transform: rotate(0)
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg)
+            }
+        }
+
+        @keyframes nprogress-spinner {
+            0% {
+                transform: rotate(0)
+            }
+
+            100% {
+                transform: rotate(360deg)
+            }
+        }
+    </style>
+    <script async=\"\" src=\"https://ping.hashnode.com/gtag/js?id=G-72XG3F8LNJ\"></script>
+    <script
+        type=\"text/javascript\">\n    window.dataLayer = window.dataLayer || [];\n    function gtag(){window.dataLayer.push(arguments);}\n    gtag('js', new Date());\n  </script>
+    <link rel=\"preload\" href=\"/_next/static/media/a34f9d1faa5f3315-s.p.woff2\" as=\"font\" type=\"font/woff2\"
+        crossorigin=\"anonymous\" data-next-font=\"size-adjust\" />
+    <link rel=\"preload\" href=\"/_next/static/css/919b4f3475ba87ff.css\" as=\"style\" />
+    <link rel=\"stylesheet\" href=\"/_next/static/css/919b4f3475ba87ff.css\" data-n-g=\"\" /><noscript
+        data-n-css=\"\"></noscript>
+    <script defer=\"\" nomodule=\"\" src=\"/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js\"></script>
+    <script defer=\"\" src=\"/_next/static/chunks/8820-56721d947d773244.js\"></script>
+    <script defer=\"\" src=\"/_next/static/chunks/2237-072bb2d02e777191.js\"></script>
+    <script defer=\"\" src=\"/_next/static/chunks/8226.64bcf70d809f2c9f.js\"></script>
+    <script defer=\"\" src=\"/_next/static/chunks/211-09755787265c40e7.js\"></script>
+    <script defer=\"\" src=\"/_next/static/chunks/7179.29baf9e5a00c3069.js\"></script>
+    <script src=\"/_next/static/chunks/webpack-a2af78920c5377e3.js\" defer=\"\"></script>
+    <script src=\"/_next/static/chunks/framework-ce84985cd166733a.js\" defer=\"\"></script>
+    <script src=\"/_next/static/chunks/main-999609f14ec7de7a.js\" defer=\"\"></script>
+    <script src=\"/_next/static/chunks/pages/_app-9b7e51f28796fc05.js\" defer=\"\"></script>
+    <script src=\"/_next/static/chunks/0b5ea8d6-6ac0c2d57f55ed79.js\" defer=\"\"></script>
+    <script src=\"/_next/static/chunks/6365-3d0e1852af604b43.js\" defer=\"\"></script>
+    <script src=\"/_next/static/chunks/6933-986f597e56c71925.js\" defer=\"\"></script>
+    <script src=\"/_next/static/chunks/pages/%5B...slug%5D-02cb0eb0ef099009.js\" defer=\"\"></script>
+    <script src=\"/_next/static/VY7gfv8JfZ1AtTVSeqeoU/_buildManifest.js\" defer=\"\"></script>
+    <script src=\"/_next/static/VY7gfv8JfZ1AtTVSeqeoU/_ssgManifest.js\" defer=\"\"></script>
+    <style id=\"__jsx-668768712\">
+        @font-face {
+            font-family: \"Suisse Intl\";
+            src: url(\"/fonts/SuisseIntl-Book-WebXL.woff2\")format(\"woff2\"), url(\"/fonts/SuisseIntl-Book-WebXL.woff\")format(\"woff\");
+            font-weight: 450;
+            font-style: normal;
+            font-display: block
+        }
+
+        @font-face {
+            font-family: \"Suisse Intl\";
+            src: url(\"/fonts/SuisseIntl-Medium-WebXL.woff2\")format(\"woff2\"), url(\"/fonts/SuisseIntl-Medium-WebXL.woff\")format(\"woff\");
+            font-weight: 500;
+            font-style: normal;
+            font-display: block
+        }
+
+        @font-face {
+            font-family: \"Suisse Intl\";
+            src: url(\"/fonts/SuisseIntl-SemiBold-WebXL.woff2\")format(\"woff2\"), url(\"/fonts/SuisseIntl-SemiBold-WebXL.woff\")format(\"woff\");
+            font-weight: 600;
+            font-style: normal;
+            font-display: block
+        }
+
+        @font-face {
+            font-family: \"Suisse Intl\";
+            src: url(\"/fonts/SuisseIntl-Bold-WebXL.woff2\")format(\"woff2\"), url(\"/fonts/SuisseIntl-Bold-WebXL.woff\")format(\"woff\");
+            font-weight: 700;
+            font-style: normal;
+            font-display: block
+        }
+
+        html {
+            --font-inter: __Inter_a184c8;
+            --font-suisse-intl: 'Suisse Intl';
+            --font-mermaid: var(--font-inter)
+        }
+    </style>
+</head>
+
+<body class=\"bg-white leading-normal antialiased dark:bg-slate-950\"><input type=\"hidden\" id=\"hn-user\" />
+    <style id=\"__jsx-668768712\">
+        @font-face {
+            font-family: \"Suisse Intl\";
+            src: url(\"/fonts/SuisseIntl-Book-WebXL.woff2\")format(\"woff2\"), url(\"/fonts/SuisseIntl-Book-WebXL.woff\")format(\"woff\");
+            font-weight: 450;
+            font-style: normal;
+            font-display: block
+        }
+
+        @font-face {
+            font-family: \"Suisse Intl\";
+            src: url(\"/fonts/SuisseIntl-Medium-WebXL.woff2\")format(\"woff2\"), url(\"/fonts/SuisseIntl-Medium-WebXL.woff\")format(\"woff\");
+            font-weight: 500;
+            font-style: normal;
+            font-display: block
+        }
+
+        @font-face {
+            font-family: \"Suisse Intl\";
+            src: url(\"/fonts/SuisseIntl-SemiBold-WebXL.woff2\")format(\"woff2\"), url(\"/fonts/SuisseIntl-SemiBold-WebXL.woff\")format(\"woff\");
+            font-weight: 600;
+            font-style: normal;
+            font-display: block
+        }
+
+        @font-face {
+            font-family: \"Suisse Intl\";
+            src: url(\"/fonts/SuisseIntl-Bold-WebXL.woff2\")format(\"woff2\"), url(\"/fonts/SuisseIntl-Bold-WebXL.woff\")format(\"woff\");
+            font-weight: 700;
+            font-style: normal;
+            font-display: block
+        }
+
+        html {
+            --font-inter: __Inter_a184c8;
+            --font-suisse-intl: 'Suisse Intl';
+            --font-mermaid: var(--font-inter)
+        }
+    </style>
+    <div id=\"__next\">
+        <div class=\"bg-white dark:bg-slate-950\" data-theme=\"dark\">
+            <script
+                type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@type\":\"NewsArticle\",\"url\":\"https://blog.saravanakumar.engineer/compiler-vs-interpreter-a-deep-dive-with-python-and-pypy-installation-guide\",\"mainEntityOfPage\":\"https://blog.saravanakumar.engineer/compiler-vs-interpreter-a-deep-dive-with-python-and-pypy-installation-guide\",\"headline\":\"Compiler vs Interpreter: A Deep Dive with Python and PyPy Installation Guide\",\"description\":\"Compiler vs Interpreter: A Deep Dive with Python and PyPy Installation Guide\\nWhen diving into programming languages, understanding the difference between compilers and interpreters is crucial. This blog will explain these concepts, particularly in th...\",\"datePublished\":\"2024-07-20T18:10:48.513Z\",\"isAccessibleForFree\":true,\"author\":{\"@type\":\"Person\",\"name\":\"Saravanakumar R\",\"url\":\"https://hashnode.com/@Saravanakumar2003\",\"sameAs\":\"https://twitter.com/Saravana2003_me\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\" Saravanakumar R's blog\",\"url\":\"https://blog.saravanakumar.engineer\",\"logo\":\"https://hashnode.com/utility/r?url=https%3A%2F%2Fcdn.hashnode.com%2Fres%2Fhashnode%2Fimage%2Fupload%2Fv1559814205701%2Fek9fO-yT0.jpeg%3Fw%3D800%26bm%3Dnormal%26balph%3D100%26txt64%3DIFNhcmF2YW5ha3VtYXIgUidzIGJsb2c%26txtsize%3D42%26txtfit%3Dmax%26txtalign%3Dmiddle%2Ccenter%26txtfont%3DHelvetica%20Neue%2CBold%26txtclr%3Dffffff%26blend%3D800080\"},\"image\":{\"@type\":\"ImageObject\",\"url\":\"https://cdn.hashnode.com/res/hashnode/image/upload/v1721498916646/ce3ad81b-31cb-42c1-b93d-f9d73eefd5b9.png\"}}</script>
+            <header style=\"background-color:#800080\" class=\"blog-header z-50 w-full border-b relative transform-none
+                md:sticky md:top-0 md:left-0 md:backdrop-blur-lg border-transparent md:border-none\">
+                <div class=\"container mx-auto px-2 md:px-4 md:py-1 2xl:px-10\">
+                    <div class=\"relative z-40 flex flex-row items-center justify-between pb-2 pt-8 md:py-4\">
+                        <div class=\"mb-2 flex flex-row items-center md:mb-0 text-white\"><a aria-label=\"Back to blog
+                                home\" class=\"blog-back-to-home-button focus-ring-base flex flex-row items-center
+                                rounded-full font-medium transition duration-100 ease-in-out
+                                focus-ring-colors-dark-header hover:bg-white/20 mr-2 p-3\" data-state=\"closed\"
+                                href=\"/\"><svg class=\"h-4 w-4 fill-current pr-1\" xmlns=\"http://www.w3.org/2000/svg\"
+                                    viewBox=\"0 0 10 17\">
+                                    <path d=\"M7.75135 16.7197L0.885098 9.55347C0.683348 9.31347 0.600098 9.08847
+                                        0.600098 8.89722C0.600098 8.70597 0.68331 8.44834 0.850898 8.27509L7.71715
+                                        1.10884C8.06035 0.749066 8.6299 0.737366 8.9884 1.08189C9.34933 1.42408 9.36107
+                                        1.99576 9.01535 2.35351L2.7466 8.89722L9.0466 15.4747C9.39231 15.831 9.38057
+                                        16.404 9.01965 16.7463C8.6626 17.091 8.0926 17.0797 7.75135 16.7197Z\"></path>
+                                </svg></a>
+                            <div class=\"mr-2\"><button type=\"button\" aria-label=\"Open blog links\"
+                                    class=\"blog-bars-button focus-ring-base flex flex-row items-center rounded-full
+                                    font-medium transition duration-100 ease-in-out focus-ring-colors-dark-header
+                                    hover:bg-white/20 mr-2 p-2\" data-state=\"closed\"><svg class=\"h-6 w-6
+                                        stroke-current\" viewBox=\"0 0 24 24\" fill=\"none\"
+                                        xmlns=\"http://www.w3.org/2000/svg\">
+                                        <path d=\"M20.9889 11.9969H11.9945H3M20.9889 17.8745H3M21 6.12451H3\"
+                                            stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\">
+                                        </path>
+                                    </svg></button></div>
+                            <div class=\"hidden md:block\">
+                                <div class=\"blog-title text-lg md:text-xl text-left break-words font-heading
+                                    font-semibold leading-snug md:font-bold text-white\"><a
+                                        href=\"/?source=top_nav_blog_home\" class=\"focus-ring-base flex flex-row
+                                        items-center focus-ring-colors-dark-header\" aria-label=\" Saravanakumar
+                                        R&#x27;s blog home page\"> Saravanakumar R&#x27;s blog</a></div>
+                            </div>
+                        </div>
+                        <div class=\"flex flex-row items-center text-white\"><button type=\"button\" aria-label=\"Open
+                                blog search\" class=\"blog-search-button focus-ring-base flex flex-row items-center
+                                rounded-full font-medium transition duration-100 ease-in-out
+                                focus-ring-colors-dark-header hover:bg-white/20 mr-2 p-2\" data-state=\"closed\"><svg
+                                    class=\"h-6 w-6 stroke-current\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0
+                                    24 24\" fill=\"none\">
+                                    <path d=\"M21 21L15.8091 15.8091M18 10.5C18 14.6421 14.6421 18 10.5 18C6.35786 18 3
+                                        14.6421 3 10.5C3 6.35786 6.35786 3 10.5 3C14.6421 3 18 6.35786 18 10.5Z\"
+                                        stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>
+                                </svg></button><button type=\"button\" aria-label=\"Toggle blog theme\"
+                                class=\"blog-theme-switcher focus-ring-base flex flex-row items-center rounded-full
+                                font-medium transition duration-100 ease-in-out focus-ring-colors-dark-header
+                                hover:bg-white/20 mr-2 p-2\" data-state=\"closed\"><svg class=\"h-6 w-6 fill-current\"
+                                    viewBox=\"0 0 100 100\" fill=\"none\">
+                                    <path d=\"M50 23.61c-14.55 0-26.388 11.839-26.388 26.388 0 14.55 11.839 26.388
+                                        26.388 26.388 14.55 0 26.388-11.838 26.388-26.388
+                                        0-14.55-11.839-26.388-26.388-26.388zm0 45.369c-10.466 0-18.98-8.515-18.98-18.98
+                                        0-10.463 8.514-18.982 18.98-18.982 10.466 0 18.98 8.519 18.98 18.981 0
+                                        10.466-8.514 18.98-18.98 18.98zM50 18.209a3.705 3.705 0
+                                        003.704-3.704V3.704a3.704 3.704 0 00-7.407 0v10.801A3.703 3.703 0 0050
+                                        18.209zM50 81.786a3.704 3.704 0 00-3.704 3.703v10.804a3.704 3.704 0 007.408
+                                        0V85.489A3.706 3.706 0 0050 81.786zM96.296 46.295H85.495a3.704 3.704 0 000
+                                        7.407h10.801a3.704 3.704 0 000-7.407zM18.21 49.998a3.702 3.702 0
+                                        00-3.703-3.703H3.704a3.704 3.704 0 000 7.407h10.803a3.704 3.704 0
+                                        003.703-3.704zM77.716 27.52l7.636-7.64a3.704 3.704 0 000-5.236 3.701 3.701 0
+                                        00-5.236 0l-7.637 7.637a3.703 3.703 0 105.237 5.238zM22.282 72.477l-7.638
+                                        7.639a3.703 3.703 0 105.237 5.236l7.638-7.635a3.709 3.709 0 000-5.24 3.703 3.703
+                                        0 00-5.236 0zM77.718 72.48a3.705 3.705 0 00-5.24 0 3.706 3.706 0 000 5.237l7.64
+                                        7.635a3.703 3.703 0 105.236-5.236l-7.636-7.635zM22.282 27.52a3.704 3.704 0
+                                        005.237-5.24l-7.638-7.638a3.705 3.705 0 00-5.237 0 3.706 3.706 0 000 5.237l7.638
+                                        7.64z\" fill=\"fill-current\"></path>
+                                </svg></button>
+                            <div class=\"hidden md:mr-2 md:block\">
+                                <div class=\"flex animate-pulse flex-row items-center rounded-full border-1-1/2 px-4
+                                    py-2 text-center text-sm font-medium border-transparent bg-black/10\"><svg
+                                        class=\"invisible mr-2 h-5 w-5\" viewBox=\"0 0 22 22\" fill=\"none\"
+                                        xmlns=\"http://www.w3.org/2000/svg\">
+                                        <path d=\"M14.2953 4.58698C13.9301 4.37611 13.683 4.00814 13.626 3.59028L13.4336
+                                            2.17939C13.3415 1.50373 12.7644 1 12.0825 1L9.91765 1C9.23573 1 8.65865
+                                            1.50373 8.56652 2.17939L8.37412 3.5903C8.31709 4.00849 8.06963 4.37672
+                                            7.70395 4.58749L7.0923 4.94003C6.72723 5.15046 6.28538 5.18029 5.89533
+                                            5.02084L4.57791 4.48227C3.9467 4.22423 3.22192 4.47214 2.88096
+                                            5.06269L1.79854 6.9375C1.45758 7.52805 1.60528 8.27969 2.14436
+                                            8.69731L3.26948 9.56895C3.60259 9.82701 3.79768 10.2246 3.79799
+                                            10.646L3.7985 11.3519C3.7988 11.774 3.60364 12.1724 3.26999 12.4309L2.14433
+                                            13.3029C1.60525 13.7205 1.45755 14.4722 1.79851 15.0627L2.88093
+                                            16.9375C3.22189 17.5281 3.94667 17.776 4.57788 17.518L5.89588
+                                            16.9792C6.28624 16.8196 6.72847 16.8496 7.0937 17.0604L7.70483
+                                            17.4133C8.07006 17.6241 8.31718 17.9921 8.37416 18.41L8.56652
+                                            19.8206C8.65865 20.4963 9.23573 21 9.91765 21L12.0825 21C12.7644 21 13.3415
+                                            20.4963 13.4336 19.8206L13.626 18.4098C13.683 17.9916 13.9305 17.6234
+                                            14.2962 17.4127L14.9077 17.0602C15.2728 16.8497 15.7146 16.8199 16.1047
+                                            16.9794L17.4221 17.5179C18.0533 17.776 18.7781 17.5281 19.119
+                                            16.9375L20.2015 15.0627C20.5424 14.4721 20.3947 13.7205 19.8557
+                                            13.3029L18.7305 12.4312C18.3974 12.1732 18.2023 11.7756 18.202
+                                            11.3542L18.2015 10.6483C18.2012 10.2263 18.3964 9.82784 18.73
+                                            9.56935L19.8556 8.69734C20.3947 8.27972 20.5424 7.52809 20.2014
+                                            6.93753L19.119 5.06272C18.7781 4.47217 18.0533 4.22427 17.4221
+                                            4.48231L16.1042 5.02106C15.7138 5.18064 15.2716 5.15063 14.9064
+                                            4.93976L14.2953 4.58698Z\" stroke-width=\"1.5\" stroke-linecap=\"round\"
+                                            stroke-linejoin=\"round\"></path>
+                                        <path d=\"M13.3619 12.3637C12.6088 13.6681 10.9408 14.1151 9.63638
+                                            13.362C8.33195 12.6088 7.88502 10.9409 8.63813 9.63643C9.39125 8.33199
+                                            11.0592 7.88506 12.3637 8.63818C13.6681 9.39129 14.115 11.0593 13.3619
+                                            12.3637Z\" stroke-width=\"1.5\" stroke-linecap=\"round\"
+                                            stroke-linejoin=\"round\"></path>
+                                    </svg><span class=\"invisible\">Follow</span></div>
+                            </div>
+                            <div class=\"hidden md:mr-2 md:block\">
+                                <div class=\"animate-pulse rounded-full border-1-1/2 p-2 border-transparent
+                                    bg-black/10\"><svg class=\"invisible h-5 w-5\" viewBox=\"0 0 22 17\" fill=\"none\"
+                                        xmlns=\"http://www.w3.org/2000/svg\">
+                                        <path d=\"M12.1728 3.50973C12.587 3.50973 12.9228 3.17395 12.9228
+                                            2.75973C12.9228 2.34552 12.587 2.00973 12.1728 2.00973V3.50973ZM18.958
+                                            9.10996C18.958 8.69575 18.6222 8.35996 18.208 8.35996C17.7938 8.35996 17.458
+                                            8.69575 17.458 9.10996H18.958ZM1.5018 5.97023C1.1338 5.7801 0.681352 5.9243
+                                            0.491222 6.2923C0.301092 6.66029 0.445283 7.11275 0.813283 7.30288L1.5018
+                                            5.97023ZM15.6397 8.12794C15.9841 7.8979 16.0769 7.43217 15.8468
+                                            7.08771C15.6168 6.74325 15.1511 6.6505 14.8066 6.88055L15.6397
+                                            8.12794ZM7.29742 9.80877L6.95316 10.4751L7.29742 9.80877ZM9.154
+                                            10.5963L9.2714 9.85557L9.154 10.5963ZM12.1823 9.53509L11.7658
+                                            8.91139L12.1823 9.53509ZM10.4253 10.5251L10.2259 9.80209L10.4253
+                                            10.5251ZM16.1797 3.11305C15.8868 2.82016 15.4119 2.82016 15.1191
+                                            3.11305C14.8262 3.40595 14.8262 3.88082 15.1191 4.17371L16.1797
+                                            3.11305ZM17.3215 5.31545L16.7911 5.84578C16.9358 5.99043 17.1332 6.06972
+                                            17.3377 6.06527C17.5423 6.06083 17.7361 5.97304 17.8743 5.82224L17.3215
+                                            5.31545ZM21.5529 1.80928C21.8328 1.50394 21.8121 1.02952 21.5068
+                                            0.749625C21.2015 0.46973 20.727 0.490357 20.4471 0.795697L21.5529
+                                            1.80928ZM17.458 14.2317C17.458 14.8735 16.9378 15.3937 16.296
+                                            15.3937V16.8937C17.7662 16.8937 18.958 15.7019 18.958 14.2317H17.458ZM16.296
+                                            15.3937H2.912V16.8937H16.296V15.3937ZM2.912 15.3937C2.27025 15.3937 1.75
+                                            14.8735 1.75 14.2317H0.25C0.25 15.7019 1.44182 16.8937 2.912
+                                            16.8937V15.3937ZM1.75 14.2317V4.67173H0.25V14.2317H1.75ZM1.75 4.67173C1.75
+                                            4.02998 2.27024 3.50973 2.912 3.50973V2.00973C1.44182 2.00973 0.25 3.20155
+                                            0.25 4.67173H1.75ZM2.912 3.50973H12.1728V2.00973H2.912V3.50973ZM18.958
+                                            14.2317V9.10996H17.458V14.2317H18.958ZM0.813283 7.30288L6.95316
+                                            10.4751L7.64168 9.14245L1.5018 5.97023L0.813283 7.30288ZM12.5988
+                                            10.1588L15.6397 8.12794L14.8066 6.88055L11.7658 8.91139L12.5988
+                                            10.1588ZM6.95316 10.4751C7.82539 10.9257 8.40949 11.2377 9.03661
+                                            11.3371L9.2714 9.85557C8.93995 9.80304 8.60585 9.6406 7.64168
+                                            9.14245L6.95316 10.4751ZM11.7658 8.91139C10.8633 9.51412 10.5494 9.71287
+                                            10.2259 9.80209L10.6247 11.2481C11.2368 11.0793 11.7824 10.704 12.5988
+                                            10.1588L11.7658 8.91139ZM9.03661 11.3371C9.56626 11.421 10.1077 11.3907
+                                            10.6247 11.2481L10.2259 9.80209C9.91519 9.88779 9.58974 9.90602 9.2714
+                                            9.85557L9.03661 11.3371ZM15.1191 4.17371L16.7911 5.84578L17.8518
+                                            4.78512L16.1797 3.11305L15.1191 4.17371ZM17.8743 5.82224L21.5529
+                                            1.80928L20.4471 0.795697L16.7686 4.80866L17.8743 5.82224Z\"></path>
+                                    </svg></div>
+                            </div>
+                            <div class=\"h-10 w-10 animate-pulse rounded-full border-1-1/2 border-transparent
+                                bg-black/10\"></div>
+                        </div>
+                    </div>
+                    <div class=\"mx-auto my-5 flex w-2/3 flex-row items-center justify-center md:hidden\">
+                        <div class=\"blog-title text-2xl text-center break-words font-heading font-semibold leading-snug
+                            md:font-bold text-white\"><a href=\"/?source=top_nav_blog_home\" class=\"focus-ring-base
+                                flex flex-row items-center focus-ring-colors-dark-header\" aria-label=\" Saravanakumar
+                                R&#x27;s blog home page\"> Saravanakumar R&#x27;s blog</a></div>
+                    </div>
+                    <div class=\"blog-sub-header mb-4 md:hidden\" data-testid=\"blog-sub-header\">
+                        <div class=\"md:(mb-0 ml-auto) flex flex-row items-center justify-center gap-x-3\">
+                            <div class=\"flex animate-pulse flex-row items-center rounded-full border-1-1/2 px-4 py-2
+                                text-center text-sm font-medium border-transparent bg-black/10\"><svg class=\"invisible
+                                    mr-2 h-5 w-5\" viewBox=\"0 0 22 22\" fill=\"none\"
+                                    xmlns=\"http://www.w3.org/2000/svg\">
+                                    <path d=\"M14.2953 4.58698C13.9301 4.37611 13.683 4.00814 13.626 3.59028L13.4336
+                                        2.17939C13.3415 1.50373 12.7644 1 12.0825 1L9.91765 1C9.23573 1 8.65865 1.50373
+                                        8.56652 2.17939L8.37412 3.5903C8.31709 4.00849 8.06963 4.37672 7.70395
+                                        4.58749L7.0923 4.94003C6.72723 5.15046 6.28538 5.18029 5.89533 5.02084L4.57791
+                                        4.48227C3.9467 4.22423 3.22192 4.47214 2.88096 5.06269L1.79854 6.9375C1.45758
+                                        7.52805 1.60528 8.27969 2.14436 8.69731L3.26948 9.56895C3.60259 9.82701 3.79768
+                                        10.2246 3.79799 10.646L3.7985 11.3519C3.7988 11.774 3.60364 12.1724 3.26999
+                                        12.4309L2.14433 13.3029C1.60525 13.7205 1.45755 14.4722 1.79851 15.0627L2.88093
+                                        16.9375C3.22189 17.5281 3.94667 17.776 4.57788 17.518L5.89588 16.9792C6.28624
+                                        16.8196 6.72847 16.8496 7.0937 17.0604L7.70483 17.4133C8.07006 17.6241 8.31718
+                                        17.9921 8.37416 18.41L8.56652 19.8206C8.65865 20.4963 9.23573 21 9.91765
+                                        21L12.0825 21C12.7644 21 13.3415 20.4963 13.4336 19.8206L13.626 18.4098C13.683
+                                        17.9916 13.9305 17.6234 14.2962 17.4127L14.9077 17.0602C15.2728 16.8497 15.7146
+                                        16.8199 16.1047 16.9794L17.4221 17.5179C18.0533 17.776 18.7781 17.5281 19.119
+                                        16.9375L20.2015 15.0627C20.5424 14.4721 20.3947 13.7205 19.8557 13.3029L18.7305
+                                        12.4312C18.3974 12.1732 18.2023 11.7756 18.202 11.3542L18.2015 10.6483C18.2012
+                                        10.2263 18.3964 9.82784 18.73 9.56935L19.8556 8.69734C20.3947 8.27972 20.5424
+                                        7.52809 20.2014 6.93753L19.119 5.06272C18.7781 4.47217 18.0533 4.22427 17.4221
+                                        4.48231L16.1042 5.02106C15.7138 5.18064 15.2716 5.15063 14.9064 4.93976L14.2953
+                                        4.58698Z\" stroke-width=\"1.5\" stroke-linecap=\"round\"
+                                        stroke-linejoin=\"round\"></path>
+                                    <path d=\"M13.3619 12.3637C12.6088 13.6681 10.9408 14.1151 9.63638 13.362C8.33195
+                                        12.6088 7.88502 10.9409 8.63813 9.63643C9.39125 8.33199 11.0592 7.88506 12.3637
+                                        8.63818C13.6681 9.39129 14.115 11.0593 13.3619 12.3637Z\" stroke-width=\"1.5\"
+                                        stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>
+                                </svg><span class=\"invisible\">Follow</span></div>
+                            <div class=\"animate-pulse rounded-full border-1-1/2 p-2 border-transparent bg-black/10\">
+                                <svg class=\"invisible h-5 w-5\" viewBox=\"0 0 22 17\" fill=\"none\"
+                                    xmlns=\"http://www.w3.org/2000/svg\">
+                                    <path d=\"M12.1728 3.50973C12.587 3.50973 12.9228 3.17395 12.9228 2.75973C12.9228
+                                        2.34552 12.587 2.00973 12.1728 2.00973V3.50973ZM18.958 9.10996C18.958 8.69575
+                                        18.6222 8.35996 18.208 8.35996C17.7938 8.35996 17.458 8.69575 17.458
+                                        9.10996H18.958ZM1.5018 5.97023C1.1338 5.7801 0.681352 5.9243 0.491222
+                                        6.2923C0.301092 6.66029 0.445283 7.11275 0.813283 7.30288L1.5018
+                                        5.97023ZM15.6397 8.12794C15.9841 7.8979 16.0769 7.43217 15.8468 7.08771C15.6168
+                                        6.74325 15.1511 6.6505 14.8066 6.88055L15.6397 8.12794ZM7.29742 9.80877L6.95316
+                                        10.4751L7.29742 9.80877ZM9.154 10.5963L9.2714 9.85557L9.154 10.5963ZM12.1823
+                                        9.53509L11.7658 8.91139L12.1823 9.53509ZM10.4253 10.5251L10.2259 9.80209L10.4253
+                                        10.5251ZM16.1797 3.11305C15.8868 2.82016 15.4119 2.82016 15.1191 3.11305C14.8262
+                                        3.40595 14.8262 3.88082 15.1191 4.17371L16.1797 3.11305ZM17.3215 5.31545L16.7911
+                                        5.84578C16.9358 5.99043 17.1332 6.06972 17.3377 6.06527C17.5423 6.06083 17.7361
+                                        5.97304 17.8743 5.82224L17.3215 5.31545ZM21.5529 1.80928C21.8328 1.50394 21.8121
+                                        1.02952 21.5068 0.749625C21.2015 0.46973 20.727 0.490357 20.4471
+                                        0.795697L21.5529 1.80928ZM17.458 14.2317C17.458 14.8735 16.9378 15.3937 16.296
+                                        15.3937V16.8937C17.7662 16.8937 18.958 15.7019 18.958 14.2317H17.458ZM16.296
+                                        15.3937H2.912V16.8937H16.296V15.3937ZM2.912 15.3937C2.27025 15.3937 1.75 14.8735
+                                        1.75 14.2317H0.25C0.25 15.7019 1.44182 16.8937 2.912 16.8937V15.3937ZM1.75
+                                        14.2317V4.67173H0.25V14.2317H1.75ZM1.75 4.67173C1.75 4.02998 2.27024 3.50973
+                                        2.912 3.50973V2.00973C1.44182 2.00973 0.25 3.20155 0.25 4.67173H1.75ZM2.912
+                                        3.50973H12.1728V2.00973H2.912V3.50973ZM18.958
+                                        14.2317V9.10996H17.458V14.2317H18.958ZM0.813283 7.30288L6.95316 10.4751L7.64168
+                                        9.14245L1.5018 5.97023L0.813283 7.30288ZM12.5988 10.1588L15.6397 8.12794L14.8066
+                                        6.88055L11.7658 8.91139L12.5988 10.1588ZM6.95316 10.4751C7.82539 10.9257 8.40949
+                                        11.2377 9.03661 11.3371L9.2714 9.85557C8.93995 9.80304 8.60585 9.6406 7.64168
+                                        9.14245L6.95316 10.4751ZM11.7658 8.91139C10.8633 9.51412 10.5494 9.71287 10.2259
+                                        9.80209L10.6247 11.2481C11.2368 11.0793 11.7824 10.704 12.5988 10.1588L11.7658
+                                        8.91139ZM9.03661 11.3371C9.56626 11.421 10.1077 11.3907 10.6247 11.2481L10.2259
+                                        9.80209C9.91519 9.88779 9.58974 9.90602 9.2714 9.85557L9.03661 11.3371ZM15.1191
+                                        4.17371L16.7911 5.84578L17.8518 4.78512L16.1797 3.11305L15.1191 4.17371ZM17.8743
+                                        5.82224L21.5529 1.80928L20.4471 0.795697L16.7686 4.80866L17.8743 5.82224Z\">
+                                    </path>
+                                </svg></div>
+                        </div>
+                        <div class=\"mt-6\">
+                            <div class=\"blog-social-media-section flex flex-row flex-wrap gap-y-2 justify-center
+                                gap-x-1.5 text-white\"><a href=\"https://hashnode.com/@Saravanakumar2003\"
+                                    aria-label=\"Find me on Hashnode, external website, opens in new tab\"
+                                    target=\"_blank\" rel=\"me noopener\" class=\"focus-ring-base flex flex-row
+                                    items-center justify-center rounded-full p-2 transition-colors duration-150
+                                    focus-ring-colors-dark-header hover:bg-white/20\"><svg class=\"h-5 w-5
+                                        fill-current\" viewBox=\"0 0 200 200\" fill=\"none\">
+                                        <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M13.742 66.824c-18.323
+                                            18.323-18.323 48.029 0 66.352l53.082 53.082c18.323 18.323 48.029 18.323
+                                            66.352 0l53.082-53.082c18.323-18.323 18.323-48.03
+                                            0-66.352l-53.082-53.082c-18.323-18.323-48.03-18.323-66.352 0L13.742
+                                            66.824zm109.481 56.399c12.826-12.826 12.826-33.62
+                                            0-46.446s-33.62-12.826-46.446 0-12.826 33.62 0 46.446 33.62 12.826 46.446
+                                            0z\"></path>
+                                    </svg></a><a href=\"/rss.xml\" aria-label=\"Open blog XML Feed, opens in new tab\"
+                                    target=\"_blank\" rel=\"me noopener\" class=\"focus-ring-base flex flex-row
+                                    items-center justify-center rounded-full p-2 transition-colors duration-150
+                                    focus-ring-colors-dark-header hover:bg-white/20\"><svg class=\"h-5 w-5
+                                        fill-current\" viewBox=\"0 0 448 512\">
+                                        <path d=\"M80 368c17.645 0 32 14.355 32 32s-14.355 32-32 32-32-14.355-32-32
+                                            14.355-32 32-32m0-48c-44.183 0-80 35.817-80 80s35.817 80 80 80 80-35.817
+                                            80-80-35.817-80-80-80zm367.996
+                                            147.615c-6.449-237.834-198.057-429.163-435.61-435.61C5.609 31.821 0 37.229 0
+                                            44.007v24.02c0 6.482 5.147 11.808 11.626 11.992 211.976 6.04 382.316 176.735
+                                            388.354 388.354.185 6.479 5.51 11.626 11.992 11.626h24.02c6.78.001
+                                            12.187-5.608 12.004-12.384zm-136.239-.05C305.401 305.01 174.966 174.599
+                                            12.435 168.243 5.643 167.977 0 173.444 0 180.242v24.024c0 6.431 5.072 11.705
+                                            11.497 11.98 136.768 5.847 246.411 115.511 252.258 252.258.275 6.425 5.549
+                                            11.497 11.98 11.497h24.024c6.797-.001 12.264-5.644 11.998-12.436z\"></path>
+                                    </svg></a></div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class=\"blog-post-area relative z-40\">
+                <main class=\"blog-post-detail-card pb-24\">
+                    <article>
+                        <style>
+                            \n [data-rmiz-ghost] {
+                                \n position: absolute;
+                                \n pointer-events: none;
+                                \n
+                            }
+
+                            \n [data-rmiz-btn-zoom],
+                            \n [data-rmiz-btn-unzoom] {
+                                \n background-color: rgba(0, 0, 0, 0.7);
+                                \n border-radius: 50%;
+                                \n border: none;
+                                \n box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+                                \n color: #fff;
+                                \n height: 40px;
+                                \n margin: 0;
+                                \n outline-offset: 2px;
+                                \n padding: 9px;
+                                \n touch-action: manipulation;
+                                \n width: 40px;
+                                \n -webkit-appearance: none;
+                                \n -moz-appearance: none;
+                                \n appearance: none;
+                                \n
+                            }
+
+                            \n [data-rmiz-btn-zoom]:not(:focus):not(:active) {
+                                \n position: absolute;
+                                \n clip: rect(0 0 0 0);
+                                \n clip-path: inset(50%);
+                                \n height: 1px;
+                                \n overflow: hidden;
+                                \n pointer-events: none;
+                                \n white-space: nowrap;
+                                \n width: 1px;
+                                \n
+                            }
+
+                            \n [data-rmiz-btn-zoom] {
+                                \n position: absolute;
+                                \n inset: 10px 10px auto auto;
+                                \n cursor: zoom-in;
+                                \n
+                            }
+
+                            \n [data-rmiz-btn-unzoom] {
+                                \n position: absolute;
+                                \n inset: 20px 20px auto auto;
+                                \n cursor: zoom-out;
+                                \n z-index: 1;
+                                \n display: none;
+                                \n
+                            }
+
+                            \n [data-rmiz-content=\"found\"] img,
+                            \n [data-rmiz-content=\"found\"] svg,
+                            \n [data-rmiz-content=\"found\"] [role=\"img\"],
+                            \n [data-rmiz-content=\"found\"] [data-zoom] {
+                                \n cursor: zoom-in;
+                                \n
+                            }
+
+                            \n [data-rmiz-modal]::backdrop {
+                                \n display: none;
+                                \n
+                            }
+
+                            \n [data-rmiz-modal][open] {
+                                \n position: fixed;
+                                \n width: 100vw;
+                                \n width: 100dvw;
+                                \n height: 100vh;
+                                \n height: 100dvh;
+                                \n max-width: none;
+                                \n max-height: none;
+                                \n margin: 0;
+                                \n padding: 0;
+                                \n border: 0;
+                                \n background: transparent;
+                                \n overflow: hidden;
+                                \n
+                            }
+
+                            \n [data-rmiz-modal-overlay] {
+                                \n position: absolute;
+                                \n inset: 0;
+                                \n transition: background-color 0.3s;
+                                \n
+                            }
+
+                            \n [data-rmiz-modal-overlay=\"hidden\"] {
+                                \n background-color: rgba(255, 255, 255, 0);
+                                \n
+                            }
+
+                            \n [data-rmiz-modal-overlay=\"visible\"] {
+                                \n background-color: rgba(0, 0, 0, 0.9);
+                                \n
+                            }
+
+                            \n [data-rmiz-modal-content] {
+                                \n position: relative;
+                                \n width: 100%;
+                                \n height: 100%;
+                                \n
+                            }
+
+                            \n [data-rmiz-modal-img] {
+                                \n position: absolute;
+                                \n cursor: zoom-out;
+                                \n image-rendering: high-quality;
+                                \n transform-origin: top left;
+                                \n transition: transform 0.3s;
+                                \n
+                            }
+
+                            \n @media (prefers-reduced-motion: reduce) {
+
+                                \n [data-rmiz-modal-overlay],
+                                \n [data-rmiz-modal-img] {
+                                    \n transition-duration: 0.01ms !important;
+                                    \n
+                                }
+
+                                \n
+                            }
+
+                            \n
+                        </style>
+                        <div class=\"blog-article-page container relative mx-auto grid grid-cols-8\">
+                            <div class=\"col-span-full lg:col-span-6 lg:col-start-2\">
+                                <div class=\"relative\"><span
+                                        style=\"box-sizing:border-box;display:block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative\"><span
+                                            style=\"box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;padding-top:52.5%\"></span><img
+                                            alt=\"Compiler vs Interpreter: A Deep Dive with Python and PyPy Installation
+                                            Guide\"
+                                            src=\"https://cdn.hashnode.com/res/hashnode/image/upload/v1721498916646/ce3ad81b-31cb-42c1-b93d-f9d73eefd5b9.png?w=1600&amp;h=840&amp;fit=crop&amp;crop=entropy&amp;auto=compress,format&amp;format=webp\"
+                                            decoding=\"async\" data-nimg=\"responsive\" class=\"mb-0 block w-full\"
+                                            style=\"position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%;background-size:cover;background-position:0%
+                                            0%;filter:blur(20px);background-image:url(&quot;https://cdn.hashnode.com/res/hashnode/image/upload/v1721498916646/ce3ad81b-31cb-42c1-b93d-f9d73eefd5b9.png?w=400&amp;h=210&amp;fit=crop&amp;crop=entropy&amp;auto=compress,format&amp;format=webp&amp;fm=blurhash&quot;)\" /><noscript><img
+                                                alt=\"Compiler vs Interpreter: A Deep Dive with Python and PyPy
+                                                Installation Guide\" decoding=\"async\" data-nimg=\"responsive\"
+                                                style=\"position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%\"
+                                                class=\"mb-0 block w-full\"
+                                                src=\"https://cdn.hashnode.com/res/hashnode/image/upload/v1721498916646/ce3ad81b-31cb-42c1-b93d-f9d73eefd5b9.png?w=1600&amp;h=840&amp;fit=crop&amp;crop=entropy&amp;auto=compress,format&amp;format=webp\" /></noscript></span>
+                                </div>
+                                <div class=\"mt-6 break-words px-4 text-center font-heading text-3xl font-bold
+                                    text-slate-900 dark:text-white md:mt-10 md:px-5 md:text-4xl lg:px-8 xl:px-20
+                                    xl:text-5xl mb-8 md:mb-14\">
+                                    <h1 class=\"leading-tight\" data-query=\"post-title\">Compiler vs Interpreter: A
+                                        Deep Dive with Python and PyPy Installation Guide</h1>
+                                </div>
+                                <div class=\"relative z-20 mb-8 flex flex-row flex-wrap items-center justify-center px-4
+                                    md:-mt-7 md:mb-14 md:text-lg last:md:mb-10\">
+                                    <div class=\"mb-5 flex w-full flex-row items-center justify-center md:mb-0 md:w-auto
+                                        md:justify-start\">
+                                        <div style=\"z-index:1\" class=\"overflow-hidden rounded-full bg-slate-200
+                                            dark:bg-white/20 md:mr-3 h-10 w-10 md:h-12 md:w-12\"><a
+                                                href=\"https://hashnode.com/@Saravanakumar2003\" class=\"relative block
+                                                h-full w-full\"><span
+                                                    style=\"box-sizing:border-box;display:inline-block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative;max-width:100%\"><span
+                                                        style=\"box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;max-width:100%\"><img
+                                                            style=\"display:block;max-width:100%;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0\"
+                                                            alt=\"\" aria-hidden=\"true\"
+                                                            src=\"data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27200%27%20height=%27200%27/%3e\" /></span><img
+                                                        alt=\"Saravanakumar R&#x27;s photo\"
+                                                        src=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7\"
+                                                        decoding=\"async\" data-nimg=\"intrinsic\" class=\"relative z-20
+                                                        block w-full rounded-full\"
+                                                        style=\"position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%\" /><noscript><img
+                                                            alt=\"Saravanakumar R&#x27;s photo\" loading=\"lazy\"
+                                                            decoding=\"async\" data-nimg=\"intrinsic\"
+                                                            style=\"position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%\"
+                                                            class=\"relative z-20 block w-full rounded-full\"
+                                                            src=\"https://cdn.hashnode.com/res/hashnode/image/upload/v1715492925925/aHvkVWBZT.png?w=200&amp;h=200&amp;fit=crop&amp;crop=faces&amp;auto=compress,format&amp;format=webp\" /></noscript></span></a>
+                                        </div><a href=\"https://hashnode.com/@Saravanakumar2003\" class=\"ml-2
+                                            font-semibold text-slate-600 dark:text-white md:ml-0\"><span>Saravanakumar
+                                                R</span></a>
+                                    </div>
+                                    <div class=\"mb-5 flex w-full flex-row items-center justify-center md:mb-0 md:w-auto
+                                        md:justify-start\"><span class=\"mx-3 hidden font-bold text-slate-500
+                                            md:block\">·</span><a
+                                            href=\"https://blog.saravanakumar.engineer/compiler-vs-interpreter-a-deep-dive-with-python-and-pypy-installation-guide\"
+                                            class=\"tooltip-handle text-slate-600 dark:text-slate-400\" data-title=\"Jul
+                                            20, 2024 18:10\"><time dateTime=\"2024-07-20T18:10:48.513Z\">Jul 20,
+                                                2024</time></a><span class=\"mx-3 block font-bold
+                                            text-slate-500\">·</span>
+                                        <p class=\"flex flex-row items-center text-slate-600 dark:text-slate-400\"><svg
+                                                class=\"mr-2 h-5 w-5 fill-current opacity-75\" viewBox=\"0 0 576 512\">
+                                                <path d=\"M540.9
+                                                    56.77c-45.95-16.66-90.23-24.09-129.1-24.75-60.7.94-102.7 17.45-123.8
+                                                    27.72-21.1-10.27-64.1-26.8-123.2-27.74-40-.05-84.4 8.35-129.7
+                                                    24.77C14.18 64.33 0 84.41 0 106.7v302.9c0 14.66 6.875 28.06 18.89
+                                                    36.8 11.81 8.531 26.64 10.98 40.73 6.781 118.9-36.34 209.3 19.05
+                                                    214.3 22.19C277.8 477.6 281.2 480 287.1 480c6.52 0 10.12-2.373
+                                                    14.07-4.578 10.78-6.688 98.3-57.66 214.3-22.27 14.11 4.25 28.86 1.75
+                                                    40.75-6.812C569.1 437.6 576 424.2 576
+                                                    409.6V106.7c0-22.28-14.2-42.35-35.1-49.93zM272
+                                                    438.1c-24.95-12.03-71.01-29.37-130.5-29.37-27.83 0-58.5 3.812-91.19
+                                                    13.77-4.406 1.344-9 .594-12.69-2.047C34.02 417.8 32 413.1 32
+                                                    409.6V106.7c0-8.859 5.562-16.83 13.86-19.83C87.66 71.7 127.9 63.95
+                                                    164.5 64c51.8.81 89.7 15.26 107.5 23.66V438.1zm272-28.5c0
+                                                    4.375-2.016 8.234-5.594 10.84-3.766 2.703-8.297 3.422-12.69
+                                                    2.125C424.1 391.6 341.3 420.4 304 438.3V87.66c17.8-8.4 55.7-22.85
+                                                    107.4-23.66 35.31-.063 76.34 7.484 118.8 22.88 8.2 3 13.8 10.96 13.8
+                                                    19.82v302.9z\"></path>
+                                            </svg><span>3<!-- --> min read</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=\"blog-content-wrapper article-main-wrapper container relative z-30 mx-auto grid
+                            grid-flow-row grid-cols-8 xl:gap-6 2xl:grid-cols-10\">
+                            <section class=\"blog-content-main z-20 col-span-8 mb-10 px-4 md:z-10 lg:col-span-6
+                                lg:col-start-2 lg:px-0 xl:col-span-6 xl:col-start-2 2xl:col-span-6 2xl:col-start-3\">
+                                <div class=\"relative\">
+                                    <div id=\"post-content-parent\" class=\"relative mb-10 pb-14\">
+                                        <div id=\"post-content-wrapper\" class=\"prose prose-lg mx-auto mb-10 min-h-30
+                                            break-words dark:prose-dark xl:prose-xl\">
+                                            <h1
+                                                id=\"heading-compiler-vs-interpreter-a-deep-dive-with-python-and-pypy-installation-guide\">
+                                                Compiler vs Interpreter: A Deep Dive with Python and PyPy Installation
+                                                Guide</h1>\n<p>When diving into programming languages, understanding the
+                                                difference between compilers and interpreters is crucial. This blog will
+                                                explain these concepts, particularly in the context of Python, and guide
+                                                you through installing PyPy on your PC.</p>\n<h2
+                                                id=\"heading-compiler-vs-interpreter\">Compiler vs Interpreter</h2>\n<h3
+                                                id=\"heading-compiler\">Compiler</h3>\n<p>A compiler translates the
+                                                entire program from a high-level programming language into machine code
+                                                (binary code) before execution. This process occurs in several stages:
+                                            </p>\n<ol>\n<li><strong>Lexical Analysis:</strong> Converts the source code
+                                                    into tokens.</li>\n<li><strong>Syntax Analysis:</strong> Constructs
+                                                    a parse tree based on the grammar rules.</li>\n<li><strong>Semantic
+                                                        Analysis:</strong> Checks for semantic errors and generates an
+                                                    intermediate representation.</li>\n<li>
+                                                    <strong>Optimization:</strong> Improves the intermediate code.</li>
+                                                \n<li><strong>Code Generation:</strong> Produces the final machine code.
+                                                </li>\n</ol>\n<p><strong>Advantages:</strong></p>\n<ul>\n<li>Faster
+                                                    execution after compilation.</li>\n<li>Error detection before
+                                                    runtime.</li>\n</ul>\n<p><strong>Disadvantages:</strong></p>\n<ul>\n
+                                                <li>Longer development time due to compilation.</li>\n<li>Requires
+                                                    recompilation for every change.</li>\n</ul>\n<h3
+                                                id=\"heading-interpreter\">Interpreter</h3>\n<p>An interpreter
+                                                translates and executes the program line by line. It does not produce a
+                                                separate executable file; instead, it runs directly from the source
+                                                code. This process typically involves:</p>\n<ol>\n<li><strong>Lexical
+                                                        Analysis:</strong> Converts the source code into tokens.</li>\n
+                                                <li><strong>Parsing:</strong> Analyzes the tokens to build an abstract
+                                                    syntax tree.</li>\n<li><strong>Execution:</strong> Executes the code
+                                                    based on the syntax tree.</li>\n</ol>\n<p>
+                                                <strong>Advantages:</strong></p>\n<ul>\n<li>Immediate execution and
+                                                    testing.</li>\n<li>Easier to debug and test code line by line.</li>
+                                                \n</ul>\n<p><strong>Disadvantages:</strong></p>\n<ul>\n<li>Slower
+                                                    execution compared to compiled languages.</li>\n<li>Errors are
+                                                    detected during runtime.</li>\n</ul>\n<h2
+                                                id=\"heading-python-compiler-or-interpreter\">Python: Compiler or
+                                                Interpreter?</h2>\n<p>Python is traditionally known as an interpreted
+                                                language. The standard implementation, CPython, compiles Python code
+                                                into bytecode, which is then interpreted by the Python virtual machine.
+                                                This approach combines features of both compilers and interpreters.</p>
+                                            \n<p>However, Python’s flexibility allows various implementations, such as
+                                                PyPy, which uses Just-In-Time (JIT) compilation to enhance performance.
+                                            </p>\n<h2 id=\"heading-installing-pypy-on-windows\">Installing PyPy on
+                                                Windows</h2>\n<p>PyPy is an alternative Python interpreter that offers
+                                                faster execution by using JIT compilation. Here’s how you can install
+                                                PyPy on a Windows PC:</p>\n<h3 id=\"heading-step-1-download-pypy\">Step
+                                                1: Download PyPy</h3>\n<ol>\n<li>Go to the <a target=\"_blank\"
+                                                        href=\"https://www.pypy.org/download.html\">PyPy official
+                                                        website</a>.</li>\n<li>Download the latest version of PyPy for
+                                                    Windows. Choose the appropriate 32-bit or 64-bit version based on
+                                                    your system.</li>\n</ol>\n<h3
+                                                id=\"heading-step-2-extract-the-archive\">Step 2: Extract the Archive
+                                            </h3>\n<ol>\n<li>Locate the downloaded <code>.zip</code> file.</li>\n<li>
+                                                    Right-click the file and select \"Extract All...\"</li>\n<li>Choose
+                                                    a destination folder where you want to extract the files.</li>\n
+                                            </ol>\n<h3 id=\"heading-step-3-set-up-environment-variables\">Step 3: Set Up
+                                                Environment Variables</h3>\n<ol>\n<li>Open the Start menu and search for
+                                                    \"Environment Variables.\"</li>\n<li>Click on \"Edit the system
+                                                    environment variables.\"</li>\n<li>In the System Properties window,
+                                                    click on \"Environment Variables.\"</li>\n<li>In the Environment
+                                                    Variables window, find the \"Path\" variable in the \"System
+                                                    variables\" section and click \"Edit.\"</li>\n<li>Click \"New\" and
+                                                    add the path to the folder where you extracted PyPy (e.g.,
+                                                    <code>C:\\path\\to\\pypy</code>).</li>\n<li>Click \"OK\" to save and
+                                                    close all dialog boxes.</li>\n</ol>\n<h3
+                                                id=\"heading-step-4-verify-the-installation\">Step 4: Verify the
+                                                Installation</h3>\n<ol>\n<li>Open Command Prompt (cmd).</li>\n<li>Type
+                                                    <code>pypy --version</code> and press Enter.</li>\n<li>You should
+                                                    see the version of PyPy displayed, confirming that the installation
+                                                    was successful.</li>\n</ol>\n<h2 id=\"heading-conclusion\">
+                                                Conclusion</h2>\n<p>Understanding the difference between compilers and
+                                                interpreters is fundamental to grasping how different programming
+                                                languages work. PyPy offers a performance boost for Python through JIT
+                                                compilation, making it a valuable tool for Python developers. By
+                                                following the steps above, you can easily install PyPy on your PC and
+                                                start experiencing its benefits.</p>\n<p>Feel free to leave comments or
+                                                questions below!</p>\n
+                                        </div>
+                                    </div>
+                                    <div class=\"mb-5 flex w-full flex-row flex-wrap justify-center md:mb-0\"><a
+                                            class=\"mb-3 mr-3 rounded-lg border bg-slate-100 px-2 py-1 text-base
+                                            font-medium text-slate-700 hover:bg-slate-200 dark:border-slate-800
+                                            dark:bg-slate-800 dark:text-slate-100 dark:hover:bg-slate-700\"
+                                            href=\"/tag/compiler?source=tags_bottom_blogs\"><span>compiler</span></a><a
+                                            class=\"mb-3 mr-3 rounded-lg border bg-slate-100 px-2 py-1 text-base
+                                            font-medium text-slate-700 hover:bg-slate-200 dark:border-slate-800
+                                            dark:bg-slate-800 dark:text-slate-100 dark:hover:bg-slate-700\"
+                                            href=\"/tag/interpreter?source=tags_bottom_blogs\"><span>interpreter</span></a><a
+                                            class=\"mb-3 mr-3 rounded-lg border bg-slate-100 px-2 py-1 text-base
+                                            font-medium text-slate-700 hover:bg-slate-200 dark:border-slate-800
+                                            dark:bg-slate-800 dark:text-slate-100 dark:hover:bg-slate-700\"
+                                            href=\"/tag/pypy?source=tags_bottom_blogs\"><span>pypy</span></a></div>
+                                </div>
+                            </section>
+                        </div>
+                        <div class=\"absolute h-px w-px overflow-hidden\" id=\"refNode1\"
+                            style=\"top:100px;left:100px\"> </div>
+                        <div class=\"absolute left-0 top-0 h-px w-px overflow-hidden\" id=\"refNode2\"></div>
+                        <div class=\"absolute z-50 mt-4 hidden\">
+                            <div class=\"flex flex-row items-center rounded-lg border border-slate-300 bg-white p-4
+                                text-slate-800 shadow-lg dark:border-white dark:bg-slate-800 dark:text-slate-300\"><span
+                                    class=\"mr-3 block\">Share this</span><a
+                                    href=\"https://twitter.com/share?url=https%3A%2F%2Fblog.saravanakumar.engineer%2Fcompiler-vs-interpreter-a-deep-dive-with-python-and-pypy-installation-guide&amp;text=%20%40Saravanakumar2003\"
+                                    class=\"rounded-full border border-transparent py-1 font-medium text-slate-700
+                                    dark:text-slate-200 hover:bg-slate-200 disabled:opacity-50 hover:dark:bg-slate-700
+                                    flex flex-row items-center focus:outline-none px-2 text-sm\" variant=\"transparent\"
+                                    target=\"_blank\" rel=\"noopener\"><svg class=\"h-6 w-6 stroke-current\" viewBox=\"0
+                                        0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">
+                                        <path d=\"M10.643 13.346L4.26862 4.86856C3.85863 4.32329 4.2478 3.54408 4.93001
+                                            3.54431L7.2184 3.54508C7.47633 3.54517 7.71945 3.66557 7.87585
+                                            3.87066L12.9065 10.4675M10.643 13.346L5.19311 20.5093M10.643 13.346L15.8028
+                                            20.077C15.9588 20.2805 16.2003 20.4001 16.4567 20.4009L18.7925
+                                            20.4082C19.4778 20.4104 19.8683 19.6261 19.4536 19.0805L12.9065
+                                            10.4675M12.9065 10.4675L18.2181 3.50928\" stroke-width=\"1.5\"
+                                            stroke-linecap=\"round\"></path>
+                                    </svg></a><a
+                                    href=\"http://www.reddit.com/submit?title=Compiler%20vs%20Interpreter%3A%20A%20Deep%20Dive%20with%20Python%20and%20PyPy%20Installation%20Guide&amp;selftext=true&amp;text=%20https%3A%2F%2Fblog.saravanakumar.engineer%2Fcompiler-vs-interpreter-a-deep-dive-with-python-and-pypy-installation-guide\"
+                                    class=\"rounded-full border border-transparent py-1 font-medium hover:bg-slate-200
+                                    disabled:opacity-50 hover:dark:bg-slate-700 flex flex-row items-center
+                                    focus:outline-none px-2 text-sm text-red-600 dark:text-red-600\"
+                                    variant=\"transparent\" target=\"_blank\" rel=\"noopener\"><svg class=\"h-6 w-6
+                                        fill-current\" viewBox=\"0 0 512 512\">
+                                        <path d=\"M201.5 305.5c-13.8 0-24.9-11.1-24.9-24.6 0-13.8 11.1-24.9 24.9-24.9
+                                            13.6 0 24.6 11.1 24.6 24.9 0 13.6-11.1 24.6-24.6 24.6zM504 256c0 137-111
+                                            248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zm-132.3-41.2c-9.4 0-17.7
+                                            3.9-23.8 10-22.4-15.5-52.6-25.5-86.1-26.6l17.4-78.3 55.4 12.5c0 13.6 11.1
+                                            24.6 24.6 24.6 13.8 0 24.9-11.3 24.9-24.9s-11.1-24.9-24.9-24.9c-9.7 0-18
+                                            5.8-22.1 13.8l-61.2-13.6c-3-.8-6.1 1.4-6.9 4.4l-19.1 86.4c-33.2 1.4-63.1
+                                            11.3-85.5 26.8-6.1-6.4-14.7-10.2-24.1-10.2-34.9 0-46.3 46.9-14.4 62.8-1.1
+                                            5-1.7 10.2-1.7 15.5 0 52.6 59.2 95.2 132 95.2 73.1 0 132.3-42.6 132.3-95.2
+                                            0-5.3-.6-10.8-1.9-15.8 31.3-16 19.8-62.5-14.9-62.5zM302.8 331c-18.2
+                                            18.2-76.1 17.9-93.6 0-2.2-2.2-6.1-2.2-8.3 0-2.5 2.5-2.5 6.4 0 8.6 22.8 22.8
+                                            87.3 22.8 110.2 0 2.5-2.2 2.5-6.1 0-8.6-2.2-2.2-6.1-2.2-8.3 0zm7.7-75c-13.6
+                                            0-24.6 11.1-24.6 24.9 0 13.6 11.1 24.6 24.6 24.6 13.8 0 24.9-11.1 24.9-24.6
+                                            0-13.8-11-24.9-24.9-24.9z\"></path>
+                                    </svg></a><button class=\"rounded-full border border-transparent py-1 font-medium
+                                    text-slate-700 dark:text-slate-200 hover:bg-slate-200 disabled:opacity-50
+                                    hover:dark:bg-slate-700 flex flex-row items-center focus:outline-none px-2 text-sm\"
+                                    type=\"button\" variant=\"transparent\" data-clipboard-text=\"
+                                    https://blog.saravanakumar.engineer/compiler-vs-interpreter-a-deep-dive-with-python-and-pypy-installation-guide\"
+                                    id=\"text-sharer\"><svg class=\"h-6 w-6 fill-current\" viewBox=\"0 0 384 512\">
+                                        <path d=\"M336 64h-88.6c.4-2.6.6-5.3.6-8 0-30.9-25.1-56-56-56s-56 25.1-56 56c0
+                                            2.7.2 5.4.6 8H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h288c26.5 0
+                                            48-21.5 48-48V112c0-26.5-21.5-48-48-48zM192 32c13.3 0 24 10.7 24 24s-10.7
+                                            24-24 24-24-10.7-24-24 10.7-24 24-24zm160 432c0 8.8-7.2 16-16 16H48c-8.8
+                                            0-16-7.2-16-16V112c0-8.8 7.2-16 16-16h48v20c0 6.6 5.4 12 12 12h168c6.6 0
+                                            12-5.4 12-12V96h48c8.8 0 16 7.2 16 16z\"></path>
+                                    </svg></button></div>
+                        </div>
+                        <div class=\"container relative z-20 mx-auto grid grid-flow-row grid-cols-8 xl:gap-6
+                            2xl:grid-cols-10\">
+                            <div class=\"blog-comments-section-wrapper col-span-8 px-4 lg:col-span-6 lg:col-start-2
+                                lg:px-0 xl:col-span-6 xl:col-start-2 2xl:col-span-6 2xl:col-start-3\"></div>
+                        </div>
+                    </article>
+                </main>
+            </div>
+        </div>
+    </div>
+    <script
+        type=\"text/javascript\">\n              var SUPPORTS_PASSIVE = false;\n              try {\n                var opts = Object.defineProperty({}, 'passive', {\n                  get: function() {\n                    SUPPORTS_PASSIVE = true;\n                  }\n                });\n                window.addEventListener(\"testPassive\", null, opts);\n                window.removeEventListener(\"testPassive\", null, opts);\n              } catch (e) {}\n            </script>
+    <script
+        type=\"text/javascript\">\n              // Array.prototype.flat polyfill\n              if (!Array.prototype.flat) {\n                // eslint-disable-next-line no-extend-native\n                Object.defineProperty(Array.prototype, 'flat', {\n                  configurable: true,\n                  writable: true,\n                  value() {\n                    // eslint-disable-next-line prefer-rest-params\n                    const depth = typeof arguments[0] === 'undefined' ? 1 : Number(arguments[0]) || 0;\n                    const result = [];\n                    const { forEach } = result;\n\n                    // eslint-disable-next-line no-var\n                    var flatDeep = function (arr, depth) {\n                      forEach.call(arr, (val) => {\n                        if (depth > 0 && Array.isArray(val)) {\n                          flatDeep(val, depth - 1);\n                        } else {\n                          result.push(val);\n                        }\n                      });\n                    };\n\n                    flatDeep(this, depth);\n                    return result;\n                  },\n                });\n              }\n            </script>
+    <script id=\"__NEXT_DATA__\"
+        type=\"application/json\">{\"props\":{\"pageProps\":{\"post\":\"{\\\"_id\\\":\\\"669bfda8284e02df22c0280a\\\",\\\"partOfPublication\\\":true,\\\"author\\\":{\\\"_id\\\":\\\"658920e4c2b52f1cc673b410\\\",\\\"name\\\":\\\"Saravanakumar R\\\",\\\"photo\\\":\\\"https://cdn.hashnode.com/res/hashnode/image/upload/v1715492925925/aHvkVWBZT.png\\\",\\\"username\\\":\\\"Saravanakumar2003\\\",\\\"bio\\\":\\\"\\u003cp\\u003e👋 Hey there! I am Saravanakumar, a proud Velammal Engineering College student pursuing a bachelor's degree in Electronics and Communication Engineering and building a solid foundation in technology. I am also an avid developer, enthusiastic volunteer, and public speaker, and I love exploring new opportunities and avenues.\\u003c/p\\u003e\\\\n\\\",\\\"socialMedia\\\":{\\\"website\\\":\\\"\\\",\\\"github\\\":\\\"https://github.com/Saravanakumar2003\\\",\\\"twitter\\\":\\\"https://twitter.com/Saravana2003_me\\\",\\\"facebook\\\":\\\"\\\",\\\"stackoverflow\\\":\\\"https://stackoverflow.com/users/22913783/saravanakumar-r\\\",\\\"linkedin\\\":\\\"https://www.linkedin.com/in/saravanaramaswamy2003/\\\"},\\\"isDeactivated\\\":false},\\\"bookmarkedIn\\\":[],\\\"publication\\\":{\\\"_id\\\":\\\"65892120e1f02b9355934c61\\\",\\\"author\\\":{\\\"_id\\\":\\\"658920e4c2b52f1cc673b410\\\",\\\"name\\\":\\\"Saravanakumar R\\\",\\\"photo\\\":\\\"https://cdn.hashnode.com/res/hashnode/image/upload/v1715492925925/aHvkVWBZT.png\\\",\\\"username\\\":\\\"Saravanakumar2003\\\"},\\\"badgePageEnabled\\\":true,\\\"description\\\":\\\"\\\",\\\"domain\\\":\\\"blog.saravanakumar.engineer\\\",\\\"domainStatus\\\":{\\\"ready\\\":true,\\\"certIssued\\\":true},\\\"wwwPrefixedDomainStatus\\\":{},\\\"customCSSEnabled\\\":false,\\\"customCSSPublished\\\":{\\\"homeMin\\\":\\\"\\\",\\\"postMin\\\":\\\"\\\",\\\"staticMin\\\":\\\"\\\"},\\\"customRules\\\":[],\\\"darkModeEnabled\\\":true,\\\"darkModeLogo\\\":\\\"\\\",\\\"disableFooterBranding\\\":false,\\\"isSubscriptionModalDisabled\\\":false,\\\"publicMembersCount\\\":1,\\\"displayTitle\\\":\\\"\\\",\\\"favicon\\\":\\\"\\\",\\\"gaTrackingID\\\":\\\"\\\",\\\"gTagManagerID\\\":\\\"\\\",\\\"hasBadges\\\":true,\\\"headerColor\\\":\\\"#800080\\\",\\\"hideMembersPage\\\":false,\\\"isTeam\\\":true,\\\"layout\\\":\\\"magazine\\\",\\\"membersPageEnabled\\\":true,\\\"menu\\\":[{\\\"_id\\\":\\\"66153dceb85c62401a8cfc77\\\",\\\"label\\\":\\\"Back to Portfolio\\\",\\\"type\\\":\\\"link\\\",\\\"url\\\":\\\"https://saravana.vercel.app\\\"}],\\\"metaHTML\\\":\\\"\\\",\\\"metaHTMLSanitized\\\":\\\"\\\",\\\"newsletterEnabled\\\":true,\\\"proTeamEnabled\\\":false,\\\"newsletterPageEnabled\\\":false,\\\"ogImage\\\":\\\"\\\",\\\"logo\\\":\\\"\\\",\\\"textSelectionSharerEnabled\\\":true,\\\"title\\\":\\\" Saravanakumar R's blog\\\",\\\"urlPattern\\\":\\\"simple\\\",\\\"username\\\":\\\"saravanakumar2003\\\",\\\"viewCountVisible\\\":false,\\\"readTimeHidden\\\":false,\\\"links\\\":{\\\"twitter\\\":\\\"\\\",\\\"instagram\\\":\\\"\\\",\\\"github\\\":\\\"\\\",\\\"website\\\":\\\"\\\",\\\"hashnode\\\":\\\"https://hashnode.com/@Saravanakumar2003\\\",\\\"youtube\\\":\\\"\\\",\\\"dailydev\\\":\\\"\\\",\\\"linkedin\\\":\\\"\\\",\\\"mastodon\\\":\\\"\\\",\\\"facebook\\\":\\\"\\\"},\\\"numPosts\\\":3,\\\"sponsorship\\\":{\\\"content\\\":\\\"\\\",\\\"contentMarkdown\\\":\\\"\\\"},\\\"allowContributorEdits\\\":true,\\\"allowCrawlingByGPT\\\":false},\\\"tags\\\":[{\\\"_id\\\":\\\"58790ce83c79514bec51631b\\\",\\\"slug\\\":\\\"compiler\\\",\\\"name\\\":\\\"compiler\\\",\\\"isActive\\\":true,\\\"isApproved\\\":true},{\\\"_id\\\":\\\"57af2aa293640a480303796a\\\",\\\"slug\\\":\\\"interpreter\\\",\\\"name\\\":\\\"interpreter\\\",\\\"isActive\\\":true,\\\"isApproved\\\":true},{\\\"_id\\\":\\\"5f32e27f2a23d9080d179f06\\\",\\\"slug\\\":\\\"pypy\\\",\\\"name\\\":\\\"pypy\\\",\\\"isActive\\\":true,\\\"isApproved\\\":true}],\\\"coAuthors\\\":[],\\\"responseCount\\\":0,\\\"replyCount\\\":0,\\\"contentMarkdown\\\":\\\"# Compiler vs Interpreter: A Deep Dive with Python and PyPy Installation Guide\\\\n\\\\nWhen diving into programming languages, understanding the difference between compilers and interpreters is crucial. This blog will explain these concepts, particularly in the context of Python, and guide you through installing PyPy on your PC.\\\\n\\\\n## Compiler vs Interpreter\\\\n\\\\n### Compiler\\\\n\\\\nA compiler translates the entire program from a high-level programming language into machine code (binary code) before execution. This process occurs in several stages:\\\\n\\\\n1. **Lexical Analysis:** Converts the source code into tokens.\\\\n2. **Syntax Analysis:** Constructs a parse tree based on the grammar rules.\\\\n3. **Semantic Analysis:** Checks for semantic errors and generates an intermediate representation.\\\\n4. **Optimization:** Improves the intermediate code.\\\\n5. **Code Generation:** Produces the final machine code.\\\\n\\\\n**Advantages:**\\\\n- Faster execution after compilation.\\\\n- Error detection before runtime.\\\\n\\\\n**Disadvantages:**\\\\n- Longer development time due to compilation.\\\\n- Requires recompilation for every change.\\\\n\\\\n### Interpreter\\\\n\\\\nAn interpreter translates and executes the program line by line. It does not produce a separate executable file; instead, it runs directly from the source code. This process typically involves:\\\\n\\\\n1. **Lexical Analysis:** Converts the source code into tokens.\\\\n2. **Parsing:** Analyzes the tokens to build an abstract syntax tree.\\\\n3. **Execution:** Executes the code based on the syntax tree.\\\\n\\\\n**Advantages:**\\\\n- Immediate execution and testing.\\\\n- Easier to debug and test code line by line.\\\\n\\\\n**Disadvantages:**\\\\n- Slower execution compared to compiled languages.\\\\n- Errors are detected during runtime.\\\\n\\\\n## Python: Compiler or Interpreter?\\\\n\\\\nPython is traditionally known as an interpreted language. The standard implementation, CPython, compiles Python code into bytecode, which is then interpreted by the Python virtual machine. This approach combines features of both compilers and interpreters.\\\\n\\\\nHowever, Python’s flexibility allows various implementations, such as PyPy, which uses Just-In-Time (JIT) compilation to enhance performance.\\\\n\\\\n## Installing PyPy on Windows\\\\n\\\\nPyPy is an alternative Python interpreter that offers faster execution by using JIT compilation. Here’s how you can install PyPy on a Windows PC:\\\\n\\\\n### Step 1: Download PyPy\\\\n\\\\n1. Go to the [PyPy official website](https://www.pypy.org/download.html).\\\\n2. Download the latest version of PyPy for Windows. Choose the appropriate 32-bit or 64-bit version based on your system.\\\\n\\\\n### Step 2: Extract the Archive\\\\n\\\\n1. Locate the downloaded `.zip` file.\\\\n2. Right-click the file and select \\\\\\\"Extract All...\\\\\\\"\\\\n3. Choose a destination folder where you want to extract the files.\\\\n\\\\n### Step 3: Set Up Environment Variables\\\\n\\\\n1. Open the Start menu and search for \\\\\\\"Environment Variables.\\\\\\\"\\\\n2. Click on \\\\\\\"Edit the system environment variables.\\\\\\\"\\\\n3. In the System Properties window, click on \\\\\\\"Environment Variables.\\\\\\\"\\\\n4. In the Environment Variables window, find the \\\\\\\"Path\\\\\\\" variable in the \\\\\\\"System variables\\\\\\\" section and click \\\\\\\"Edit.\\\\\\\"\\\\n5. Click \\\\\\\"New\\\\\\\" and add the path to the folder where you extracted PyPy (e.g., `C:\\\\\\\\path\\\\\\\\to\\\\\\\\pypy`).\\\\n6. Click \\\\\\\"OK\\\\\\\" to save and close all dialog boxes.\\\\n\\\\n### Step 4: Verify the Installation\\\\n\\\\n1. Open Command Prompt (cmd).\\\\n2. Type `pypy --version` and press Enter.\\\\n3. You should see the version of PyPy displayed, confirming that the installation was successful.\\\\n\\\\n## Conclusion\\\\n\\\\nUnderstanding the difference between compilers and interpreters is fundamental to grasping how different programming languages work. PyPy offers a performance boost for Python through JIT compilation, making it a valuable tool for Python developers. By following the steps above, you can easily install PyPy on your PC and start experiencing its benefits.\\\\n\\\\nFeel free to leave comments or questions below!\\\\n\\\",\\\"content\\\":\\\"\\u003ch1 id=\\\\\\\"heading-compiler-vs-interpreter-a-deep-dive-with-python-and-pypy-installation-guide\\\\\\\"\\u003eCompiler vs Interpreter: A Deep Dive with Python and PyPy Installation Guide\\u003c/h1\\u003e\\\\n\\u003cp\\u003eWhen diving into programming languages, understanding the difference between compilers and interpreters is crucial. This blog will explain these concepts, particularly in the context of Python, and guide you through installing PyPy on your PC.\\u003c/p\\u003e\\\\n\\u003ch2 id=\\\\\\\"heading-compiler-vs-interpreter\\\\\\\"\\u003eCompiler vs Interpreter\\u003c/h2\\u003e\\\\n\\u003ch3 id=\\\\\\\"heading-compiler\\\\\\\"\\u003eCompiler\\u003c/h3\\u003e\\\\n\\u003cp\\u003eA compiler translates the entire program from a high-level programming language into machine code (binary code) before execution. This process occurs in several stages:\\u003c/p\\u003e\\\\n\\u003col\\u003e\\\\n\\u003cli\\u003e\\u003cstrong\\u003eLexical Analysis:\\u003c/strong\\u003e Converts the source code into tokens.\\u003c/li\\u003e\\\\n\\u003cli\\u003e\\u003cstrong\\u003eSyntax Analysis:\\u003c/strong\\u003e Constructs a parse tree based on the grammar rules.\\u003c/li\\u003e\\\\n\\u003cli\\u003e\\u003cstrong\\u003eSemantic Analysis:\\u003c/strong\\u003e Checks for semantic errors and generates an intermediate representation.\\u003c/li\\u003e\\\\n\\u003cli\\u003e\\u003cstrong\\u003eOptimization:\\u003c/strong\\u003e Improves the intermediate code.\\u003c/li\\u003e\\\\n\\u003cli\\u003e\\u003cstrong\\u003eCode Generation:\\u003c/strong\\u003e Produces the final machine code.\\u003c/li\\u003e\\\\n\\u003c/ol\\u003e\\\\n\\u003cp\\u003e\\u003cstrong\\u003eAdvantages:\\u003c/strong\\u003e\\u003c/p\\u003e\\\\n\\u003cul\\u003e\\\\n\\u003cli\\u003eFaster execution after compilation.\\u003c/li\\u003e\\\\n\\u003cli\\u003eError detection before runtime.\\u003c/li\\u003e\\\\n\\u003c/ul\\u003e\\\\n\\u003cp\\u003e\\u003cstrong\\u003eDisadvantages:\\u003c/strong\\u003e\\u003c/p\\u003e\\\\n\\u003cul\\u003e\\\\n\\u003cli\\u003eLonger development time due to compilation.\\u003c/li\\u003e\\\\n\\u003cli\\u003eRequires recompilation for every change.\\u003c/li\\u003e\\\\n\\u003c/ul\\u003e\\\\n\\u003ch3 id=\\\\\\\"heading-interpreter\\\\\\\"\\u003eInterpreter\\u003c/h3\\u003e\\\\n\\u003cp\\u003eAn interpreter translates and executes the program line by line. It does not produce a separate executable file; instead, it runs directly from the source code. This process typically involves:\\u003c/p\\u003e\\\\n\\u003col\\u003e\\\\n\\u003cli\\u003e\\u003cstrong\\u003eLexical Analysis:\\u003c/strong\\u003e Converts the source code into tokens.\\u003c/li\\u003e\\\\n\\u003cli\\u003e\\u003cstrong\\u003eParsing:\\u003c/strong\\u003e Analyzes the tokens to build an abstract syntax tree.\\u003c/li\\u003e\\\\n\\u003cli\\u003e\\u003cstrong\\u003eExecution:\\u003c/strong\\u003e Executes the code based on the syntax tree.\\u003c/li\\u003e\\\\n\\u003c/ol\\u003e\\\\n\\u003cp\\u003e\\u003cstrong\\u003eAdvantages:\\u003c/strong\\u003e\\u003c/p\\u003e\\\\n\\u003cul\\u003e\\\\n\\u003cli\\u003eImmediate execution and testing.\\u003c/li\\u003e\\\\n\\u003cli\\u003eEasier to debug and test code line by line.\\u003c/li\\u003e\\\\n\\u003c/ul\\u003e\\\\n\\u003cp\\u003e\\u003cstrong\\u003eDisadvantages:\\u003c/strong\\u003e\\u003c/p\\u003e\\\\n\\u003cul\\u003e\\\\n\\u003cli\\u003eSlower execution compared to compiled languages.\\u003c/li\\u003e\\\\n\\u003cli\\u003eErrors are detected during runtime.\\u003c/li\\u003e\\\\n\\u003c/ul\\u003e\\\\n\\u003ch2 id=\\\\\\\"heading-python-compiler-or-interpreter\\\\\\\"\\u003ePython: Compiler or Interpreter?\\u003c/h2\\u003e\\\\n\\u003cp\\u003ePython is traditionally known as an interpreted language. The standard implementation, CPython, compiles Python code into bytecode, which is then interpreted by the Python virtual machine. This approach combines features of both compilers and interpreters.\\u003c/p\\u003e\\\\n\\u003cp\\u003eHowever, Python’s flexibility allows various implementations, such as PyPy, which uses Just-In-Time (JIT) compilation to enhance performance.\\u003c/p\\u003e\\\\n\\u003ch2 id=\\\\\\\"heading-installing-pypy-on-windows\\\\\\\"\\u003eInstalling PyPy on Windows\\u003c/h2\\u003e\\\\n\\u003cp\\u003ePyPy is an alternative Python interpreter that offers faster execution by using JIT compilation. Here’s how you can install PyPy on a Windows PC:\\u003c/p\\u003e\\\\n\\u003ch3 id=\\\\\\\"heading-step-1-download-pypy\\\\\\\"\\u003eStep 1: Download PyPy\\u003c/h3\\u003e\\\\n\\u003col\\u003e\\\\n\\u003cli\\u003eGo to the \\u003ca target=\\\\\\\"_blank\\\\\\\" href=\\\\\\\"https://www.pypy.org/download.html\\\\\\\"\\u003ePyPy official website\\u003c/a\\u003e.\\u003c/li\\u003e\\\\n\\u003cli\\u003eDownload the latest version of PyPy for Windows. Choose the appropriate 32-bit or 64-bit version based on your system.\\u003c/li\\u003e\\\\n\\u003c/ol\\u003e\\\\n\\u003ch3 id=\\\\\\\"heading-step-2-extract-the-archive\\\\\\\"\\u003eStep 2: Extract the Archive\\u003c/h3\\u003e\\\\n\\u003col\\u003e\\\\n\\u003cli\\u003eLocate the downloaded \\u003ccode\\u003e.zip\\u003c/code\\u003e file.\\u003c/li\\u003e\\\\n\\u003cli\\u003eRight-click the file and select \\\\\\\"Extract All...\\\\\\\"\\u003c/li\\u003e\\\\n\\u003cli\\u003eChoose a destination folder where you want to extract the files.\\u003c/li\\u003e\\\\n\\u003c/ol\\u003e\\\\n\\u003ch3 id=\\\\\\\"heading-step-3-set-up-environment-variables\\\\\\\"\\u003eStep 3: Set Up Environment Variables\\u003c/h3\\u003e\\\\n\\u003col\\u003e\\\\n\\u003cli\\u003eOpen the Start menu and search for \\\\\\\"Environment Variables.\\\\\\\"\\u003c/li\\u003e\\\\n\\u003cli\\u003eClick on \\\\\\\"Edit the system environment variables.\\\\\\\"\\u003c/li\\u003e\\\\n\\u003cli\\u003eIn the System Properties window, click on \\\\\\\"Environment Variables.\\\\\\\"\\u003c/li\\u003e\\\\n\\u003cli\\u003eIn the Environment Variables window, find the \\\\\\\"Path\\\\\\\" variable in the \\\\\\\"System variables\\\\\\\" section and click \\\\\\\"Edit.\\\\\\\"\\u003c/li\\u003e\\\\n\\u003cli\\u003eClick \\\\\\\"New\\\\\\\" and add the path to the folder where you extracted PyPy (e.g., \\u003ccode\\u003eC:\\\\\\\\path\\\\\\\\to\\\\\\\\pypy\\u003c/code\\u003e).\\u003c/li\\u003e\\\\n\\u003cli\\u003eClick \\\\\\\"OK\\\\\\\" to save and close all dialog boxes.\\u003c/li\\u003e\\\\n\\u003c/ol\\u003e\\\\n\\u003ch3 id=\\\\\\\"heading-step-4-verify-the-installation\\\\\\\"\\u003eStep 4: Verify the Installation\\u003c/h3\\u003e\\\\n\\u003col\\u003e\\\\n\\u003cli\\u003eOpen Command Prompt (cmd).\\u003c/li\\u003e\\\\n\\u003cli\\u003eType \\u003ccode\\u003epypy --version\\u003c/code\\u003e and press Enter.\\u003c/li\\u003e\\\\n\\u003cli\\u003eYou should see the version of PyPy displayed, confirming that the installation was successful.\\u003c/li\\u003e\\\\n\\u003c/ol\\u003e\\\\n\\u003ch2 id=\\\\\\\"heading-conclusion\\\\\\\"\\u003eConclusion\\u003c/h2\\u003e\\\\n\\u003cp\\u003eUnderstanding the difference between compilers and interpreters is fundamental to grasping how different programming languages work. PyPy offers a performance boost for Python through JIT compilation, making it a valuable tool for Python developers. By following the steps above, you can easily install PyPy on your PC and start experiencing its benefits.\\u003c/p\\u003e\\\\n\\u003cp\\u003eFeel free to leave comments or questions below!\\u003c/p\\u003e\\\\n\\\",\\\"cuid\\\":\\\"clyug3329000f09l91dsuerh5\\\",\\\"views\\\":11,\\\"title\\\":\\\"Compiler vs Interpreter: A Deep Dive with Python and PyPy Installation Guide\\\",\\\"slug\\\":\\\"compiler-vs-interpreter-a-deep-dive-with-python-and-pypy-installation-guide\\\",\\\"dateAdded\\\":\\\"2024-07-20T18:10:48.513Z\\\",\\\"dateUpdated\\\":null,\\\"type\\\":\\\"story\\\",\\\"coverImage\\\":\\\"https://cdn.hashnode.com/res/hashnode/image/upload/v1721498916646/ce3ad81b-31cb-42c1-b93d-f9d73eefd5b9.png\\\",\\\"isCoverImagePortrait\\\":false,\\\"isCoverAttributionHidden\\\":false,\\\"brief\\\":\\\"Compiler vs Interpreter: A Deep Dive with Python and PyPy Installation Guide\\\\nWhen diving into programming languages, understanding the difference between compilers and interpreters is crucial. This blog will explain these concepts, particularly in th...\\\",\\\"isFollowing\\\":false,\\\"totalReactions\\\":0,\\\"totalReactionsByCurrentUser\\\":0,\\\"series\\\":null,\\\"isPinnedToBlog\\\":false,\\\"readTime\\\":3,\\\"sB\\\":false,\\\"isAMA\\\":false,\\\"subtitle\\\":\\\"\\\",\\\"isPartOfSeries\\\":false,\\\"hasTags\\\":true,\\\"ogImage\\\":\\\"https://cdn.hashnode.com/res/hashnode/image/upload/v1721498910714/a53ce52c-214b-4e46-884d-4bbb6a7a06af.png\\\",\\\"metaTitle\\\":\\\"\\\",\\\"metaDescription\\\":\\\"\\\",\\\"isRepublished\\\":false,\\\"autoPublishedFromRSS\\\":false,\\\"responses\\\":[],\\\"isFeatured\\\":false,\\\"hasLatex\\\":false,\\\"stickCoverToBottom\\\":false,\\\"hideBadges\\\":false,\\\"badges\\\":[],\\\"isDelisted\\\":false,\\\"audioUrls\\\":{},\\\"disableComments\\\":false,\\\"enableToc\\\":false,\\\"toc\\\":[],\\\"noIndex\\\":false}\",\"publication\":\"{\\\"__typename\\\":\\\"Publication\\\",\\\"id\\\":\\\"65892120e1f02b9355934c61\\\",\\\"url\\\":\\\"https://blog.saravanakumar.engineer\\\",\\\"canonicalURL\\\":\\\"https://blog.saravanakumar.engineer\\\",\\\"urlPattern\\\":\\\"SIMPLE\\\",\\\"title\\\":\\\" Saravanakumar R's blog\\\",\\\"displayTitle\\\":null,\\\"hasBadges\\\":true,\\\"descriptionSEO\\\":null,\\\"publicMembers\\\":{\\\"totalDocuments\\\":1},\\\"about\\\":null,\\\"features\\\":{\\\"proTeam\\\":{\\\"isEnabled\\\":false},\\\"newsletter\\\":{\\\"isEnabled\\\":true},\\\"viewCount\\\":{\\\"isEnabled\\\":false},\\\"readTime\\\":{\\\"isEnabled\\\":true},\\\"textSelectionSharer\\\":{\\\"isEnabled\\\":true},\\\"customCSS\\\":{\\\"isEnabled\\\":false,\\\"published\\\":null,\\\"draft\\\":null},\\\"gptBotCrawling\\\":{\\\"__typename\\\":\\\"GPTBotCrawlingFeature\\\",\\\"isEnabled\\\":false}},\\\"metaTags\\\":null,\\\"ogMetaData\\\":{\\\"image\\\":null},\\\"author\\\":{\\\"__typename\\\":\\\"User\\\",\\\"id\\\":\\\"658920e4c2b52f1cc673b410\\\",\\\"name\\\":\\\"Saravanakumar R\\\",\\\"username\\\":\\\"Saravanakumar2003\\\",\\\"profilePicture\\\":\\\"https://cdn.hashnode.com/res/hashnode/image/upload/v1715492925925/aHvkVWBZT.png\\\"},\\\"preferences\\\":{\\\"__typename\\\":\\\"Preferences\\\",\\\"logo\\\":\\\"\\\",\\\"darkMode\\\":{\\\"__typename\\\":\\\"DarkModePreferences\\\",\\\"logo\\\":\\\"\\\",\\\"enabled\\\":true},\\\"navbarItems\\\":[{\\\"__typename\\\":\\\"PublicationNavbarItem\\\",\\\"id\\\":\\\"66153dceb85c62401a8cfc77\\\",\\\"label\\\":\\\"Back to Portfolio\\\",\\\"url\\\":\\\"https://saravana.vercel.app\\\",\\\"type\\\":\\\"link\\\",\\\"series\\\":null,\\\"page\\\":null}],\\\"enabledPages\\\":{\\\"__typename\\\":\\\"PagesPreferences\\\",\\\"badges\\\":false,\\\"newsletter\\\":true,\\\"members\\\":true},\\\"layout\\\":\\\"magazine\\\",\\\"disableFooterBranding\\\":false,\\\"isSubscriptionModalDisabled\\\":false},\\\"favicon\\\":\\\"\\\",\\\"headerColor\\\":\\\"#800080\\\",\\\"integrations\\\":{\\\"fbPixelID\\\":null,\\\"fathomSiteID\\\":null,\\\"fathomCustomDomainEnabled\\\":null,\\\"fathomCustomDomain\\\":null,\\\"hotjarSiteID\\\":null,\\\"matomoSiteID\\\":null,\\\"matomoURL\\\":null,\\\"gaTrackingID\\\":null,\\\"gTagManagerID\\\":null,\\\"plausibleAnalyticsEnabled\\\":null,\\\"wmPaymentPointer\\\":null,\\\"koalaPublicKey\\\":null,\\\"msClarityID\\\":null},\\\"imprintV2\\\":null,\\\"postsCount\\\":{\\\"totalDocuments\\\":3},\\\"isTeam\\\":true,\\\"links\\\":{\\\"twitter\\\":\\\"\\\",\\\"instagram\\\":null,\\\"github\\\":\\\"\\\",\\\"website\\\":\\\"\\\",\\\"hashnode\\\":\\\"https://hashnode.com/@Saravanakumar2003\\\",\\\"youtube\\\":null,\\\"dailydev\\\":null,\\\"linkedin\\\":null,\\\"mastodon\\\":null,\\\"facebook\\\":null,\\\"bluesky\\\":null},\\\"domainInfo\\\":{\\\"__typename\\\":\\\"DomainInfo\\\",\\\"hashnodeSubdomain\\\":\\\"saravanakumar2003\\\",\\\"domain\\\":{\\\"__typename\\\":\\\"DomainStatus\\\",\\\"host\\\":\\\"blog.saravanakumar.engineer\\\",\\\"ready\\\":true},\\\"wwwPrefixedDomain\\\":null},\\\"redirectionRules\\\":[],\\\"totalRecommendedPublications\\\":0,\\\"sponsorship\\\":{\\\"content\\\":null,\\\"stripe\\\":null},\\\"allowContributorEdits\\\":true,\\\"rssImport\\\":null,\\\"post\\\":{\\\"id\\\":\\\"669bfda8284e02df22c0280a\\\",\\\"cuid\\\":\\\"clyug3329000f09l91dsuerh5\\\",\\\"title\\\":\\\"Compiler vs Interpreter: A Deep Dive with Python and PyPy Installation Guide\\\",\\\"subtitle\\\":null,\\\"slug\\\":\\\"compiler-vs-interpreter-a-deep-dive-with-python-and-pypy-installation-guide\\\",\\\"brief\\\":\\\"Compiler vs Interpreter: A Deep Dive with Python and PyPy Installation Guide\\\\nWhen diving into programming languages, understanding the difference between compilers and interpreters is crucial. This blog will explain these concepts, particularly in th...\\\",\\\"featured\\\":false,\\\"publishedAt\\\":\\\"2024-07-20T18:10:48.513Z\\\",\\\"updatedAt\\\":null,\\\"author\\\":{\\\"__typename\\\":\\\"User\\\",\\\"id\\\":\\\"658920e4c2b52f1cc673b410\\\",\\\"name\\\":\\\"Saravanakumar R\\\",\\\"username\\\":\\\"Saravanakumar2003\\\",\\\"deactivated\\\":false,\\\"profilePicture\\\":\\\"https://cdn.hashnode.com/res/hashnode/image/upload/v1715492925925/aHvkVWBZT.png\\\",\\\"bio\\\":{\\\"html\\\":\\\"\\u003cp\\u003e👋 Hey there! I am Saravanakumar, a proud Velammal Engineering College student pursuing a bachelor's degree in Electronics and Communication Engineering and building a solid foundation in technology. I am also an avid developer, enthusiastic volunteer, and public speaker, and I love exploring new opportunities and avenues.\\u003c/p\\u003e\\\\n\\\"},\\\"socialMediaLinks\\\":{\\\"website\\\":\\\"\\\",\\\"github\\\":\\\"https://github.com/Saravanakumar2003\\\",\\\"twitter\\\":\\\"https://twitter.com/Saravana2003_me\\\",\\\"facebook\\\":\\\"\\\",\\\"stackoverflow\\\":\\\"https://stackoverflow.com/users/22913783/saravanakumar-r\\\",\\\"linkedin\\\":\\\"https://www.linkedin.com/in/saravanaramaswamy2003/\\\"}},\\\"coAuthors\\\":[],\\\"seo\\\":{\\\"title\\\":null,\\\"description\\\":null,\\\"shouldNotIndex\\\":false},\\\"coverImage\\\":{\\\"url\\\":\\\"https://cdn.hashnode.com/res/hashnode/image/upload/v1721498916646/ce3ad81b-31cb-42c1-b93d-f9d73eefd5b9.png\\\",\\\"isPortrait\\\":false,\\\"attribution\\\":null,\\\"isAttributionHidden\\\":false,\\\"photographer\\\":null},\\\"responseCount\\\":0,\\\"reactionCount\\\":0,\\\"replyCount\\\":0,\\\"content\\\":{\\\"html\\\":\\\"\\u003ch1 id=\\\\\\\"heading-compiler-vs-interpreter-a-deep-dive-with-python-and-pypy-installation-guide\\\\\\\"\\u003eCompiler vs Interpreter: A Deep Dive with Python and PyPy Installation Guide\\u003c/h1\\u003e\\\\n\\u003cp\\u003eWhen diving into programming languages, understanding the difference between compilers and interpreters is crucial. This blog will explain these concepts, particularly in the context of Python, and guide you through installing PyPy on your PC.\\u003c/p\\u003e\\\\n\\u003ch2 id=\\\\\\\"heading-compiler-vs-interpreter\\\\\\\"\\u003eCompiler vs Interpreter\\u003c/h2\\u003e\\\\n\\u003ch3 id=\\\\\\\"heading-compiler\\\\\\\"\\u003eCompiler\\u003c/h3\\u003e\\\\n\\u003cp\\u003eA compiler translates the entire program from a high-level programming language into machine code (binary code) before execution. This process occurs in several stages:\\u003c/p\\u003e\\\\n\\u003col\\u003e\\\\n\\u003cli\\u003e\\u003cstrong\\u003eLexical Analysis:\\u003c/strong\\u003e Converts the source code into tokens.\\u003c/li\\u003e\\\\n\\u003cli\\u003e\\u003cstrong\\u003eSyntax Analysis:\\u003c/strong\\u003e Constructs a parse tree based on the grammar rules.\\u003c/li\\u003e\\\\n\\u003cli\\u003e\\u003cstrong\\u003eSemantic Analysis:\\u003c/strong\\u003e Checks for semantic errors and generates an intermediate representation.\\u003c/li\\u003e\\\\n\\u003cli\\u003e\\u003cstrong\\u003eOptimization:\\u003c/strong\\u003e Improves the intermediate code.\\u003c/li\\u003e\\\\n\\u003cli\\u003e\\u003cstrong\\u003eCode Generation:\\u003c/strong\\u003e Produces the final machine code.\\u003c/li\\u003e\\\\n\\u003c/ol\\u003e\\\\n\\u003cp\\u003e\\u003cstrong\\u003eAdvantages:\\u003c/strong\\u003e\\u003c/p\\u003e\\\\n\\u003cul\\u003e\\\\n\\u003cli\\u003eFaster execution after compilation.\\u003c/li\\u003e\\\\n\\u003cli\\u003eError detection before runtime.\\u003c/li\\u003e\\\\n\\u003c/ul\\u003e\\\\n\\u003cp\\u003e\\u003cstrong\\u003eDisadvantages:\\u003c/strong\\u003e\\u003c/p\\u003e\\\\n\\u003cul\\u003e\\\\n\\u003cli\\u003eLonger development time due to compilation.\\u003c/li\\u003e\\\\n\\u003cli\\u003eRequires recompilation for every change.\\u003c/li\\u003e\\\\n\\u003c/ul\\u003e\\\\n\\u003ch3 id=\\\\\\\"heading-interpreter\\\\\\\"\\u003eInterpreter\\u003c/h3\\u003e\\\\n\\u003cp\\u003eAn interpreter translates and executes the program line by line. It does not produce a separate executable file; instead, it runs directly from the source code. This process typically involves:\\u003c/p\\u003e\\\\n\\u003col\\u003e\\\\n\\u003cli\\u003e\\u003cstrong\\u003eLexical Analysis:\\u003c/strong\\u003e Converts the source code into tokens.\\u003c/li\\u003e\\\\n\\u003cli\\u003e\\u003cstrong\\u003eParsing:\\u003c/strong\\u003e Analyzes the tokens to build an abstract syntax tree.\\u003c/li\\u003e\\\\n\\u003cli\\u003e\\u003cstrong\\u003eExecution:\\u003c/strong\\u003e Executes the code based on the syntax tree.\\u003c/li\\u003e\\\\n\\u003c/ol\\u003e\\\\n\\u003cp\\u003e\\u003cstrong\\u003eAdvantages:\\u003c/strong\\u003e\\u003c/p\\u003e\\\\n\\u003cul\\u003e\\\\n\\u003cli\\u003eImmediate execution and testing.\\u003c/li\\u003e\\\\n\\u003cli\\u003eEasier to debug and test code line by line.\\u003c/li\\u003e\\\\n\\u003c/ul\\u003e\\\\n\\u003cp\\u003e\\u003cstrong\\u003eDisadvantages:\\u003c/strong\\u003e\\u003c/p\\u003e\\\\n\\u003cul\\u003e\\\\n\\u003cli\\u003eSlower execution compared to compiled languages.\\u003c/li\\u003e\\\\n\\u003cli\\u003eErrors are detected during runtime.\\u003c/li\\u003e\\\\n\\u003c/ul\\u003e\\\\n\\u003ch2 id=\\\\\\\"heading-python-compiler-or-interpreter\\\\\\\"\\u003ePython: Compiler or Interpreter?\\u003c/h2\\u003e\\\\n\\u003cp\\u003ePython is traditionally known as an interpreted language. The standard implementation, CPython, compiles Python code into bytecode, which is then interpreted by the Python virtual machine. This approach combines features of both compilers and interpreters.\\u003c/p\\u003e\\\\n\\u003cp\\u003eHowever, Python’s flexibility allows various implementations, such as PyPy, which uses Just-In-Time (JIT) compilation to enhance performance.\\u003c/p\\u003e\\\\n\\u003ch2 id=\\\\\\\"heading-installing-pypy-on-windows\\\\\\\"\\u003eInstalling PyPy on Windows\\u003c/h2\\u003e\\\\n\\u003cp\\u003ePyPy is an alternative Python interpreter that offers faster execution by using JIT compilation. Here’s how you can install PyPy on a Windows PC:\\u003c/p\\u003e\\\\n\\u003ch3 id=\\\\\\\"heading-step-1-download-pypy\\\\\\\"\\u003eStep 1: Download PyPy\\u003c/h3\\u003e\\\\n\\u003col\\u003e\\\\n\\u003cli\\u003eGo to the \\u003ca target=\\\\\\\"_blank\\\\\\\" href=\\\\\\\"https://www.pypy.org/download.html\\\\\\\"\\u003ePyPy official website\\u003c/a\\u003e.\\u003c/li\\u003e\\\\n\\u003cli\\u003eDownload the latest version of PyPy for Windows. Choose the appropriate 32-bit or 64-bit version based on your system.\\u003c/li\\u003e\\\\n\\u003c/ol\\u003e\\\\n\\u003ch3 id=\\\\\\\"heading-step-2-extract-the-archive\\\\\\\"\\u003eStep 2: Extract the Archive\\u003c/h3\\u003e\\\\n\\u003col\\u003e\\\\n\\u003cli\\u003eLocate the downloaded \\u003ccode\\u003e.zip\\u003c/code\\u003e file.\\u003c/li\\u003e\\\\n\\u003cli\\u003eRight-click the file and select \\\\\\\"Extract All...\\\\\\\"\\u003c/li\\u003e\\\\n\\u003cli\\u003eChoose a destination folder where you want to extract the files.\\u003c/li\\u003e\\\\n\\u003c/ol\\u003e\\\\n\\u003ch3 id=\\\\\\\"heading-step-3-set-up-environment-variables\\\\\\\"\\u003eStep 3: Set Up Environment Variables\\u003c/h3\\u003e\\\\n\\u003col\\u003e\\\\n\\u003cli\\u003eOpen the Start menu and search for \\\\\\\"Environment Variables.\\\\\\\"\\u003c/li\\u003e\\\\n\\u003cli\\u003eClick on \\\\\\\"Edit the system environment variables.\\\\\\\"\\u003c/li\\u003e\\\\n\\u003cli\\u003eIn the System Properties window, click on \\\\\\\"Environment Variables.\\\\\\\"\\u003c/li\\u003e\\\\n\\u003cli\\u003eIn the Environment Variables window, find the \\\\\\\"Path\\\\\\\" variable in the \\\\\\\"System variables\\\\\\\" section and click \\\\\\\"Edit.\\\\\\\"\\u003c/li\\u003e\\\\n\\u003cli\\u003eClick \\\\\\\"New\\\\\\\" and add the path to the folder where you extracted PyPy (e.g., \\u003ccode\\u003eC:\\\\\\\\path\\\\\\\\to\\\\\\\\pypy\\u003c/code\\u003e).\\u003c/li\\u003e\\\\n\\u003cli\\u003eClick \\\\\\\"OK\\\\\\\" to save and close all dialog boxes.\\u003c/li\\u003e\\\\n\\u003c/ol\\u003e\\\\n\\u003ch3 id=\\\\\\\"heading-step-4-verify-the-installation\\\\\\\"\\u003eStep 4: Verify the Installation\\u003c/h3\\u003e\\\\n\\u003col\\u003e\\\\n\\u003cli\\u003eOpen Command Prompt (cmd).\\u003c/li\\u003e\\\\n\\u003cli\\u003eType \\u003ccode\\u003epypy --version\\u003c/code\\u003e and press Enter.\\u003c/li\\u003e\\\\n\\u003cli\\u003eYou should see the version of PyPy displayed, confirming that the installation was successful.\\u003c/li\\u003e\\\\n\\u003c/ol\\u003e\\\\n\\u003ch2 id=\\\\\\\"heading-conclusion\\\\\\\"\\u003eConclusion\\u003c/h2\\u003e\\\\n\\u003cp\\u003eUnderstanding the difference between compilers and interpreters is fundamental to grasping how different programming languages work. PyPy offers a performance boost for Python through JIT compilation, making it a valuable tool for Python developers. By following the steps above, you can easily install PyPy on your PC and start experiencing its benefits.\\u003c/p\\u003e\\\\n\\u003cp\\u003eFeel free to leave comments or questions below!\\u003c/p\\u003e\\\\n\\\",\\\"markdown\\\":\\\"# Compiler vs Interpreter: A Deep Dive with Python and PyPy Installation Guide\\\\n\\\\nWhen diving into programming languages, understanding the difference between compilers and interpreters is crucial. This blog will explain these concepts, particularly in the context of Python, and guide you through installing PyPy on your PC.\\\\n\\\\n## Compiler vs Interpreter\\\\n\\\\n### Compiler\\\\n\\\\nA compiler translates the entire program from a high-level programming language into machine code (binary code) before execution. This process occurs in several stages:\\\\n\\\\n1. **Lexical Analysis:** Converts the source code into tokens.\\\\n2. **Syntax Analysis:** Constructs a parse tree based on the grammar rules.\\\\n3. **Semantic Analysis:** Checks for semantic errors and generates an intermediate representation.\\\\n4. **Optimization:** Improves the intermediate code.\\\\n5. **Code Generation:** Produces the final machine code.\\\\n\\\\n**Advantages:**\\\\n- Faster execution after compilation.\\\\n- Error detection before runtime.\\\\n\\\\n**Disadvantages:**\\\\n- Longer development time due to compilation.\\\\n- Requires recompilation for every change.\\\\n\\\\n### Interpreter\\\\n\\\\nAn interpreter translates and executes the program line by line. It does not produce a separate executable file; instead, it runs directly from the source code. This process typically involves:\\\\n\\\\n1. **Lexical Analysis:** Converts the source code into tokens.\\\\n2. **Parsing:** Analyzes the tokens to build an abstract syntax tree.\\\\n3. **Execution:** Executes the code based on the syntax tree.\\\\n\\\\n**Advantages:**\\\\n- Immediate execution and testing.\\\\n- Easier to debug and test code line by line.\\\\n\\\\n**Disadvantages:**\\\\n- Slower execution compared to compiled languages.\\\\n- Errors are detected during runtime.\\\\n\\\\n## Python: Compiler or Interpreter?\\\\n\\\\nPython is traditionally known as an interpreted language. The standard implementation, CPython, compiles Python code into bytecode, which is then interpreted by the Python virtual machine. This approach combines features of both compilers and interpreters.\\\\n\\\\nHowever, Python’s flexibility allows various implementations, such as PyPy, which uses Just-In-Time (JIT) compilation to enhance performance.\\\\n\\\\n## Installing PyPy on Windows\\\\n\\\\nPyPy is an alternative Python interpreter that offers faster execution by using JIT compilation. Here’s how you can install PyPy on a Windows PC:\\\\n\\\\n### Step 1: Download PyPy\\\\n\\\\n1. Go to the [PyPy official website](https://www.pypy.org/download.html).\\\\n2. Download the latest version of PyPy for Windows. Choose the appropriate 32-bit or 64-bit version based on your system.\\\\n\\\\n### Step 2: Extract the Archive\\\\n\\\\n1. Locate the downloaded `.zip` file.\\\\n2. Right-click the file and select \\\\\\\"Extract All...\\\\\\\"\\\\n3. Choose a destination folder where you want to extract the files.\\\\n\\\\n### Step 3: Set Up Environment Variables\\\\n\\\\n1. Open the Start menu and search for \\\\\\\"Environment Variables.\\\\\\\"\\\\n2. Click on \\\\\\\"Edit the system environment variables.\\\\\\\"\\\\n3. In the System Properties window, click on \\\\\\\"Environment Variables.\\\\\\\"\\\\n4. In the Environment Variables window, find the \\\\\\\"Path\\\\\\\" variable in the \\\\\\\"System variables\\\\\\\" section and click \\\\\\\"Edit.\\\\\\\"\\\\n5. Click \\\\\\\"New\\\\\\\" and add the path to the folder where you extracted PyPy (e.g., `C:\\\\\\\\path\\\\\\\\to\\\\\\\\pypy`).\\\\n6. Click \\\\\\\"OK\\\\\\\" to save and close all dialog boxes.\\\\n\\\\n### Step 4: Verify the Installation\\\\n\\\\n1. Open Command Prompt (cmd).\\\\n2. Type `pypy --version` and press Enter.\\\\n3. You should see the version of PyPy displayed, confirming that the installation was successful.\\\\n\\\\n## Conclusion\\\\n\\\\nUnderstanding the difference between compilers and interpreters is fundamental to grasping how different programming languages work. PyPy offers a performance boost for Python through JIT compilation, making it a valuable tool for Python developers. By following the steps above, you can easily install PyPy on your PC and start experiencing its benefits.\\\\n\\\\nFeel free to leave comments or questions below!\\\\n\\\"},\\\"views\\\":11,\\\"preferences\\\":{\\\"pinnedToBlog\\\":false,\\\"disableComments\\\":false,\\\"stickCoverToBottom\\\":false,\\\"isDelisted\\\":false},\\\"readTimeInMinutes\\\":3,\\\"series\\\":null,\\\"tags\\\":[{\\\"id\\\":\\\"58790ce83c79514bec51631b\\\",\\\"slug\\\":\\\"compiler\\\",\\\"name\\\":\\\"compiler\\\"},{\\\"id\\\":\\\"57af2aa293640a480303796a\\\",\\\"slug\\\":\\\"interpreter\\\",\\\"name\\\":\\\"interpreter\\\"},{\\\"id\\\":\\\"5f32e27f2a23d9080d179f06\\\",\\\"slug\\\":\\\"pypy\\\",\\\"name\\\":\\\"pypy\\\"}],\\\"ogMetaData\\\":{\\\"image\\\":\\\"https://cdn.hashnode.com/res/hashnode/image/upload/v1721498910714/a53ce52c-214b-4e46-884d-4bbb6a7a06af.png\\\"},\\\"canonicalUrl\\\":null,\\\"hasLatexInPost\\\":false,\\\"audioUrls\\\":null,\\\"isFollowed\\\":null,\\\"bookmarked\\\":false,\\\"features\\\":{\\\"tableOfContents\\\":{\\\"isEnabled\\\":false,\\\"items\\\":[]},\\\"badges\\\":{\\\"isEnabled\\\":true,\\\"items\\\":[]}},\\\"isAutoPublishedFromRSS\\\":false,\\\"authenticatedUserLikes\\\":{\\\"edges\\\":[]},\\\"totalUserLikes\\\":{\\\"totalDocuments\\\":0},\\\"isShadowBanned\\\":false,\\\"isAskMeAnything\\\":false},\\\"redirectedPost\\\":null,\\\"staticPage\\\":null}\",\"totalUsersWhoLikedArticle\":0,\"integrations\":{\"fbPixelID\":null,\"fathomSiteID\":null,\"fathomCustomDomainEnabled\":null,\"fathomCustomDomain\":null,\"hotjarSiteID\":null,\"matomoSiteID\":null,\"matomoURL\":null,\"gaTrackingID\":null,\"gTagManagerID\":null,\"plausibleAnalyticsEnabled\":null,\"koalaPublicKey\":null,\"msClarityID\":null,\"domainURL\":\"blog.saravanakumar.engineer\"},\"rootLayout\":{\"legacyPublicationJSON\":\"{\\\"_id\\\":\\\"65892120e1f02b9355934c61\\\",\\\"author\\\":{\\\"_id\\\":\\\"658920e4c2b52f1cc673b410\\\",\\\"name\\\":\\\"Saravanakumar R\\\",\\\"photo\\\":\\\"https://cdn.hashnode.com/res/hashnode/image/upload/v1715492925925/aHvkVWBZT.png\\\",\\\"username\\\":\\\"Saravanakumar2003\\\"},\\\"badgePageEnabled\\\":true,\\\"description\\\":\\\"\\\",\\\"domain\\\":\\\"blog.saravanakumar.engineer\\\",\\\"domainStatus\\\":{\\\"ready\\\":true,\\\"certIssued\\\":true},\\\"wwwPrefixedDomainStatus\\\":{},\\\"customCSSEnabled\\\":false,\\\"customCSSPublished\\\":{\\\"homeMin\\\":\\\"\\\",\\\"postMin\\\":\\\"\\\",\\\"staticMin\\\":\\\"\\\"},\\\"customRules\\\":[],\\\"darkModeEnabled\\\":true,\\\"darkModeLogo\\\":\\\"\\\",\\\"disableFooterBranding\\\":false,\\\"isSubscriptionModalDisabled\\\":false,\\\"publicMembersCount\\\":1,\\\"displayTitle\\\":\\\"\\\",\\\"favicon\\\":\\\"\\\",\\\"gaTrackingID\\\":\\\"\\\",\\\"gTagManagerID\\\":\\\"\\\",\\\"hasBadges\\\":true,\\\"headerColor\\\":\\\"#800080\\\",\\\"hideMembersPage\\\":false,\\\"isTeam\\\":true,\\\"layout\\\":\\\"magazine\\\",\\\"membersPageEnabled\\\":true,\\\"menu\\\":[{\\\"_id\\\":\\\"66153dceb85c62401a8cfc77\\\",\\\"label\\\":\\\"Back to Portfolio\\\",\\\"type\\\":\\\"link\\\",\\\"url\\\":\\\"https://saravana.vercel.app\\\"}],\\\"metaHTML\\\":\\\"\\\",\\\"metaHTMLSanitized\\\":\\\"\\\",\\\"newsletterEnabled\\\":true,\\\"proTeamEnabled\\\":false,\\\"newsletterPageEnabled\\\":false,\\\"ogImage\\\":\\\"\\\",\\\"logo\\\":\\\"\\\",\\\"textSelectionSharerEnabled\\\":true,\\\"title\\\":\\\" Saravanakumar R's blog\\\",\\\"urlPattern\\\":\\\"simple\\\",\\\"username\\\":\\\"saravanakumar2003\\\",\\\"viewCountVisible\\\":false,\\\"readTimeHidden\\\":false,\\\"links\\\":{\\\"twitter\\\":\\\"\\\",\\\"instagram\\\":\\\"\\\",\\\"github\\\":\\\"\\\",\\\"website\\\":\\\"\\\",\\\"hashnode\\\":\\\"https://hashnode.com/@Saravanakumar2003\\\",\\\"youtube\\\":\\\"\\\",\\\"dailydev\\\":\\\"\\\",\\\"linkedin\\\":\\\"\\\",\\\"mastodon\\\":\\\"\\\",\\\"facebook\\\":\\\"\\\"},\\\"numPosts\\\":3,\\\"sponsorship\\\":{\\\"content\\\":\\\"\\\",\\\"contentMarkdown\\\":\\\"\\\"},\\\"allowContributorEdits\\\":true,\\\"allowCrawlingByGPT\\\":false}\",\"legacyPostJSON\":\"{\\\"_id\\\":\\\"669bfda8284e02df22c0280a\\\",\\\"partOfPublication\\\":true,\\\"author\\\":{\\\"_id\\\":\\\"658920e4c2b52f1cc673b410\\\",\\\"name\\\":\\\"Saravanakumar R\\\",\\\"photo\\\":\\\"https://cdn.hashnode.com/res/hashnode/image/upload/v1715492925925/aHvkVWBZT.png\\\",\\\"username\\\":\\\"Saravanakumar2003\\\",\\\"bio\\\":\\\"\\u003cp\\u003e👋 Hey there! I am Saravanakumar, a proud Velammal Engineering College student pursuing a bachelor's degree in Electronics and Communication Engineering and building a solid foundation in technology. I am also an avid developer, enthusiastic volunteer, and public speaker, and I love exploring new opportunities and avenues.\\u003c/p\\u003e\\\\n\\\",\\\"socialMedia\\\":{\\\"website\\\":\\\"\\\",\\\"github\\\":\\\"https://github.com/Saravanakumar2003\\\",\\\"twitter\\\":\\\"https://twitter.com/Saravana2003_me\\\",\\\"facebook\\\":\\\"\\\",\\\"stackoverflow\\\":\\\"https://stackoverflow.com/users/22913783/saravanakumar-r\\\",\\\"linkedin\\\":\\\"https://www.linkedin.com/in/saravanaramaswamy2003/\\\"},\\\"isDeactivated\\\":false},\\\"bookmarkedIn\\\":[],\\\"publication\\\":{\\\"_id\\\":\\\"65892120e1f02b9355934c61\\\",\\\"author\\\":{\\\"_id\\\":\\\"658920e4c2b52f1cc673b410\\\",\\\"name\\\":\\\"Saravanakumar R\\\",\\\"photo\\\":\\\"https://cdn.hashnode.com/res/hashnode/image/upload/v1715492925925/aHvkVWBZT.png\\\",\\\"username\\\":\\\"Saravanakumar2003\\\"},\\\"badgePageEnabled\\\":true,\\\"description\\\":\\\"\\\",\\\"domain\\\":\\\"blog.saravanakumar.engineer\\\",\\\"domainStatus\\\":{\\\"ready\\\":true,\\\"certIssued\\\":true},\\\"wwwPrefixedDomainStatus\\\":{},\\\"customCSSEnabled\\\":false,\\\"customCSSPublished\\\":{\\\"homeMin\\\":\\\"\\\",\\\"postMin\\\":\\\"\\\",\\\"staticMin\\\":\\\"\\\"},\\\"customRules\\\":[],\\\"darkModeEnabled\\\":true,\\\"darkModeLogo\\\":\\\"\\\",\\\"disableFooterBranding\\\":false,\\\"isSubscriptionModalDisabled\\\":false,\\\"publicMembersCount\\\":1,\\\"displayTitle\\\":\\\"\\\",\\\"favicon\\\":\\\"\\\",\\\"gaTrackingID\\\":\\\"\\\",\\\"gTagManagerID\\\":\\\"\\\",\\\"hasBadges\\\":true,\\\"headerColor\\\":\\\"#800080\\\",\\\"hideMembersPage\\\":false,\\\"isTeam\\\":true,\\\"layout\\\":\\\"magazine\\\",\\\"membersPageEnabled\\\":true,\\\"menu\\\":[{\\\"_id\\\":\\\"66153dceb85c62401a8cfc77\\\",\\\"label\\\":\\\"Back to Portfolio\\\",\\\"type\\\":\\\"link\\\",\\\"url\\\":\\\"https://saravana.vercel.app\\\"}],\\\"metaHTML\\\":\\\"\\\",\\\"metaHTMLSanitized\\\":\\\"\\\",\\\"newsletterEnabled\\\":true,\\\"proTeamEnabled\\\":false,\\\"newsletterPageEnabled\\\":false,\\\"ogImage\\\":\\\"\\\",\\\"logo\\\":\\\"\\\",\\\"textSelectionSharerEnabled\\\":true,\\\"title\\\":\\\" Saravanakumar R's blog\\\",\\\"urlPattern\\\":\\\"simple\\\",\\\"username\\\":\\\"saravanakumar2003\\\",\\\"viewCountVisible\\\":false,\\\"readTimeHidden\\\":false,\\\"links\\\":{\\\"twitter\\\":\\\"\\\",\\\"instagram\\\":\\\"\\\",\\\"github\\\":\\\"\\\",\\\"website\\\":\\\"\\\",\\\"hashnode\\\":\\\"https://hashnode.com/@Saravanakumar2003\\\",\\\"youtube\\\":\\\"\\\",\\\"dailydev\\\":\\\"\\\",\\\"linkedin\\\":\\\"\\\",\\\"mastodon\\\":\\\"\\\",\\\"facebook\\\":\\\"\\\"},\\\"numPosts\\\":3,\\\"sponsorship\\\":{\\\"content\\\":\\\"\\\",\\\"contentMarkdown\\\":\\\"\\\"},\\\"allowContributorEdits\\\":true,\\\"allowCrawlingByGPT\\\":false},\\\"tags\\\":[{\\\"_id\\\":\\\"58790ce83c79514bec51631b\\\",\\\"slug\\\":\\\"compiler\\\",\\\"name\\\":\\\"compiler\\\",\\\"isActive\\\":true,\\\"isApproved\\\":true},{\\\"_id\\\":\\\"57af2aa293640a480303796a\\\",\\\"slug\\\":\\\"interpreter\\\",\\\"name\\\":\\\"interpreter\\\",\\\"isActive\\\":true,\\\"isApproved\\\":true},{\\\"_id\\\":\\\"5f32e27f2a23d9080d179f06\\\",\\\"slug\\\":\\\"pypy\\\",\\\"name\\\":\\\"pypy\\\",\\\"isActive\\\":true,\\\"isApproved\\\":true}],\\\"coAuthors\\\":[],\\\"responseCount\\\":0,\\\"replyCount\\\":0,\\\"contentMarkdown\\\":\\\"# Compiler vs Interpreter: A Deep Dive with Python and PyPy Installation Guide\\\\n\\\\nWhen diving into programming languages, understanding the difference between compilers and interpreters is crucial. This blog will explain these concepts, particularly in the context of Python, and guide you through installing PyPy on your PC.\\\\n\\\\n## Compiler vs Interpreter\\\\n\\\\n### Compiler\\\\n\\\\nA compiler translates the entire program from a high-level programming language into machine code (binary code) before execution. This process occurs in several stages:\\\\n\\\\n1. **Lexical Analysis:** Converts the source code into tokens.\\\\n2. **Syntax Analysis:** Constructs a parse tree based on the grammar rules.\\\\n3. **Semantic Analysis:** Checks for semantic errors and generates an intermediate representation.\\\\n4. **Optimization:** Improves the intermediate code.\\\\n5. **Code Generation:** Produces the final machine code.\\\\n\\\\n**Advantages:**\\\\n- Faster execution after compilation.\\\\n- Error detection before runtime.\\\\n\\\\n**Disadvantages:**\\\\n- Longer development time due to compilation.\\\\n- Requires recompilation for every change.\\\\n\\\\n### Interpreter\\\\n\\\\nAn interpreter translates and executes the program line by line. It does not produce a separate executable file; instead, it runs directly from the source code. This process typically involves:\\\\n\\\\n1. **Lexical Analysis:** Converts the source code into tokens.\\\\n2. **Parsing:** Analyzes the tokens to build an abstract syntax tree.\\\\n3. **Execution:** Executes the code based on the syntax tree.\\\\n\\\\n**Advantages:**\\\\n- Immediate execution and testing.\\\\n- Easier to debug and test code line by line.\\\\n\\\\n**Disadvantages:**\\\\n- Slower execution compared to compiled languages.\\\\n- Errors are detected during runtime.\\\\n\\\\n## Python: Compiler or Interpreter?\\\\n\\\\nPython is traditionally known as an interpreted language. The standard implementation, CPython, compiles Python code into bytecode, which is then interpreted by the Python virtual machine. This approach combines features of both compilers and interpreters.\\\\n\\\\nHowever, Python’s flexibility allows various implementations, such as PyPy, which uses Just-In-Time (JIT) compilation to enhance performance.\\\\n\\\\n## Installing PyPy on Windows\\\\n\\\\nPyPy is an alternative Python interpreter that offers faster execution by using JIT compilation. Here’s how you can install PyPy on a Windows PC:\\\\n\\\\n### Step 1: Download PyPy\\\\n\\\\n1. Go to the [PyPy official website](https://www.pypy.org/download.html).\\\\n2. Download the latest version of PyPy for Windows. Choose the appropriate 32-bit or 64-bit version based on your system.\\\\n\\\\n### Step 2: Extract the Archive\\\\n\\\\n1. Locate the downloaded `.zip` file.\\\\n2. Right-click the file and select \\\\\\\"Extract All...\\\\\\\"\\\\n3. Choose a destination folder where you want to extract the files.\\\\n\\\\n### Step 3: Set Up Environment Variables\\\\n\\\\n1. Open the Start menu and search for \\\\\\\"Environment Variables.\\\\\\\"\\\\n2. Click on \\\\\\\"Edit the system environment variables.\\\\\\\"\\\\n3. In the System Properties window, click on \\\\\\\"Environment Variables.\\\\\\\"\\\\n4. In the Environment Variables window, find the \\\\\\\"Path\\\\\\\" variable in the \\\\\\\"System variables\\\\\\\" section and click \\\\\\\"Edit.\\\\\\\"\\\\n5. Click \\\\\\\"New\\\\\\\" and add the path to the folder where you extracted PyPy (e.g., `C:\\\\\\\\path\\\\\\\\to\\\\\\\\pypy`).\\\\n6. Click \\\\\\\"OK\\\\\\\" to save and close all dialog boxes.\\\\n\\\\n### Step 4: Verify the Installation\\\\n\\\\n1. Open Command Prompt (cmd).\\\\n2. Type `pypy --version` and press Enter.\\\\n3. You should see the version of PyPy displayed, confirming that the installation was successful.\\\\n\\\\n## Conclusion\\\\n\\\\nUnderstanding the difference between compilers and interpreters is fundamental to grasping how different programming languages work. PyPy offers a performance boost for Python through JIT compilation, making it a valuable tool for Python developers. By following the steps above, you can easily install PyPy on your PC and start experiencing its benefits.\\\\n\\\\nFeel free to leave comments or questions below!\\\\n\\\",\\\"content\\\":\\\"\\u003ch1 id=\\\\\\\"heading-compiler-vs-interpreter-a-deep-dive-with-python-and-pypy-installation-guide\\\\\\\"\\u003eCompiler vs Interpreter: A Deep Dive with Python and PyPy Installation Guide\\u003c/h1\\u003e\\\\n\\u003cp\\u003eWhen diving into programming languages, understanding the difference between compilers and interpreters is crucial. This blog will explain these concepts, particularly in the context of Python, and guide you through installing PyPy on your PC.\\u003c/p\\u003e\\\\n\\u003ch2 id=\\\\\\\"heading-compiler-vs-interpreter\\\\\\\"\\u003eCompiler vs Interpreter\\u003c/h2\\u003e\\\\n\\u003ch3 id=\\\\\\\"heading-compiler\\\\\\\"\\u003eCompiler\\u003c/h3\\u003e\\\\n\\u003cp\\u003eA compiler translates the entire program from a high-level programming language into machine code (binary code) before execution. This process occurs in several stages:\\u003c/p\\u003e\\\\n\\u003col\\u003e\\\\n\\u003cli\\u003e\\u003cstrong\\u003eLexical Analysis:\\u003c/strong\\u003e Converts the source code into tokens.\\u003c/li\\u003e\\\\n\\u003cli\\u003e\\u003cstrong\\u003eSyntax Analysis:\\u003c/strong\\u003e Constructs a parse tree based on the grammar rules.\\u003c/li\\u003e\\\\n\\u003cli\\u003e\\u003cstrong\\u003eSemantic Analysis:\\u003c/strong\\u003e Checks for semantic errors and generates an intermediate representation.\\u003c/li\\u003e\\\\n\\u003cli\\u003e\\u003cstrong\\u003eOptimization:\\u003c/strong\\u003e Improves the intermediate code.\\u003c/li\\u003e\\\\n\\u003cli\\u003e\\u003cstrong\\u003eCode Generation:\\u003c/strong\\u003e Produces the final machine code.\\u003c/li\\u003e\\\\n\\u003c/ol\\u003e\\\\n\\u003cp\\u003e\\u003cstrong\\u003eAdvantages:\\u003c/strong\\u003e\\u003c/p\\u003e\\\\n\\u003cul\\u003e\\\\n\\u003cli\\u003eFaster execution after compilation.\\u003c/li\\u003e\\\\n\\u003cli\\u003eError detection before runtime.\\u003c/li\\u003e\\\\n\\u003c/ul\\u003e\\\\n\\u003cp\\u003e\\u003cstrong\\u003eDisadvantages:\\u003c/strong\\u003e\\u003c/p\\u003e\\\\n\\u003cul\\u003e\\\\n\\u003cli\\u003eLonger development time due to compilation.\\u003c/li\\u003e\\\\n\\u003cli\\u003eRequires recompilation for every change.\\u003c/li\\u003e\\\\n\\u003c/ul\\u003e\\\\n\\u003ch3 id=\\\\\\\"heading-interpreter\\\\\\\"\\u003eInterpreter\\u003c/h3\\u003e\\\\n\\u003cp\\u003eAn interpreter translates and executes the program line by line. It does not produce a separate executable file; instead, it runs directly from the source code. This process typically involves:\\u003c/p\\u003e\\\\n\\u003col\\u003e\\\\n\\u003cli\\u003e\\u003cstrong\\u003eLexical Analysis:\\u003c/strong\\u003e Converts the source code into tokens.\\u003c/li\\u003e\\\\n\\u003cli\\u003e\\u003cstrong\\u003eParsing:\\u003c/strong\\u003e Analyzes the tokens to build an abstract syntax tree.\\u003c/li\\u003e\\\\n\\u003cli\\u003e\\u003cstrong\\u003eExecution:\\u003c/strong\\u003e Executes the code based on the syntax tree.\\u003c/li\\u003e\\\\n\\u003c/ol\\u003e\\\\n\\u003cp\\u003e\\u003cstrong\\u003eAdvantages:\\u003c/strong\\u003e\\u003c/p\\u003e\\\\n\\u003cul\\u003e\\\\n\\u003cli\\u003eImmediate execution and testing.\\u003c/li\\u003e\\\\n\\u003cli\\u003eEasier to debug and test code line by line.\\u003c/li\\u003e\\\\n\\u003c/ul\\u003e\\\\n\\u003cp\\u003e\\u003cstrong\\u003eDisadvantages:\\u003c/strong\\u003e\\u003c/p\\u003e\\\\n\\u003cul\\u003e\\\\n\\u003cli\\u003eSlower execution compared to compiled languages.\\u003c/li\\u003e\\\\n\\u003cli\\u003eErrors are detected during runtime.\\u003c/li\\u003e\\\\n\\u003c/ul\\u003e\\\\n\\u003ch2 id=\\\\\\\"heading-python-compiler-or-interpreter\\\\\\\"\\u003ePython: Compiler or Interpreter?\\u003c/h2\\u003e\\\\n\\u003cp\\u003ePython is traditionally known as an interpreted language. The standard implementation, CPython, compiles Python code into bytecode, which is then interpreted by the Python virtual machine. This approach combines features of both compilers and interpreters.\\u003c/p\\u003e\\\\n\\u003cp\\u003eHowever, Python’s flexibility allows various implementations, such as PyPy, which uses Just-In-Time (JIT) compilation to enhance performance.\\u003c/p\\u003e\\\\n\\u003ch2 id=\\\\\\\"heading-installing-pypy-on-windows\\\\\\\"\\u003eInstalling PyPy on Windows\\u003c/h2\\u003e\\\\n\\u003cp\\u003ePyPy is an alternative Python interpreter that offers faster execution by using JIT compilation. Here’s how you can install PyPy on a Windows PC:\\u003c/p\\u003e\\\\n\\u003ch3 id=\\\\\\\"heading-step-1-download-pypy\\\\\\\"\\u003eStep 1: Download PyPy\\u003c/h3\\u003e\\\\n\\u003col\\u003e\\\\n\\u003cli\\u003eGo to the \\u003ca target=\\\\\\\"_blank\\\\\\\" href=\\\\\\\"https://www.pypy.org/download.html\\\\\\\"\\u003ePyPy official website\\u003c/a\\u003e.\\u003c/li\\u003e\\\\n\\u003cli\\u003eDownload the latest version of PyPy for Windows. Choose the appropriate 32-bit or 64-bit version based on your system.\\u003c/li\\u003e\\\\n\\u003c/ol\\u003e\\\\n\\u003ch3 id=\\\\\\\"heading-step-2-extract-the-archive\\\\\\\"\\u003eStep 2: Extract the Archive\\u003c/h3\\u003e\\\\n\\u003col\\u003e\\\\n\\u003cli\\u003eLocate the downloaded \\u003ccode\\u003e.zip\\u003c/code\\u003e file.\\u003c/li\\u003e\\\\n\\u003cli\\u003eRight-click the file and select \\\\\\\"Extract All...\\\\\\\"\\u003c/li\\u003e\\\\n\\u003cli\\u003eChoose a destination folder where you want to extract the files.\\u003c/li\\u003e\\\\n\\u003c/ol\\u003e\\\\n\\u003ch3 id=\\\\\\\"heading-step-3-set-up-environment-variables\\\\\\\"\\u003eStep 3: Set Up Environment Variables\\u003c/h3\\u003e\\\\n\\u003col\\u003e\\\\n\\u003cli\\u003eOpen the Start menu and search for \\\\\\\"Environment Variables.\\\\\\\"\\u003c/li\\u003e\\\\n\\u003cli\\u003eClick on \\\\\\\"Edit the system environment variables.\\\\\\\"\\u003c/li\\u003e\\\\n\\u003cli\\u003eIn the System Properties window, click on \\\\\\\"Environment Variables.\\\\\\\"\\u003c/li\\u003e\\\\n\\u003cli\\u003eIn the Environment Variables window, find the \\\\\\\"Path\\\\\\\" variable in the \\\\\\\"System variables\\\\\\\" section and click \\\\\\\"Edit.\\\\\\\"\\u003c/li\\u003e\\\\n\\u003cli\\u003eClick \\\\\\\"New\\\\\\\" and add the path to the folder where you extracted PyPy (e.g., \\u003ccode\\u003eC:\\\\\\\\path\\\\\\\\to\\\\\\\\pypy\\u003c/code\\u003e).\\u003c/li\\u003e\\\\n\\u003cli\\u003eClick \\\\\\\"OK\\\\\\\" to save and close all dialog boxes.\\u003c/li\\u003e\\\\n\\u003c/ol\\u003e\\\\n\\u003ch3 id=\\\\\\\"heading-step-4-verify-the-installation\\\\\\\"\\u003eStep 4: Verify the Installation\\u003c/h3\\u003e\\\\n\\u003col\\u003e\\\\n\\u003cli\\u003eOpen Command Prompt (cmd).\\u003c/li\\u003e\\\\n\\u003cli\\u003eType \\u003ccode\\u003epypy --version\\u003c/code\\u003e and press Enter.\\u003c/li\\u003e\\\\n\\u003cli\\u003eYou should see the version of PyPy displayed, confirming that the installation was successful.\\u003c/li\\u003e\\\\n\\u003c/ol\\u003e\\\\n\\u003ch2 id=\\\\\\\"heading-conclusion\\\\\\\"\\u003eConclusion\\u003c/h2\\u003e\\\\n\\u003cp\\u003eUnderstanding the difference between compilers and interpreters is fundamental to grasping how different programming languages work. PyPy offers a performance boost for Python through JIT compilation, making it a valuable tool for Python developers. By following the steps above, you can easily install PyPy on your PC and start experiencing its benefits.\\u003c/p\\u003e\\\\n\\u003cp\\u003eFeel free to leave comments or questions below!\\u003c/p\\u003e\\\\n\\\",\\\"cuid\\\":\\\"clyug3329000f09l91dsuerh5\\\",\\\"views\\\":11,\\\"title\\\":\\\"Compiler vs Interpreter: A Deep Dive with Python and PyPy Installation Guide\\\",\\\"slug\\\":\\\"compiler-vs-interpreter-a-deep-dive-with-python-and-pypy-installation-guide\\\",\\\"dateAdded\\\":\\\"2024-07-20T18:10:48.513Z\\\",\\\"dateUpdated\\\":null,\\\"type\\\":\\\"story\\\",\\\"coverImage\\\":\\\"https://cdn.hashnode.com/res/hashnode/image/upload/v1721498916646/ce3ad81b-31cb-42c1-b93d-f9d73eefd5b9.png\\\",\\\"isCoverImagePortrait\\\":false,\\\"isCoverAttributionHidden\\\":false,\\\"brief\\\":\\\"Compiler vs Interpreter: A Deep Dive with Python and PyPy Installation Guide\\\\nWhen diving into programming languages, understanding the difference between compilers and interpreters is crucial. This blog will explain these concepts, particularly in th...\\\",\\\"isFollowing\\\":false,\\\"totalReactions\\\":0,\\\"totalReactionsByCurrentUser\\\":0,\\\"series\\\":null,\\\"isPinnedToBlog\\\":false,\\\"readTime\\\":3,\\\"sB\\\":false,\\\"isAMA\\\":false,\\\"subtitle\\\":\\\"\\\",\\\"isPartOfSeries\\\":false,\\\"hasTags\\\":true,\\\"ogImage\\\":\\\"https://cdn.hashnode.com/res/hashnode/image/upload/v1721498910714/a53ce52c-214b-4e46-884d-4bbb6a7a06af.png\\\",\\\"metaTitle\\\":\\\"\\\",\\\"metaDescription\\\":\\\"\\\",\\\"isRepublished\\\":false,\\\"autoPublishedFromRSS\\\":false,\\\"responses\\\":[],\\\"isFeatured\\\":false,\\\"hasLatex\\\":false,\\\"stickCoverToBottom\\\":false,\\\"hideBadges\\\":false,\\\"badges\\\":[],\\\"isDelisted\\\":false,\\\"audioUrls\\\":{},\\\"disableComments\\\":false,\\\"enableToc\\\":false,\\\"toc\\\":[],\\\"noIndex\\\":false}\",\"legacySeriesJSON\":null,\"headProps\":{\"title\":\"Compiler vs Interpreter: A Deep Dive with Python and PyPy Installation Guide\",\"description\":\"Compiler vs Interpreter: A Deep Dive with Python and PyPy Installation Guide\\nWhen diving into programming languages, understanding the difference between compilers and interpreters is crucial. This blog will explain these concepts, particularly in th...\",\"author\":{\"name\":\"Saravanakumar R\",\"username\":\"Saravanakumar2003\"},\"links\":[{\"rel\":\"canonical\",\"href\":\"https://blog.saravanakumar.engineer/compiler-vs-interpreter-a-deep-dive-with-python-and-pypy-installation-guide\"}],\"pageType\":\"article\",\"bannerType\":\"large\",\"ogSiteName\":\" Saravanakumar R's blog\",\"url\":\"https://blog.saravanakumar.engineer/compiler-vs-interpreter-a-deep-dive-with-python-and-pypy-installation-guide\",\"ogImage\":\"https://hashnode.com/utility/r?url=https%3A%2F%2Fcdn.hashnode.com%2Fres%2Fhashnode%2Fimage%2Fupload%2Fv1721498910714%2Fa53ce52c-214b-4e46-884d-4bbb6a7a06af.png%3Fw%3D1200%26auto%3Dcompress%2Cformat%26format%3Dwebp%26fm%3Dpng\",\"twitterImage\":\"https://hashnode.com/utility/r?url=https%3A%2F%2Fcdn.hashnode.com%2Fres%2Fhashnode%2Fimage%2Fupload%2Fv1721498910714%2Fa53ce52c-214b-4e46-884d-4bbb6a7a06af.png%3Fw%3D1200%26auto%3Dcompress%2Cformat%26format%3Dwebp%26fm%3Dpng\",\"twitterHandle\":\"@Saravana2003_me\",\"monetization\":null,\"style\":{},\"customHeadItems\":{\"customFavicon\":null,\"customTheme\":\"#800080\",\"customMeta\":null},\"hljs\":true},\"isDarkTheme\":true,\"headerColor\":\"#800080\",\"isBadge\":null,\"isRecommendations\":null,\"isHome\":null,\"currentMenuId\":null,\"hnmcMode\":false,\"postCUID\":\"clyug3329000f09l91dsuerh5\",\"seoSchema\":{\"@context\":\"https://schema.org\",\"@type\":\"NewsArticle\",\"url\":\"https://blog.saravanakumar.engineer/compiler-vs-interpreter-a-deep-dive-with-python-and-pypy-installation-guide\",\"mainEntityOfPage\":\"https://blog.saravanakumar.engineer/compiler-vs-interpreter-a-deep-dive-with-python-and-pypy-installation-guide\",\"headline\":\"Compiler vs Interpreter: A Deep Dive with Python and PyPy Installation Guide\",\"description\":\"Compiler vs Interpreter: A Deep Dive with Python and PyPy Installation Guide\\nWhen diving into programming languages, understanding the difference between compilers and interpreters is crucial. This blog will explain these concepts, particularly in th...\",\"datePublished\":\"2024-07-20T18:10:48.513Z\",\"isAccessibleForFree\":true,\"author\":{\"@type\":\"Person\",\"name\":\"Saravanakumar R\",\"url\":\"https://hashnode.com/@Saravanakumar2003\",\"sameAs\":\"https://twitter.com/Saravana2003_me\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\" Saravanakumar R's blog\",\"url\":\"https://blog.saravanakumar.engineer\",\"logo\":\"https://hashnode.com/utility/r?url=https%3A%2F%2Fcdn.hashnode.com%2Fres%2Fhashnode%2Fimage%2Fupload%2Fv1559814205701%2Fek9fO-yT0.jpeg%3Fw%3D800%26bm%3Dnormal%26balph%3D100%26txt64%3DIFNhcmF2YW5ha3VtYXIgUidzIGJsb2c%26txtsize%3D42%26txtfit%3Dmax%26txtalign%3Dmiddle%2Ccenter%26txtfont%3DHelvetica%20Neue%2CBold%26txtclr%3Dffffff%26blend%3D800080\"},\"image\":{\"@type\":\"ImageObject\",\"url\":\"https://cdn.hashnode.com/res/hashnode/image/upload/v1721498916646/ce3ad81b-31cb-42c1-b93d-f9d73eefd5b9.png\"}},\"publication\":{\"__typename\":\"Publication\",\"id\":\"65892120e1f02b9355934c61\",\"url\":\"https://blog.saravanakumar.engineer\",\"canonicalURL\":\"https://blog.saravanakumar.engineer\",\"urlPattern\":\"SIMPLE\",\"title\":\" Saravanakumar R's blog\",\"displayTitle\":null,\"hasBadges\":true,\"descriptionSEO\":null,\"publicMembers\":{\"totalDocuments\":1},\"about\":null,\"features\":{\"proTeam\":{\"isEnabled\":false},\"newsletter\":{\"isEnabled\":true},\"viewCount\":{\"isEnabled\":false},\"readTime\":{\"isEnabled\":true},\"textSelectionSharer\":{\"isEnabled\":true},\"customCSS\":{\"isEnabled\":false,\"published\":null,\"draft\":null},\"gptBotCrawling\":{\"__typename\":\"GPTBotCrawlingFeature\",\"isEnabled\":false}},\"metaTags\":null,\"ogMetaData\":{\"image\":null},\"author\":{\"__typename\":\"User\",\"id\":\"658920e4c2b52f1cc673b410\",\"name\":\"Saravanakumar R\",\"username\":\"Saravanakumar2003\",\"profilePicture\":\"https://cdn.hashnode.com/res/hashnode/image/upload/v1715492925925/aHvkVWBZT.png\"},\"preferences\":{\"__typename\":\"Preferences\",\"logo\":\"\",\"darkMode\":{\"__typename\":\"DarkModePreferences\",\"logo\":\"\",\"enabled\":true},\"navbarItems\":[{\"__typename\":\"PublicationNavbarItem\",\"id\":\"66153dceb85c62401a8cfc77\",\"label\":\"Back to Portfolio\",\"url\":\"https://saravana.vercel.app\",\"type\":\"link\",\"series\":null,\"page\":null}],\"enabledPages\":{\"__typename\":\"PagesPreferences\",\"badges\":false,\"newsletter\":true,\"members\":true},\"layout\":\"magazine\",\"disableFooterBranding\":false,\"isSubscriptionModalDisabled\":false},\"favicon\":\"\",\"headerColor\":\"#800080\",\"integrations\":{\"fbPixelID\":null,\"fathomSiteID\":null,\"fathomCustomDomainEnabled\":null,\"fathomCustomDomain\":null,\"hotjarSiteID\":null,\"matomoSiteID\":null,\"matomoURL\":null,\"gaTrackingID\":null,\"gTagManagerID\":null,\"plausibleAnalyticsEnabled\":null,\"koalaPublicKey\":null,\"msClarityID\":null},\"imprintV2\":null,\"postsCount\":{\"totalDocuments\":3},\"isTeam\":true,\"links\":{\"twitter\":\"\",\"instagram\":null,\"github\":\"\",\"website\":\"\",\"hashnode\":\"https://hashnode.com/@Saravanakumar2003\",\"youtube\":null,\"dailydev\":null,\"linkedin\":null,\"mastodon\":null,\"facebook\":null,\"bluesky\":null},\"domainInfo\":{\"__typename\":\"DomainInfo\",\"hashnodeSubdomain\":\"saravanakumar2003\",\"domain\":{\"__typename\":\"DomainStatus\",\"host\":\"blog.saravanakumar.engineer\",\"ready\":true},\"wwwPrefixedDomain\":null},\"redirectionRules\":[],\"totalRecommendedPublications\":0,\"sponsorship\":{\"content\":null,\"stripe\":null},\"allowContributorEdits\":true,\"rssImport\":null,\"post\":{\"id\":\"669bfda8284e02df22c0280a\",\"cuid\":\"clyug3329000f09l91dsuerh5\",\"title\":\"Compiler vs Interpreter: A Deep Dive with Python and PyPy Installation Guide\",\"subtitle\":null,\"slug\":\"compiler-vs-interpreter-a-deep-dive-with-python-and-pypy-installation-guide\",\"brief\":\"Compiler vs Interpreter: A Deep Dive with Python and PyPy Installation Guide\\nWhen diving into programming languages, understanding the difference between compilers and interpreters is crucial. This blog will explain these concepts, particularly in th...\",\"featured\":false,\"publishedAt\":\"2024-07-20T18:10:48.513Z\",\"updatedAt\":null,\"author\":{\"__typename\":\"User\",\"id\":\"658920e4c2b52f1cc673b410\",\"name\":\"Saravanakumar R\",\"username\":\"Saravanakumar2003\",\"deactivated\":false,\"profilePicture\":\"https://cdn.hashnode.com/res/hashnode/image/upload/v1715492925925/aHvkVWBZT.png\",\"bio\":{\"html\":\"\\u003cp\\u003e👋 Hey there! I am Saravanakumar, a proud Velammal Engineering College student pursuing a bachelor's degree in Electronics and Communication Engineering and building a solid foundation in technology. I am also an avid developer, enthusiastic volunteer, and public speaker, and I love exploring new opportunities and avenues.\\u003c/p\\u003e\\n\"},\"socialMediaLinks\":{\"website\":\"\",\"github\":\"https://github.com/Saravanakumar2003\",\"twitter\":\"https://twitter.com/Saravana2003_me\",\"facebook\":\"\",\"stackoverflow\":\"https://stackoverflow.com/users/22913783/saravanakumar-r\",\"linkedin\":\"https://www.linkedin.com/in/saravanaramaswamy2003/\"}},\"coAuthors\":[],\"seo\":{\"title\":null,\"description\":null,\"shouldNotIndex\":false},\"coverImage\":{\"url\":\"https://cdn.hashnode.com/res/hashnode/image/upload/v1721498916646/ce3ad81b-31cb-42c1-b93d-f9d73eefd5b9.png\",\"isPortrait\":false,\"attribution\":null,\"isAttributionHidden\":false,\"photographer\":null},\"responseCount\":0,\"reactionCount\":0,\"replyCount\":0,\"content\":{\"html\":\"\\u003ch1 id=\\\"heading-compiler-vs-interpreter-a-deep-dive-with-python-and-pypy-installation-guide\\\"\\u003eCompiler vs Interpreter: A Deep Dive with Python and PyPy Installation Guide\\u003c/h1\\u003e\\n\\u003cp\\u003eWhen diving into programming languages, understanding the difference between compilers and interpreters is crucial. This blog will explain these concepts, particularly in the context of Python, and guide you through installing PyPy on your PC.\\u003c/p\\u003e\\n\\u003ch2 id=\\\"heading-compiler-vs-interpreter\\\"\\u003eCompiler vs Interpreter\\u003c/h2\\u003e\\n\\u003ch3 id=\\\"heading-compiler\\\"\\u003eCompiler\\u003c/h3\\u003e\\n\\u003cp\\u003eA compiler translates the entire program from a high-level programming language into machine code (binary code) before execution. This process occurs in several stages:\\u003c/p\\u003e\\n\\u003col\\u003e\\n\\u003cli\\u003e\\u003cstrong\\u003eLexical Analysis:\\u003c/strong\\u003e Converts the source code into tokens.\\u003c/li\\u003e\\n\\u003cli\\u003e\\u003cstrong\\u003eSyntax Analysis:\\u003c/strong\\u003e Constructs a parse tree based on the grammar rules.\\u003c/li\\u003e\\n\\u003cli\\u003e\\u003cstrong\\u003eSemantic Analysis:\\u003c/strong\\u003e Checks for semantic errors and generates an intermediate representation.\\u003c/li\\u003e\\n\\u003cli\\u003e\\u003cstrong\\u003eOptimization:\\u003c/strong\\u003e Improves the intermediate code.\\u003c/li\\u003e\\n\\u003cli\\u003e\\u003cstrong\\u003eCode Generation:\\u003c/strong\\u003e Produces the final machine code.\\u003c/li\\u003e\\n\\u003c/ol\\u003e\\n\\u003cp\\u003e\\u003cstrong\\u003eAdvantages:\\u003c/strong\\u003e\\u003c/p\\u003e\\n\\u003cul\\u003e\\n\\u003cli\\u003eFaster execution after compilation.\\u003c/li\\u003e\\n\\u003cli\\u003eError detection before runtime.\\u003c/li\\u003e\\n\\u003c/ul\\u003e\\n\\u003cp\\u003e\\u003cstrong\\u003eDisadvantages:\\u003c/strong\\u003e\\u003c/p\\u003e\\n\\u003cul\\u003e\\n\\u003cli\\u003eLonger development time due to compilation.\\u003c/li\\u003e\\n\\u003cli\\u003eRequires recompilation for every change.\\u003c/li\\u003e\\n\\u003c/ul\\u003e\\n\\u003ch3 id=\\\"heading-interpreter\\\"\\u003eInterpreter\\u003c/h3\\u003e\\n\\u003cp\\u003eAn interpreter translates and executes the program line by line. It does not produce a separate executable file; instead, it runs directly from the source code. This process typically involves:\\u003c/p\\u003e\\n\\u003col\\u003e\\n\\u003cli\\u003e\\u003cstrong\\u003eLexical Analysis:\\u003c/strong\\u003e Converts the source code into tokens.\\u003c/li\\u003e\\n\\u003cli\\u003e\\u003cstrong\\u003eParsing:\\u003c/strong\\u003e Analyzes the tokens to build an abstract syntax tree.\\u003c/li\\u003e\\n\\u003cli\\u003e\\u003cstrong\\u003eExecution:\\u003c/strong\\u003e Executes the code based on the syntax tree.\\u003c/li\\u003e\\n\\u003c/ol\\u003e\\n\\u003cp\\u003e\\u003cstrong\\u003eAdvantages:\\u003c/strong\\u003e\\u003c/p\\u003e\\n\\u003cul\\u003e\\n\\u003cli\\u003eImmediate execution and testing.\\u003c/li\\u003e\\n\\u003cli\\u003eEasier to debug and test code line by line.\\u003c/li\\u003e\\n\\u003c/ul\\u003e\\n\\u003cp\\u003e\\u003cstrong\\u003eDisadvantages:\\u003c/strong\\u003e\\u003c/p\\u003e\\n\\u003cul\\u003e\\n\\u003cli\\u003eSlower execution compared to compiled languages.\\u003c/li\\u003e\\n\\u003cli\\u003eErrors are detected during runtime.\\u003c/li\\u003e\\n\\u003c/ul\\u003e\\n\\u003ch2 id=\\\"heading-python-compiler-or-interpreter\\\"\\u003ePython: Compiler or Interpreter?\\u003c/h2\\u003e\\n\\u003cp\\u003ePython is traditionally known as an interpreted language. The standard implementation, CPython, compiles Python code into bytecode, which is then interpreted by the Python virtual machine. This approach combines features of both compilers and interpreters.\\u003c/p\\u003e\\n\\u003cp\\u003eHowever, Python’s flexibility allows various implementations, such as PyPy, which uses Just-In-Time (JIT) compilation to enhance performance.\\u003c/p\\u003e\\n\\u003ch2 id=\\\"heading-installing-pypy-on-windows\\\"\\u003eInstalling PyPy on Windows\\u003c/h2\\u003e\\n\\u003cp\\u003ePyPy is an alternative Python interpreter that offers faster execution by using JIT compilation. Here’s how you can install PyPy on a Windows PC:\\u003c/p\\u003e\\n\\u003ch3 id=\\\"heading-step-1-download-pypy\\\"\\u003eStep 1: Download PyPy\\u003c/h3\\u003e\\n\\u003col\\u003e\\n\\u003cli\\u003eGo to the \\u003ca target=\\\"_blank\\\" href=\\\"https://www.pypy.org/download.html\\\"\\u003ePyPy official website\\u003c/a\\u003e.\\u003c/li\\u003e\\n\\u003cli\\u003eDownload the latest version of PyPy for Windows. Choose the appropriate 32-bit or 64-bit version based on your system.\\u003c/li\\u003e\\n\\u003c/ol\\u003e\\n\\u003ch3 id=\\\"heading-step-2-extract-the-archive\\\"\\u003eStep 2: Extract the Archive\\u003c/h3\\u003e\\n\\u003col\\u003e\\n\\u003cli\\u003eLocate the downloaded \\u003ccode\\u003e.zip\\u003c/code\\u003e file.\\u003c/li\\u003e\\n\\u003cli\\u003eRight-click the file and select \\\"Extract All...\\\"\\u003c/li\\u003e\\n\\u003cli\\u003eChoose a destination folder where you want to extract the files.\\u003c/li\\u003e\\n\\u003c/ol\\u003e\\n\\u003ch3 id=\\\"heading-step-3-set-up-environment-variables\\\"\\u003eStep 3: Set Up Environment Variables\\u003c/h3\\u003e\\n\\u003col\\u003e\\n\\u003cli\\u003eOpen the Start menu and search for \\\"Environment Variables.\\\"\\u003c/li\\u003e\\n\\u003cli\\u003eClick on \\\"Edit the system environment variables.\\\"\\u003c/li\\u003e\\n\\u003cli\\u003eIn the System Properties window, click on \\\"Environment Variables.\\\"\\u003c/li\\u003e\\n\\u003cli\\u003eIn the Environment Variables window, find the \\\"Path\\\" variable in the \\\"System variables\\\" section and click \\\"Edit.\\\"\\u003c/li\\u003e\\n\\u003cli\\u003eClick \\\"New\\\" and add the path to the folder where you extracted PyPy (e.g., \\u003ccode\\u003eC:\\\\path\\\\to\\\\pypy\\u003c/code\\u003e).\\u003c/li\\u003e\\n\\u003cli\\u003eClick \\\"OK\\\" to save and close all dialog boxes.\\u003c/li\\u003e\\n\\u003c/ol\\u003e\\n\\u003ch3 id=\\\"heading-step-4-verify-the-installation\\\"\\u003eStep 4: Verify the Installation\\u003c/h3\\u003e\\n\\u003col\\u003e\\n\\u003cli\\u003eOpen Command Prompt (cmd).\\u003c/li\\u003e\\n\\u003cli\\u003eType \\u003ccode\\u003epypy --version\\u003c/code\\u003e and press Enter.\\u003c/li\\u003e\\n\\u003cli\\u003eYou should see the version of PyPy displayed, confirming that the installation was successful.\\u003c/li\\u003e\\n\\u003c/ol\\u003e\\n\\u003ch2 id=\\\"heading-conclusion\\\"\\u003eConclusion\\u003c/h2\\u003e\\n\\u003cp\\u003eUnderstanding the difference between compilers and interpreters is fundamental to grasping how different programming languages work. PyPy offers a performance boost for Python through JIT compilation, making it a valuable tool for Python developers. By following the steps above, you can easily install PyPy on your PC and start experiencing its benefits.\\u003c/p\\u003e\\n\\u003cp\\u003eFeel free to leave comments or questions below!\\u003c/p\\u003e\\n\",\"markdown\":\"# Compiler vs Interpreter: A Deep Dive with Python and PyPy Installation Guide\\n\\nWhen diving into programming languages, understanding the difference between compilers and interpreters is crucial. This blog will explain these concepts, particularly in the context of Python, and guide you through installing PyPy on your PC.\\n\\n## Compiler vs Interpreter\\n\\n### Compiler\\n\\nA compiler translates the entire program from a high-level programming language into machine code (binary code) before execution. This process occurs in several stages:\\n\\n1. **Lexical Analysis:** Converts the source code into tokens.\\n2. **Syntax Analysis:** Constructs a parse tree based on the grammar rules.\\n3. **Semantic Analysis:** Checks for semantic errors and generates an intermediate representation.\\n4. **Optimization:** Improves the intermediate code.\\n5. **Code Generation:** Produces the final machine code.\\n\\n**Advantages:**\\n- Faster execution after compilation.\\n- Error detection before runtime.\\n\\n**Disadvantages:**\\n- Longer development time due to compilation.\\n- Requires recompilation for every change.\\n\\n### Interpreter\\n\\nAn interpreter translates and executes the program line by line. It does not produce a separate executable file; instead, it runs directly from the source code. This process typically involves:\\n\\n1. **Lexical Analysis:** Converts the source code into tokens.\\n2. **Parsing:** Analyzes the tokens to build an abstract syntax tree.\\n3. **Execution:** Executes the code based on the syntax tree.\\n\\n**Advantages:**\\n- Immediate execution and testing.\\n- Easier to debug and test code line by line.\\n\\n**Disadvantages:**\\n- Slower execution compared to compiled languages.\\n- Errors are detected during runtime.\\n\\n## Python: Compiler or Interpreter?\\n\\nPython is traditionally known as an interpreted language. The standard implementation, CPython, compiles Python code into bytecode, which is then interpreted by the Python virtual machine. This approach combines features of both compilers and interpreters.\\n\\nHowever, Python’s flexibility allows various implementations, such as PyPy, which uses Just-In-Time (JIT) compilation to enhance performance.\\n\\n## Installing PyPy on Windows\\n\\nPyPy is an alternative Python interpreter that offers faster execution by using JIT compilation. Here’s how you can install PyPy on a Windows PC:\\n\\n### Step 1: Download PyPy\\n\\n1. Go to the [PyPy official website](https://www.pypy.org/download.html).\\n2. Download the latest version of PyPy for Windows. Choose the appropriate 32-bit or 64-bit version based on your system.\\n\\n### Step 2: Extract the Archive\\n\\n1. Locate the downloaded `.zip` file.\\n2. Right-click the file and select \\\"Extract All...\\\"\\n3. Choose a destination folder where you want to extract the files.\\n\\n### Step 3: Set Up Environment Variables\\n\\n1. Open the Start menu and search for \\\"Environment Variables.\\\"\\n2. Click on \\\"Edit the system environment variables.\\\"\\n3. In the System Properties window, click on \\\"Environment Variables.\\\"\\n4. In the Environment Variables window, find the \\\"Path\\\" variable in the \\\"System variables\\\" section and click \\\"Edit.\\\"\\n5. Click \\\"New\\\" and add the path to the folder where you extracted PyPy (e.g., `C:\\\\path\\\\to\\\\pypy`).\\n6. Click \\\"OK\\\" to save and close all dialog boxes.\\n\\n### Step 4: Verify the Installation\\n\\n1. Open Command Prompt (cmd).\\n2. Type `pypy --version` and press Enter.\\n3. You should see the version of PyPy displayed, confirming that the installation was successful.\\n\\n## Conclusion\\n\\nUnderstanding the difference between compilers and interpreters is fundamental to grasping how different programming languages work. PyPy offers a performance boost for Python through JIT compilation, making it a valuable tool for Python developers. By following the steps above, you can easily install PyPy on your PC and start experiencing its benefits.\\n\\nFeel free to leave comments or questions below!\\n\"},\"views\":11,\"preferences\":{\"pinnedToBlog\":false,\"disableComments\":false,\"stickCoverToBottom\":false,\"isDelisted\":false},\"readTimeInMinutes\":3,\"series\":null,\"tags\":[{\"id\":\"58790ce83c79514bec51631b\",\"slug\":\"compiler\",\"name\":\"compiler\"},{\"id\":\"57af2aa293640a480303796a\",\"slug\":\"interpreter\",\"name\":\"interpreter\"},{\"id\":\"5f32e27f2a23d9080d179f06\",\"slug\":\"pypy\",\"name\":\"pypy\"}],\"ogMetaData\":{\"image\":\"https://cdn.hashnode.com/res/hashnode/image/upload/v1721498910714/a53ce52c-214b-4e46-884d-4bbb6a7a06af.png\"},\"canonicalUrl\":null,\"hasLatexInPost\":false,\"audioUrls\":null,\"isFollowed\":null,\"bookmarked\":false,\"features\":{\"tableOfContents\":{\"isEnabled\":false,\"items\":[]},\"badges\":{\"isEnabled\":true,\"items\":[]}},\"isAutoPublishedFromRSS\":false,\"authenticatedUserLikes\":{\"edges\":[]},\"totalUserLikes\":{\"totalDocuments\":0},\"isShadowBanned\":false,\"isAskMeAnything\":false},\"redirectedPost\":null,\"staticPage\":null},\"series\":null}},\"__N_SSP\":true},\"page\":\"/[...slug]\",\"query\":{\"x-host\":\"blog.saravanakumar.engineer\",\"slug\":[\"compiler-vs-interpreter-a-deep-dive-with-python-and-pypy-installation-guide\"]},\"buildId\":\"VY7gfv8JfZ1AtTVSeqeoU\",\"isFallback\":false,\"dynamicIds\":[87179],\"gssp\":true,\"scriptLoader\":[]}</script>
+    <div id=\"hn-modal\"></div>
+    <div id=\"hn-toast\"></div>
+</body>
+
+</html>

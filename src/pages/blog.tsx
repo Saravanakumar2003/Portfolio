@@ -213,7 +213,7 @@ export default function Blog() {
                         ))}
                       </div>
                     </div>
-                    <Link href={blog.url}>
+                    <Link href={`/blog/${blog.id}`}>
                       <T.ButtonAlternatives>
                         {currentLang === 'ta' ? 'வலைப்பதிவைப் பார்க்க' : 'View Blog'}
                         <ArrowRight

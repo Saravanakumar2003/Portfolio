@@ -11,6 +11,7 @@
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
     "@emotion/styled": "^11.11.0",
+    "@giscus/react": "^3.0.0",
     "@hookform/resolvers": "^3.1.0",
     "@mantine/core": "^7.4.1",
     "@mantine/hooks": "^7.4.1",

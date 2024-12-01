@@ -6,19 +6,21 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 import { Footer } from '../../components/Footer';
 import { ScrollTop } from '../../components/ScrollTop';
-import { MarkdownContainer, CenteredContainer } from '../../styles/markdown';
+import { MarkdownContainer, CenteredContainer, GiscusContainer } from '../../styles/markdown';
 import Link from 'next/link';
 import { ButtonSecondary } from '../../styles/styles';
 import { ArrowLeft } from 'phosphor-react';
 import { useTranslation } from 'react-i18next';
 import { useEffect, useState } from 'react';
+import Giscus from '@giscus/react';
 
 interface BlogProps {
   htmlContent: string;
   title: string;
+  discussions: any[];
 }
 
-export default function BlogDetail({ htmlContent, title }: BlogProps) {
+export default function BlogDetail({ htmlContent, title, discussions }: BlogProps) {
   const router = useRouter();
   const { id } = router.query;
   const { t, i18n } = useTranslation('common');
@@ -37,6 +39,22 @@ export default function BlogDetail({ htmlContent, title }: BlogProps) {
       <ScrollTop />
       <br /> <br /> <br />
       <MarkdownContainer dangerouslySetInnerHTML={{ __html: htmlContent }} />
+      <GiscusContainer>
+        <Giscus
+          repo="Saravanakumar2003/Portfolio"
+          repoId="R_kgDOLFzyGQ"
+          category="Blog"
+          categoryId="DIC_kwDOLFzyGc4Ckx5G"
+          mapping="specific"
+          term={`Blog Post ID: ${id}`}
+          reactionsEnabled="1"
+          emitMetadata="0"
+          inputPosition="top"
+          theme="dark"
+          lang="en"
+          loading="lazy"
+        />
+      </GiscusContainer>
       <CenteredContainer>
         <Link href={'/blog'} legacyBehavior>
           <ButtonSecondary>

@@ -1,5 +1,16 @@
 import styled from 'styled-components';
 
+export const GiscusContainer = styled.div`
+  background-color: ${({ theme }) => theme.dark};
+  color: ${({ theme }) => theme.color};
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+  size: 1rem;
+`;
+
+
 export const CenteredContainer = styled.div`
   display: flex;
   justify-content: center;

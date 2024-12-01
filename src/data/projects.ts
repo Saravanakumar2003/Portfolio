@@ -2,7 +2,7 @@ import { time } from "console"
 
 const projects = [
   {
-    id: 6,
+    id: 4,
     url: 'Muon',
     banner: '/projects/Muon/Muon.png',
     img: '/projects/Muon/Muon.png',
@@ -15,7 +15,7 @@ const projects = [
     description:
       'The Muon Track Reconstruction software is a sophisticated simulation and analysis tool designed for studying muon interactions with customizable drift tube arrays. This project showcases advanced skills in particle physics simulation, data analysis, and software development, combining complex algorithms with an intuitive user interface to provide researchers with a powerful tool for muon detection experiments.',
     tags: [
-      {name: 'BARC Projects'},
+      {name: 'Internship Projects'},
     ],
     tech: [
       {
@@ -88,13 +88,13 @@ const projects = [
     year: 'July 2024',
     gif: '/projects/Portfolio/Cool.mp4',
     backgroundImage: '/projects/Background.png',
-    trelloboard: 'https://trello.com/b/0dMB7E3v.html',
-    trelloedit: 'https://trello.com/invite/b/66cbe2fe748f3b64368ff451/ATTIad41d26f953647f4b43d142f7571391d93E88338/portfolio-board',
+    trelloboard: 'https://trello.com/b/G09nw8o5.html',
+    trelloedit: 'https://forms.gle/p2vH1ensakcsPgvv6',
     video:
       'https://youtu.be/WzlVRtlzjSM'
   },
   {
-    id: 5,
+    id: 3,
     url: 'NSSVEC',
     banner: '/projects/NSS/Banner.png',
     img: '/projects/NSS/Banner.png',
@@ -209,134 +209,12 @@ const projects = [
     year: 'May 2024',
     gif: '/projects/Portfolio/Cool.mp4',
     backgroundImage: '/projects/Background.png',
-    trelloboard: 'https://trello.com/b/0dMB7E3v.html',
-    trelloedit: 'https://trello.com/invite/b/66cbe2fe748f3b64368ff451/ATTIad41d26f953647f4b43d142f7571391d93E88338/portfolio-board',
+    trelloboard: 'https://trello.com/b/Nkhrtqx9.html',
+    trelloedit: 'https://forms.gle/p2vH1ensakcsPgvv6',
     video:'https://youtu.be/WzlVRtlzjSM'
   },
   {
-    id: 4,
-    url: 'NIWEDashboard',
-    banner: '/projects/NIWEDashboard/NIWE.png',
-    img: '/projects/NIWEDashboard/NIWE.png',
-    title: 'NIWE Dashboard',
-    type: 'Website',
-    icon: '/projects/NIWEDashboard/NIWE.png',
-    blog: 'https://saravanakumar2003.hashnode.dev/niwe-dashboard',
-    github: 'https://github.com/Saravanakumar2003/NIWEDashboard',
-    web: 'https://niwe.netlify.app/',
-    description:
-      'This is a powerful management system made for NIWE (National Institue of Wind Energy) during my internship. The system is designed to simplify and enhance project management, making it efficient.',
-    tags: [
-      {name: 'NIWE Projects'},
-    ],
-
-    tech: [
-      {
-        name: 'HTML',
-        icon: '/icons/HTML.png',
-        color: '#FFFFFF',
-        rgb: '255, 255, 255'
-      },
-      {
-        name: 'CSS',
-        icon: '/icons/CSS.png',
-        color: '#3178C6',
-        rgb: '49, 120, 198'
-      },
-      {
-        name: 'JavaScript',
-        icon: '/icons/JS.png',
-        color: '#38BDF8',
-        rgb: '56, 189, 248'
-      },
-      {
-        name: 'Firebase',
-        icon: '/icons/Firebase.png',
-        color: '#38BDF8',
-        rgb: '56, 189, 248'
-      },
-    ],
-
-    print: [
-      {
-        name: 'Home Page',
-        description:
-          'The "Home" screen is the landing page, offering a welcoming interface and providing an introduction to the NIWE Dashboard.',
-        img: '/projects/NIWEDashboard/Home.jpg'
-      },
-      {
-        name: 'Add Project',
-        description:
-          'The "Add Project" screen allows users to input and submit project details, making it easy to add new projects to the system.',
-        img: '/projects/NIWEDashboard/Add-Poject.jpg'
-      },
-      {
-        name: 'Project List/Table view',
-        description:
-          'The "Project Table" screen displays a table or grid of projects, offering a quick overview of ongoing projects, their statuses, and key details.',
-        img: '/projects/NIWEDashboard/Project-Table.jpg'
-      },
-      {
-        name: 'Add/View Employees',
-        description:
-          'The "Employees" screen showcases a list of team members, providing information about each employee and their respective roles.',
-        img: '/projects/NIWEDashboard/Employees.jpg'
-      },
-      {
-        name: 'Add/View Attendance',
-        description:
-          'The "Attendance" screen provides an overview of employee attendance, allowing for easy tracking and management of attendance records.',
-        img: '/projects/NIWEDashboard/Attendance.jpg'
-      },
-      {
-        name: 'Add/View Todo List',
-        description:
-          'The "Todo" screen features a task management interface, allowing users to create, track, and manage their to-do lists within the system.',
-        img: '/projects/NIWEDashboard/Todo.jpg'
-      },
-      {
-        name: 'Add/View Event List',
-        description:
-          'The "Events" screen showcases a calendar or list of events related to projects or team activities, helping users stay informed about upcoming events.',
-        img: '/projects/NIWEDashboard/Events.jpg'
-      },
-      {
-        name: 'Contact Us Page',
-        description:
-          'The "Contact Us" screen offers a form or interface for users to get in touch with the developer or relevant contacts associated with the project.',
-        img: '/projects/NIWEDashboard/Contact-Us.jpg'
-      }
-    ],
-    team: [
-      {
-        id: '2',
-        name: 'Dr. K. Boopathi',
-        role: 'Director/Divison Head WRA, NIWE (Mentor)',
-        img: '/projects/Teams/Boopathi Sir.png',
-        email: 'boopathi@niwe.res.in'
-      },
-      {
-        id: '1',
-        name: 'Saravanakumar',
-        role: 'WRA Intern, NIWE',
-        img: '/projects/Teams/Saravana.jpg',
-        github: 'https://github.com/Saravanakumar2003',
-        linkedin: 'https://www.linkedin.com/in/saravanakumar2003/',
-        twitter: 'https://twitter.com/Saravana2003',
-        instagram: 'https://www.instagram.com/saravana2003/'
-      },
-    ],
-    status: 'Completed',
-    year: 'January 2024',
-    gif: '/projects/Portfolio/Cool.mp4',
-    backgroundImage: '/projects/Background.png',    
-    trelloboard: 'https://trello.com/b/0dMB7E3v.html',
-    trelloedit: 'https://trello.com/invite/b/66cbe2fe748f3b64368ff451/ATTIad41d26f953647f4b43d142f7571391d93E88338/portfolio-board',
-    video:
-      'https://youtu.be/WzlVRtlzjSM'
-  },
-  {
-    id: 3,
+    id: 2,
     url: 'dat_2_csv',
     banner: '/projects/DATtoCSV/DATBG.png',
     img: '/projects/DATtoCSV/DATBG.png',
@@ -349,7 +227,7 @@ const projects = [
     description:
       'This project is a Python-based .dat to .csv file converter initially developed during my internship tenure at the National Institute of Wind Energy (NIWE). The objective was to address the challenge of converting .dat files to .csv format efficiently.',
     tags: [
-      {name: 'NIWE Projects'}
+      {name: 'Internship Projects'}
     ],
 
     tech: [
@@ -422,107 +300,10 @@ const projects = [
     year: 'December 2023',
     gif: '/projects/Portfolio/Cool.mp4',
     backgroundImage: '/projects/Background.png',
-    trelloboard: 'https://trello.com/b/0dMB7E3v.html',
-    trelloedit: 'https://trello.com/invite/b/66cbe2fe748f3b64368ff451/ATTIad41d26f953647f4b43d142f7571391d93E88338/portfolio-board',
+    trelloboard: 'https://trello.com/b/G09nw8o5.html',
+    trelloedit: 'https://forms.gle/p2vH1ensakcsPgvv6',
     video:
       'https://youtu.be/ggpB_Erkl4k'
-  },
-  {
-    id: 2,
-    url: 'EmpowerKids',
-    banner: '/projects/EmpowerKids/EKBG.png',
-    img: '/projects/EmpowerKids/EKBG.png',
-    title: 'EmpowerKids',
-    type: 'Website',
-    icon: '/projects/EmpowerKids/EKlogo.jpg',
-    github: 'https://github.com/Saravanakumar2003/EmpowerKids',
-    blog: 'https://saravanakumar2003.hashnode.dev/empowerkids-complaint-portal',
-    web: 'https://empowerkids.netlify.app/',
-    description:
-      'Empowerkids is a platform that allows children to file complaints regarding issues that affect them. ',
-    tags: [
-      {name: 'Hackathon Projects'},
-    ],
-
-    tech: [
-      {
-        name: 'HTML',
-        icon: '/icons/HTML.png',
-        color: '#FFFFFF',
-        rgb: '255, 255, 255'
-      },
-      {
-        name: 'Firebase',
-        icon: '/icons/Firebase.png',
-        color: '#38BDF8',
-        rgb: '56, 189, 248'
-      },
-      {
-        name: 'JavaScript',
-        icon: '/icons/JS.png',
-        color: '#38BDF8',
-        rgb: '56, 189, 248'
-      },
-      {
-        name: 'CSS',
-        icon: '/icons/CSS.png',
-        color: '#38BDF8',
-        rgb: '56, 189, 248'
-      },
-    ],
-    team: [
-      {
-        id: '1',
-        name: 'Saravanakumar',
-        role: 'Student',
-        img: '/projects/Teams/Saravana.jpg',
-        github: 'https://github.com/Saravanakumar2003',
-        linkedin: 'https://www.linkedin.com/in/saravanakumar2003/',
-        twitter: 'https://twitter.com/Saravana2003',
-        instagram: 'https://www.instagram.com/saravana2003/'
-      },
-    ],
-
-    print: [
-      {
-        name: 'Home Page',
-        description:
-          'It is the home page of our website with basic information. It features a Notification / Circulars section with the latest updates from Officers.',
-        img: '/projects/EmpowerKids/EK1.jpeg'
-      },
-      {
-        name: 'Student Dashboard',
-        description:
-          'Student can Raise a New Complaint by entering "Complaint Type" and "Complaint Description". Students can see the "My Complaints" section with all complaints lodged by him/her in the Data Table. Info icon opens dialog box for additional information like Issued To, Remarks etc.',
-        img: '/projects/EmpowerKids/EKStudent.jpeg'
-      },
-      {
-        name: 'Officer Dashboard',
-        description:
-          'Features the same UI for three different officers - EmpowerKids Team, Legal Expert, and Government Official. Officer can add/delete Notification / Circulars from the dashboard which is shown on the Home Page.',
-        img: '/projects/EmpowerKids/EKOfficial.jpeg'
-      },
-      {
-        name: 'Admin Dashboard',
-        description:
-          'Admin Data Table features all account details. Admin can change any account type to - Student, EmpowerKids Team, Legal Expert, Government Official, Admin.',
-        img: '/projects/EmpowerKids/EKAdmin.jpeg'
-      },
-      {
-        name: 'Contact Us Page',
-        description:
-          'Contact Us Page features about us, contact details, and a email ID for any queries.',
-        img: '/projects/EmpowerKids/EkComplaint.jpeg'
-      },
-    ],
-    status: 'Completed',
-    year: 'November 2023',
-    gif: '/projects/Portfolio/Cool.mp4',
-    backgroundImage: '/projects/Background.png',    
-    trelloboard: 'https://trello.com/b/0dMB7E3v.html',
-    trelloedit: 'https://trello.com/invite/b/66cbe2fe748f3b64368ff451/ATTIad41d26f953647f4b43d142f7571391d93E88338/portfolio-board',
-    video:
-      'https://youtu.be/oh0n2WFNn5U'
   },
   {
     id: 1,
@@ -623,7 +404,7 @@ const projects = [
     gif: '/projects/Portfolio/Cool.mp4',
     backgroundImage: '/projects/Background.png',
     trelloboard: 'https://trello.com/b/0dMB7E3v.html',
-    trelloedit: 'https://trello.com/invite/b/66cbe2fe748f3b64368ff451/ATTIad41d26f953647f4b43d142f7571391d93E88338/portfolio-board',
+    trelloedit: 'https://forms.gle/p2vH1ensakcsPgvv6',
     video:
       'https://youtu.be/WzlVRtlzjSM'
   },

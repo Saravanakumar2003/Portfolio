@@ -166,7 +166,7 @@ export default function Projeto({ project }: ProjectProps) {
             </span>
           </Title>
           <div className="description">
-            <p style={{ textAlign: "justify" }}> The Trello Board is integrated into this project section to provide a transparent view of the project's status and progress. If you have any suggestions or features you'd like to see added, please feel free to edit the Trello board using the button below.
+            <p style={{ textAlign: "justify" }}> The Trello Board is integrated into this project section to provide a transparent view of the project's status and progress. If you have any suggestions or features you'd like to see added, please feel free to suggest for Trello board using the button below.
               <br /> <br /> <strong>Note:</strong> The Trello board is updated occasionally and may not reflect the current status of the project.
             </p>
           </div>
@@ -189,7 +189,7 @@ export default function Projeto({ project }: ProjectProps) {
             rel="noopener noreferrer"
             className="edit-link"
           >
-            Edit Trello Board
+            Suggest for Trello Board
           </a>
         </div>
       </S.Trelloboard>

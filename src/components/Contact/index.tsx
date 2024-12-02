@@ -69,6 +69,18 @@ export function Contact() {
           frameBorder="0"
           title="Calendly"
         ></iframe>
+        <Title style={{ textAlign: "center" }}>
+          {currentLang === 'ta' ? 'எனது நாட்காட்டியைக் காண்க' : 'See my Calendar'}
+        </Title>
+        <iframe
+          src="https://calendar.google.com/calendar/embed?src=4dbce29b5ac124ca344d5705185f15c62ea7c6aacb5d1047bf4a30dfafddd13c%40group.calendar.google.com&ctz=Asia%2FKolkata"
+          style={{ border: 0 }}
+          width="800"
+          height="600"
+          frameBorder="0"
+          scrolling="no"
+          title="Google Calendar"
+        ></iframe>
       </ContainerContact>
     </Section>
   );

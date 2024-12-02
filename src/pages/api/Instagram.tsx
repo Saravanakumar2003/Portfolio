@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react';
 
-const behold = process.env.NEXT_PUBLIC_BEHOLD_URL;
+const instragram = process.env.NEXT_PUBLIC_INSTAGRAM_URL;
 export function Instagram() {
  
   useEffect(() => {
     const script = document.createElement('script');
-    script.src = "https://w.behold.so/widget.js";
+    script.src = "https://widgets.sociablekit.com/instagram-feed/widget.js";
     script.type = "module";
     document.body.appendChild(script);
-    <script src="https://w.behold.so/widget.js" type="module"></script>
+    <script src="https://widgets.sociablekit.com/instagram-feed/widget.js" type="module"></script>
 
     // This function will run when the component unmounts
     return () => {
@@ -17,6 +17,6 @@ export function Instagram() {
   }, []); // Empty array means this effect runs once on mount and clean up on unmount
 
   return (
-    <figure data-behold-id={behold}></figure>
+    <figure  className='sk-instagram-feed' data-embed-id={instragram} ></figure>
   );
 }

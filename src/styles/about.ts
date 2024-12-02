@@ -1,5 +1,22 @@
 import styled from 'styled-components'
 
+export const InBox = styled.div`
+  background-color: ${props => props.theme.backgroundAlt};
+  border: 2px solid ${props => props.theme.border};
+  padding: 1rem;
+  margin: 1rem 0;
+
+  @media (min-width: 768px) {
+    padding: 1.5rem;
+    margin: 2rem 10%;
+  }
+
+  @media (min-width: 994px) {
+    padding: 2rem;
+    margin: 2rem 10%;
+  }
+`;
+
 export const AboutContainer = styled.section`
   padding-top: 2rem;
   display: flex;

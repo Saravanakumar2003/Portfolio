@@ -95,7 +95,7 @@ export function HomeHero() {
                 },
               }}
             >
-              <h2 style={{
+              {/* <h2 style={{
                 color: 'black',
                 textAlign: 'center',
                 fontSize: '1.5rem',
@@ -122,7 +122,14 @@ export function HomeHero() {
                 textAlign: 'center',
                 fontSize: '1rem',
                 fontWeight: 'bold',
-              }}>{currentLang === 'ta' ? 'நீங்கள் தொடர விரும்புகிறீர்களா?' : 'Do you want to continue?'}</p>
+              }}>{currentLang === 'ta' ? 'நீங்கள் தொடர விரும்புகிறீர்களா?' : 'Do you want to continue?'}</p> */}
+                            <p style={{
+                marginTop: '1rem',
+                color: 'black',
+                textAlign: 'center',
+                fontSize: '1rem',
+                fontWeight: 'bold',
+              }}>{currentLang === 'ta' ? 'தற்போது பராமரிப்பில் உள்ளது. விரைவில் கிடைக்கும்!!' : 'Currently in maintenance. It will be available soon!!'}</p>
               <div style={{
                 display: 'flex',
                 justifyContent: 'center',
@@ -138,7 +145,7 @@ export function HomeHero() {
                 padding: '0.5rem 1rem',
                 borderRadius: '5px',
               }} onClick={closeModal}>{currentLang === 'ta' ? 'மூடு' : 'Close'}</Button>
-              <Button style={{
+              {/* <Button style={{
                 display: 'inline-block',
                 alignSelf: 'center',
                 marginTop: '1rem',
@@ -148,7 +155,7 @@ export function HomeHero() {
                 border: 'none',
                 padding: '0.5rem 1rem',
                 borderRadius: '5px',
-              }} onClick={handleContinue}>{currentLang === 'ta' ? 'தொடரவும்' : 'Continue'}</Button>
+              }} onClick={handleContinue}>{currentLang === 'ta' ? 'தொடரவும்' : 'Continue'}</Button> */}
               </div>
             </Modal>
           </div>

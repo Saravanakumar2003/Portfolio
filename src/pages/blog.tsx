@@ -123,7 +123,7 @@ export default function Blog() {
           </span>
         </T.Title>
         <T.Description>
-          {currentLang === 'ta' ? 'எனது வலைப்பதிவுகள் ஹாஷ்நோட் இணையதளத்தால் இயக்கப்படுகின்றன. "வலைப்பதிவைப் பார்க்க" கிளிக் செய்தால், நீங்கள் ஹாஷ்நோட் வலைப்பதிவு தளத்திற்கு மாற்றப்படுவீர்கள். விருப்பம் அல்லது கருத்து தெரிவிக்க ஹாஷ்நோடில் உள்நுழைய வேண்டும்!' : 'My blogs are powered by Hashnode website. If you click on "View Blog", you\'ll be redirected to Hashnode Blog Site. In order to like or comment you need to login on Hashnode!'}
+          {currentLang === 'ta' ? 'எனது வலைப்பதிவுகள் ஹாஷ்நோட் இணையதளத்தால் இயக்கப்படுகின்றன. நான் தொழில்நுட்பம், நிரலாக்கம் மற்றும் வாழ்க்கை உட்பட பல்வேறு தலைப்புகளைப் பற்றி எழுதுகிறேன். தயங்காமல் அவற்றைப் பாருங்கள்!' : 'My blogs are powered by Hashnode website. I write about various topics including tech, programming, and life. Feel free to check them out!'}
         </T.Description>
 
         <S.BlogContainer>

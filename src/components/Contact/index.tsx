@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import { Form } from './Form'
 import { Description, Section, Title } from '../../styles/styles'
-import { ContainerContact, ContactContent } from './styles'
+import { ContainerContact, ContactContent, ResponsiveIframeContainer } from './styles'
 import { BsWhatsapp } from 'react-icons/bs'
 import { Envelope, TelegramLogo } from 'phosphor-react'
 import { useTranslation } from 'react-i18next'
@@ -62,16 +62,19 @@ export function Contact() {
         <Description style={{ textAlign: "center", marginTop: "3px" }}>
           {currentLang === 'ta' ? 'இது Calendy மூலம் இயக்கப்படுகிறது. எனவே, ஏற்றுவதற்கு சில நேரம் ஆகலாம். (குறிப்பு: சந்திப்பை திட்டமிட நீங்கள் Calendy குக்கீகளை ஏற்க வேண்டும்)' : 'This is powered by Calendy. Hence, it may take some time for loading. (Note: You have to accept the cookies by Calendy in order to Schedule a meet)'}
         </Description>
-        <iframe
-          src={calendy}
-          width="100%"
-          height="800px"
-          frameBorder="0"
-          title="Calendly"
-        ></iframe>
+        <ResponsiveIframeContainer>
+          <iframe
+            src={calendy}
+            width="100%"
+            height="800px"
+            frameBorder="0"
+            title="Calendly"
+          ></iframe>
+        </ResponsiveIframeContainer>
         <Title style={{ textAlign: "center" }}>
           {currentLang === 'ta' ? 'எனது நாட்காட்டியைக் காண்க' : 'See my Calendar'}
         </Title>
+        <ResponsiveIframeContainer>
         <iframe
           src="https://calendar.google.com/calendar/embed?src=4dbce29b5ac124ca344d5705185f15c62ea7c6aacb5d1047bf4a30dfafddd13c%40group.calendar.google.com&ctz=Asia%2FKolkata"
           style={{ border: 0 }}
@@ -81,6 +84,7 @@ export function Contact() {
           scrolling="no"
           title="Google Calendar"
         ></iframe>
+        </ResponsiveIframeContainer>
       </ContainerContact>
     </Section>
   );

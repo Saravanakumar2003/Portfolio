@@ -1,0 +1,13 @@
+.cookieConsent {
+    background: #2b373b !important;
+    color: white !important;
+  }
+  
+  .cookieConsent button {
+    background: #ffd700 !important;
+    color: #4e503b !important;
+    border-radius: 5px !important;
+    padding: 5px 10px !important;
+    font-size: 14px !important;
+  }
+  

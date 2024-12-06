@@ -37,29 +37,29 @@ export function Skills() {
         </div>
       </Vector>
       <Title>
-      Skills
+        {currentLang === 'ta' ? 'திறன்கள்' : 'Skills'}
         <span>
-          <BsCodeSquare />Top
+          <BsCodeSquare /> {currentLang === 'ta' ? 'சிறந்தவை' : 'Top'}
         </span>
       </Title>
       <SkillsContainer>
-      {cardSkills.map(skill => {
-        return (
-          <SkillsContent color={skill.color} key={skill.id}>
-            {/* eslint-disable-next-line jsx-a11y/alt-text */}
-            <Image
-              width={60}
-              height={60} 
-              src={skill.img} 
-              alt={skill.title[currentLang]}
-              loading='lazy'
+        {cardSkills.map(skill => {
+          return (
+            <SkillsContent color={skill.color} key={skill.id}>
+              {/* eslint-disable-next-line jsx-a11y/alt-text */}
+              <Image
+                width={60}
+                height={60} 
+                src={skill.img} 
+                alt={skill.title[currentLang]}
+                loading='lazy'
               />
               <h4>{skill.title[currentLang]}</h4>
-            <span className='border'></span>
-          </SkillsContent>
-        )
-      })}
-    </SkillsContainer>
+              <span className='border'></span>
+            </SkillsContent>
+          )
+        })}
+      </SkillsContainer>
     </Container>
   )
 }

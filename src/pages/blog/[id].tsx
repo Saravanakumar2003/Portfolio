@@ -13,6 +13,8 @@ import { ArrowLeft } from 'phosphor-react';
 import { useTranslation } from 'react-i18next';
 import { useEffect, useState } from 'react';
 import Giscus from '@giscus/react';
+import { useRef } from 'react';
+import TextToSpeechPlayer from '../../components/TTS/TextToSpeechPlayer';
 
 interface BlogProps {
   htmlContent: string;
@@ -25,6 +27,8 @@ export default function BlogDetail({ htmlContent, title, discussions }: BlogProp
   const { id } = router.query;
   const { t, i18n } = useTranslation('common');
   const [currentLang, setCurrentLang] = useState<'en' | 'ta'>('en');
+
+  const contentRef = useRef<HTMLDivElement>(null);
 
   const kitkey = process.env.NEXT_PUBLIC_KITKEY_URL;
 
@@ -48,7 +52,11 @@ export default function BlogDetail({ htmlContent, title, discussions }: BlogProp
       </Head>
       <ScrollTop />
       <br /> <br /> <br />
-      <MarkdownContainer dangerouslySetInnerHTML={{ __html: htmlContent }} />
+      <TextToSpeechPlayer contentRef={contentRef} />
+      <MarkdownContainer
+        ref={contentRef} // Attach the ref here
+        dangerouslySetInnerHTML={{ __html: htmlContent }}
+      />
       <GiscusContainer>
         <Giscus
           repo="Saravanakumar2003/Portfolio"

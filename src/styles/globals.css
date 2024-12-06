@@ -10,4 +10,29 @@
     padding: 5px 10px !important;
     font-size: 14px !important;
   }
+
+  .ttsPlayer {
+    display: flex;
+    gap: 10px;
+    background-color: #f3f4f6;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .ttsButton {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4f46e5;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .ttsButton:hover {
+    background-color: #4338ca;
+  }
+  
   

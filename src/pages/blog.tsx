@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
+import Script from 'next/script'
 import blog from '../data/blogs';
 import { Footer } from '../components/Footer';
 import { ScrollTop } from '../components/ScrollTop';

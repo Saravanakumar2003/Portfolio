@@ -26,10 +26,20 @@ export default function BlogDetail({ htmlContent, title, discussions }: BlogProp
   const { t, i18n } = useTranslation('common');
   const [currentLang, setCurrentLang] = useState<'en' | 'ta'>('en');
 
+  const kitkey = process.env.NEXT_PUBLIC_KITKEY_URL;
+
   useEffect(() => {
     const { locale } = router;
     setCurrentLang(locale as 'en' | 'ta');
   }, [router.locale]);
+
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.async = true;
+    script.setAttribute('data-uid', '43bd20ce30');
+    script.src =  kitkey || '' ;
+    document.body.appendChild(script);
+  }, []);
 
   return (
     <>

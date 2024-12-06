@@ -10,7 +10,7 @@ export const ResponsiveIframeContainer = styled.div`
   position: relative;
   width: 100%;
   padding-bottom: 56.25%; /* 16:9 aspect ratio */
-  height: 0;
+  height: 500px;
   overflow: hidden;
 
   iframe {
@@ -83,7 +83,7 @@ export const FormContent = styled.form`
     width: 100%;
     border: solid 2px ${props => props.theme.backgroundSecond};
     border-radius: 10px;
-    background: ${props => props.theme.backgroundSecond};
+    background: ${props => props.theme.background};
     padding: 1rem;
     font-size: 1rem;
     transition: border 150ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -102,7 +102,7 @@ export const FormContent = styled.form`
   textarea:valid {
     outline: none;
     border: 2px solid ${props => props.theme.secondColor};
-    background: ${props => props.theme.background};
+    background: ${props => props.theme.white};
   }
 
   .input:focus ~ label,

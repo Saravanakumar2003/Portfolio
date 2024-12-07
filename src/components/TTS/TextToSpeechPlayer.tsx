@@ -1,176 +1,185 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 interface TTSProps {
   contentRef: React.RefObject<HTMLDivElement>;
+  audioSrc: string;
 }
 
-const TextToSpeechPlayer: React.FC<TTSProps> = ({ contentRef }) => {
+const TextToSpeechPlayer: React.FC<TTSProps> = ({ contentRef, audioSrc }) => {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [speechSynth, setSpeechSynth] = useState<SpeechSynthesisUtterance | null>(null);
-  const [highlightedWordIndex, setHighlightedWordIndex] = useState<number | null>(null);
-  const [progress, setProgress] = useState(0); // Track progress for the slider
-  const [voice, setVoice] = useState<SpeechSynthesisVoice | null>(null); // Store the selected voice
-  const [utterance, setUtterance] = useState<SpeechSynthesisUtterance | null>(null);
-  const [isPaused, setIsPaused] = useState(false); // Track if speech is paused
-  const sliderRef = useRef<HTMLInputElement | null>(null);
+  const [progress, setProgress] = useState(0);
+  const [currentTime, setCurrentTime] = useState("00:00");
+  const [totalTime, setTotalTime] = useState("00:00");
+  const [playbackRate, setPlaybackRate] = useState(1);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  const togglePlay = () => {
+    if (audioRef.current) {
+      if (audioRef.current.paused) {
+        audioRef.current.play();
+        setIsPlaying(true);
+      } else {
+        audioRef.current.pause();
+        setIsPlaying(false);
+      }
+    }
+  };
+
+  const handleTimeUpdate = () => {
+    if (audioRef.current) {
+      const progressPercent = (audioRef.current.currentTime / audioRef.current.duration) * 100;
+      setProgress(progressPercent);
+
+      const currentMinute = Math.floor(audioRef.current.currentTime / 60);
+      const currentSeconds = Math.floor(audioRef.current.currentTime % 60);
+      setCurrentTime(
+        `${currentMinute < 10 ? `0${currentMinute}` : currentMinute}:${
+          currentSeconds < 10 ? `0${currentSeconds}` : currentSeconds
+        }`
+      );
+
+      const totalMinute = Math.floor(audioRef.current.duration / 60);
+      const totalSeconds = Math.floor(audioRef.current.duration % 60);
+      setTotalTime(
+        `${totalMinute < 10 ? `0${totalMinute}` : totalMinute}:${
+          totalSeconds < 10 ? `0${totalSeconds}` : totalSeconds
+        }`
+      );
+    }
+  };
+
+  const handleSeek = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    if (audioRef.current) {
+      const percent = e.nativeEvent.offsetX / e.currentTarget.offsetWidth;
+      audioRef.current.currentTime = percent * audioRef.current.duration;
+    }
+  };
+
+  const handleSpeedChange = () => {
+    const speeds = [1, 1.2, 1.5, 1.7, 2];
+    const currentSpeedIndex = speeds.indexOf(playbackRate);
+    const nextSpeedIndex = (currentSpeedIndex + 1) % speeds.length;
+    const nextSpeed = speeds[nextSpeedIndex];
+    setPlaybackRate(nextSpeed);
+    if (audioRef.current) {
+      audioRef.current.playbackRate = nextSpeed;
+    }
+  };
 
   useEffect(() => {
-    if (!("speechSynthesis" in window)) {
-      alert("Text-to-Speech is not supported in your browser.");
+    if (audioRef.current) {
+      audioRef.current.addEventListener("timeupdate", handleTimeUpdate);
+      audioRef.current.addEventListener("loadedmetadata", handleTimeUpdate);
+      audioRef.current.addEventListener("ended", () => {
+        setIsPlaying(false);
+        setProgress(0);
+        setCurrentTime("00:00");
+      });
     }
-
-    // Get available voices
-    const voices = window.speechSynthesis.getVoices();
-    const femaleVoice = voices.find((voice) => voice.name.toLowerCase().includes("female"));
-    setVoice(femaleVoice || voices[4]); // Default to first voice if no female voice found
   }, []);
 
-  const extractVisibleText = () => {
-    if (!contentRef.current) return "";
-    return contentRef.current.innerText || "";
-  };
-
-  const playSpeech = () => {
-    const text = extractVisibleText();
-    if (!text) {
-      alert("No text available to read!");
-      return;
-    }
-
-    const utterance = new SpeechSynthesisUtterance(text);
-    if (voice) utterance.voice = voice;
-
-    setProgress(0);
-    setIsPaused(false);
-
-    utterance.onboundary = (event) => {
-      if (event.name === "word") {
-        const wordIndex = event.charIndex / (text.length / text.split(" ").length);
-        setHighlightedWordIndex(Math.floor(wordIndex));
-      }
-    };
-
-    utterance.onend = () => {
-      setIsPlaying(false);
-      setHighlightedWordIndex(null);
-      setProgress(100); // Reset progress when the speech ends
-    };
-
-    utterance.onstart = () => {
-      setIsPlaying(true);
-    };
-
-    utterance.onmark = (event) => {
-      if (sliderRef.current) {
-        const progressPercent = (event.elapsedTime / utterance.text.length) * 100;
-        setProgress(progressPercent);
-      }
-    };
-
-    window.speechSynthesis.cancel(); // Stop any ongoing speech
-    window.speechSynthesis.speak(utterance);
-    setUtterance(utterance);
-  };
-
-  const pauseSpeech = () => {
-    if (isPlaying && utterance) {
-      setIsPlaying(false);
-      window.speechSynthesis.pause();
-      setIsPaused(true);
-    }
-  };
-
-  const resumeSpeech = () => {
-    if (isPaused && utterance) {
-      setIsPlaying(true);
-      window.speechSynthesis.resume();
-      setIsPaused(false);
-    }
-  };
-
-  const stopSpeech = () => {
-    if (utterance) {
-      setIsPlaying(false);
-      window.speechSynthesis.cancel();
-      setHighlightedWordIndex(null);
-      setProgress(0);
-    }
-  };
-
-  // Handle slider change
-  const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = Number(e.target.value);
-    if (utterance) {
-      setProgress(value);
-
-      // Create a new utterance to reset from the beginning
-      const newUtterance = new SpeechSynthesisUtterance(extractVisibleText());
-      newUtterance.voice = voice || null;
-      window.speechSynthesis.cancel(); // Cancel any ongoing speech
-      window.speechSynthesis.speak(newUtterance); // Restart the speech
-
-      // Set the progress slider to the correct position
-      setProgress(value);
-    }
-  };
-
   return (
-    <div style={playerStyles.container}>
-      <button
-        onClick={isPlaying ? pauseSpeech : playSpeech} // Toggle between play and pause
-        style={playerStyles.button}
-      >
-        {isPlaying ? "⏸ Pause" : "▶ Play"}
-      </button>
-      <button onClick={stopSpeech} style={playerStyles.button}>
-        ⏹ Stop
-      </button>
-
-      {/* Progress slider */}
-      <input
-        type="range"
-        min="0"
-        max="100"
-        value={progress}
-        onChange={handleSliderChange}
-        style={playerStyles.slider}
-        ref={sliderRef}
-      />
-      
-      <div ref={contentRef} style={playerStyles.textContainer}>
-        {/* Render the visible text */}
+    <div className="audio-player" style={playerStyles.audioPlayer}>
+      <audio ref={audioRef} src={audioSrc} id="audio" />
+      <div className="player-controls" style={playerStyles.playerControls}>
+        <button
+          id="playAudio"
+          onClick={togglePlay}
+          className={isPlaying ? "pause" : ""}
+          style={{
+            ...playerStyles.playButton,
+            background: isPlaying
+              ? "▶️"
+              : "⏸️",
+          }}
+        ></button>
+        <div id="seekObjContainer" onClick={handleSeek} style={playerStyles.seekObjContainer}>
+          <div id="seekObj" style={playerStyles.seekObj}>
+            <div id="percentage" style={{ ...playerStyles.percentage, width: `${progress}%` }}></div>
+          </div>
+        </div>
+        <button onClick={handleSpeedChange} style={playerStyles.speedButton}>
+          {playbackRate}x
+        </button>
+      </div>
+      <div style={playerStyles.timeContainer}>
+        <p><small id="currentTime">{currentTime}</small></p>
+        <p><small id="totalTime">{totalTime}</small></p>
       </div>
     </div>
   );
 };
 
-const playerStyles = {
-  container: {
+const playerStyles: { [key: string]: React.CSSProperties } = {
+  audioPlayer: {
+    width: "100%",
+    maxWidth: "600px",
+    margin: "auto",
+    padding: "20px",
+    backgroundColor: "#f9f9f9",
+    borderRadius: "10px",
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+  },
+  playerControls: {
     display: "flex",
     alignItems: "center",
-    gap: "10px",
-    padding: "10px",
-    background: "#f3f4f6",
-    borderRadius: "10px",
-    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+    justifyContent: "space-between",
+    marginBottom: "10px",
   },
-  button: {
-    padding: "10px 15px",
+  playButton: {
+    width: "30px",
+    height: "30px",
     border: "none",
+    cursor: "pointer",
+    backgroundSize: "cover",
+  },
+  seekObjContainer: {
+    flex: "1",
+    margin: "0 10px",
+    height: "5px",
+    backgroundColor: "#e3e3e3",
     borderRadius: "5px",
-    backgroundColor: "#4f46e5",
+    position: "relative",
+  },
+  seekObj: {
+    width: "100%",
+    height: "100%",
+    position: "relative",
+  },
+  percentage: {
+    height: "100%",
+    backgroundColor: "#0070f3",
+    borderRadius: "5px",
+    position: "absolute",
+    top: "0",
+    left: "0",
+  },
+  speedButton: {
+    padding: "5px 10px",
+    borderRadius: "5px",
+    border: "none",
+    backgroundColor: "#0070f3",
     color: "#fff",
     cursor: "pointer",
-    fontSize: "14px",
   },
-  slider: {
-    width: "200px",
-    marginLeft: "10px",
-    marginRight: "10px",
+  timeContainer: {
+    display: "flex",
+    justifyContent: "space-between",
+    width: "100%",
+    padding: "0 10px",
+  },
+  ttsSpeaker: {
+    textAlign: "center",
+    marginTop: "10px",
+    fontSize: "14px",
+    color: "#333",
   },
   textContainer: {
     maxWidth: "600px",
     padding: "10px",
+    marginTop: "10px",
+    borderRadius: "5px",
+    boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
   },
 };
 

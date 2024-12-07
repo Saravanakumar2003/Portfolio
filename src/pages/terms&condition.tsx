@@ -13,7 +13,7 @@ export default function TermsAndConditions() {
         <br /><br />
         <h1>Terms and Conditions</h1>
 
-        <h2>Last Updated: November 29, 2024</h2>
+        <h2>Last Updated: December 7th, 2024</h2>
 
         <p>Welcome to Saravanakumar.engineer. By accessing or using this website, you agree to comply with and be bound by the following terms and conditions. If you do not agree with these terms, please do not use this site.</p>
 
@@ -51,9 +51,16 @@ export default function TermsAndConditions() {
           <li><strong>Testimonial.to:</strong> Manages testimonial submissions and collects data.</li>
           <li><strong>Giscus:</strong> Enables commenting on blog posts.</li>
           <li><strong>Kit.com:</strong> Used for newsletter subscription.</li>
-          <li><strong>Google Calendar:</strong> Manages event scheduling and calendar integration.</li>
+          <li><strong>Google Calendar:</strong> My personal portfolio calendar integration.</li>
           <li><strong>SociableKIT:</strong> Embeds social media feeds and widgets.</li>
           <li><strong>Email.js:</strong> Facilitates email communication and form submissions.</li>
+          <li><strong>Calendly:</strong> Schedules and manages appointments and meetings.</li>
+          <li><strong>WakaTime Embeds:</strong> Tracks coding activity and embeds coding stats.</li>
+          <li><strong>Canva Embeds:</strong> Embeds resume created with Canva.</li>
+          <li><strong>Hashnode:</strong> Manages and displays blog posts.</li>
+          <li><strong>Trello (Project board):</strong> Manages project tasks and collaboration.</li>
+          <li><strong>Google Forms:</strong> Collects project suggestions and feedback.</li>
+          <li><strong>YouTube Video:</strong> Hosts and displays project explanation videos.</li>
         </ul>
         <p>These services operate under their respective terms and policies. We are not responsible for their data collection or handling practices.</p>
 
@@ -74,7 +81,7 @@ export default function TermsAndConditions() {
 
         <h3>11. Contact Information</h3>
         <p>For questions about these Terms and Conditions or the original project attribution, contact:</p>
-        
+
         <p><strong>Saravanakumar R</strong><br />
           Email: hello@saravanakumar.engineer<br />
           Website: <a href="https://Saravanakumar.engineer">Saravanakumar.engineer</a>

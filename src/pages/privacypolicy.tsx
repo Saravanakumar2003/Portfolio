@@ -35,16 +35,23 @@ export default function PrivacyPolicy() {
         <h3>3. Third-Party Services</h3>
         <p>We use third-party services to enhance your experience, including:</p>
         <ul>
-        <li><strong>Google Analytics:</strong> Tracks website traffic and usage patterns.</li>
-        <li><strong>Vercel Analytics:</strong> Monitors website performance.</li>
-        <li><strong>Botpress:</strong> Powers the AI chatbot for interactive communication.</li>
-        <li><strong>Visme Forms:</strong> Manages feedback submissions and collects data.</li>
-        <li><strong>Testimonial.to:</strong> Manages testimonial submissions and collects data.</li>
-        <li><strong>Giscus:</strong> Enables commenting on blog posts.</li>
-        <li><strong>Kit.com:</strong> Used for newsletter subscription.</li>
-        <li><strong>Google Calendar:</strong> Manages event scheduling and calendar integration.</li>
-        <li><strong>SociableKIT:</strong> Embeds social media feeds and widgets.</li>
-        <li><strong>Email.js:</strong> Facilitates email communication and form submissions.</li>   
+          <li><strong>Google Analytics:</strong> Tracks website traffic and usage patterns.</li>
+          <li><strong>Vercel Analytics:</strong> Monitors website performance.</li>
+          <li><strong>Botpress:</strong> Powers the AI chatbot for interactive communication.</li>
+          <li><strong>Visme Forms:</strong> Manages feedback submissions and collects data.</li>
+          <li><strong>Testimonial.to:</strong> Manages testimonial submissions and collects data.</li>
+          <li><strong>Giscus:</strong> Enables commenting on blog posts.</li>
+          <li><strong>Kit.com:</strong> Used for newsletter subscription.</li>
+          <li><strong>Google Calendar:</strong> My personal portfolio calendar integration.</li>
+          <li><strong>SociableKIT:</strong> Embeds social media feeds and widgets.</li>
+          <li><strong>Email.js:</strong> Facilitates email communication and form submissions.</li>
+          <li><strong>Calendly:</strong> Schedules and manages appointments and meetings.</li>
+          <li><strong>WakaTime Embeds:</strong> Tracks coding activity and embeds coding stats.</li>
+          <li><strong>Canva Embeds:</strong> Embeds resume created with Canva.</li>
+          <li><strong>Hashnode:</strong> Manages and displays blog posts.</li>
+          <li><strong>Trello (Project board):</strong> Manages project tasks and collaboration.</li>
+          <li><strong>Google Forms:</strong> Collects project suggestions and feedback.</li>
+          <li><strong>YouTube Video:</strong> Hosts and displays project explanation videos.</li>
         </ul>
         <p>These third-party services may collect, use, and store your data according to their respective privacy policies.</p>
 

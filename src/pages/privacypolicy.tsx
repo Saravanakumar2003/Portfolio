@@ -13,7 +13,7 @@ export default function PrivacyPolicy() {
         <br/><br/>
         <h1>Privacy Policy</h1>
 
-        <h2>Last Updated: November 29, 2024</h2>
+        <h2>Last Updated: December 7th, 2024</h2>
 
         <p>Your privacy is important to us. This Privacy Policy explains how Saravanakumar.engineer collects, uses, and protects your information when you interact with our website.</p>
 
@@ -35,11 +35,16 @@ export default function PrivacyPolicy() {
         <h3>3. Third-Party Services</h3>
         <p>We use third-party services to enhance your experience, including:</p>
         <ul>
-          <li><strong>Google Analytics:</strong> Tracks website traffic and usage patterns.</li>
-          <li><strong>Vercel Analytics:</strong> Monitors website performance.</li>
-          <li><strong>Botpress:</strong> Powers the AI chatbot for interactive communication.</li>
-          <li><strong>Visme Forms:</strong> Manages feedback submissions and collects data.</li>
-          <li><strong>Testimonial.to</strong> Manages testimonial submissions and collects data.</li>
+        <li><strong>Google Analytics:</strong> Tracks website traffic and usage patterns.</li>
+        <li><strong>Vercel Analytics:</strong> Monitors website performance.</li>
+        <li><strong>Botpress:</strong> Powers the AI chatbot for interactive communication.</li>
+        <li><strong>Visme Forms:</strong> Manages feedback submissions and collects data.</li>
+        <li><strong>Testimonial.to:</strong> Manages testimonial submissions and collects data.</li>
+        <li><strong>Giscus:</strong> Enables commenting on blog posts.</li>
+        <li><strong>Kit.com:</strong> Used for newsletter subscription.</li>
+        <li><strong>Google Calendar:</strong> Manages event scheduling and calendar integration.</li>
+        <li><strong>SociableKIT:</strong> Embeds social media feeds and widgets.</li>
+        <li><strong>Email.js:</strong> Facilitates email communication and form submissions.</li>   
         </ul>
         <p>These third-party services may collect, use, and store your data according to their respective privacy policies.</p>
 

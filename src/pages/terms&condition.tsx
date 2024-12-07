@@ -44,11 +44,16 @@ export default function TermsAndConditions() {
         <h3>6. Third-Party Services</h3>
         <p>This site integrates with third-party tools, including:</p>
         <ul>
-          <li><strong>Google Analytics</strong>: For tracking site usage.</li>
-          <li><strong>Vercel Analytics</strong>: For performance monitoring.</li>
-          <li><strong>Botpress</strong>: For AI-based chat interactions.</li>
-          <li><strong>Visme Forms</strong>: For feedback collection.</li>
-          <li><strong>Testimonial.to</strong> For testimonial submissions.</li>
+          <li><strong>Google Analytics:</strong> Tracks website traffic and usage patterns.</li>
+          <li><strong>Vercel Analytics:</strong> Monitors website performance.</li>
+          <li><strong>Botpress:</strong> Powers the AI chatbot for interactive communication.</li>
+          <li><strong>Visme Forms:</strong> Manages feedback submissions and collects data.</li>
+          <li><strong>Testimonial.to:</strong> Manages testimonial submissions and collects data.</li>
+          <li><strong>Giscus:</strong> Enables commenting on blog posts.</li>
+          <li><strong>Kit.com:</strong> Used for newsletter subscription.</li>
+          <li><strong>Google Calendar:</strong> Manages event scheduling and calendar integration.</li>
+          <li><strong>SociableKIT:</strong> Embeds social media feeds and widgets.</li>
+          <li><strong>Email.js:</strong> Facilitates email communication and form submissions.</li>
         </ul>
         <p>These services operate under their respective terms and policies. We are not responsible for their data collection or handling practices.</p>
 
@@ -69,6 +74,7 @@ export default function TermsAndConditions() {
 
         <h3>11. Contact Information</h3>
         <p>For questions about these Terms and Conditions or the original project attribution, contact:</p>
+        
         <p><strong>Saravanakumar R</strong><br />
           Email: hello@saravanakumar.engineer<br />
           Website: <a href="https://Saravanakumar.engineer">Saravanakumar.engineer</a>

@@ -12,6 +12,7 @@ export const ResponsiveIframeContainer = styled.div`
   padding-bottom: 56.25%; /* 16:9 aspect ratio */
   height: 500px;
   overflow: hidden;
+  background-color: ${({ theme }) => theme.backgroundSecond};
 
   iframe {
     position: absolute;

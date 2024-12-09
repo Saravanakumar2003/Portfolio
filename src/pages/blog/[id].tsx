@@ -3,6 +3,7 @@ import axios from 'axios';
 import createDOMPurify from 'dompurify';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
+import Script from 'next/script';
 import { Footer } from '../../components/Footer';
 import { ScrollTop } from '../../components/ScrollTop';
 import { MainContainer, MarkdownContainer, CenteredContainer, TextContainer, Tag, TOCContainer, TOCList, TOCItem, InfoContainer, InfoItem } from '../../styles/markdown';
@@ -15,7 +16,6 @@ import Giscus from '@giscus/react';
 import TextToSpeechPlayer from '../../components/TTS/TextToSpeechPlayer';
 import blogData from '../../data/blogs';
 import { JSDOM } from 'jsdom';
-
 
 interface BlogProps {
   htmlContent: string;
@@ -43,14 +43,6 @@ export default function BlogDetail({ htmlContent, title, date, readTime, tags, d
   }, [router.locale]);
 
   useEffect(() => {
-    const script = document.createElement('script');
-    script.async = true;
-    script.setAttribute('data-uid', '43bd20ce30');
-    script.src = kitkey || '';
-    document.body.appendChild(script);
-  }, []);
-
-  useEffect(() => {
     const generateTOC = (htmlContent: string) => {
       const toc: { id: string; text: string; level: number }[] = [];
       const parser = new DOMParser();
@@ -73,61 +65,64 @@ export default function BlogDetail({ htmlContent, title, date, readTime, tags, d
 
   return (
     <>
-    <MainContainer>
       <Head>
         <title>{title}</title>
       </Head>
       <ScrollTop />
-      <br /> <br /> <br />
-      <TextContainer>
-        <h1>{title}</h1>
-        <InfoContainer>
-          <InfoItem>Date Published: {date}</InfoItem>
-          <InfoItem>Read Time: {readTime}</InfoItem>
-        </InfoContainer>
-        <div>
-          {tags.map((tag) => (
-            <Tag key={tag.name}>{tag.name}</Tag>
-          ))}
+      <MainContainer>
+        <br /><br />
+        <TextContainer>
+          <h1>{title}</h1>
+          <InfoContainer>
+            <InfoItem>Date Published: {date}</InfoItem>
+            <InfoItem>Read Time: {readTime}</InfoItem>
+          </InfoContainer>
+          <div>
+            {tags.map((tag) => (
+              <Tag key={tag.name}>{tag.name}</Tag>
+            ))}
+          </div>
+        </TextContainer>
+        <TOCContainer>
+          <h2>Table of Contents</h2>
+          <TOCList>
+            {toc.map((item) => (
+              <TOCItem key={item.id} level={item.level}>
+                <a href={`#${item.id}`}>{item.text}</a>
+              </TOCItem>
+            ))}
+          </TOCList>
+        </TOCContainer>
+        <TextToSpeechPlayer contentRef={contentRef} audioSrc={audioSrc} />
+        <MarkdownContainer ref={contentRef} dangerouslySetInnerHTML={{ __html: htmlContent }} />
+        <div style={{ position: 'relative', zIndex: 1, marginBottom: '20px'}}>
+          <Giscus
+            repo="Saravanakumar2003/Portfolio"
+            repoId="R_kgDOLFzyGQ"
+            category="Blog"
+            categoryId="DIC_kwDOLFzyGc4Ckx5G"
+            mapping="specific"
+            term={`Blog Post ID: ${id}`}
+            reactionsEnabled="1"
+            emitMetadata="0"
+            inputPosition="top"
+            theme="dark"
+            lang="en"
+            loading="lazy"
+          />
+          <div style={{ marginTop: '50px'}} dangerouslySetInnerHTML={{ __html: `<script async data-uid="43bd20ce30" src="${kitkey}"></script>` }} />
         </div>
-      </TextContainer>
-      <TOCContainer>
-        <h2>Table of Contents</h2>
-        <TOCList>
-          {toc.map((item) => (
-            <TOCItem key={item.id} level={item.level}>
-              <a href={`#${item.id}`}>{item.text}</a>
-            </TOCItem>
-          ))}
-        </TOCList>
-      </TOCContainer>
-      <TextToSpeechPlayer contentRef={contentRef} audioSrc={audioSrc} />
-      <MarkdownContainer ref={contentRef} dangerouslySetInnerHTML={{ __html: htmlContent }} />
-        <Giscus
-          repo="Saravanakumar2003/Portfolio"
-          repoId="R_kgDOLFzyGQ"
-          category="Blog"
-          categoryId="DIC_kwDOLFzyGc4Ckx5G"
-          mapping="specific"
-          term={`Blog Post ID: ${id}`}
-          reactionsEnabled="1"
-          emitMetadata="0"
-          inputPosition="top"
-          theme="dark"
-          lang="en"
-          loading="lazy"
-        />
+        <CenteredContainer>
+          <Link href={'/blog'} legacyBehavior>
+            <ButtonSecondary>
+              <a>
+                <ArrowLeft style={{ marginBottom: '-0.2rem' }} weight="bold" size={18} />{' '}
+                {currentLang === 'ta' ? 'திரும்பி செல்' : 'Go Back'}
+              </a>
+            </ButtonSecondary>
+          </Link>
+        </CenteredContainer>
       </MainContainer>
-      <CenteredContainer>
-        <Link href={'/blog'} legacyBehavior>
-          <ButtonSecondary>
-            <a>
-              <ArrowLeft style={{ marginBottom: '-0.2rem' }} weight="bold" size={18} />{' '}
-              {currentLang === 'ta' ? 'திரும்பி செல்' : 'Go Back'}
-            </a>
-          </ButtonSecondary>
-        </Link>
-      </CenteredContainer>
       <Footer />
     </>
   );

@@ -22,7 +22,7 @@ export const TextContainer = styled.div`
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   background-color: ${({ theme }) => theme.background};
-  color: ${({ theme }) => theme.text};
+  color: ${({ theme }) => theme.textPrimary};
 `;
 
 export const Tag = styled.span`
@@ -32,6 +32,7 @@ export const Tag = styled.span`
   background-color: ${({ theme }) => theme.backgroundSecond};
   color: ${({ theme }) => theme.textPrimary};
   border-radius: 3px;
+  border: 1px solid ${({ theme }) => theme.firstColor};
 `;
 
 export const InfoContainer = styled.div`
@@ -44,7 +45,8 @@ export const InfoContainer = styled.div`
 
 export const InfoItem = styled.p`
   margin: 0;
-  color: ${({ theme }) => theme.text};
+  color: ${({ theme }) => theme.textPrimary};
+  decoration: underline;
 `;
 
 export const TOCContainer = styled.div`

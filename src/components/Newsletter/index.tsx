@@ -3,7 +3,9 @@ import { ButtonSecondary, FormContent } from './styles';
 import { At, User } from 'phosphor-react';
 import toast from 'react-hot-toast';
 
-const GOOGLE_SHEET_URL = process.env.NEXT_PUBLIC_GOOGLE_SHEET_URL;
+const GOOGLE_FORM_ACTION_URL = process.env.NEXT_PUBLIC_GOOGLE_FORM_ACTION_URL;
+const NAME_ENTRY_ID = process.env.NEXT_PUBLIC_NAME_ENTRY_ID;
+const EMAIL_ENTRY_ID = process.env.NEXT_PUBLIC_EMAIL_ENTRY_ID;
 
 export function NewsletterForm() {
   const [name, setName] = useState('');
@@ -18,21 +20,23 @@ export function NewsletterForm() {
       return;
     }
 
-    if (!GOOGLE_SHEET_URL) {
-      toast.error('Google Sheet URL is not set.');
+    if (!GOOGLE_FORM_ACTION_URL || !NAME_ENTRY_ID || !EMAIL_ENTRY_ID) {
+      toast.error('Form configuration is missing.');
       return;
     }
 
     try {
-      const response = await fetch(GOOGLE_SHEET_URL, {
+      const formData = new FormData();
+      formData.append(NAME_ENTRY_ID, name);
+      formData.append(EMAIL_ENTRY_ID, email);
+
+      const response = await fetch(GOOGLE_FORM_ACTION_URL, {
         method: 'POST',
-        body: JSON.stringify({ name, email }),
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        body: formData,
+        mode: 'no-cors',
       });
 
-      if (response.ok) {
+      if (response) {
         toast.success('Subscription successful!');
         setName('');
         setEmail('');
@@ -47,9 +51,9 @@ export function NewsletterForm() {
 
   return (
     <FormContent onSubmit={handleSubmit}>
-      <h2>Subscribe to our newsletter</h2>
-      <p>Subscribe to our newsletter to get the latest updates on our products and services.</p>
-      <p>I promise not to spam you! Unsubscribe at any time.</p>
+      <h2>Stay Informed, Inspired, and Ahead! 🌟</h2>
+      <p>Join our newsletter to receive articles & updates. (no spam—just meaningful updates)</p>
+      <p>Ready to stay connected? Subscribe today and never miss a beat!</p>
       <br />
       <div className="input-group">
         <input

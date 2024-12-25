@@ -1,5 +1,17 @@
 import styled from 'styled-components';
 
+export const GiscusContainer = styled.div`
+  margin-bottom: 20px;
+  width: 50%;
+  margin: 0 auto;
+  padding: 20px;
+
+  @media (max-width: 850px) {
+    width: 100%;
+  }
+`;
+
+
 export const MainContainer = styled.div`
   display: flex;
   flex-direction: column;

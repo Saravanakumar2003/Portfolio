@@ -6,7 +6,8 @@ import Head from 'next/head';
 import Script from 'next/script';
 import { Footer } from '../../components/Footer';
 import { ScrollTop } from '../../components/ScrollTop';
-import { MainContainer, MarkdownContainer, CenteredContainer, TextContainer, Tag, TOCContainer, TOCList, TOCItem, InfoContainer, InfoItem } from '../../styles/markdown';
+import { NewsletterForm } from '../../components/Newsletter';
+import { MainContainer, GiscusContainer, MarkdownContainer, CenteredContainer, TextContainer, Tag, TOCContainer, TOCList, TOCItem, InfoContainer, InfoItem } from '../../styles/markdown';
 import Link from 'next/link';
 import { ButtonSecondary } from '../../styles/styles';
 import { ArrowLeft } from 'phosphor-react';
@@ -95,7 +96,7 @@ export default function BlogDetail({ htmlContent, title, date, readTime, tags, d
         </TOCContainer>
         <TextToSpeechPlayer contentRef={contentRef} audioSrc={audioSrc} />
         <MarkdownContainer ref={contentRef} dangerouslySetInnerHTML={{ __html: htmlContent }} />
-        <div style={{ position: 'relative', zIndex: 1, marginBottom: '20px'}}>
+        <GiscusContainer>
           <Giscus
             repo="Saravanakumar2003/Portfolio"
             repoId="R_kgDOLFzyGQ"
@@ -110,8 +111,8 @@ export default function BlogDetail({ htmlContent, title, date, readTime, tags, d
             lang="en"
             loading="lazy"
           />
-          <div style={{ marginTop: '50px'}} dangerouslySetInnerHTML={{ __html: `<script async data-uid="43bd20ce30" src="${kitkey}"></script>` }} />
-        </div>
+        </GiscusContainer>
+        <NewsletterForm />
         <CenteredContainer>
           <Link href={'/blog'} legacyBehavior>
             <ButtonSecondary>

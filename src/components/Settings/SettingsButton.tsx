@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { FaSun, FaMoon, FaCog, FaTimes } from 'react-icons/fa';
+import React, { useState, useEffect, useRef } from 'react';
+import { FaSun, FaMoon, FaPlay, FaPause } from 'react-icons/fa';
+import { Translate } from 'phosphor-react'
+import { MdFormatSize } from "react-icons/md";
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import { useRouter } from 'next/router';
-import AudioPlayer from '../Music/AudioPlayer';
 
 interface SettingsProps {
   toggleTheme: () => void;
@@ -12,118 +13,83 @@ interface SettingsProps {
 
 const SettingsContainer = styled.div`
   position: fixed;
-  display: inline-block;
+  bottom: 1.3rem;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 1000;
-  align-self: center;
-`;
-
-const SettingsButton = styled.button`
-  color: ${({ theme }) => theme.firstColor};
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-`;
-
-const Dropdown = styled.div`
-  background-color: ${({ theme }) => theme.backgroundAlt};
-  color: ${({ theme }) => theme.firstColor};
-  border: 1px solid ${({ theme }) => theme.firstColor};
-  border-radius: 5px;
-  padding: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  @media (max-width: 500px) {
-    position: fixed;
-    top: 3.5rem;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 999;
-    padding: 1rem;
-  }
-  hr {
-    border: 0.5px solid ${({ theme }) => theme.firstColor};
-  }
-`;
-
-const LanguageButton = styled.button`
-  background-color: ${({ theme }) => theme.backgroundAlt};
-  color: ${({ theme }) => theme.firstColor};
-  border: 1px solid ${({ theme }) => theme.firstColor};
-  border-radius: 5px;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  font-size: 0.8rem;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  &:hover {
-    background-color: ${({ theme }) => theme.background};
-  }
-`;
-
-const ThemeButton = styled.button`
-  background-color: ${({ theme }) => theme.backgroundAlt};
-  color: ${({ theme }) => theme.firstColor};
-  border: 1px solid ${({ theme }) => theme.firstColor};
-  border-radius: 5px;
-  padding: 0.5rem 5rem;
-  cursor: pointer;
-  font-size: 0.8rem;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  &:hover {
-    background-color: ${({ theme }) => theme.background};
-  }
-`;
-
-const Text = styled.p`
-  color: ${({ theme }) => theme.firstColor};
-  font-size: 0.8rem;
-  margin-top: 0.5rem;
-`;
-
-const AudioToggleButton = styled.button`
-  background-color: ${({ theme }) => theme.backgroundAlt};
-  color: ${({ theme }) => theme.firstColor};
-  border: 1px solid ${({ theme }) => theme.firstColor};
-  border-radius: 5px;
-  padding: 0.5rem 5rem;
-  cursor: pointer;
-  font-size: 0.8rem;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  &:hover {
-    background-color: ${({ theme }) => theme.background};
-  }
-`;
-
-const FontSizeButton = styled.button`
-  background-color: ${({ theme }) => theme.backgroundAlt};
-  color: ${({ theme }) => theme.firstColor};
-  border: 1px solid ${({ theme }) => theme.firstColor};
-  border-radius: 5px;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  font-size: 0.8rem;
-  margin-top: 0.5rem;
-  &:hover {
-    background-color: ${({ theme }) => theme.background};
-  }
-`;
-
-const FontSizeContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+`;
+
+const OvalBar = styled.div`
+  background-color: ${({ theme }) => theme.firstColor};
+  border-radius: 50px;
+  padding: 0.5rem 1rem;
+  display: flex;
   gap: 1rem;
-  margin-bottom: 0.5rem;
+  align-items: center;
+  border: 2px solid ${({ theme }) => theme.white};
+`;
+
+const IconButton = styled.button`
+  background: none;
+  border: none;
+  color: ${({ theme }) => theme.white};
+  cursor: pointer;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    color: ${({ theme }) => theme.secondColor};
+  }
+`;
+
+const IconButton2 = styled.button`
+  background: none;
+  border: 2px solid ${({ theme }) => theme.white};
+  color: ${({ theme }) => theme.white};
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  &:hover {
+    color: ${({ theme }) => theme.secondColor};
+    border-color: ${({ theme }) => theme.secondColor};
+    background-color: ${({ theme }) => theme.white};
+  }
+`;
+
+const Dropdown = styled.div`
+  position: absolute;
+  bottom: 3rem;
+  background-color: ${({ theme }) => theme.firstColor};
+  color: ${({ theme }) => theme.white};
+  border-radius: 5px;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  animation: fadeIn 0.3s ease-in-out;
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 `;
 
 const Small = styled.small`
   color: ${({ theme }) => theme.secondColor};
-  margin-top: 0.2rem;
-  margin-bottom: 0.2rem;
   font-size: 0.5rem;
   text-align: center;
 `;
@@ -131,9 +97,11 @@ const Small = styled.small`
 const Settings: React.FC<SettingsProps> = ({ toggleTheme, currentTheme }) => {
   const { t } = useTranslation();
   const router = useRouter();
-  const [open, setOpen] = useState(false);
   const [audioVisible, setAudioVisible] = useState(false);
   const [fontSize, setFontSize] = useState(16);
+  const [showLanguageOptions, setShowLanguageOptions] = useState(false);
+  const [showFontSizeOptions, setShowFontSizeOptions] = useState(false);
+  const audioRef = useRef<HTMLAudioElement>(null);
 
   const changeLanguage = (lang: string) => {
     router.push(router.pathname, router.asPath, { locale: lang });
@@ -160,42 +128,49 @@ const Settings: React.FC<SettingsProps> = ({ toggleTheme, currentTheme }) => {
     document.documentElement.style.fontSize = `${fontSize}px`;
   }, [fontSize]);
 
+  const toggleAudio = () => {
+    if (audioRef.current) {
+      if (audioVisible) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play();
+      }
+      setAudioVisible(!audioVisible);
+    }
+  };
+
+  const fontSizePercentage = Math.round((fontSize / 16) * 100);
+
   return (
     <SettingsContainer>
-      <SettingsButton onClick={() => setOpen(!open)}>
-      {open ? <FaTimes size={20} /> : <FaCog size={20} />}
-      </SettingsButton>
-      {open && (
-        <Dropdown>
-          <p style={{ textAlign: 'center' }}>Settings</p>
-          <hr />
-          <Text style={{ textAlign: 'center' }}>Play some music</Text>
-          <AudioToggleButton onClick={() => setAudioVisible(!audioVisible)}>
-            {audioVisible ? 'Hide Player' : 'Show Player'}
-          </AudioToggleButton>
-          <Small>Player will be visible in the left bottom of the screen</Small>
-          <hr />
-          <Text style={{ textAlign: 'center' }}>Change Theme</Text>
-          <ThemeButton onClick={toggleTheme}>
-            {currentTheme === 'light' ? <FaMoon /> : <FaSun />}
-          </ThemeButton>
-          <hr />
-          <Text style={{ textAlign: 'center' }}>Change Language</Text>
-          <LanguageButton onClick={() => changeLanguage('en')}>English</LanguageButton>
-          <LanguageButton onClick={() => changeLanguage('ta')}>தமிழ்</LanguageButton>
-          <hr />
-          <Text style={{ textAlign: 'center' }}>Font Size</Text>
-          <FontSizeContainer>
-            <FontSizeButton onClick={decreaseFontSize}>-</FontSizeButton>
-            <FontSizeButton onClick={resetFontSize}>Default</FontSizeButton>
-            <FontSizeButton onClick={increaseFontSize}>+</FontSizeButton>
-          </FontSizeContainer>
-          <hr />
-        </Dropdown>
-      )}
-      {audioVisible && (
-        <AudioPlayer audioSrc={musicSrc} />
-      )}
+      <OvalBar>
+        <IconButton onClick={toggleAudio}>
+          {audioVisible ? <FaPause /> : <FaPlay />}
+        </IconButton>
+        <IconButton onClick={toggleTheme}>
+          {currentTheme === 'light' ? <FaMoon /> : <FaSun />}
+        </IconButton>
+        <IconButton onClick={() => setShowLanguageOptions(!showLanguageOptions)}>
+          <Translate />
+        </IconButton>
+        {showLanguageOptions && (
+          <Dropdown>
+            <IconButton2 onClick={() => changeLanguage('en')}>EN</IconButton2>
+            <IconButton2 onClick={() => changeLanguage('ta')}>TA</IconButton2>
+          </Dropdown>
+        )}
+        <IconButton onClick={() => setShowFontSizeOptions(!showFontSizeOptions)}>
+          <MdFormatSize />
+        </IconButton>
+        {showFontSizeOptions && (
+          <Dropdown>
+            <IconButton2 onClick={decreaseFontSize}>-</IconButton2>
+            <IconButton2 onClick={resetFontSize}>{fontSizePercentage}%</IconButton2>
+            <IconButton2 onClick={increaseFontSize}>+</IconButton2>
+          </Dropdown>
+        )}
+      </OvalBar>
+      <audio ref={audioRef} src={musicSrc} loop />
     </SettingsContainer>
   );
 };

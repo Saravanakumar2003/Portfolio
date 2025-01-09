@@ -10,6 +10,10 @@ export const FooterContainer = styled.footer`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  
+  @media (max-width: 768px) {
+    margin-bottom: 2.5rem;
+  }
 
   @media (min-width: 768px) {
     flex-direction: row;

@@ -17,7 +17,7 @@ export const Figure = styled.figure`
   iframe {
     border: none;
     padding: 10px;
-    width: 400px;
+    width: 350px;
     height: 300px;
 
     @media (min-width: 768px) {

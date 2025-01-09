@@ -3,6 +3,90 @@ import { time } from "console"
 const projects = [
   {
     id: 4,
+    url: 'electrowiz',
+    banner: '/projects/Electrowiz/Banner.png',
+    img: '/projects/Electrowiz/Banner.png',
+    title: 'ELECTROWIZ\'25',
+    type: 'Website',
+    icon: '/projects/Electrowiz/icon.png',
+    blog: 'https://saravanakumar2003.hashnode.dev/muon-track-reconstruction',
+    github: 'https://github.com/Saravanakumar2003/Electrowiz-25',
+    web: 'https://electrowiz.info/',
+    description:
+      'An automated symposium website integrating online registration, Razorpay payments, QR code-based ID cards, and Google Sheets for attendance tracking, significantly reducing manual effort and enhancing efficiency.',
+    tags: [
+      {name: 'College Projects'},
+    ],
+    tech: [
+      {
+        name: 'HTML',
+        icon: '/icons/html.png',
+        color: '#38BDF8',
+        rgb: '56, 189, 248'
+      },
+      {
+        name: 'CSS',
+        icon: '/icons/css.png',
+        color: '#38BDF8',
+        rgb: '56, 189, 248'
+      },
+      {
+        name: 'React',
+        icon: '/icons/react.png',
+        color: '#38BDF8',
+        rgb: '56, 189, 248'
+      },
+      {
+        name: 'Firebase',
+        icon: '/icons/firebase.png',
+        color: '#38BDF8',
+        rgb: '56, 189, 248'
+      }
+    ],
+
+    print: [
+      {
+        name: 'Homepage',
+        description:
+          '',
+        img: '/projects/Electrowiz/Home.png'
+      },
+      {
+        name: 'Events Page',
+        description:
+          '',
+        img: '/projects/Electrowiz/Events.png'
+      },
+      {
+        name: 'Register Page',
+        description:
+          '',
+        img: '/projects/Electrowiz/Register.png'
+      },
+    ],
+    team: [
+      {
+        id: '1',
+        name: 'Saravanakumar',
+        role: 'Student, VEC',
+        img: '/projects/Teams/Saravana.jpg',
+        github: 'https://github.com/Saravanakumar2003',
+        linkedin: 'https://www.linkedin.com/in/saravanakumar2003/',
+        twitter: 'https://twitter.com/Saravana2003',
+        instagram: 'https://www.instagram.com/saravana2003/'
+      },
+    ],
+    status: 'Completed',
+    year: 'Jan 2025',
+    gif: '/projects/Portfolio/Cool.mp4',
+    backgroundImage: '/projects/Background.png',
+    trelloboard: 'https://trello.com/b/G09nw8o5.html',
+    trelloedit: 'https://forms.gle/p2vH1ensakcsPgvv6',
+    video:
+      'https://youtu.be/WzlVRtlzjSM'
+  },
+  {
+    id: 4,
     url: 'Muon',
     banner: '/projects/Muon/Muon.png',
     img: '/projects/Muon/Muon.png',
@@ -84,7 +168,7 @@ const projects = [
         instagram: 'https://www.instagram.com/saravana2003/'
       },
     ],
-    status: 'In Progress',
+    status: 'Completed',
     year: 'July 2024',
     gif: '/projects/Portfolio/Cool.mp4',
     backgroundImage: '/projects/Background.png',

@@ -483,32 +483,17 @@ export const Video = styled.div`
 
 export const Trelloboard = styled.div`
 
-  .trello-board-container {
-  border: 2px solid #ccc;
-  border-radius: 8px;
-  background-color: #f9f9f9;
-
-
-  }
-
   .trello-board {
-    width: 100%;
     height: 600px;
-    border: none;
-    border-radius: 8px;
-    margin-top: 20px;
-
-    @media (min-width: 468px) {
-    margin-top: 100px;
+    border-radius: 8px; 
+    max-width: 800px;
+    align-self: center;
+    margin: 0 auto;
+    margin-bottom: 50px;
   }
-  @media (min-width: 768px) {
-    margin-top: 10px;
-  }
-  }
-
 
   .edit-trello-board {
-    margin-top: 50px;
+    margin-top: 60px;
     text-align: center;
     margin-bottom: 200px;
   }

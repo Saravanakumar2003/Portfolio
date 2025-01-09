@@ -1,12 +1,12 @@
 const certificates = [
-  {
-    id: 1,
-    name: {
-      en: 'Google IT Support Professional Certificate',
-      ta: 'கூகுள் ஐடி ஆதரவு தொழில்முறை சான்றிதழ்',
-    },
-    image: '/certi/IT.png',
-  },
+  // {
+  //   id: 1,
+  //   name: {
+  //     en: 'Google IT Support Professional Certificate',
+  //     ta: 'கூகுள் ஐடி ஆதரவு தொழில்முறை சான்றிதழ்',
+  //   },
+  //   image: '/certi/IT.png',
+  // },
   {
     id: 2,
     name: {
@@ -23,14 +23,14 @@ const certificates = [
     },
     image: '/certi/Azure.png',
   },
-  {
-    id: 5,
-    name: {
-      en: 'English for Career Development',
-      ta: 'தொழில் வளர்ச்சிக்கான ஆங்கிலம்',
-    },
-    image: '/certi/English.png',
-  },
+  // {
+  //   id: 5,
+  //   name: {
+  //     en: 'English for Career Development',
+  //     ta: 'தொழில் வளர்ச்சிக்கான ஆங்கிலம்',
+  //   },
+  //   image: '/certi/English.png',
+  // },
   {
     id: 6,
     name: {

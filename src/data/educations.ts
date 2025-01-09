@@ -1,29 +1,29 @@
 const educations = [
-  {
-    id: 1,
-    title: {
-      en: 'Google IT Support',
-      ta: 'கூகுள் ஐடி ஆதரவு',
-    },
-    subTitle: {
-      en: 'Click here to see certificate',
-      ta: 'சான்றிதழைப் பார்க்க இங்கே கிளிக் செய்யவும்',
-    },
-    status: {
-      en: 'Completed',
-      ta: 'நிறைவு',
-    },
-    level: {
-      en: 'October 2023',
-      ta: 'அக்டோபர் 2023',
-    },
-    link: 'https://www.coursera.org/account/accomplishments/professional-cert/7B6496VHSVNK?utm_source=mobile&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=prof',
-    description: {
-      en: 'I learned the ins and outs of IT support, from computer hardware to the latest software. It helped me to learn how to provide support to meet any organization’s IT needs. It helped me to learn critical thinking and problem-solving skills using both Windows and Linux operating systems, and to gain practical experience with the command line.',
-      ta: 'கணினி வன்பொருளிலிருந்து சமீபத்திய மென்பொருள் வரை ஐடி ஆதரவு பற்றிய முழு விவரங்களையும் கற்றுக்கொண்டேன். எந்த நிறுவனத்தின் ஐடி தேவைகளையும் பூர்த்தி செய்ய ஆதரவு வழங்குவது எப்படி என்று கற்றுக்கொண்டேன். விண்டோஸ் மற்றும் லினக்ஸ் இயக்க முறைமைகள் இரண்டையும் பயன்படுத்தி முக்கியமான சிந்தனை மற்றும் சிக்கல் தீர்க்கும் திறன்களை கற்றுக்கொண்டேன் மற்றும் கட்டளை வரியுடன் நடைமுறை அனுபவத்தைப் பெற்றேன்.',
-    },
-    logo: '/certi/coursera_logo.jpeg',
-  },
+  // {
+  //   id: 1,
+  //   title: {
+  //     en: 'Google IT Support',
+  //     ta: 'கூகுள் ஐடி ஆதரவு',
+  //   },
+  //   subTitle: {
+  //     en: 'Click here to see certificate',
+  //     ta: 'சான்றிதழைப் பார்க்க இங்கே கிளிக் செய்யவும்',
+  //   },
+  //   status: {
+  //     en: 'Completed',
+  //     ta: 'நிறைவு',
+  //   },
+  //   level: {
+  //     en: 'October 2023',
+  //     ta: 'அக்டோபர் 2023',
+  //   },
+  //   link: 'https://www.coursera.org/account/accomplishments/professional-cert/7B6496VHSVNK?utm_source=mobile&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=prof',
+  //   description: {
+  //     en: 'I learned the ins and outs of IT support, from computer hardware to the latest software. It helped me to learn how to provide support to meet any organization’s IT needs. It helped me to learn critical thinking and problem-solving skills using both Windows and Linux operating systems, and to gain practical experience with the command line.',
+  //     ta: 'கணினி வன்பொருளிலிருந்து சமீபத்திய மென்பொருள் வரை ஐடி ஆதரவு பற்றிய முழு விவரங்களையும் கற்றுக்கொண்டேன். எந்த நிறுவனத்தின் ஐடி தேவைகளையும் பூர்த்தி செய்ய ஆதரவு வழங்குவது எப்படி என்று கற்றுக்கொண்டேன். விண்டோஸ் மற்றும் லினக்ஸ் இயக்க முறைமைகள் இரண்டையும் பயன்படுத்தி முக்கியமான சிந்தனை மற்றும் சிக்கல் தீர்க்கும் திறன்களை கற்றுக்கொண்டேன் மற்றும் கட்டளை வரியுடன் நடைமுறை அனுபவத்தைப் பெற்றேன்.',
+  //   },
+  //   logo: '/certi/coursera_logo.jpeg',
+  // },
   {
     id: 2,
     title: {

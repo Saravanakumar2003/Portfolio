@@ -20,13 +20,13 @@ const projects = [
     tech: [
       {
         name: 'HTML',
-        icon: '/icons/html.png',
+        icon: '/icons/HTML.png',
         color: '#38BDF8',
         rgb: '56, 189, 248'
       },
       {
         name: 'CSS',
-        icon: '/icons/css.png',
+        icon: '/icons/CSS.png',
         color: '#38BDF8',
         rgb: '56, 189, 248'
       },
@@ -38,10 +38,16 @@ const projects = [
       },
       {
         name: 'Firebase',
-        icon: '/icons/firebase.png',
+        icon: '/icons/Firebase.png',
         color: '#38BDF8',
         rgb: '56, 189, 248'
-      }
+      },
+      {
+        name: 'Vercel',
+        icon: '/icons/vercel.png',
+        color: '#38BDF8',
+        rgb: '56, 189, 248'
+      },
     ],
 
     print: [

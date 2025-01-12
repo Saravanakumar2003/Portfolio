@@ -3,8 +3,8 @@ import styled from 'styled-components'
 export const FooterContainer = styled.footer`
   margin-top: 5rem;
   border-top: 1px solid ${props => props.theme.gray_easy};
-  padding: 1.4rem 0;
-  gap: 5px;
+  padding: 1rem 0;
+  gap: 15px;
 
   display: flex;
   flex-direction: column;
@@ -33,6 +33,27 @@ export const FooterContainer = styled.footer`
     color: ${props => props.theme.gray};
 
     a {
+      &:hover {
+        color: ${props => props.theme.firstColor};
+      }
+    }
+  }
+`
+
+export const FooterContent = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .footer_links {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    color: ${props => props.theme.gray};
+
+    a {
+      cursor: pointer;
       &:hover {
         color: ${props => props.theme.firstColor};
       }

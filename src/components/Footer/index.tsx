@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { FaWhatsapp } from 'react-icons/fa'
 import { FiGithub, FiLinkedin, FiInstagram } from 'react-icons/fi'
-import { FooterContainer } from './styles'
+import { FooterContainer, FooterContent } from './styles'
 import { useTranslation } from 'react-i18next'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
@@ -18,13 +18,17 @@ export function Footer() {
 
   return (
     <FooterContainer>
-      <h4> &copy; {new Date().getFullYear()} Saravanakumar Ramaswamy</h4>
-      <Link href={'/privacypolicy'} aria-label={currentLang === 'ta' ? 'தனியுரிமைக் கொள்கை' : 'Privacy Policy'} legacyBehavior>
-        {currentLang === 'ta' ? 'தனியுரிமைக் கொள்கை' : 'Privacy Policy'}
+      <FooterContent>
+        <h4> &copy; {new Date().getFullYear()} Saravanakumar Ramaswamy</h4>
+        <div className="footer_links">
+        <Link href={'/privacypolicy'} aria-label={currentLang === 'ta' ? 'தனியுரிமைக் கொள்கை' : 'Privacy Policy'} legacyBehavior>
+          {currentLang === 'ta' ? 'தனியுரிமைக் கொள்கை' : 'Privacy Policy'}
         </Link>
         <Link href={'/terms&condition'} aria-label={currentLang === 'ta' ? 'விதிமுறைகள் மற்றும் நிபந்தனைகள்' : 'Terms and Conditions'} legacyBehavior>
-        {currentLang === 'ta' ? 'விதிமுறைகள் மற்றும் நிபந்தனைகள்' : 'Terms and Conditions'}
+          {currentLang === 'ta' ? 'விதிமுறைகள் மற்றும் நிபந்தனைகள்' : 'Terms and Conditions'}
         </Link>
+        </div>
+      </FooterContent>
       <div className="links">
         <Link
           href={'https://github.com/Saravanakumar2003'}
@@ -40,9 +44,9 @@ export function Footer() {
         >
           <FiLinkedin />
         </Link>
-        <Link 
+        <Link
           href={'https://www.instagram.com/saravanakumar.me?utm_source=qr'}
-          target="_blank" 
+          target="_blank"
           aria-label={currentLang === 'ta' ? 'இன்ஸ்டாகிராம்' : 'Instagram'}
         >
           <FiInstagram />

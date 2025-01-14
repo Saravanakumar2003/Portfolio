@@ -56,6 +56,9 @@ export function NewsletterForm() {
       <p>Ready to stay connected? Subscribe today and never miss a beat!</p>
       <br />
       <div className="input-group">
+        <label htmlFor="name" className="user-label">
+          Name <User size={15} weight="bold" />
+        </label>
         <input
           type="text"
           value={name}
@@ -67,12 +70,12 @@ export function NewsletterForm() {
           required
           className="input"
         />
-        <label htmlFor="name" className="user-label">
-          Name <User size={15} weight="bold" />
-        </label>
       </div>
 
       <div className="input-group">
+        <label htmlFor="email" className="user-label">
+          Email <At size={15} weight="bold" />
+        </label>
         <input
           type="email"
           value={email}
@@ -84,9 +87,6 @@ export function NewsletterForm() {
           placeholder=" "
           className="input"
         />
-        <label htmlFor="email" className="user-label">
-          Email <At size={15} weight="bold" />
-        </label>
       </div>
 
       <div className="input-group">
@@ -97,7 +97,7 @@ export function NewsletterForm() {
           id="consent"
           required
         />
-        <label htmlFor="consent" className="user-label">
+        <label htmlFor="consent">
           I agree to the terms and conditions
         </label>
       </div>

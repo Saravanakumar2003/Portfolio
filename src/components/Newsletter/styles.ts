@@ -22,7 +22,6 @@ export const FormContent = styled.form`
       border: 2px solid ${props => props.theme.border};
       border-radius: 5px;
       background: ${props => props.theme.backgroundSecond};
-      color: ${props => props.theme.text};
       font-size: 1rem;
       outline: none;
       transition: border-color 0.3s;
@@ -33,11 +32,7 @@ export const FormContent = styled.form`
     }
 
     .user-label {
-      position: absolute;
       left: 1rem;
-      background: ${props => props.theme.background};
-      padding: 0 0.25rem;
-      color: ${props => props.theme.textSecondary};
       font-size: 0.875rem;
       transition: color 0.3s;
     }
@@ -49,7 +44,6 @@ export const FormContent = styled.form`
   }
 
   .input-group label[for="consent"] {
-    color: ${props => props.theme.text};
   }
 `;
 

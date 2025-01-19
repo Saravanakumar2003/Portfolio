@@ -54,19 +54,19 @@ const projects = [
       {
         name: 'Homepage',
         description:
-          '',
+          'The homepage of the Electrowiz\'25 website serves as the central hub for the symposium, providing information about the event, registration details, and other essential resources for participants.', 
         img: '/projects/Electrowiz/Home.png'
       },
       {
         name: 'Events Page',
         description:
-          '',
+          'The Events page showcases a list of events, allowing participants to view event details, register for events, and access resources related to each event such as rules & judjing criteria.',
         img: '/projects/Electrowiz/Events.png'
       },
       {
         name: 'Register Page',
         description:
-          '',
+          'The Register page allows participants to register for the symposium, providing essential details such as name, email, phone number, and event preferences. The page also features a payment gateway for registration fees.',
         img: '/projects/Electrowiz/Register.png'
       },
     ],
@@ -89,7 +89,7 @@ const projects = [
     trelloboard: 'https://trello.com/b/G09nw8o5.html',
     trelloedit: 'https://forms.gle/p2vH1ensakcsPgvv6',
     video:
-      'https://youtu.be/WzlVRtlzjSM'
+      'https://youtu.be/sw_21UWcdqk'
   },
   {
     id: 4,

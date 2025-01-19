@@ -4,7 +4,7 @@ import { Form } from './Form'
 import { Description, Section, Title } from '../../styles/styles'
 import { ContainerContact, ContactContent, ResponsiveIframeContainer } from './styles'
 import { BsWhatsapp } from 'react-icons/bs'
-import { Envelope, TelegramLogo } from 'phosphor-react'
+import { Envelope, TelegramLogo, LinkedinLogo } from 'phosphor-react'
 import { useTranslation } from 'react-i18next'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
@@ -39,10 +39,10 @@ export function Contact() {
         <ContactContent>
           <div className="contact-content">
             <h4>
-              <BsWhatsapp size={22} color="#00fffb" /> WhatsApp{' '}
+              <LinkedinLogo size={22} color="#00fffb" /> Linkedin{' '}
             </h4>
-            <Link href="https://api.whatsapp.com/send?phone=918838416187" target="_blank">
-              <span>+91 8838416187</span>
+            <Link href="https://www.linkedin.com/in/saravanaramaswamy2003/" target="_blank">
+              <span>saravanaramaswamy2003</span>
             </Link>
           </div>
 

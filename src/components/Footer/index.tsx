@@ -1,6 +1,5 @@
 import Link from 'next/link'
-import { FaWhatsapp } from 'react-icons/fa'
-import { FiGithub, FiLinkedin, FiInstagram } from 'react-icons/fi'
+import { FiGithub, FiLinkedin, FiInstagram, FiTwitter } from 'react-icons/fi'
 import { FooterContainer, FooterContent } from './styles'
 import { useTranslation } from 'react-i18next'
 import { useRouter } from 'next/router'
@@ -52,11 +51,11 @@ export function Footer() {
           <FiInstagram />
         </Link>
         <Link
-          href={'https://api.whatsapp.com/send?phone=918838416187'}
+          href={'https://x.com/Saravanakumar16'}
           target="_blank"
-          aria-label={currentLang === 'ta' ? 'வாட்ஸ்அப் மூலம் தொடர்பு கொள்ள' : 'Link to contact via WhatsApp'}
+          aria-label={currentLang === 'ta' ? 'ட்விட்டர்' : 'Twitter'}
         >
-          <FaWhatsapp />
+          <FiTwitter />
         </Link>
       </div>
     </FooterContainer>

@@ -2,7 +2,7 @@ import { time } from "console"
 
 const projects = [
   {
-    id: 4,
+    id: 5,
     url: 'electrowiz',
     banner: '/projects/Electrowiz/Banner.png',
     img: '/projects/Electrowiz/Banner.png',
@@ -89,7 +89,7 @@ const projects = [
     trelloboard: 'https://trello.com/b/G09nw8o5.html',
     trelloedit: 'https://forms.gle/p2vH1ensakcsPgvv6',
     video:
-      'https://youtu.be/sw_21UWcdqk'
+      'https://youtu.be/XIH0iKOHCcM'
   },
   {
     id: 4,

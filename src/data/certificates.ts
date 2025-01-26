@@ -1,29 +1,4 @@
 const certificates = [
-  {
-    id: 4,
-    title: {
-      en: 'CS50x Introduction to Computer Science',
-      ta: 'CS50x கணினி அறிவியலுக்கான அறிமுகம்',
-    },
-    subTitle: {
-      en: 'Click here to see certificate',
-      ta: 'சான்றிதழைப் பார்க்க இங்கே கிளிக் செய்யவும்',
-    },
-    status: {
-      en: 'Completed',
-      ta: 'நிறைவு',
-    },
-    level: {
-      en: 'July 2024',
-      ta: 'ஜூலை 2024',
-    },
-    link: 'https://cs50.harvard.edu/certificates/33a06466-faff-4691-be1f-d37257bc35b6',
-    description: {
-      en: 'Credentials ID: 33a06466-faff-4691-be1f-d37257bc35b6 \n\nSkills Acquired: C, Python, SQL, HTML, CSS, JavaScript, Flask\n\n',
-      ta: 'அங்கீகார ஐடி: 33a06466-faff-4691-be1f-d37257bc35b6 \n\nபெற்ற திறன்கள்: C, Python, SQL, HTML, CSS, JavaScript, Flask\n\n',
-    },
-    logo: '/certi/harvard.png',
-  },
   // {
   //   id: 5,
   //   title: {

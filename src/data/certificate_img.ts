@@ -23,22 +23,22 @@ const certificates = [
     },
     image: '/certi/Azure.png',
   },
-  // {
-  //   id: 5,
-  //   name: {
-  //     en: 'English for Career Development',
-  //     ta: 'தொழில் வளர்ச்சிக்கான ஆங்கிலம்',
-  //   },
-  //   image: '/certi/English.png',
-  // },
   {
-    id: 6,
+    id: 5,
     name: {
-      en: 'CS50x Introduction to Computer Science',
-      ta: 'CS50x கணினி அறிவியலுக்கான அறிமுகம்',
+      en: 'English for Career Development',
+      ta: 'தொழில் வளர்ச்சிக்கான ஆங்கிலம்',
     },
-    image: '/certi/CS50x.png',
+    image: '/certi/English.png',
   },
+  // {
+  //   id: 6,
+  //   name: {
+  //     en: 'CS50x Introduction to Computer Science',
+  //     ta: 'CS50x கணினி அறிவியலுக்கான அறிமுகம்',
+  //   },
+  //   image: '/certi/CS50x.png',
+  // },
 ];
 
 export default certificates;

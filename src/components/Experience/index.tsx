@@ -34,7 +34,7 @@ export function Experience() {
       <Title>
         {currentLang === 'ta' ? 'அனுபவம்' : 'Experience'}  
         <span>
-          <Briefcase /> {currentLang === 'ta' ? 'வேலை' : 'Works'}
+          <Briefcase /> {currentLang === 'ta' ? 'பயிற்சி' : 'Internship'}
         </span>
       </Title>
 
@@ -60,7 +60,7 @@ export function Experience() {
                       width={60}
                       height={60}
                       src={exp.img}
-                      alt={exp.title.en} // Default to English
+                      alt={exp.title.en} 
                       loading="lazy"
                     />
                   }

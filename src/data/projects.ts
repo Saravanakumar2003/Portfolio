@@ -1,6 +1,88 @@
-import { time } from "console"
-
 const projects = [
+  {
+    id: 6,
+    url: 'hydrosense',
+    banner: '/projects/HydroSense/Banner.png',
+    img: '/projects/HydroSense/Banner.png',
+    title: 'HydroSense',
+    type: 'Device',
+    icon: '/projects/HydroSense/Icon.png',
+    blog: 'https://saravanakumar2003.hashnode.dev/hydrosense-water-quality-monitoring-system',
+    github: 'https://github.com/',
+    web: 'https://saravana.vercel.app/',
+    description:
+      'HydroSense is a water quality monitoring system that uses IoT technology to measure and analyze water quality parameters such as pH and turbidity. The device is designed to provide real-time data, alerts, and notifications to users, enabling them to monitor and maintain water quality effectively.',
+    tags: [
+      {name: 'College Projects'},
+    ],
+    tech: [
+      {
+        name: 'HTML',
+        icon: '/icons/HTML.png',
+        color: '#38BDF8',
+        rgb: '56, 189, 248'
+      },
+      {
+        name: 'CSS',
+        icon: '/icons/CSS.png',
+        color: '#38BDF8',
+        rgb: '56, 189, 248'
+      },
+      {
+        name: 'JavaScript',
+        icon: '/icons/JS.png',
+        color: '#38BDF8',
+        rgb: '56, 189, 248'
+      },
+      {
+        name: 'Arduino',
+        icon: '/icons/Arduino.png',
+        color: '#38BDF8',
+        rgb: '56, 189, 248'
+      },
+    ],
+    print: [
+      {
+        name: 'Hardware Components',
+        description:
+          'We use Vega Aries IoT v2.o as the microcontroller and with it we have connected turbidity and pH sensor. This is used to collect both the parameters from the water and show it in a dashboard', 
+        img: '/projects/HydroSense/Components_Image.jpg'
+      },
+      {
+        name: 'Dashboard',
+        description:
+        'The dashboard is built using HTML, CSS and JavaScript. It shows the real-time data of the water quality parameters such as pH and turbidity. It also shows the historical data of the water quality parameters.',
+        img: '/projects/HydroSense/Dashboard.png'
+      },
+      {
+        name: 'Data Reports',
+        description:
+          'The device generates data reports of the water quality parameters. The data reports are generated in the form of graphs and tables.',
+        img: '/projects/HydroSense/Data_Report.png'
+      },
+      
+    ],
+    team: [
+      {
+        id: '1',
+        name: 'Saravanakumar',
+        role: 'Student, VEC',
+        img: '/projects/Teams/Saravana.jpg',
+        github: 'https://github.com/Saravanakumar2003',
+        linkedin: 'https://www.linkedin.com/in/saravanakumar2003/',
+        twitter: 'https://twitter.com/Saravana2003',
+        instagram: 'https://www.instagram.com/saravana2003/'
+      },
+    ],
+    status: 'Completed',
+    year: 'Jan 2025',
+    gif: '/projects/Portfolio/Cool.mp4',
+    backgroundImage: '/projects/Background.png',
+    trelloboard: 'https://trello.com/b/G09nw8o5.html',
+    trelloedit: 'https://forms.gle/p2vH1ensakcsPgvv6',
+    video:
+      'https://youtu.be/WzlVRtlzjSM'
+  },
   {
     id: 5,
     url: 'electrowiz',

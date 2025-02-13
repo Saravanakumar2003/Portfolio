@@ -329,41 +329,23 @@ const projects = [
         img: '/projects/NSS/1.png'
       },
       {
-        name: 'Login Page',
+        name: 'About NSS Page',
         description:
-          'The "Login" screen allows users to sign in to their accounts, providing access to personalized features and content.',
+          'The "About NSS" page provides an overview of the NSSVEC unit, its mission, and its objectives.',
+        img: '/projects/NSS/4.png'
+      },
+      {
+        name: 'NSS Podcast Page',
+        description:
+          'The "NSS Podcast" page showcases the latest podcasts, enabling users to listen to and download the podcasts.',
         img: '/projects/NSS/2.png'
       },
       {
-        name: 'Student Dashboard',
+        name: 'NSS Team Page',
         description:
-          'The "Student Dashboard" screen showcases a list of upcoming events, allowing students to register for events and access resources.',
+          'The "NSS Team" page displays the NSSVEC team members, providing information about each member of Coordination Team.',
         img: '/projects/NSS/3.png'
-      },
-      {
-        name: 'Admin Dashboard',
-        description:
-          'The "Admin Dashboard" screen provides administrators with tools to manage events, view registrations, and access student data.',
-        img: '/projects/NSS/5.png'
-      },
-      {
-        name: 'Volunteer List Page',
-        description:
-          'The "Volunteer List" screen displays a list of volunteers, providing information about each volunteer and their respective roles.',
-        img: '/projects/NSS/6.png'
-      },
-      {
-        name: 'Event Upload Page',
-        description:
-          'The "Event Upload" screen allows administrators & teachers to upload new events, providing details and information for students to register.',
-        img: '/projects/NSS/8.png'
-      },
-      {
-        name: 'Newsletters Page',
-        description:
-          'The "Newsletters" screen features a collection of newsletters, providing updates and information about NSSVEC activities and events.',
-        img: '/projects/NSS/9.png'
-       },
+      }
     ],
     team: [
       {

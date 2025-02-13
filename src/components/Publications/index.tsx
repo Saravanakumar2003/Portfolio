@@ -39,6 +39,7 @@ export function Publications() {
               description={publication.description[currentLang]}
               authors={publication.authors[currentLang]}
               publicationDate={publication.publicationDate[currentLang]}
+              publicationType={publication.publicationType[currentLang]}
               source={publication.source[currentLang]}
               link={publication.link} 
               id={publication.id}           

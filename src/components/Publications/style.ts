@@ -67,6 +67,15 @@ export const PublicationSource = styled.p`
   }
 `;
 
+export const PublicationType = styled.p`
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
+`;
+
 export const PublicationLink = styled.a`
   font-size: 1.1rem;
   color: #0070f3;

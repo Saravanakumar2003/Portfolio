@@ -62,7 +62,7 @@ export function Wakatime() {
 
       <h1 style={{
         margin: '2rem 0',
-      }}>{currentLang === 'ta' ? 'குறியீட்டு தளங்கள், நீங்கள் என்னை இதில் காணலாம்:' : 'Coding Platforms, you can find me on:'}</h1>
+      }}>{currentLang === 'ta' ? 'குறியீட்டு தளங்கள்,' : 'Coding Platforms,'} <br /> {currentLang === 'ta' ? 'நீங்கள் என்னை இதில் காணலாம்:' : 'you can find me on:'}</h1>
 
       <Box>
         <a href="http://www.skillrack.com/profile/381703/7d59d9d0ed57993adcca4f71e60bcc308c4abf09" target="_blank" rel="noopener noreferrer">

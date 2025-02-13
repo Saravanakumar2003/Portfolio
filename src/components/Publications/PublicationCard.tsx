@@ -9,6 +9,7 @@ export function PublicationCard({
   title,
   authors,
   publicationDate,
+  publicationType,
   source,
   description,
   link,
@@ -29,6 +30,7 @@ export function PublicationCard({
       <S.PublicationAuthors><b>{currentLang === 'ta' ? 'ஆசிரியர்கள்: ' : 'Authors: '}</b>{authors}</S.PublicationAuthors>
       <S.PublicationDate><b>{currentLang === 'ta' ? 'வெளியீட்டு தேதி: ' : 'Publication Date: '}</b>{publicationDate}</S.PublicationDate>
       <S.PublicationSource><b>{currentLang === 'ta' ? 'வெளியீடு: ' : 'Published By: '}</b>{source}</S.PublicationSource>
+      <S.PublicationType><b>{currentLang === 'ta' ? 'வெளியீட்டு வகை: ' : 'Publication Type: '}</b>{publicationType}</S.PublicationType>
       <S.PublicationLink href={link} target="_blank">
         {currentLang === 'ta' ? 'மேலும் வாசிக்க' : 'Read more'}
       </S.PublicationLink>

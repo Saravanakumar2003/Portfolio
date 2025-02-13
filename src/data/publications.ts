@@ -11,13 +11,18 @@ const publications = [
       },
 
       authors: {
-        en: 'Dr. Mary Joans S, Saravanakumar R',
-        ta: 'டாக்டர் மேரி ஜோன்ஸ் எஸ், சரவணகுமார்',
+        en: 'Dr. Mary Joans S, Saravanakumar R, Dilip Kumar, Yogeshwaran',
+        ta: 'டாக்டர் மேரி ஜோன்ஸ் எஸ், சரவணகுமார் ரா, திலிப் குமார், யோகேஷ்வரன்',
       },
 
       publicationDate: {
         en: 'Yet to be published',
         ta: 'இன்னும் வெளியிடப்படவில்லை',
+      },
+
+      publicationType: {
+        en: 'Conference',
+        ta: 'மாநாடு',
       },
 
       source: {

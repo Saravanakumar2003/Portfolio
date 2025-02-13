@@ -277,7 +277,7 @@ const projects = [
     github: 'https://github.com/Saravanakumar2003/NSS',
     web: 'https://nssvec.vercel.app/',
     description:
-      'NSSVEC is a platform that allows students to register, login, event/photo/video uploads, view & upload newsletters, notifications, volunteer/teacher lists, admin controls, and batch details. It was developed for the National Service Scheme (NSS) unit of Velammal Engineering College.',
+      'The NSSVEC website is a personal project developed to showcase the activities and initiatives of the National Service Scheme (NSS) unit at VEC. The website features a modern design, user-friendly interface, and interactive elements to engage visitors and provide information about the NSSVEC unit of Velammal Engineering College.',
     tags: [
       {name: 'Personal Projects'}
     ],

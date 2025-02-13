@@ -34,6 +34,11 @@ export function PublicationCard({
       <S.PublicationLink href={link} target="_blank">
         {currentLang === 'ta' ? 'மேலும் வாசிக்க' : 'Read more'}
       </S.PublicationLink>
+      <br />
+      <p style={{fontSize: '10px', marginTop: '10px'}}>
+        <strong>{currentLang === 'ta' ? 'குறிப்பு: ' : 'Note: '}</strong>
+        {currentLang === 'ta' ? 'இணைப்பு அணுகல் கட்டுப்படுத்தப்பட்டிருக்கலாம். அணுகலைப் பெற மின்னஞ்சல் மூலம் என்னைத் தொடர்பு கொள்ளவும்.' : 'Link access may be restricted. Request me via email to get access.'}
+      </p>
     </S.PublicationCardContainer>
   );
 }

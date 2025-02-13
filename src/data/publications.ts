@@ -11,8 +11,8 @@ const publications = [
       },
 
       authors: {
-        en: 'Dr. Mary Joans S, Saravanakumar R, Dilip Kumar, Yogeshwaran',
-        ta: 'டாக்டர் மேரி ஜோன்ஸ் எஸ், சரவணகுமார் ரா, திலிப் குமார், யோகேஷ்வரன்',
+        en: 'Dr. Mary Joans S, Saravanakumar R, etc.',
+        ta: 'டாக்டர் மேரி ஜோன்ஸ் எஸ், சரவணகுமார் ரா, முதலியன.',
       },
 
       publicationDate: {
@@ -29,7 +29,7 @@ const publications = [
         en: 'ICSIE 2025',
         ta: 'ICSIE 2025',
       },
-      link: 'https://www.researchgate.net/publication/379445862_Development_and_Deployment_of_a_Web-Based_Automated_Converter_for_SODAR_Wind_Energy_Data_from_Binary_dat_to_Standardized_csv_Format',
+      link: 'https://drive.google.com/file/d/1MbGyiradz5JQ0Evprm2lY_hH2IG8Bt45/view?usp=sharing',
 
     },
     // {

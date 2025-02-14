@@ -21,8 +21,8 @@ export const Title = styled.h2`
   position: relative;
   font-size: 2.2rem;
   font-weight: 800;
-  margin: 2rem 0;
-  padding-top: 2.1rem;
+  padding-top: 4rem;
+  margin-bottom: 2rem;
   color: ${props => props.theme.firstColor};
   z-index: 1;
   opacity: 1;
@@ -44,7 +44,7 @@ export const Title = styled.h2`
   span {
     z-index: -1;
     display: grid;
-    gap: 0.8rem;
+    gap: 1rem;
     grid-template-columns: 1fr 1fr;
     justify-content: center;
     align-items: center;
@@ -53,7 +53,6 @@ export const Title = styled.h2`
     left: 50%;
     right: 50%;
     color: ${props => props.theme.secondColor};
-    opacity: 0.2;
     font-weight: 800;
     font-size: 2.6rem;
 

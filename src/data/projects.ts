@@ -302,20 +302,8 @@ const projects = [
         rgb: '56, 189, 248'
       },
       {
-        name: 'Firebase',
-        icon: '/icons/Firebase.png',
-        color: '#38BDF8',
-        rgb: '56, 189, 248'
-      },
-      {
         name: 'Vercel',
         icon: '/icons/vercel.png',
-        color: '#38BDF8',
-        rgb: '56, 189, 248'
-      },
-      {
-        name: 'React',
-        icon: '/icons/react.png',
         color: '#38BDF8',
         rgb: '56, 189, 248'
       },
@@ -333,6 +321,12 @@ const projects = [
         description:
           'The "About NSS" page provides an overview of the NSSVEC unit, its mission, and its objectives.',
         img: '/projects/NSS/4.png'
+      },
+      {
+        name: 'Events Page',
+        description:
+          'The "Events" page displays the events conducted by the NSSVEC unit, providing information about the event along with the newsletter.',
+        img: '/projects/NSS/5.png'
       },
       {
         name: 'NSS Podcast Page',

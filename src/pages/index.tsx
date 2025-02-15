@@ -9,13 +9,14 @@ import { Footer } from "../components/Footer";
 import { Experience } from "../components/Experience";
 import { CardContact } from "../components/CardContact";
 import { Section } from "../styles/styles";
-import { Work } from "../components/Work";
+import { Work } from "../components/Volunteer";
 import { Education } from "../components/Education";
 import { Achievements } from "../components/Achievements";
 import { Testimonials } from "../components/Testimonials";
 import { Publications } from "../components/Publications";
 import { Wakatime } from "../components/Coding/Wakatime";
 import { Certificates } from "../components/Certificates/index";
+import { Work_Experience } from "../components/Work/index";
 import { useTranslation } from 'react-i18next'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
@@ -48,6 +49,7 @@ export default function Home() {
         <About />
         <Skills />
         <Education />
+        {/* <Work_Experience /> */}
         <Experience />
         <Work />
         <Achievements />

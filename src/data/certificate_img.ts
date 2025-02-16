@@ -26,10 +26,10 @@ const certificates = [
   {
     id: 5,
     name: {
-      en: 'English for Career Development',
-      ta: 'தொழில் வளர்ச்சிக்கான ஆங்கிலம்',
+      en: 'Soft Skills',
+      ta: 'மென்மை திறன்',
     },
-    image: '/certi/English.png',
+    image: '/certi/soft.jpg',
   },
   // {
   //   id: 6,

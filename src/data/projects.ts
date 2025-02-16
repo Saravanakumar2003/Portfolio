@@ -7,7 +7,7 @@ const projects = [
     title: 'HydroSense',
     type: 'Device',
     icon: '/projects/HydroSense/Icon.png',
-    blog: 'https://saravanakumar2003.hashnode.dev/hydrosense-water-quality-monitoring-system',
+    blog: 'https://blog.saravanakumar.engineer/will-be-updated-soon',
     github: 'https://github.com/',
     web: 'https://saravana.vercel.app/',
     description:

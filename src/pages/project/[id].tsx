@@ -52,11 +52,11 @@ export default function Projeto({ project }: ProjectProps) {
                 Repository <FaGithub size={17} />
               </ButtonAlt>
             </Link>
-            <Link href={project.blog}>
+            {/* <Link href={project.blog}>
               <ButtonAlt>
                 Blog <FaBlog size={17} />
               </ButtonAlt>
-            </Link>
+            </Link> */}
           </div>
         </div>
       </S.Banner>

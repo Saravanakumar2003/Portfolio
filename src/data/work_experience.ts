@@ -15,11 +15,11 @@ const work_experience = [
         ta: 'தொழில்நுட்ப பயிற்சி',
         },
         description: {
-        en: '✯ Currently working as a Technical Trainee at Zoho Books, a cloud-based accounting software. Learning to troubleshoot and resolve customer issues, and provide technical support.',
-        ta: '✯ தற்போது கிளவுட் அடிப்படையிலான கணக்கியல் மென்பொருளான ஜோஹோ புக்ஸில் தொழில்நுட்ப பயிற்சியாளராக பணிபுரிகிறேன். வாடிக்கையாளர் சிக்கல்களை சரிசெய்து தீர்க்கவும், தொழில்நுட்ப ஆதரவை வழங்கவும் கற்றுக்கொள்கிறேன்.' ,
+        en: '✯ Currently working as a Technical Trainee at Zoho Pay, a payment-gateway product of Zoho Corporation. More details will be updated soon!',
+        ta: '✯ தற்போது Zoho கார்ப்பரேஷனின் கட்டண-நுழைவாயில் தயாரிப்பான Zoho Pay-யில் தொழில்நுட்ப பயிற்சியாளராக பணிபுரிகிறேன். மேலும் விவரங்கள் விரைவில் புதுப்பிக்கப்படும்!',
         },
         tags: [
-        { name: 'Python', icon: '/icons/python.png' },
+        { name: 'Zoho Pay', icon: '/icons/Zoho_Pay.png' },
         ],
         date: '17-Feb-25 to Present',
         link: 'https://drive.google.com/file/d/1YJ7BeX5BpPyxI_3cpHKylPA5uMWApt2B/view?usp=sharing',

@@ -12,7 +12,7 @@ import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { initGA, logPageView } from '../utils/analytics';
 import { lightTheme } from '../styles/themes/default';
-import CookiesConsent from "../components/CookiesConsent";
+import CookiesConsent from "../components/Cookies/CookiesConsent";
 import "../styles/globals.css";
 
 const botkey = process.env.NEXT_PUBLIC_BOTKEY_URL;

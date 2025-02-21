@@ -49,7 +49,7 @@ export default function Home() {
         <About />
         <Skills />
         <Education />
-        {/* <Work_Experience /> */}
+        <Work_Experience/>
         <Experience />
         <Work />
         <Achievements />

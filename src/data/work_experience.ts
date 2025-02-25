@@ -7,8 +7,8 @@ const work_experience = [
         ta: 'சோஹோ கழகம்',
         },
         subTitle: {
-        en: 'Zoho Books Team',
-        ta: 'ஜோஹோ புக்ஸ் குழு',
+        en: 'Zoho Pay Team',
+        ta: 'ஜோஹோ பே குழு',
         },
         office: {
         en: 'Technical Trainee',

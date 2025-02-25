@@ -199,9 +199,22 @@ const works = [
         description:
           'Participated in a meaningful tree plantation drive as a Bhumi volunteer conducted by Eco-Champs Team of Bhumi.'
       },
-
-
-      
+      {
+        name: 'Kanini AVM',
+        image: '/Volunteering/Bhumi/AVM.jpg',
+        date: '23rd, Feb 2025',
+        description:
+          'Annual Volunteer Meet (AVM) was conducted to discuss the progress of the program and also to discuss the problems faced by the volunteers. The meet was very useful and I got to know a lot of things about the program.'
+      },
+      {
+        name: 'Caught Ya! Award',
+        image: '/Volunteering/Bhumi/CaughtYa.jpg',
+        date: '23rd, Feb 2025',
+        description:
+          'I was awarded the "Caught Ya!" award for my dedication and hard work in the Kanini program. The award was given to me by Sivasubramanium, LB of Kanini, Bhumi.',
+        url: 'https://drive.google.com/file/d/1ISK_3vqLz2MOjK2LlqtUWws58D5jdX5a/view?usp=sharing',
+        urltitle: 'View the certificate here'
+      },
       {
         name: 'Bhumi Image Gallery',
         image: '/Volunteering/Banners/BhumiJourney.png',

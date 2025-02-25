@@ -111,17 +111,22 @@ export const WorkContent = styled.div`
     background-size: cover;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 0 1rem;
+    padding: 1 2rem;
     position: relative;
 
     img {
       border-radius: 5px;
       max-width: 1200px;
-      width: 100%;
-      height: 100%;
+      width: 800px;
+      height: 600px;
       object-fit: cover;
       opacity: 1;
       transition: 0.5s;
+
+      @media (max-width: 800px) {
+        width: 95%;
+        height: 95%;
+      }
     }
 
     .text {

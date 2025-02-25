@@ -35,6 +35,12 @@
   margin-top: 10px;
 }
 
+.subtext{
+  font-size: 10px;
+  margin-top: 10px;
+  color: #fff;
+}
+
 @keyframes fadeInScale {
   from {
     opacity: 0;

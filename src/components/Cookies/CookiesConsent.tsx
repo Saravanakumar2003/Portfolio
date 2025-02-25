@@ -30,6 +30,7 @@ const CookiesConsent: React.FC = () => {
               <button onClick={handleAccept} className={styles.button}>
                 I Understand
               </button>
+              {/* <p className={styles.subtext}>* Privacy policy can be seen only if you press "I Understand" button.</p> */}
             </div>
           </div>
         </div>

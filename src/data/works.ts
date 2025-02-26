@@ -204,11 +204,11 @@ const works = [
         image: '/Volunteering/Bhumi/AVM.jpg',
         date: '23rd, Feb 2025',
         description:
-          'Annual Volunteer Meet (AVM) was conducted to discuss the progress of the program and also to discuss the problems faced by the volunteers. The meet was very useful and I got to know a lot of things about the program.'
+          'Annual Volunteer Meet (AVM) was conducted to discuss the progress of the program and also to discuss the problems faced by the volunteers.'
       },
       {
         name: 'Caught Ya! Award',
-        image: '/Volunteering/Bhumi/CaughtYa.jpg',
+        image: '/Volunteering/Bhumi/CaughtYa.JPG',
         date: '23rd, Feb 2025',
         description:
           'I was awarded the "Caught Ya!" award for my dedication and hard work in the Kanini program. The award was given to me by Sivasubramanium, LB of Kanini, Bhumi.',

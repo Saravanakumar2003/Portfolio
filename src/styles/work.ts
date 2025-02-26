@@ -117,8 +117,6 @@ export const WorkContent = styled.div`
     img {
       border-radius: 5px;
       max-width: 1200px;
-      width: 800px;
-      height: 600px;
       object-fit: cover;
       opacity: 1;
       transition: 0.5s;
@@ -133,6 +131,7 @@ export const WorkContent = styled.div`
       display: flex;
       flex-direction: column;
       align-items: center;
+      padding: 1rem;
 
 
       h3 {
@@ -165,6 +164,33 @@ export const WorkContent = styled.div`
         border-radius: 3px;
         padding: 1rem;
         text-align: justify;
+      }
+    }
+  }
+
+    &:nth-child(even) {
+    flex-direction: row-reverse;
+    align-items: center;
+
+    .workItem {
+      .text {
+        align-items: right;
+        right: 0;
+        left: -10rem;
+        bottom: -150px
+      }
+    }
+  }
+
+  &:nth-child(odd) {
+    flex-direction: row;
+    align-items: center;
+
+    .workItem {
+      .text {
+        align-items: left;
+        right: -10rem;
+        bottom: -150px
       }
     }
   }

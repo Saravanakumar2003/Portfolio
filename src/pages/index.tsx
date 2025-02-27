@@ -17,6 +17,7 @@ import { Publications } from "../components/Publications";
 import { Wakatime } from "../components/Coding/Wakatime";
 import { Certificates } from "../components/Certificates/index";
 import { Work_Experience } from "../components/Work/index";
+import { Jokes } from "../components/Misc/Joke";
 import { useTranslation } from 'react-i18next'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
@@ -59,6 +60,7 @@ export default function Home() {
         <Wakatime />
         <Testimonials />
         <CardContact />
+        <Jokes />
       </Section>
 
       <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>

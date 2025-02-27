@@ -102,6 +102,15 @@ export const Title = styled.h2`
     }
   }
 `
+export const SubTitle = styled.h4`
+  margin-top: -5rem;
+  margin-bottom: 3rem;
+  max-width: 50rem;
+  text-align: justify;
+  padding: 0 1rem;
+  font-size: 1.5rem;
+  color: ${props => props.theme.gray};
+`
 
 export const Description = styled.h4`
   margin-top: -5rem;

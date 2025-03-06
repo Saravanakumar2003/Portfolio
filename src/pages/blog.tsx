@@ -194,6 +194,7 @@ export default function Blog() {
                 <S.BlogItem>
                   <div className="banner">
                     <Image
+                      style={{ borderRadius: "20px" }}
                       width={500}
                       height={300}
                       src={blog.img}

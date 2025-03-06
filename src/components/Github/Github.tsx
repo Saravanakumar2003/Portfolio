@@ -121,7 +121,6 @@ export default function Github() {
     font-size: 1rem;
     font-weight: 200;
     text-align: center;
-    color: black;
 
     @media (max-width: 630px) {
       font-size: 0.8rem;
@@ -202,7 +201,6 @@ export default function Github() {
               <Text>
                 <a href={html_url} style={{
                   textDecoration: 'underline',
-                  color: 'black',
                   fontWeight: 'bold',
                   fontSize: '1rem',
                   textAlign: 'center',
@@ -217,7 +215,6 @@ export default function Github() {
           withBackground={true}
           style={{
             backgroundColor: '$(props => props.theme.colors.dark[0])',
-            color: 'white',
             borderRadius: '10px',
             margin: '1rem',
           }}

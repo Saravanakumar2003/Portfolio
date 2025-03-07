@@ -64,7 +64,7 @@ const blog = [
       en: 'The buzz surrounding the Build with AI Roadshow was palpable as tech enthusiasts from across Chennai eagerly awaited the chance to immerse themselves in a day of learning, collaboration, and exploration.',
       ta: 'சென்னையின் பல்வேறு பகுதிகளில் இருந்து தொழில்நுட்ப ஆர்வலர்கள் கற்றல், ஒத்துழைப்பு மற்றும் ஆராய்ச்சி ஆகியவற்றில் ஒரு நாளில் தங்களை மூழ்கடிக்க ஆவலுடன் காத்திருந்ததால் AI ரோட்ஷோவுடன் கட்டமைக்கப்பட்ட பரபரப்பு உணரப்பட்டது.',
     },
-    img: '/blog/BLOG1.jpg',
+    img: '/blog/BLOG1.png',
     date: {
       en: '11/05/2024',
       ta: '11/05/2024',

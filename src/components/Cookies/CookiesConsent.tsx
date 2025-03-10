@@ -4,6 +4,7 @@ import styles from "./CookiesConsent.module.css"; // Import CSS module for styli
 
 const CookiesConsent: React.FC = () => {
   const [showPopup, setShowPopup] = useState(false);
+  const [isPolicyClicked, setIsPolicyClicked] = useState(false);
 
   useEffect(() => {
     const consent = localStorage.getItem("userConsent");
@@ -17,15 +18,19 @@ const CookiesConsent: React.FC = () => {
     setShowPopup(false);
   };
 
+  const handlePolicyClick = () => {
+    setIsPolicyClicked(true);
+  };
+
   return (
     <>
       {showPopup && (
-        <div className={styles.overlay}>
-          <div className={styles.popup}>
+        <div className={`${styles.overlay} ${isPolicyClicked ? styles.noBlur : ""}`}>
+          <div className={`${styles.popup} ${isPolicyClicked ? styles.popupDown : ""}`}>
             <div className={styles.popupContent}>
               <p>
                 This website uses cookies to enhance the user experience. <br/> By using this site, you accept our{" "}
-                <Link href={'/privacypolicy'} style={{ color: "#00D9FF" }}>Privacy Policy</Link>.
+                <Link href={'/privacypolicy'} style={{ color: "#00D9FF" }} onClick={handlePolicyClick}>Privacy Policy</Link>.
               </p>
               <button onClick={handleAccept} className={styles.button}>
                 I Understand

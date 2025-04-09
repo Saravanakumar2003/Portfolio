@@ -1,7 +1,7 @@
 const work_experience = [
     {
         id: 1,
-        img: '/icons/zoho_full.png',
+        img: '/experience/Zoho.jpg',
         title: {
         en: 'Zoho Corporation',
         ta: 'சோஹோ கழகம்',

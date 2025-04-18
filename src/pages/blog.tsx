@@ -17,6 +17,7 @@ import { Button } from '@mantine/core';
 import { useTranslation } from 'react-i18next';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
+import { NewsletterForm } from '../components/Newsletter';
 
 const botkey = process.env.NEXT_PUBLIC_BOTKEY_URL;
 
@@ -236,6 +237,7 @@ export default function Blog() {
             </p>
           </S.BlogContent>
         </S.BlogContainer>
+        <NewsletterForm />
       </T.Section>
       <Publications />
       <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>

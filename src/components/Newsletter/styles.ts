@@ -22,6 +22,7 @@ export const FormContent = styled.form`
       border: 2px solid ${props => props.theme.border};
       border-radius: 5px;
       background: ${props => props.theme.backgroundSecond};
+      color: ${props => props.theme.firstColor};
       font-size: 1rem;
       outline: none;
       transition: border-color 0.3s;

@@ -98,7 +98,8 @@ export function NewsletterForm() {
           required
         />
         <label htmlFor="consent">
-          I agree to the terms and conditions
+          I agree to receive emails from Saravanakumar and I can unsubscribe at any time
+          <span style={{ color: 'red' }}>*</span>
         </label>
       </div>
 

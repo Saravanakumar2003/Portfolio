@@ -21,18 +21,6 @@ export function Jokes() {
     setJokeImageUrl(`https://readme-jokes.vercel.app/api?${Date.now()}`);
   };
 
-  const handleShare = () => {
-    if (navigator.share) {
-      navigator.share({
-        title: 'Joke for You!',
-        text: 'Check out this joke!',
-        url: jokeImageUrl,
-      }).catch((error) => console.error('Error sharing:', error));
-    } else {
-      alert('Sharing not supported on this browser.');
-    }
-  };
-
   return (
     <Section>
       <Title >
@@ -48,9 +36,6 @@ export function Jokes() {
       <div>
         <ButtonSecondary onClick={handleRefresh} style={{ marginRight: '10px' }}>
           <ArrowCounterClockwise size={24} /> {currentLang === 'ta' ? 'புதுப்பிக்க' : 'Refresh'}
-        </ButtonSecondary>
-        <ButtonSecondary onClick={handleShare}>
-          <ShareNetwork size={24} /> {currentLang === 'ta' ? 'பகிர்' : 'Share'}
         </ButtonSecondary>
       </div>
     </Section>

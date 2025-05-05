@@ -8,8 +8,8 @@ const projects = [
     type: 'Device',
     icon: '/projects/HydroSense/Icon.png',
     blog: 'https://blog.saravanakumar.engineer/will-be-updated-soon',
-    github: 'https://github.com/',
-    web: 'https://saravana.vercel.app/',
+    github: 'https://github.com/Saravanakumar2003/HydroSense/',
+    web: 'https://hydrosense-app.vercel.app/',
     description:
       'HydroSense is a water quality monitoring system that uses IoT technology to measure and analyze water quality parameters such as pH and turbidity. The device is designed to provide real-time data, alerts, and notifications to users, enabling them to monitor and maintain water quality effectively.',
     tags: [

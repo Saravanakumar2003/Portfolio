@@ -11,7 +11,7 @@ const projects = [
     github: 'https://github.com/Saravanakumar2003/HydroSense/',
     web: 'https://hydrosense-app.vercel.app/',
     description:
-      'HydroSense is a water quality monitoring system that uses IoT technology to measure and analyze water quality parameters such as pH and turbidity. The device is designed to provide real-time data, alerts, and notifications to users, enabling them to monitor and maintain water quality effectively.',
+      'Hydrosense is an IoT-based water distribution system designed to ensure clean and safe drinking water. It utilizes a Vega Aries IoT V2.0 microcontroller to collect real-time data from various sensors, including preesure, pH, turbidity, TDS, and temperature. The data is then displayed on a user-friendly dashboard, allowing users to monitor water quality and distribution effectively.',
     tags: [
       {name: 'College Projects'},
     ],
@@ -40,6 +40,24 @@ const projects = [
         color: '#38BDF8',
         rgb: '56, 189, 248'
       },
+      {
+        name: 'Firebase',
+        icon: '/icons/Firebase.png',
+        color: '#38BDF8',
+        rgb: '56, 189, 248'
+      },
+      {
+        name: 'Vercel',
+        icon: '/icons/vercel.png',
+        color: '#38BDF8',
+        rgb: '56, 189, 248'
+      },
+      {
+        name: 'GitHub',
+        icon: '/icons/GitHub.png',
+        color: '#38BDF8',
+        rgb: '56, 189, 248'
+      },
     ],
     print: [
       {
@@ -52,15 +70,50 @@ const projects = [
         name: 'Dashboard',
         description:
         'The dashboard is built using HTML, CSS and JavaScript. It shows the real-time data of the water quality parameters such as pH and turbidity. It also shows the historical data of the water quality parameters.',
-        img: '/projects/HydroSense/Dashboard.png'
+        img: '/projects/HydroSense/dashboard.png'
       },
       {
-        name: 'Data Reports',
+        name: 'Chart View',
         description:
-          'The device generates data reports of the water quality parameters. The data reports are generated in the form of graphs and tables.',
-        img: '/projects/HydroSense/Data_Report.png'
+          'The chart view is built using Chart.js. It shows the real-time data of the water quality parameters such as pH and turbidity. It also shows the historical data of the water quality parameters.',
+        img: '/projects/HydroSense/chart.png'
       },
-      
+      {
+        name: 'Water Distribution',
+        description : 'This module helps monitor the balance between expected (theoretical) water pressure and actual pressure detected by sensors in a water distribution system. It is designed to detect distribution issues, calibrate sensor readings, and maintain optimal flow conditions',
+        img: '/projects/HydroSense/distributon.png'
+      },
+      {
+        name: 'Hardware Status',
+        description:
+          'The Vega Aries IoT V2.0 Has several inbuilt sensors which show and monitiors the performace of the Board. In this module we sho w the real-time value of those inbuilt sensors for reference.',
+        img: '/projects/HydroSense/hardware.png'
+      },
+      {
+        name: 'Talk with AI',
+        description : 'The Artificial Intelligence section of HydroSense allows users to interact directly with the water  quality dataset using natural language. It is your personal water scientist—just ask a question and get immediate insights. This feature is powered by AI and trained on real-time sensor data and historic trends.',
+        img: '/projects/HydroSense/ai.png'
+      },
+      {
+        name: 'Backup Data',
+        description : 'The Cloud Backups module allows you to safely store water quality data in the cloud and retrieve it whenever needed. This ensures that your local storage stays clean and optimized, while your historical data remains secure and easily accessible',
+        img: '/projects/HydroSense/backup_data.png'
+      },
+      {
+        name: 'Reports',
+        description : 'The Reports page provides access to downloadable data insights from HydroSense, helping users  analyze water quality trends, compliance, and system health over time. You can export all data or specific reports based on your needs.',
+        img: '/projects/HydroSense/reports.png'
+      },
+      {
+        name: 'Profile',
+        description : 'The Profile section is your personal space on HydroSense. It allows you to manage your account, update credentials, and secure your data with additional layers of protection.',
+        img: '/projects/HydroSense/profile.png'
+      },
+      {
+        name: 'Settings',
+        description : 'The settings module allows you to setup your Hardware Device and run a simulation mode for test purposes. You can also clear your data and cookies from this module.',
+        img: '/projects/HydroSense/settings.png'
+      },
     ],
     team: [
       {

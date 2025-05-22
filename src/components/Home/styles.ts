@@ -38,16 +38,18 @@ export const Box = styled.div`
     }
 
      span {
-      font-size: 20px;
+      font-size: 13px;
       text-align: center;
-      left: 5px;
-      right: 5px;
+      margin-left: 10px;
+      margin-right: 10px;
+      left: 10px;
+      right: 15px;
 
       @media (max-width: 768px) {
-        font-size: 15px;
+        font-size: 10px;
       }
       @media (max-width: 500px) {
-        font-size: 10px;
+        font-size: 8px;
       }
 }
 
@@ -124,8 +126,8 @@ export const Logo = styled.div`
     right: 120px;
     width: 30%;
 
-    @media (max-width: 500px) {
-      right: 80px;
+    @media (max-width: 570px) {
+      right: -10px;
       width: 30%;
     }
     
@@ -135,8 +137,8 @@ export const Logo = styled.div`
     left: 120px;
     width: 30%;
 
-    @media (max-width: 500px) {
-      left: 80px;
+    @media (max-width: 570px) {
+      left: -10px;
       width: 30%;
     }
     

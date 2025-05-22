@@ -1,6 +1,6 @@
 /* eslint-disable-next-line import/no-anonymous-default-export */
 import Link from 'next/link'
-import { Description, Section, Title, ButtonPrimary, ButtonSecondary, SubTitle} from '../../styles/styles'
+import { Description, Section, Title, ButtonPrimary, ButtonAlt, SubTitle} from '../../styles/styles'
 import { SmileyWink, ArrowCounterClockwise, ShareNetwork } from 'phosphor-react'
 import { useTranslation } from 'react-i18next'
 import { useRouter } from 'next/router'
@@ -34,9 +34,9 @@ export function Jokes() {
       </SubTitle>
       <img src={jokeImageUrl} alt="Jokes Card" />
       <div>
-        <ButtonSecondary onClick={handleRefresh} style={{ marginRight: '10px' }}>
+        <ButtonAlt onClick={handleRefresh} style={{ marginRight: '10px' }}>
           <ArrowCounterClockwise size={24} /> {currentLang === 'ta' ? 'புதுப்பிக்க' : 'Refresh'}
-        </ButtonSecondary>
+        </ButtonAlt>
       </div>
     </Section>
   );

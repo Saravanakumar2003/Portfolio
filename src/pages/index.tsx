@@ -59,8 +59,8 @@ export default function Home() {
         <Projects />
         <Wakatime />
         <Testimonials />
-        <CardContact />
         <Jokes />
+        <CardContact />
       </Section>
 
       <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>

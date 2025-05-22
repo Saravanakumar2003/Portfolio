@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { ButtonAlt, Section } from '../../styles/styles'
+import { ButtonAlt, ButtonSecondary, Section } from '../../styles/styles'
 import { CardContactContainer, CardContactContent } from './styles'
 import { Pen, TelegramLogo } from 'phosphor-react'
 import { useTranslation } from 'react-i18next'
@@ -62,7 +62,7 @@ export function CardContact() {
           </ButtonAlt>
         </Link>
         <Link href="https://forms.visme.co/formsPlayer/kkjne993-saravana-039-s-portfolio" legacyBehavior>
-          <ButtonAlt style={{
+          <ButtonSecondary style={{
             marginTop: '1rem',
           }}>
             {currentLang === 'ta' ? 'கருத்துக்களை எழுதுங்கள்' : 'Write a feedback'}{' '}
@@ -74,7 +74,7 @@ export function CardContact() {
               size={16}
               weight="bold"
             />
-          </ButtonAlt>
+          </ButtonSecondary>
         </Link>
       </CardContactContainer>
     </Section>

@@ -8,7 +8,7 @@ import {
 import 'react-vertical-timeline-component/style.min.css'
 import { Button, Container, Title } from '../../styles/styles'
 import { EducationContainer, EducationContent } from './styles'
-import { Books } from 'phosphor-react'
+import { Books, Student } from 'phosphor-react'
 import Link from "next/link";
 import { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -40,7 +40,7 @@ export function Education() {
       <Title>
         {currentLang === 'ta' ? 'வரலாறு' : 'History'}
         <span>
-          <Books /> {currentLang === 'ta' ? 'கல்வி' : 'Academic'}
+          <Student  /> {currentLang === 'ta' ? 'கல்வி' : 'Academic'}
         </span>
       </Title>
 

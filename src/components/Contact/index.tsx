@@ -51,8 +51,8 @@ export function Contact() {
               {' '}
               <TelegramLogo size={22} color="#00fffb" /> Email{' '}
             </h4>
-            <Link href="mailto:hello@saravanakumar.engineer" target="_blank">
-              <span>hello@saravanakumar.engineer</span>
+            <Link href="mailto:saravanaramaswamy2003@gmail.com" target="_blank">
+              <span>saravanaramaswamy2003@gmail.com</span>
             </Link>
           </div>
         </ContactContent>

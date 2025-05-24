@@ -4,7 +4,7 @@ import Link from 'next/link'
 import achievements from '../../data/achievements'
 import { AchievementsContainer, AchievementsContent } from './styles'
 import { Container, Title } from '../../styles/styles'
-import { HiOutlineDesktopComputer } from 'react-icons/hi'
+import { Medal } from 'phosphor-react'
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; 
 import { Key } from 'react'
@@ -35,7 +35,7 @@ export function Achievements() {
       <Title style={{ marginBottom: '3rem' }}>
         {currentLang === 'ta' ? 'விருதுகள்!' : 'Accolades!'}
         <span>
-          <HiOutlineDesktopComputer />{currentLang === 'ta' ? 'சிறந்த' : 'Outstanding'}
+          <Medal  />{currentLang === 'ta' ? 'சிறந்த' : 'Outstanding'}
         </span>      
       </Title>
       <AchievementsContainer>

@@ -15,7 +15,7 @@ export default function PrivacyPolicy() {
 
         <h2>Last Updated: December 7th, 2024</h2>
 
-        <p>Your privacy is important to us. This Privacy Policy explains how Saravanakumar.engineer collects, uses, and protects your information when you interact with our website.</p>
+        <p>Your privacy is important to us. This Privacy Policy explains how Saravanakumar's Portfolio collects, uses, and protects your information when you interact with our website.</p>
 
         <h3>1. Information We Collect</h3>
         <p>We may collect the following types of information when you use our website:</p>
@@ -78,8 +78,8 @@ export default function PrivacyPolicy() {
         <h3>9. Contact Information</h3>
         <p>If you have questions or concerns about this Privacy Policy, contact us at:</p>
         <p><strong>Saravanakumar R</strong><br />
-          Email: hello@saravanakumar.engineer<br />
-          Website: <a href="https://saravanakumar.enginner">saravanakumar.engineer</a>
+          Email: saravanaramaswamy2003@gmail.com<br />
+          Website: <a href="https://saravana.vercel.app">saravana.vercel.app</a>
         </p>
       </PrivacyPolicyContainer>
       <ScrollTop />

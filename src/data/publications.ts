@@ -16,8 +16,8 @@ const publications = [
       },
 
       publicationDate: {
-        en: 'Yet to be published',
-        ta: 'இன்னும் வெளியிடப்படவில்லை',
+        en: '26/04/2025',
+        ta: '26/04/2025',
       },
 
       publicationType: {

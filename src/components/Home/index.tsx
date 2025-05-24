@@ -311,7 +311,7 @@ export function HomeHero() {
                         <h1>{userName || 'Error'}</h1>
                         <h3 className="italic">thanks for stopping by my world</h3>
                       </Announcement>
-                      <span>www.saravanakumar.engineer</span>
+                      <span>https://saravavana.vercel.app/</span>
                     </Card>
                   </Box>
                 )}

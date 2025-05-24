@@ -10,7 +10,7 @@ import { Button } from '../../styles/styles';
 import 'react-vertical-timeline-component/style.min.css';
 import { Container, Title } from '../../styles/styles';
 import { ExperienceContainer, ExperienceContent } from './styles';
-import { Briefcase } from 'phosphor-react';
+import { Books } from 'phosphor-react';
 import { useTranslation } from 'react-i18next';
 import { useRouter } from 'next/router';
 import experience from '../../data/experiences';
@@ -34,7 +34,7 @@ export function Experience() {
       <Title>
         {currentLang === 'ta' ? 'அனுபவம்' : 'Experience'}  
         <span>
-          <Briefcase /> {currentLang === 'ta' ? 'பயிற்சி' : 'Internship'}
+          <Books /> {currentLang === 'ta' ? 'பயிற்சி' : 'Internship'}
         </span>
       </Title>
 

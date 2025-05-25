@@ -15,6 +15,9 @@ import { useRef } from 'react';
 import * as htmlToImage from 'html-to-image';
 import Confetti from 'react-confetti';
 
+const GOOGLE_FORM_ACTION_URL2 = process.env.NEXT_PUBLIC_GOOGLE_FORM_ACTION_URL2;
+const NAME_ENTRY_ID2 = process.env.NEXT_PUBLIC_NAME_ENTRY_ID2;
+
 Modal.setAppElement('#__next');
 
 export function HomeHero() {
@@ -60,13 +63,37 @@ export function HomeHero() {
     setModalIsOpen2(false);
   }
 
-  function handleGenerate() {
+  async function handleGenerate() {
     if (userName.trim() === '') {
       alert('Please enter a name!');
       return;
     }
 
     setShowCard(true);
+
+    try {
+      if (!GOOGLE_FORM_ACTION_URL2) {
+        console.error('Google Form action URL is not defined');
+        return;
+      }
+
+      const formData = new FormData();
+      formData.append(NAME_ENTRY_ID2 || '', userName);
+
+      const response = await fetch(GOOGLE_FORM_ACTION_URL2, {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors',
+      });
+
+      if (response) {
+        setUserName('');
+      } else {
+        console.error('Failed to submit the form');
+      }
+    } catch (error) {
+      console.error('Error submitting the form:', error);
+    }
 
     // Trigger confetti
     setShowConfetti(true);
@@ -125,11 +152,12 @@ export function HomeHero() {
           </h2>
 
           <div className="button">
-            <ButtonPrimary onClick={openModal}>
-              <b>{currentLang === 'ta' ? 'எனது கதையைப் பார்க்கவும்' : 'See my story'}</b>
-              <FiArrowRight style={{ marginBottom: '-0.3rem' }} size={20} />
-            </ButtonPrimary>
-
+            <Link legacyBehavior href="#projects">
+              <ButtonPrimary>
+                <b>{currentLang === 'ta' ? 'திட்டங்களைக் காண்க' : 'See Portfolio'}</b>
+                <FiArrowRight style={{ marginBottom: '-0.3rem' }} size={20} />
+              </ButtonPrimary>
+            </Link>
             <Modal
               isOpen={modalIsOpen}
               onRequestClose={closeModal}
@@ -239,8 +267,8 @@ export function HomeHero() {
                   transform: 'translate(-50%, -50%)',
                   backgroundColor: '#fff',
                   borderRadius: '10px',
-                  padding: '20px',
-                  width: '90%', // Adjust width for responsiveness
+                  padding: '10px',
+                  width: '70%', // Adjust width for responsiveness
                   maxWidth: '600px', // Limit the maximum width
                   height: 'auto',
                 },
@@ -350,7 +378,7 @@ export function HomeHero() {
           <Confetti
             width={window.innerWidth}
             height={window.innerHeight}
-            numberOfPieces={250} 
+            numberOfPieces={250}
             gravity={0.5}
             wind={0.05}
           />

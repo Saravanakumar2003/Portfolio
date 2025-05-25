@@ -4,7 +4,6 @@ import styled from 'styled-components';
 export const Box = styled.div`
   display: flex;
   text-transform: uppercase;
-  font-family: 'Asap Condensed', sans-serif;
   box-sizing: border-box;
   margin: 0;
   padding: 0;

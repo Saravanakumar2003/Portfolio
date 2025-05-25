@@ -7,7 +7,7 @@ const projects = [
     title: 'HydroSense',
     type: 'Device',
     icon: '/projects/HydroSense/Icon.png',
-    blog: 'https://blog.saravanakumar.engineer/will-be-updated-soon',
+    blog: 'https://saravanakumarblog.hashnode.dev/will-be-updated-soon',
     github: 'https://github.com/Saravanakumar2003/HydroSense/',
     web: 'https://hydrosense-app.vercel.app/',
     description:
@@ -67,10 +67,16 @@ const projects = [
         img: '/projects/HydroSense/Components_Image.jpg'
       },
       {
+        name: 'Hydrosense Product',
+        description:
+          'This is the final product of HydroSense. It is a IoT based water distribution system which is used to monitor the water quality and distribution. It has several inbuilt sensors which are used to collect the data from the water and show it in a dashboard.',
+        img: '/projects/HydroSense/final.png'
+      },
+      {
         name: 'Dashboard',
         description:
         'The dashboard is built using HTML, CSS and JavaScript. It shows the real-time data of the water quality parameters such as pH and turbidity. It also shows the historical data of the water quality parameters.',
-        img: '/projects/HydroSense/dashboard.png'
+        img: '/projects/HydroSense/Dashboard.png'
       },
       {
         name: 'Chart View',
@@ -144,7 +150,7 @@ const projects = [
     title: 'ELECTROWIZ\'25',
     type: 'Website',
     icon: '/projects/Electrowiz/icon.png',
-    blog: 'https://saravanakumar2003.hashnode.dev/muon-track-reconstruction',
+    blog: 'https://saravanakumarblog.hashnode.dev/will-be-updated-soon',
     github: 'https://github.com/Saravanakumar2003/Electrowiz-25',
     web: 'https://electrowiz.info/',
     description:
@@ -234,7 +240,7 @@ const projects = [
     title: 'Muon Track Reconstruction',
     type: 'Software',
     icon: '/projects/Muon/icon.png',
-    blog: 'https://saravanakumar2003.hashnode.dev/muon-track-reconstruction',
+    blog: 'https://saravanakumarblog.hashnode.dev/will-be-updated-soon',
     github: 'https://github.com/Saravanakumar2003/Muon-Track-Reconstruction',
     web: 'https://muon-api.onrender.com/',
     description:
@@ -326,7 +332,7 @@ const projects = [
     title: 'NSS Website',
     type: 'Website',
     icon: '/projects/NSS/Nss.png',
-    blog: 'https://saravanakumar2003.hashnode.dev/nssvec-website',
+    blog: 'https://saravanakumarblog.hashnode.dev/will-be-updated-soon',
     github: 'https://github.com/Saravanakumar2003/NSS',
     web: 'https://nssvec.vercel.app/',
     description:
@@ -422,7 +428,7 @@ const projects = [
     title: 'DAT to CSV Converter',
     type: 'Convertor',
     icon: '/projects/DATtoCSV/DATlogo.png',
-    blog: 'https://saravanakumar2003.hashnode.dev/dat-to-csv-file-converter',
+    blog: 'https://saravanakumarblog.hashnode.dev/will-be-updated-soon',
     github: 'https://github.com/Saravanakumar2003/DAT-to-CSV-Convertor',
     web: 'https://saravanakumar.pythonanywhere.com/',
     description:
@@ -515,7 +521,7 @@ const projects = [
     type: 'Website',
     icon: '/Logo1.png',
     github: 'https://github.com/Saravanakumar2003/Portfolio',
-    blog: 'https://saravanakumar2003.hashnode.dev/how-i-built-my-portfolio',
+    blog: 'https://saravanakumarblog.hashnode.dev/will-be-updated-soon',
     web: 'https://saravana.vercel.app/',
     description:
       'It is built using Next.js, a React framework that enables server-side rendering and other powerful features. The website is designed to showcase my skills, projects, and other relevant information.',

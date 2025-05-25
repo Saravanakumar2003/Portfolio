@@ -11,12 +11,12 @@ const work_experience = [
         ta: 'ஜோஹோ பே குழு',
         },
         office: {
-        en: 'Technical Trainee',
-        ta: 'தொழில்நுட்ப பயிற்சி',
+        en: 'Technical Support Engineer',
+        ta: 'தொழில்நுட்ப ஆதரவு பொறியாளர்',
         },
         description: {
-        en: '✯ Currently working as a Technical Trainee at Zoho Pay, a payment-gateway product of Zoho Corporation. More details will be updated soon!',
-        ta: '✯ தற்போது Zoho கார்ப்பரேஷனின் கட்டண-நுழைவாயில் தயாரிப்பான Zoho Pay-யில் தொழில்நுட்ப பயிற்சியாளராக பணிபுரிகிறேன். மேலும் விவரங்கள் விரைவில் புதுப்பிக்கப்படும்!',
+        en: '✯ Currently working as a Technical Support Engineer at Zoho Pay, a payment-gateway product of Zoho Corporation. More details will be updated soon!',
+        ta: '✯ தற்போது Zoho கார்ப்பரேஷனின் கட்டண-நுழைவாயில் தயாரிப்பான Zoho Pay-யில் தொழில்நுட்ப ஆதரவு பொறியாளராக பணிபுரிகிறேன். மேலும் விவரங்கள் விரைவில் புதுப்பிக்கப்படும்!',
         },
         tags: [
         { name: 'Zoho Pay', icon: '/icons/Zoho_Pay.png' },

@@ -124,6 +124,15 @@ const cardSkills = [
     },
     img: '/icons/Canva.png',
     color: '#00C4CC'
+  },
+  {
+    id: 15,
+    title: {
+      en: 'Figma',
+      ta: 'பிக்மா',
+    },
+    img: '/icons/Figma.png',
+    color: '#F24E1E'
   }
 ]
 

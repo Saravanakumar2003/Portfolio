@@ -177,7 +177,7 @@ export const BlogItem = styled.div`
   }
 
   .description {
-    max-width: 30rem;
+    max-width: 45rem;
 
     p {
       margin: 1.5rem 0;
@@ -186,6 +186,7 @@ export const BlogItem = styled.div`
       display: -webkit-box;
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 4;
+      text-align: justify;
     }
 
     .tags {

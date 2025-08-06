@@ -13,7 +13,7 @@ export default function TermsAndConditions() {
         <br /><br />
         <h1>Terms and Conditions</h1>
 
-        <h2>Last Updated: December 7th, 2024</h2>
+        <h2>Last Updated:August 7th, 2025</h2>
 
         <p>Welcome to Saravanakumar's Portfolio. By accessing or using this website, you agree to comply with and be bound by the following terms and conditions. If you do not agree with these terms, please do not use this site.</p>
 
@@ -27,7 +27,7 @@ export default function TermsAndConditions() {
         <p>Saravanakumar's Portfolio is based on the project <strong>Evander Inacio Portfolio</strong>, which was originally developed and publicly shared on GitHub by Evander Inacio.</p>
         <p>The project <strong>Evander Inacio Portfolio</strong> is <strong>not open-source</strong>, and its use and distribution are subject to the original creator's terms.</p>
         <p>Special thanks to Evander Inacio for <strong>granting permission to use and build upon his project.</strong> This project has since evolved with numerous enhancements and new features while maintaining proper attribution to the original creator.</p>
-        <p>Modifications and additional features to the site were made by <strong>Saravana Kumar R</strong> for personal use and are not intended for redistribution or commercial use without proper authorization.</p>
+        <p>Modifications and additional features to the site were made by <strong>Saravanakumar R</strong> for personal use and are not intended for redistribution or commercial use without proper authorization.</p>
         <p><strong>Disclaimer:</strong> The creator of Saravanakumar's Portfolio does not claim ownership of the original "Evander Inacio" project or its intellectual property. All rights to the original code are retained by the original creator.</p>
         
         <h3>4. User Responsibilities</h3>
@@ -42,26 +42,7 @@ export default function TermsAndConditions() {
         <p>By using features like the contact form or feedback form, you agree to the collection and use of your data as outlined in our <a href="#">Privacy Policy</a>.</p>
 
         <h3>6. Third-Party Services</h3>
-        <p>This site integrates with third-party tools, including:</p>
-        <ul>
-          <li><strong>Google Analytics:</strong> Tracks website traffic and usage patterns.</li>
-          <li><strong>Vercel Analytics:</strong> Monitors website performance.</li>
-          <li><strong>Botpress:</strong> Powers the AI chatbot for interactive communication.</li>
-          <li><strong>Visme Forms:</strong> Manages feedback submissions and collects data.</li>
-          <li><strong>Testimonial.to:</strong> Manages testimonial submissions and collects data.</li>
-          <li><strong>Giscus:</strong> Enables commenting on blog posts.</li>
-          <li><strong>Kit.com:</strong> Used for newsletter subscription.</li>
-          <li><strong>Google Calendar:</strong> My personal portfolio calendar integration.</li>
-          <li><strong>SociableKIT:</strong> Embeds social media feeds and widgets.</li>
-          <li><strong>Email.js:</strong> Facilitates email communication and form submissions.</li>
-          <li><strong>Calendly:</strong> Schedules and manages appointments and meetings.</li>
-          <li><strong>WakaTime Embeds:</strong> Tracks coding activity and embeds coding stats.</li>
-          <li><strong>Canva Embeds:</strong> Embeds resume created with Canva.</li>
-          <li><strong>Hashnode:</strong> Manages and displays blog posts.</li>
-          <li><strong>Trello (Project board):</strong> Manages project tasks and collaboration.</li>
-          <li><strong>Google Forms:</strong> Collects project suggestions and feedback.</li>
-          <li><strong>YouTube Video:</strong> Hosts and displays project explanation videos.</li>
-        </ul>
+        <p>This site uses third-party tools (such as Google Analytics, Vercel, Botpress, Email.js, and others) to manage analytics, forms, chatbots, and embeds. Each service is governed by its own privacy policy and terms. Please refer to our [Privacy Policy] for more details.</p>
         <p>These services operate under their respective terms and policies. We are not responsible for their data collection or handling practices.</p>
 
         <h3>7. Limitation of Liability</h3>
@@ -83,7 +64,6 @@ export default function TermsAndConditions() {
         <p>For questions about these Terms and Conditions or the original project attribution, contact:</p>
 
         <p><strong>Saravanakumar R</strong><br />
-          Email: hello@Saravanakumar's Portfolio<br />
           Website: <a href="https://saravana.vercel.app">saravana.vercel.app</a>
         </p>
       </TermsAndConditionsContainer>

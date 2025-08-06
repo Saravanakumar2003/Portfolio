@@ -13,7 +13,7 @@ export default function PrivacyPolicy() {
         <br/><br/>
         <h1>Privacy Policy</h1>
 
-        <h2>Last Updated: December 7th, 2024</h2>
+        <h2>Last Updated: August 7th, 2025</h2>
 
         <p>Your privacy is important to us. This Privacy Policy explains how Saravanakumar's Portfolio collects, uses, and protects your information when you interact with our website.</p>
 
@@ -21,7 +21,8 @@ export default function PrivacyPolicy() {
         <p>We may collect the following types of information when you use our website:</p>
         <ul>
           <li><strong>Personal Information:</strong> Name, email address, phone number, and feedback (via forms).</li>
-          <li><strong>Non-Personal Information:</strong> Browser type, IP address, and usage data collected through analytics tools.</li>
+          <li><strong>Non-Personal Information:</strong> IP address, browser type, device type, pages visited, and interactions (collected via cookies and third-party tools)
+</li>
         </ul>
 
         <h3>2. How We Use Your Information</h3>
@@ -56,10 +57,10 @@ export default function PrivacyPolicy() {
         <p>These third-party services may collect, use, and store your data according to their respective privacy policies.</p>
 
         <h3>4. Cookies and Tracking Technologies</h3>
-        <p>We use cookies to improve your browsing experience and analyze website usage. You can manage your cookie preferences through your browser settings.</p>
+        <p>We may use cookies and similar technologies for analytics and improving user experience. By continuing to use this site, you consent to our use of cookies.</p>
 
         <h3>5. Data Protection</h3>
-        <p>We take appropriate measures to safeguard your personal information against unauthorized access, disclosure, alteration, or destruction. However, no online platform can guarantee absolute security.</p>
+        <p>We take appropriate measures to safeguard your personal information against unauthorized access, disclosure, alteration, or destruction. However, no online platform can guarantee absolute security. We retain your data only for as long as necessary to fulfill the purposes outlined in this policy, unless a longer retention period is required or permitted by law.</p>
 
         <h3>6. Data Sharing</h3>
         <p>We do not sell, rent, or share your personal information with third parties except as required by law or to provide essential services (e.g., analytics, hosting).</p>

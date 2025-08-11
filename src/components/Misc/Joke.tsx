@@ -24,9 +24,9 @@ export function Jokes() {
   return (
     <Section>
       <Title >
-        {currentLang === 'ta' ? 'தொடர்பு படிவம்' : 'Joke For You!'}
+        {currentLang === 'ta' ? 'சிறப்பு நகைச்சுவை!' : 'Joke For You!'}
         <span>
-          <SmileyWink /> {currentLang === 'ta' ? 'தொடர்பு' : 'Special'}
+          <SmileyWink /> {currentLang === 'ta' ? 'உனக்கான' : 'Special'}
         </span>
       </Title>
       <SubTitle>

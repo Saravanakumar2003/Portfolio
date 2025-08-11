@@ -6,6 +6,7 @@ const work_experience = [
         en: 'Zoho Corporation',
         ta: 'சோஹோ கழகம்',
         },
+
         subTitle: {
         en: 'Zoho Pay Team',
         ta: 'ஜோஹோ பே குழு',
@@ -21,10 +22,11 @@ const work_experience = [
         tags: [
         { name: 'Zoho Pay', icon: '/icons/Zoho_Pay.png' },
         ],
-        date: '17-Feb-25 to Present',
-        link: 'https://drive.google.com/file/d/1YJ7BeX5BpPyxI_3cpHKylPA5uMWApt2B/view?usp=sharing',
-        link2: 'https://www.zoho.com/',
-        certificate: 'https://drive.google.com/file/d/14ycBaF9U54wz3Jb1mJRyiRAl5fE7TpLS/view?usp=sharing',
+        date: {
+         en: '17-Feb-25 to Present',
+         ta: '17-பிப்-25 முதல் தற்போது வரை',
+        },
+        link2: 'https://www.zoho.com/us/payments/',
     },
 ];
 

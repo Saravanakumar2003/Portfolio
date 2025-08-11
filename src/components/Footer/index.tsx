@@ -18,13 +18,13 @@ export function Footer() {
   return (
     <FooterContainer>
       <FooterContent>
-        <h4> &copy; {new Date().getFullYear()} Saravanakumar Ramaswamy</h4>
+        <h4> &copy; {new Date().getFullYear()} {currentLang === 'ta' ? 'சரவணகுமார் ராமசாமி' : 'Saravanakumar Ramaswamy'}</h4>
         <div className="footer_links">
         <Link href={'/privacypolicy'} aria-label={currentLang === 'ta' ? 'தனியுரிமைக் கொள்கை' : 'Privacy Policy'} legacyBehavior>
           {currentLang === 'ta' ? 'தனியுரிமைக் கொள்கை' : 'Privacy Policy'}
         </Link>
-        <Link href={'/terms&condition'} aria-label={currentLang === 'ta' ? 'விதிமுறைகள் மற்றும் நிபந்தனைகள்' : 'Terms and Conditions'} legacyBehavior>
-          {currentLang === 'ta' ? 'விதிமுறைகள் மற்றும் நிபந்தனைகள்' : 'Terms and Conditions'}
+        <Link href={'/terms&condition'} aria-label={currentLang === 'ta' ? 'விதிமுறைகள் & நிபந்தனைகள்' : 'Terms & Conditions'} legacyBehavior>
+          {currentLang === 'ta' ? 'விதிமுறைகள் & நிபந்தனைகள்' : 'Terms & Conditions'}
         </Link>
         </div>
       </FooterContent>

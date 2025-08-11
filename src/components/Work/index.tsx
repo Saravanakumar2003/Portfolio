@@ -53,7 +53,7 @@ export function Work_Experience() {
                   contentArrowStyle={{
                     borderRight: `10px solid ${theme.backgroundAlt}`
                   }}
-                  date={exp.date}
+                  date={exp.date[currentLang]}
                   icon={
                     <Image
                       style={{ position: 'relative', width: '100%', height: '100%', borderRadius: '60%' }}

@@ -15,15 +15,55 @@ export interface Print {
 }
 
 export interface Work {
-  id: string
+  id: number
   url: string
   imgUrl: string
-  title: string
-  title2: string
-  title3: string
-  subTitle: string
-  description: string
-  tags: Tag[]
-  prints: Print[]
-  date: string
+  title: {
+    en: string
+    ta: string
+  }
+  title2: {
+    en: string
+    ta: string
+  }
+  title3: {
+    en: string
+    ta: string
+  }
+  subTitle: {
+    en: string
+    ta: string
+  }
+  description: {
+    en: string
+    ta: string
+  }
+  tags: Array<{
+    name: string
+    icon: string
+  }>
+  date: {
+    en: string
+    ta: string
+  }
+  prints: Array<{
+    name: {
+      en: string
+      ta: string
+    }
+    image: string
+    date: {
+      en: string
+      ta: string
+    }
+    description: {
+      en: string
+      ta: string
+    }
+    url?: string
+    urltitle?: {
+      en: string
+      ta: string
+    }
+  }>
 }

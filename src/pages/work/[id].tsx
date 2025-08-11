@@ -2,6 +2,8 @@ import { GetStaticProps, GetStaticPaths } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { useEffect, useState } from 'react'
 import works from '../../data/works'
 import { Work } from '../../types/Work'
 
@@ -15,12 +17,26 @@ interface WorkProps {
 }
 
 export default function Projeto({ work }: WorkProps) {
+  const router = useRouter()
+  const [currentLang, setCurrentLang] = useState<'en' | 'ta'>('en')
+
+  useEffect(() => {
+    const { locale } = router
+    setCurrentLang(locale as 'en' | 'ta')
+  }, [router.locale])
+
+  // Get localized content
+  const title = work.title[currentLang]
+  const subTitle = work.subTitle[currentLang]
+  const description = work.description[currentLang]
+  const date = work.date[currentLang]
+
   return <>
     <Head>
-      <title>{work.title} | Saravanakumar </title>
-      <meta name="description" content={work.description} />
-      <meta property="og:title" content={work.title} />
-      <meta property="og:description" content={work.description} />
+      <title>{title} | Saravanakumar </title>
+      <meta name="description" content={description} />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
       <meta property="og:image" content={work.imgUrl} />
       <meta property="og:image:secure_url" content={work.imgUrl} />
       <meta name="twitter:image" content={work.imgUrl} />
@@ -31,16 +47,16 @@ export default function Projeto({ work }: WorkProps) {
       <S.WorkBanner imgUrl={work.imgUrl}>
         <div className="bannerImg" />
         <div className="title">
-          <h1>{work.title}</h1>
+          <h1>{title}</h1>
         </div>
-        <h2>{work.subTitle}</h2>
-        <span>{work.date}</span>
-        <p>{work.description}</p>
+        <h2>{subTitle}</h2>
+        <span>{date}</span>
+        <p>{description}</p>
 
         <div className="tags">
-          {work.tags.map(tag => {
+          {work.tags.map((tag, index) => {
             return (
-              <ul key={tag.id}>
+              <ul key={index}>
                 <Image width={40} height={40} src={tag.icon} alt={tag.name} />
                 <p>{tag.name}</p>
               </ul>
@@ -49,7 +65,6 @@ export default function Projeto({ work }: WorkProps) {
         </div>
 
         <Link href={'/'}>
-
           <ButtonAlternatives>
             <ArrowLeft
               style={{
@@ -58,42 +73,46 @@ export default function Projeto({ work }: WorkProps) {
               weight="bold"
               size={16}
             />
-            Back
+            {currentLang === 'ta' ? 'திரும்பு' : 'Back'}
           </ButtonAlternatives>
-
         </Link>
       </S.WorkBanner>
 
       <S.WorkDescription>
-        {work.prints.map(print => {
+        {work.prints.map((print, index) => {
+          const printName = print.name[currentLang]
+          const printDescription = print.description[currentLang]
+          const printDate = print.date[currentLang]
+          const printUrlTitle = print.urltitle?.[currentLang]
+
           return (
-            <>
-              <S.WorkContent>
-                <div className="workItem" key={print.id}>
-                  <div className="text">
-                    <h3>{print.name}</h3>
-                    <p style={
-                      {
-                        textAlign: 'justify',
-                      }
-                    }>{print.description}</p>
-                    <span>Date : {print.date}</span>
-                    <a href={print.url} style={
-                      {
-                        textDecorationLine: 'underline',
-                        marginBottom: '1rem',
-                      }
-                    }>{print.urltitle}</a>
-                  </div>
-                  <Image
-                    width={700}
-                    height={400}
-                    src={print.image}
-                    alt={print.name}
-                  />
+            <S.WorkContent key={index}>
+              <div className="workItem">
+                <div className="text">
+                  <h3>{printName}</h3>
+                  <p style={{
+                    textAlign: 'justify',
+                  }}>{printDescription}</p>
+                  <span>
+                    {currentLang === 'ta' ? 'தேதி : ' : 'Date : '}{printDate}
+                  </span>
+                  {print.url && printUrlTitle && (
+                    <a href={print.url} style={{
+                      textDecorationLine: 'underline',
+                      marginBottom: '1rem',
+                      display: 'block',
+                      marginTop: '0.5rem'
+                    }}>{printUrlTitle}</a>
+                  )}
                 </div>
-              </S.WorkContent>
-            </>
+                <Image
+                  width={700}
+                  height={400}
+                  src={print.image}
+                  alt={printName}
+                />
+              </div>
+            </S.WorkContent>
           )
         })}
       </S.WorkDescription>
@@ -106,7 +125,7 @@ export default function Projeto({ work }: WorkProps) {
               weight="bold"
               size={18}
             />{' '}
-            Back
+            {currentLang === 'ta' ? 'திரும்பு' : 'Back'}
           </a>
         </ButtonSecondary>
       </Link>

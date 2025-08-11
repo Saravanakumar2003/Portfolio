@@ -41,7 +41,7 @@ export function Header() {
               alt="logo"
             />
           </div>
-          {'Saravanakumar'}
+          <span>{currentLang === 'ta' ? 'சரவணகுமார்' : 'Saravanakumar'}</span>
         </Link>
         <div className="settings">
           <Settings toggleTheme={toggleTheme} currentTheme={currentTheme} />

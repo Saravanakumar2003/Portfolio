@@ -23,7 +23,7 @@
     "cors-anywhere": "^0.4.4",
     "date-fns-tz": "^2.0.0",
     "dompurify": "^3.2.2",
-    "framer-motion": "^10.16.4",
+    "framer-motion": "^10.18.0",
     "g": "^2.0.1",
     "html-to-image": "^1.11.13",
     "i18next": "^23.15.1",

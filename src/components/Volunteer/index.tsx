@@ -34,8 +34,8 @@ export function Work() {
               <div className="workItem">
                 <div className="overlay" />
                 <div className="text">
-                  <h1>{work.title2}</h1>
-                  <h2>{work.title3}</h2>
+                  <h1>{work.title2[currentLang]}</h1>
+                  <h2>{work.title3[currentLang]}</h2>
                 </div>
               </div>
               <button type="button">

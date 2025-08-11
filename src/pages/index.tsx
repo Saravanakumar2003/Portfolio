@@ -25,12 +25,13 @@ import React from 'react'
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useLoading } from '../hooks/useLoading';
-
+import RouteTransition from '../components/Animations/RouteTransition';
+import FadeInAnimation from '../components/Animations/FadeInAnimation';
 
 const botkey = process.env.NEXT_PUBLIC_BOTKEY_URL;
 
 export default function Home() {
-  const { t, i18n } = useTranslation('common'); // Use the 'common' namespace
+  const { t, i18n } = useTranslation('common');
   const router = useRouter();
   const [currentLang, setCurrentLang] = useState<'en' | 'ta'>('en');
   const isLoading = useLoading(3000); 
@@ -45,27 +46,57 @@ export default function Home() {
   }
 
   return (
-    <>
+    <RouteTransition>
       <Head>
         <title>{currentLang === 'ta' ? 'சரவணகுமாரின் போர்ட்ஃபோலியோ' : ' Saravanakumar\'s Portfolio'} </title>
       </Head>
       <ScrollTop />
       <Section>
-        <HomeHero />
-        <About />
-        <Skills />
-        <Education />
-        <Work_Experience/>
-        <Experience />
-        <Work />
-        <Achievements />
-        <Publications />
-        <Certificates />
-        <Projects />
-        <Wakatime />
-        <Testimonials />
-        <Jokes />
-        <CardContact />
+        <FadeInAnimation delay={0.1}>
+          <HomeHero />
+        </FadeInAnimation>
+        <FadeInAnimation delay={0.2}>
+          <About />
+        </FadeInAnimation>
+        <FadeInAnimation delay={0.3}>
+          <Skills />
+        </FadeInAnimation>
+        <FadeInAnimation delay={0.4}>
+          <Education />
+        </FadeInAnimation>
+        <FadeInAnimation delay={0.5}>
+          <Work_Experience/>
+        </FadeInAnimation>
+        <FadeInAnimation delay={0.6}>
+          <Experience />
+        </FadeInAnimation>
+        <FadeInAnimation delay={0.7}>
+          <Work />
+        </FadeInAnimation>
+        <FadeInAnimation delay={0.8}>
+          <Achievements />
+        </FadeInAnimation>
+        <FadeInAnimation delay={0.9}>
+          <Publications />
+        </FadeInAnimation>
+        <FadeInAnimation delay={1.0}>
+          <Certificates />
+        </FadeInAnimation>
+        <FadeInAnimation delay={1.1}>
+          <Projects />
+        </FadeInAnimation>
+        <FadeInAnimation delay={1.2}>
+          <Wakatime />
+        </FadeInAnimation>
+        <FadeInAnimation delay={1.3}>
+          <Testimonials />
+        </FadeInAnimation>
+        <FadeInAnimation delay={1.4}>
+          <Jokes />
+        </FadeInAnimation>
+        <FadeInAnimation delay={1.5}>
+          <CardContact />
+        </FadeInAnimation>
       </Section>
 
       <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
@@ -74,10 +105,9 @@ export default function Home() {
         defer
       ></script>
       <Footer />
-    </>
+    </RouteTransition>
   );
 }
-
 
 export const getStaticProps: GetStaticProps = async ({ locale = 'en' }) => ({
   props: {

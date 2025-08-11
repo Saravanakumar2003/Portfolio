@@ -9,7 +9,13 @@ const CookiesConsent: React.FC = () => {
   useEffect(() => {
     const consent = localStorage.getItem("userConsent");
     if (!consent) {
-      setShowPopup(true);
+      // Add delay before showing the popup (3 seconds)
+      const timer = setTimeout(() => {
+        setShowPopup(true);
+      }, 3000);
+
+      // Cleanup timer if component unmounts
+      return () => clearTimeout(timer);
     }
   }, []);
 

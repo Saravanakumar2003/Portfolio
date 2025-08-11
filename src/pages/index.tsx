@@ -1,6 +1,5 @@
 import Head from "next/head";
 import { About } from "../components/CardAbout";
-import { Header } from "../components/Header";
 import { HomeHero } from "../components/Home";
 import { Projects } from "../components/Projects";
 import { Skills } from "../components/Skills";
@@ -10,6 +9,7 @@ import { Experience } from "../components/Experience";
 import { CardContact } from "../components/CardContact";
 import { Section } from "../styles/styles";
 import { Work } from "../components/Volunteer";
+import { LoadingScreen } from "../components/Misc/LoadingScreen";
 import { Education } from "../components/Education";
 import { Achievements } from "../components/Achievements";
 import { Testimonials } from "../components/Testimonials";
@@ -24,6 +24,7 @@ import { useEffect, useState } from 'react'
 import React from 'react'
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useLoading } from '../hooks/useLoading';
 
 
 const botkey = process.env.NEXT_PUBLIC_BOTKEY_URL;
@@ -32,12 +33,16 @@ export default function Home() {
   const { t, i18n } = useTranslation('common'); // Use the 'common' namespace
   const router = useRouter();
   const [currentLang, setCurrentLang] = useState<'en' | 'ta'>('en');
+  const isLoading = useLoading(3000); 
 
   useEffect(() => {
     const { locale } = router;
     setCurrentLang(locale as 'en' | 'ta');
   }, [router.locale]);
 
+  if (isLoading) {
+    return <LoadingScreen onLoadingComplete={() => {}} />;
+  }
 
   return (
     <>

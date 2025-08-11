@@ -9,6 +9,7 @@ import { GlobalStyles } from '../styles/global';
 import { Toaster } from '../components/Toaster'
 import { MantineProvider } from '@mantine/core'
 import { Analytics } from '@vercel/analytics/react';
+import ParticleSystem from '../components/Animations/ParticleSystem';
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { initGA, logPageView } from '../utils/analytics';
 import { lightTheme } from '../styles/themes/default';
@@ -72,6 +73,12 @@ function MyApp({ Component, pageProps }: AppProps) {
             stopDelayMs={300}
             height={3}
             showOnShallow
+          />
+          <ParticleSystem 
+            particleCount={100}
+            connectionDistance={100}
+            mouseRadius={150}
+            speed={0.5}
           />
           <Toaster />
           <Header />

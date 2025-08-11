@@ -31,6 +31,8 @@ export function HomeHero() {
   const cardRef = useRef<HTMLDivElement>(null);
   const [currentLang, setCurrentLang] = useState<'en' | 'ta'>('en');
   const router = useRouter();
+  const [scrollY, setScrollY] = useState(0);
+  
 
   useEffect(() => {
     const { locale } = router;
@@ -40,6 +42,12 @@ export function HomeHero() {
   function openModal2() {
     setModalIsOpen2(true);
   }
+
+  useEffect(() => {
+  const handleScroll = () => setScrollY(window.scrollY);
+  window.addEventListener('scroll', handleScroll);
+  return () => window.removeEventListener('scroll', handleScroll);
+}, []);
 
   useEffect(() => {
     // Fetch the current date using JavaScript's built-in Date object
@@ -119,15 +127,6 @@ export function HomeHero() {
           </p>
           <h1>
             {currentLang === 'ta' ? 'சரவணகுமார் ரா' : 'Saravanakumar R'}
-            <span className="animation">
-              <Image
-                width={200}
-                height={200}
-                src="/vectors/triangle.svg"
-                alt="triangle"
-                loading='lazy'
-              />
-            </span>
           </h1>
           <h2>
             <Typewriter

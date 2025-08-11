@@ -9,7 +9,7 @@ import { Experience } from "../components/Experience";
 import { CardContact } from "../components/CardContact";
 import { Section } from "../styles/styles";
 import { Work } from "../components/Volunteer";
-import { LoadingScreen } from "../components/Misc/LoadingScreen";
+import { LoadingScreen } from "../components/Animations/LoadingScreen";
 import { Education } from "../components/Education";
 import { Achievements } from "../components/Achievements";
 import { Testimonials } from "../components/Testimonials";

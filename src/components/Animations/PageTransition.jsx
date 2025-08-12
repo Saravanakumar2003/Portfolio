@@ -27,7 +27,6 @@ const pageTransition = {
   duration: 0.4,
 };
 
-
 const PageTransition = ({ children }) => {
   const router = useRouter();
 

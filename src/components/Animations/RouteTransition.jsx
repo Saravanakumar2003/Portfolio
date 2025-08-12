@@ -16,7 +16,6 @@ const routeVariants = {
     transition: {
       duration: 0.6,
       ease: [0.6, -0.05, 0.01, 0.99],
-      staggerChildren: 0.1,
     },
   },
   exit: {
@@ -30,13 +29,9 @@ const routeVariants = {
   },
 };
 
-const RouteTransition = ({ children, className }) => {
-  if (!children) {
-    return null; // Return null if no children are provided
-    }
+const RouteTransition = ({ children }) => {
   return (
     <motion.div
-      className={className}
       variants={routeVariants}
       initial="initial"
       animate="animate"

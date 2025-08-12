@@ -6,7 +6,6 @@ import { Footer } from '../components/Footer';
 import { PrivacyPolicyContainer } from '../styles/privacypolicy';
 import RouteTransition from '../components/Animations/RouteTransition';
 import FadeInAnimation from '../components/Animations/FadeInAnimation';
-import StaggerContainer from '../components/Animations/StaggerContainer';
 
 
 export default function PrivacyPolicy() {
@@ -194,7 +193,6 @@ export default function PrivacyPolicy() {
           <p>{content.intro[currentLang]}</p>
         </FadeInAnimation>
 
-        <StaggerContainer>
           <div>
             <h3>{content.section1.title[currentLang]}</h3>
             <p>{content.section1.content[currentLang]}</p>
@@ -277,7 +275,6 @@ export default function PrivacyPolicy() {
               {content.section9.website[currentLang]}<a href="https://saravana.vercel.app">saravana.vercel.app</a>
             </p>
           </div>
-        </StaggerContainer>
       </PrivacyPolicyContainer>
       <ScrollTop />
       <Footer />

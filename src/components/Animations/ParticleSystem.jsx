@@ -67,7 +67,7 @@ const ParticleSystem = ({
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
       ctx.fillStyle = theme.firstColor || '#00d9ff';
-      ctx.globalAlpha = 0.6;
+      ctx.globalAlpha = 2;
       ctx.fill();
       ctx.globalAlpha = 1;
     }
@@ -193,7 +193,7 @@ const ParticleCanvas = styled.canvas`
   opacity: 0.8;
   
   @media (max-width: 768px) {
-    opacity: 0.4; // Reduce opacity on mobile for better readability
+    opacity: 0.8; // Reduce opacity on mobile for better readability
   }
 `;
 

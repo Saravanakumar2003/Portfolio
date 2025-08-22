@@ -11,6 +11,7 @@ import { MantineProvider } from '@mantine/core'
 import { Analytics } from '@vercel/analytics/react';
 import ParticleSystem from '../components/Animations/ParticleSystem';
 import PageTransition from '../components/Animations/PageTransition';
+import CustomCursor from '../components/Animations/CustomCursor';
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { initGA, logPageView } from '../utils/analytics';
 import { lightTheme } from '../styles/themes/default';
@@ -81,6 +82,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             mouseRadius={150}
             speed={0.5}
           />
+          <CustomCursor />
           <Toaster />
           <Header />
           <GlobalStyles />

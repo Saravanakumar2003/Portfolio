@@ -74,11 +74,11 @@ export function Header() {
               <span>{currentLang === 'ta' ? 'பற்றி' : 'About'}</span>
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link href={'/experience'}>
               <span>{currentLang === 'ta' ? 'அனுபவம்' : 'Experience'}</span>
             </Link>
-          </li>
+          </li> */}
           <li>
             <Link href={'/blog'}>
               <span>{currentLang === 'ta' ? 'பதிவு' : 'Blogs'}</span>

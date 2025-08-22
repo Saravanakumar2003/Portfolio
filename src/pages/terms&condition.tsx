@@ -219,7 +219,7 @@ export default function TermsAndConditions() {
         <p>{content.section3.content2[currentLang]}</p>
         <p>{content.section3.content3[currentLang]}</p>
         <p>{content.section3.content4[currentLang]}</p>
-        <p><strong>{currentLang === 'ta' ? 'மறுப்பு:' : 'Disclaimer:'}</strong> {content.section3.disclaimer[currentLang]}</p>
+        <p>{content.section3.disclaimer[currentLang]}</p>
         
         <h3>{content.section4.title[currentLang]}</h3>
         <p>{content.section4.content[currentLang]}</p>

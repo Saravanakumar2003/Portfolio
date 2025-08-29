@@ -53,6 +53,104 @@ export const AboutImage = styled.div`
     width: 15rem;
     margin-bottom: 2rem;
     border-radius: 15px;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation: fadeInUp 0.8s ease-out;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+
+    /* Fade in up animation */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+      }
+    }
+
+    /* Square line wavers animation */
+    @keyframes squareWave {
+      0% {
+        transform: scale(1) rotate(0deg);
+        opacity: 0.3;
+      }
+      25% {
+        transform: scale(1.1) rotate(90deg);
+        opacity: 0.6;
+      }
+      50% {
+        transform: scale(0.9) rotate(180deg);
+        opacity: 0.4;
+      }
+      75% {
+        transform: scale(1.05) rotate(270deg);
+        opacity: 0.7;
+      }
+      100% {
+        transform: scale(1) rotate(360deg);
+        opacity: 0.3;
+      }
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3),
+                    0 0 20px rgba(100, 255, 218, 0.3);
+      }
+      50% {
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4),
+                    0 0 40px rgba(100, 255, 218, 0.6);
+      }
+    }
+
+    /* Hover effects */
+    &:hover {
+      transform: scale(1.02);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 
+                  0 0 50px rgba(100, 255, 218, 0.8);
+      border-radius: 20px;
+      animation: fadeInUp 0.8s ease-out, pulseGlow 2s ease-in-out infinite;
+    }
+
+    /* Square line wavers behind the image */
+    &::before {
+      content: '';
+      position: absolute;
+      top: -30px;
+      left: -30px;
+      right: -30px;
+      bottom: -30px;
+      border: 2px solid rgba(100, 255, 218, 0.4);
+      border-radius: 5px;
+      z-index: -1;
+      animation: squareWave 4s linear infinite;
+    }
+
+    /* Second square waver */
+    &::after {
+      content: '';
+      position: absolute;
+      top: -50px;
+      left: -50px;
+      right: -50px;
+      bottom: -50px;
+      border: 1px solid rgba(100, 255, 218, 0.2);
+      border-radius: 10px;
+      z-index: -2;
+      animation: squareWave 6s linear infinite reverse;
+    }
+
+    @media (min-width: 468px) {
+      width: 20rem;
+    }
+
+    @media (min-width: 994px) {
+      width: 23rem;
+    }
+  }
 
     @media (min-width: 468px) {
       width: 20rem;

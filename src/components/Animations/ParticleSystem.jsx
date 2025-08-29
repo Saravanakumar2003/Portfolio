@@ -193,7 +193,7 @@ const ParticleCanvas = styled.canvas`
   opacity: 0.8;
   
   @media (max-width: 768px) {
-    opacity: 0.8; // Reduce opacity on mobile for better readability
+    opacity: 0.5; // Reduce opacity on mobile for better readability
   }
 `;
 

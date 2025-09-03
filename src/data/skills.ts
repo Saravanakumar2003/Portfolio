@@ -69,7 +69,7 @@ const cardSkills = [
       ta: 'பிளாஸ்க்',
     },
     img: '/icons/flask.jpg',
-    color: '#000000'
+    color: '#5a5151ff'
   },
   {
     id: 9,

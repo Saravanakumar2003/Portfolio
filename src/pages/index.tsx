@@ -52,49 +52,49 @@ export default function Home() {
       </Head>
       <ScrollTop />
       <Section>
-        <FadeInAnimation delay={0.1}>
+        <FadeInAnimation>
           <HomeHero />
         </FadeInAnimation>
-        <FadeInAnimation delay={0.2}>
+        <FadeInAnimation>
           <About />
         </FadeInAnimation>
-        <FadeInAnimation delay={0.3}>
+        <FadeInAnimation>
           <Skills />
         </FadeInAnimation>
-        <FadeInAnimation delay={0.4}>
+        <FadeInAnimation>
           <Education />
         </FadeInAnimation>
-        <FadeInAnimation delay={0.5}>
+        <FadeInAnimation>
           <Work_Experience/>
         </FadeInAnimation>
-        <FadeInAnimation delay={0.6}>
+        <FadeInAnimation>
           <Experience />
         </FadeInAnimation>
-        <FadeInAnimation delay={0.7}>
+        <FadeInAnimation>
           <Work />
         </FadeInAnimation>
-        <FadeInAnimation delay={0.8}>
+        <FadeInAnimation>
           <Achievements />
         </FadeInAnimation>
-        <FadeInAnimation delay={0.9}>
+        <FadeInAnimation>
           <Publications />
         </FadeInAnimation>
-        <FadeInAnimation delay={1.0}>
+        <FadeInAnimation>
           <Certificates />
         </FadeInAnimation>
-        <FadeInAnimation delay={1.1}>
+        <FadeInAnimation>
           <Projects />
         </FadeInAnimation>
-        <FadeInAnimation delay={1.2}>
+        <FadeInAnimation>
           <Wakatime />
         </FadeInAnimation>
-        <FadeInAnimation delay={1.3}>
+        <FadeInAnimation>
           <Testimonials />
         </FadeInAnimation>
-        <FadeInAnimation delay={1.4}>
+        <FadeInAnimation>
           <Jokes />
         </FadeInAnimation>
-        <FadeInAnimation delay={1.5}>
+        <FadeInAnimation>
           <CardContact />
         </FadeInAnimation>
       </Section>

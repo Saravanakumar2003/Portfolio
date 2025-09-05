@@ -13,7 +13,8 @@ interface SettingsProps {
 
 const SettingsContainer = styled.div`
   position: fixed;
-  bottom: 1.3rem;
+  bottom: 1.4rem;
+  right: 1rem;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
@@ -44,8 +45,8 @@ const OvalBar = styled.div`
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-radius: 50px;
-  padding: 0.5rem 1rem;
   display: flex;
+  padding: 0.3rem 0.3rem;
   gap: 1rem;
   align-items: center;
   border: 2px solid ${({ theme }) => theme.white}40;
@@ -111,8 +112,8 @@ const IconButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 35px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
@@ -204,14 +205,13 @@ const IconButton2 = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.6rem 0.8rem;
+  padding: 0.2rem 0.2rem;
   border-radius: 12px;
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   position: relative;
   overflow: hidden;
-  min-width: 45px;
   box-shadow: 
     0 4px 12px rgba(0, 0, 0, 0.2),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
@@ -281,10 +281,10 @@ const Dropdown = styled.div`
   -webkit-backdrop-filter: blur(20px);
   color: ${({ theme }) => theme.white};
   border-radius: 16px;
-  padding: 1rem 1.2rem;
+  padding: 0.5rem 0.5rem;
   display: flex;
   flex-direction: row;
-  gap: 0.8rem;
+  gap: 0.5rem;
   border: 2px solid ${({ theme }) => theme.firstColor}40;
   box-shadow: 
     0 20px 60px rgba(0, 0, 0, 0.5),
@@ -348,13 +348,11 @@ const Dropdown = styled.div`
   @media (max-width: 768px) {
     position: fixed;
     bottom: 4.5rem;
-    left: 1rem;
-    right: 1rem;
+    left: 50%;
     transform: none;
     max-width: calc(100vw - 2rem);
     
     &::before, &::after {
-      left: 20%;
     }
   }
 `;

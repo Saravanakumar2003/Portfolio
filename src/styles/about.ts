@@ -19,6 +19,9 @@ export const InBox = styled.div`
 
 export const AboutContainer = styled.section`
   padding-top: 2rem;
+  padding-bottom: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;

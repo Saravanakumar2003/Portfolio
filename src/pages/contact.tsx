@@ -7,9 +7,6 @@ import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import React from 'react'
 
-
-const botkey = process.env.NEXT_PUBLIC_BOTKEY_URL;
-
 export default function Contacts() {
   const { t, i18n } = useTranslation('common'); // Use the 'common' namespace
   const router = useRouter();
@@ -39,8 +36,6 @@ export default function Contacts() {
 
       <ScrollTop />
       <Contact />
-      <script src="https://cdn.botpress.cloud/webchat/v3.2/inject.js"></script>
-      <script src={botkey} defer></script>
       <Footer />
     </>
   )

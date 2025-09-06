@@ -11,7 +11,6 @@ import { useTranslation } from 'react-i18next'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 
-const botkey = process.env.NEXT_PUBLIC_BOTKEY_URL;
 const canva = process.env.NEXT_PUBLIC_CANVA_URL;
 
 export default function Resume() {
@@ -74,8 +73,6 @@ export default function Resume() {
           <CV />
         </PageSection>
       </Section>
-      <script src="https://cdn.botpress.cloud/webchat/v3.2/inject.js"></script>
-      <script src={botkey} defer></script>
       <Footer />
     </>
   )

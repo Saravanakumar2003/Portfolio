@@ -18,8 +18,6 @@ import { useEffect, useState } from 'react'
 import React from 'react'
 import { Linkedin } from './api/Linkedin'
 
-const botkey = process.env.NEXT_PUBLIC_BOTKEY_URL;
-
 interface DashboardPageProps {
   fallback: any;
 }
@@ -177,8 +175,6 @@ export default function About() {
         </ButtonSecondary>
       </Link>
     </Section>
-    <script src="https://cdn.botpress.cloud/webchat/v3.2/inject.js"></script>
-    <script src={botkey} defer></script>
     <Footer />
   </>;
 }

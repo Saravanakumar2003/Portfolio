@@ -19,8 +19,6 @@ import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { NewsletterForm } from '../components/Newsletter';
 
-const botkey = process.env.NEXT_PUBLIC_BOTKEY_URL;
-
 interface BlogProps {
   target: HTMLInputElement;
 }
@@ -240,8 +238,6 @@ export default function Blog() {
         <NewsletterForm />
       </T.Section>
       <Publications />
-      <script src="https://cdn.botpress.cloud/webchat/v3.2/inject.js"></script>
-      <script src={botkey} defer></script>
       <Footer />
     </>
   );

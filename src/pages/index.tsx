@@ -28,8 +28,6 @@ import { useLoading } from '../hooks/useLoading';
 import RouteTransition from '../components/Animations/RouteTransition';
 import FadeInAnimation from '../components/Animations/FadeInAnimation';
 
-const botkey = process.env.NEXT_PUBLIC_BOTKEY_URL;
-
 export default function Home() {
   const { t, i18n } = useTranslation('common');
   const router = useRouter();
@@ -98,12 +96,6 @@ export default function Home() {
           <CardContact />
         </FadeInAnimation>
       </Section>
-
-      <script src="https://cdn.botpress.cloud/webchat/v3.2/inject.js"></script>
-      <script
-        src={botkey}
-        defer
-      ></script>
       <Footer />
     </RouteTransition>
   );

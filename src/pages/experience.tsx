@@ -20,7 +20,6 @@ import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import React from 'react'
 
-const botkey = process.env.NEXT_PUBLIC_BOTKEY_URL;
 
 export default function Experience() {
   const [tabIndex, setTabIndex] = useState(0);
@@ -158,8 +157,6 @@ export default function Experience() {
         <Education />
         <Certificates />
       </Section>
-      <script src="https://cdn.botpress.cloud/webchat/v3.2/inject.js"></script>
-      <script src={botkey} defer></script>
       <Footer />
     </div>
   );

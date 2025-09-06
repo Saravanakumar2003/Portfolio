@@ -8,8 +8,6 @@ import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import React from 'react'
 
-const botkey = process.env.NEXT_PUBLIC_BOTKEY_URL;
-
 const Styles404 = styled.div`
   display: flex;
   flex-direction: column;
@@ -104,7 +102,5 @@ export default function Error() {
         </Link>
       </Content>
     </Styles404>
-    <script src="https://cdn.botpress.cloud/webchat/v3.2/inject.js"></script>
-    <script src={botkey} defer></script>
   </>;
 }

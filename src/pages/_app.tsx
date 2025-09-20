@@ -18,7 +18,6 @@ import { lightTheme } from '../styles/themes/default';
 import CookiesConsent from "../components/Cookies/CookiesConsent";
 import "../styles/globals.css";
 
-const botkey = process.env.NEXT_PUBLIC_BOTKEY_URL;
 const google = process.env.NEXT_PUBLIC_GA_ID;
 
 declare global {
@@ -92,8 +91,6 @@ function MyApp({ Component, pageProps }: AppProps) {
           <CookiesConsent />
           <Analytics />
           <SpeedInsights />
-          <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
-          <script src={botkey} defer></script>
         </MantineProvider>
       </ThemeProvider>
     </>

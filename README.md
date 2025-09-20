@@ -73,7 +73,7 @@ http://localhost:3000
 
 9. **Visme Feedback Form:** A feedback form powered by Visme is included in the portfolio for collecting user feedback and suggestions.
 
-10.  **AI Chatbot:** An AI chatbot is integrated into the portfolio to provide interactive communication and assistance.
+10. **Giscus Comments:** Integration with Giscus allows enabling comments on blog posts using GitHub Discussions. Configure Giscus by following the instructions on the [Giscus GitHub repository](https://giscus.app/).
 
 11. **Waka Time:** Integration with WakaTime embeded code allows displaying coding activity and statistics.
 

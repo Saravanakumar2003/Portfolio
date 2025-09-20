@@ -218,7 +218,6 @@ export default function PrivacyPolicy() {
             <ul>
               <li><strong>Google Analytics:</strong> {currentLang === 'ta' ? 'இணையதள ட்ராஃபிக் மற்றும் பயன்பாட்டு முறைகளைக் கண்காணிக்கிறது.' : 'Tracks website traffic and usage patterns.'}</li>
               <li><strong>Vercel Analytics:</strong> {currentLang === 'ta' ? 'இணையதள செயல்திறனைக் கண்காணிக்கிறது.' : 'Monitors website performance.'}</li>
-              <li><strong>Botpress:</strong> {currentLang === 'ta' ? 'ஊடாடும் தொடர்புக்காக AI சாட்பாட்டை இயக்குகிறது.' : 'Powers the AI chatbot for interactive communication.'}</li>
               <li><strong>Visme Forms:</strong> {currentLang === 'ta' ? 'கருத்து சமர்ப்பிப்புகளை நிர்வகிக்கிறது மற்றும் தரவைச் சேகரிக்கிறது.' : 'Manages feedback submissions and collects data.'}</li>
               <li><strong>Testimonial.to:</strong> {currentLang === 'ta' ? 'சான்றுரை சமர்ப்பிப்புகளை நிர்வகிக்கிறது மற்றும் தரவைச் சேகரிக்கிறது.' : 'Manages testimonial submissions and collects data.'}</li>
               <li><strong>Giscus:</strong> {currentLang === 'ta' ? 'வலைப்பதிவு இடுகைகளில் கருத்துகளை செயல்படுத்துகிறது.' : 'Enables commenting on blog posts.'}</li>

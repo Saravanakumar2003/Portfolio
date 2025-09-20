@@ -115,8 +115,8 @@ export default function TermsAndConditions() {
         ta: '6. மூன்றாம் தரப்பு சேவைகள்'
       },
       content1: {
-        en: 'This site uses third-party tools (such as Google Analytics, Vercel, Botpress, Email.js, and others) to manage analytics, forms, chatbots, and embeds. Each service is governed by its own privacy policy and terms. Please refer to our [Privacy Policy] for more details.',
-        ta: 'இந்த தளம் பகுப்பாய்வு, படிவங்கள், சாட்பாட்கள் மற்றும் உட்பொதிப்புகளை நிர்வகிக்க மூன்றாம் தரப்பு கருவிகளைப் (Google Analytics, Vercel, Botpress, Email.js மற்றும் பிற) பயன்படுத்துகிறது. ஒவ்வொரு சேவையும் அதன் சொந்த தனியுரிமைக் கொள்கை மற்றும் விதிமுறைகளால் நிர்வகிக்கப்படுகிறது. மேலும் விவரங்களுக்கு எங்கள் [தனியுரிமைக் கொள்கை] ஐப் பார்க்கவும்.'
+        en: 'This site uses third-party tools (such as Google Analytics, Vercel, Email.js, and others) to manage analytics, forms, chatbots, and embeds. Each service is governed by its own privacy policy and terms. Please refer to our [Privacy Policy] for more details.',
+        ta: 'இந்த தளம் பகுப்பாய்வு, படிவங்கள், சாட்பாட்கள் மற்றும் உட்பொதிப்புகளை நிர்வகிக்க மூன்றாம் தரப்பு கருவிகளைப் (Google Analytics, Vercel, Email.js மற்றும் பிற) பயன்படுத்துகிறது. ஒவ்வொரு சேவையும் அதன் சொந்த தனியுரிமைக் கொள்கை மற்றும் விதிமுறைகளால் நிர்வகிக்கப்படுகிறது. மேலும் விவரங்களுக்கு எங்கள் [தனியுரிமைக் கொள்கை] ஐப் பார்க்கவும்.'
       },
       content2: {
         en: 'These services operate under their respective terms and policies. We are not responsible for their data collection or handling practices.',

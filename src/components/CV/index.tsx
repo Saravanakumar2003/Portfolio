@@ -1,4 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
+import Image from 'next/image'
 import { ButtonSecondAlt, Container, Title } from "../../styles/styles";
 import { CVContainer, CVContent, CVDescription, Curriculum } from "./styles"
 import { FiDownload } from 'react-icons/fi'
@@ -32,7 +32,7 @@ export function CV() {
               {currentLang === 'ta' ? 'பதிவிறக்க பொத்தானைக் கிளிக் செய்வதன் மூலம் எனது தொழில்முறை சுயவிவரத்தை நீங்கள் பதிவிறக்கம் செய்யலாம்.' : 'Here you can download my professional resume by clicking on the download button.'}
             </p>
             <div className="profile">
-              <img src="https://github.com/Saravanakumar2003.png" alt="Imagem de perfil" />
+              <Image src="https://github.com/Saravanakumar2003.png" alt="Imagem de perfil" width={80} height={80} />
               <div className="name">
                 <h3>Saravanakumar R</h3>
                 <span>{currentLang === 'ta' ? 'டெவலப்பர் | பேச்சாளர் | தன்னார்வலர்' : 'Developer | Speaker | Volunteer'}</span>
@@ -41,7 +41,7 @@ export function CV() {
           </CVDescription>
           
           <Curriculum>
-            <img src="/cv.png" alt="Resume" />
+            <Image src="/cv.png" alt="Resume" width={300} height={400} />
             <a href="/pdf/Saravanakumar_Resume.pdf" download>
               <ButtonSecondAlt>
                 <b>{currentLang === 'ta' ? 'சுயவிவரத்தை பதிவிறக்கவும்' : 'Download CV'}</b> <FiDownload size={20}  />

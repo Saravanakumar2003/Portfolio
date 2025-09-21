@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Image from 'next/image';
 // Mantine
 import {
   Avatar,
@@ -172,12 +173,12 @@ export default function Github() {
               padding: '1rem',
             }}
           >
-            <img
-              src={user?.avatar_url}
+            <Image
+              src={user?.avatar_url || ''}
               alt="Saravana's Image"
+              width={150}
+              height={150}
               style={{
-                height: '150px',
-                width: '150px',
                 borderRadius: '50%',
                 display: 'block',
               }}

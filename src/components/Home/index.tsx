@@ -285,7 +285,7 @@ export function HomeHero() {
           />
         )}
         <ImgHome>
-          <img className="home-img" src="/home.png" alt={currentLang === 'ta' ? 'முகப்பு படம்' : 'Image Home'} />
+          <Image className="home-img" src="/home.png" alt={currentLang === 'ta' ? 'முகப்பு படம்' : 'Image Home'} width={400} height={400} priority />
 
           <div className="code">
             <Image

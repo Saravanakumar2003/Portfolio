@@ -37,7 +37,7 @@ export function Educations() {
               return (
                 <S.List key={certificates.id}>
                   <S.ListImage>
-                    <img src={certificates.logo} alt={certificates.subTitle[currentLang]} />
+                    <Image src={certificates.logo} alt={certificates.subTitle[currentLang]} width={80} height={80} />
                     <p>
                       {currentLang === 'ta' ? 'தேதி:' : 'Date:'} <span>{certificates.level[currentLang]} </span>
                     </p>
@@ -61,10 +61,12 @@ export function Educations() {
         </S.EducationList>
 
         <S.EducationImage>
-          <img
+          <Image
             className="education-logo"
             src="/education/education.svg"
             alt={currentLang === 'ta' ? 'கணினியில் சிறுவன்' : 'boy on computer'}
+            width={300}
+            height={300}
           />
 
           <Carousel

@@ -1,4 +1,5 @@
 /* eslint-disable-next-line import/no-anonymous-default-export */
+import Image from 'next/image'
 import Link from 'next/link'
 import { Description, Section, Title, ButtonPrimary, ButtonAlt, SubTitle} from '../../styles/styles'
 import { SmileyWink, ArrowCounterClockwise, ShareNetwork } from 'phosphor-react'
@@ -32,7 +33,7 @@ export function Jokes() {
       <SubTitle>
         {currentLang === 'ta' ? ':)' : 'If you came this far, then you deserve a Joke!!'}
       </SubTitle>
-      <img src={jokeImageUrl} alt="Jokes Card" />
+      <Image src={jokeImageUrl} alt="Jokes Card" width={500} height={400} />
       <div>
         <ButtonAlt onClick={handleRefresh} style={{ marginRight: '10px' }}>
           <ArrowCounterClockwise size={24} /> {currentLang === 'ta' ? 'புதுப்பிக்க' : 'Refresh'}

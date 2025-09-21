@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
+import Image from 'next/image';
 import PropTypes from 'prop-types';
 
 // Temporary variable that resets on page refresh
@@ -62,7 +63,7 @@ export const LoadingScreen = ({ onLoadingComplete }) => {
     <LoadingContainer>
       <LoadingContent>
         <LogoContainer>
-          <AnimatedLogo><img width="50" height="50" src="/Logo1.png" alt="Logo" /></AnimatedLogo>
+          <AnimatedLogo><Image width={50} height={50} src="/Logo1.png" alt="Logo" /></AnimatedLogo>
           <LogoText>Welcome</LogoText>
         </LogoContainer>
         

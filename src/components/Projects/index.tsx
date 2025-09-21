@@ -49,7 +49,7 @@ export function Projects() {
         <span>
           <HiOutlineDesktopComputer />{currentLang === 'ta' ? 'திட்டம்' : 'Project'}
         </span>
-        <img className="vector" width={100} height={100} src="/vectors/code.svg" alt="project" />
+        <Image className="vector" width={100} height={100} src="/vectors/code.svg" alt="project" />
       </Title>
 
       <div style={{

@@ -37,13 +37,11 @@ export function Certificates() {
               return (
                 <S.List key={certificates.id}>
                   <S.ListImage>
-                    <img style={{
-                      width: '150px',
-                      height: '150px',
+                    <Image style={{
                       borderRadius: '50%',
                       objectFit: 'cover',
                     }}
-                    src={certificates.logo} alt={certificates.subTitle[currentLang]} />
+                    src={certificates.logo} alt={certificates.subTitle[currentLang]} width={150} height={150} />
                     <p>
                       <span><strong>{currentLang === 'ta' ? 'தேதி:' : 'Date:'}</strong> {certificates.level[currentLang]} </span>
                     </p>
@@ -72,10 +70,12 @@ export function Certificates() {
         </S.EducationList>
 
         <S.EducationImage>
-          <img
+          <Image
             className="education-logo"
             src="/education/education.svg"
             alt={currentLang === 'ta' ? 'கணினியில் சிறுவன்' : 'boy on computer'}
+            width={300}
+            height={300}
           />
 
           <Carousel

@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Image from 'next/image'
 import Link from 'next/link'
 import styled from 'styled-components'
 import { ArrowLeft } from 'phosphor-react'
@@ -87,7 +88,7 @@ export default function Error() {
     </Head>
     
     <Styles404>
-    <img src="/vectors/404.svg" alt="404" width={500} height={300}/>
+    <Image src="/vectors/404.svg" alt="404" width={500} height={300}/>
       <Content>
         <span> {currentLang === 'ta' ? 'ஏய்! நீங்கள் தொலைந்துவிட்டீர்கள் போல் தெரிகிறது :((' : 'Hey! Looks like you are lost :(('}  </span>
         <h1>

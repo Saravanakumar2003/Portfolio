@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Image from 'next/image'
 import Link from 'next/link'
 import { Header } from '../components/Header'
 import { Footer } from '../components/Footer'
@@ -58,10 +59,13 @@ export default function About() {
 
         <S.AboutContent>
           <S.AboutImage>
-            <img
+            <Image
               className="AboutImg"
               src="/Saravana.jpg"
               alt="Saravanakumar"
+              width={400}
+              height={400}
+              priority
             />
 
             <div className="links">

@@ -31,10 +31,10 @@ export default function Projeto({ project }: ProjectProps) {
 
     <S.ProjectContainer>
       <S.Banner>
-        <img className="bannerUrl" style={{ marginTop: '5rem' }} src={project.banner} alt={project.title} />
+        <Image className="bannerUrl" style={{ marginTop: '5rem' }} src={project.banner} alt={project.title} width={800} height={400} priority />
         <div className="bannerContainer">
           <div className="bannerContent">
-            <img src={project.icon} alt={project.title} />
+            <Image src={project.icon} alt={project.title} width={64} height={64} />
             <div>
               <h1>{project.title}</h1>
               <p>{project.type}</p>
@@ -196,17 +196,19 @@ export default function Projeto({ project }: ProjectProps) {
 
       <S.ContainerVideo>
         <div className="imageVideo">
-          <img src={project.backgroundImage} alt={project.title} />
+          <Image src={project.backgroundImage} alt={project.title} width={600} height={400} />
         </div>
         <Title className="title-video">
           Video
           <span>
             <YoutubeLogo /> Project
           </span>
-          <img
+          <Image
             className="vector"
             src="/vectors/youtube.svg"
             alt="logo do YouTube"
+            width={50}
+            height={50}
           />
         </Title>
         <S.Video>

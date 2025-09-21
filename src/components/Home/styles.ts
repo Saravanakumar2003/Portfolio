@@ -187,6 +187,11 @@ export const Content = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 4rem;
+  /* Add minimum height to prevent layout shift */
+  min-height: 50vh;
+  /* Performance optimization */
+  contain: layout style;
+  will-change: transform;
 
   @media (min-width: 994px) {
     display: grid;
@@ -195,6 +200,7 @@ export const Content = styled.div`
     align-items: center;
     margin-top: -1rem;
     padding-left: 2rem;
+    min-height: 80vh;
   }
 `
 
@@ -327,12 +333,20 @@ export const HomeText = styled.div`
 
 export const ImgHome = styled.div`
   position: relative;
+  /* Add minimum height to prevent layout shift */
+  min-height: 400px;
+  /* Performance optimization for animations */
+  will-change: transform;
+  transform: translateZ(0);
 
   .code {
     position: absolute;
     z-index: -1;
     width: 5rem;
     top: 3rem;
+    /* Optimize for smooth animations */
+    will-change: transform;
+    backface-visibility: hidden;
 
     @media (min-width: 768px) {
       width: 8rem;
@@ -357,6 +371,11 @@ export const ImgHome = styled.div`
       display: block;
       position: relative;
       width: 32rem;
+      height: 32rem; /* Add explicit height to prevent layout shift */
+      /* Optimize animation performance */
+      will-change: transform;
+      transform: translateZ(0);
+      backface-visibility: hidden;
       -webkit-animation: icon-move-people 4s ease 2s infinite alternate;
       animation: icon-move-people 5s ease 2s infinite alternate;
 

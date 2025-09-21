@@ -1,29 +1,20 @@
-import { useState, useEffect } from 'react'
+import { useCallback } from 'react'
 import { ArrowUp } from 'phosphor-react'
 import { Scroll } from './styles'
+import { useScrollVisibility, smoothScrollTo } from '../../hooks/useOptimizedScroll'
 
 export function ScrollTop() {
-  const [up, setUp] = useState()
+  const up = useScrollVisibility(400)
 
-  useEffect(() => {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 400) {
-        setUp(true)
-      } else {
-        setUp(false)
-      }
-    })
+  const scrollToTop = useCallback(() => {
+    smoothScrollTo(0, 500)
   }, [])
-
-  const handleScroll = () => {
-    window.scrollTo(0, 0)
-  }
 
   return (
     <>
       {up && (
         <Scroll>
-          <button onClick={handleScroll}>
+          <button onClick={scrollToTop}>
             <ArrowUp weight='bold' />
           </button>
         </Scroll>

@@ -14,6 +14,7 @@ import { useEffect } from 'react';
 import { useRef } from 'react';
 import * as htmlToImage from 'html-to-image';
 import Confetti from 'react-confetti';
+import { useOptimizedScroll } from '../../hooks/useOptimizedScroll';
 
 const GOOGLE_FORM_ACTION_URL2 = process.env.NEXT_PUBLIC_GOOGLE_FORM_ACTION_URL2;
 const NAME_ENTRY_ID2 = process.env.NEXT_PUBLIC_NAME_ENTRY_ID2;
@@ -31,7 +32,7 @@ export function HomeHero() {
   const cardRef = useRef<HTMLDivElement>(null);
   const [currentLang, setCurrentLang] = useState<'en' | 'ta'>('en');
   const router = useRouter();
-  const [scrollY, setScrollY] = useState(0);
+  const scrollY = useOptimizedScroll();
   
 
   useEffect(() => {
@@ -42,12 +43,6 @@ export function HomeHero() {
   function openModal2() {
     setModalIsOpen2(true);
   }
-
-  useEffect(() => {
-  const handleScroll = () => setScrollY(window.scrollY);
-  window.addEventListener('scroll', handleScroll);
-  return () => window.removeEventListener('scroll', handleScroll);
-}, []);
 
   useEffect(() => {
     // Fetch the current date using JavaScript's built-in Date object
@@ -285,7 +280,16 @@ export function HomeHero() {
           />
         )}
         <ImgHome>
-          <Image className="home-img" src="/home.png" alt={currentLang === 'ta' ? 'முகப்பு படம்' : 'Image Home'} width={400} height={400} priority />
+          <Image 
+            className="home-img" 
+            src="/home.png" 
+            alt={currentLang === 'ta' ? 'முகப்பு படம்' : 'Image Home'} 
+            width={400} 
+            height={400} 
+            priority 
+            placeholder="blur"
+            blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkbHw/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAhEQACAQIHAQAAAAAAAAAAAAABAgADBBEFITFRYbHB0f/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+          />
 
           <div className="code">
             <Image

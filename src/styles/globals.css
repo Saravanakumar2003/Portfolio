@@ -1,3 +1,37 @@
+/* Add font display swap and fallback fonts to reduce CLS */
+* {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Ensure consistent sizing */
+html {
+  font-display: swap;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* Add aspect ratio support for images to prevent layout shift */
+img, 
+[data-nextjs-image] {
+  height: auto;
+  max-width: 100%;
+}
+
+/* Skeleton loader for images during loading to prevent CLS */
+[data-nextjs-image] {
+  background-color: #f0f0f0;
+}
+
 .cookieConsent {
     background: #2b373b !important;
     color: white !important;
@@ -36,6 +70,7 @@
   
   .audio-player #playAudio {
     -webkit-appearance: none;
+    appearance: none;
     outline: none;
     cursor: pointer;
     border: none;

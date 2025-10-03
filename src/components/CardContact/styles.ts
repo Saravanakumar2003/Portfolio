@@ -55,9 +55,6 @@ export const CardContactContent = styled.div`
   }
 
   .contact {
-    img {
-      width: 100%;
-      }
     }
   }
 

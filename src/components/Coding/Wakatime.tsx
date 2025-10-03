@@ -36,13 +36,13 @@ export function Wakatime() {
           {currentLang === 'ta' ? 'எனது கோடிங் புள்ளிவிவரங்கள்' : 'My coding stats from'}
         </h1>
         <div style={{
-          margin: '1rem 0',
           border: '2px solid lightblue',
-          borderRadius: '5px',
-          padding: '10px',
-          color: 'lightblue',
+          borderRadius: '8px',
+          padding: '0.5rem',
+          textAlign: 'center',
+          width: 'fit-content',
+          margin: '1rem auto',
           fontWeight: 'bold',
-          display: 'inline-block',
         }}>
           {` ${lastWeekDate.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' })} to ${currentDate.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' })}`}
         </div>
@@ -67,7 +67,7 @@ export function Wakatime() {
 
       <Box>
         <a href="http://www.skillrack.com/profile/381703/7d59d9d0ed57993adcca4f71e60bcc308c4abf09" target="_blank" rel="noopener noreferrer">
-          <Image
+          <img
             src="https://custom-icon-badges.demolab.com/badge/-SkillRack-0000FF?style=for-the-badge&logo=skillrack&logoColor=0000FF&labelColor=black"
             alt="SkillRack badge"
             width={150}
@@ -76,7 +76,7 @@ export function Wakatime() {
         </a>
 
         <a href="https://www.hackerrank.com/profile/Saravana2003" target="_blank" rel="noopener noreferrer">
-          <Image
+          <img
             src="https://img.shields.io/badge/-Hackerrank-00c353?style=for-the-badge&logo=HackerRank&logoColor=00EA64&labelColor=black"
             alt="Hackerrank badge"
             width={150}
@@ -85,7 +85,7 @@ export function Wakatime() {
         </a>
 
         <a href="https://leetcode.com/Saravana2003/" target="_blank" rel="noopener noreferrer">
-          <Image
+          <img
             src="https://img.shields.io/badge/-LeetCode-da8200?style=for-the-badge&logo=LeetCode&logoColor=ffa116&labelColor=black"
             alt="LeetCode badge"
             width={150}

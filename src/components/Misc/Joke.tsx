@@ -33,7 +33,7 @@ export function Jokes() {
       <SubTitle>
         {currentLang === 'ta' ? ':)' : 'If you came this far, then you deserve a Joke!!'}
       </SubTitle>
-      <Image src={jokeImageUrl} alt="Jokes Card" width={500} height={400} />
+      <img src={jokeImageUrl} alt="Jokes Card" width={500} height={150} />
       <div>
         <ButtonAlt onClick={handleRefresh} style={{ marginRight: '10px' }}>
           <ArrowCounterClockwise size={24} /> {currentLang === 'ta' ? 'புதுப்பிக்க' : 'Refresh'}

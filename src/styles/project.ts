@@ -435,9 +435,6 @@ export const ContainerVideo = styled.div`
   }
 
   .imageVideo {
-    @media(max-width: 396px) {
-      display: none;
-    }
     img {
       z-index: -1;
       width: 100%;

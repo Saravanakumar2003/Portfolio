@@ -46,8 +46,8 @@ const OvalBar = styled.div`
   -webkit-backdrop-filter: blur(20px);
   border-radius: 50px;
   display: flex;
-  padding: 0.3rem 0.3rem;
-  gap: 1rem;
+  padding: 0.32rem 0.2rem;
+  gap: 0.5rem;
   align-items: center;
   border: 2px solid ${({ theme }) => theme.white}40;
   box-shadow: 

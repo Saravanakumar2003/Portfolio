@@ -196,7 +196,7 @@ export default function Projeto({ project }: ProjectProps) {
 
       <S.ContainerVideo>
         <div className="imageVideo">
-          <Image src={project.backgroundImage} alt={project.title} width={600} height={400} />
+          <Image src={project.backgroundImage} alt={project.title} width={4000} height={4000} />
         </div>
         <Title className="title-video">
           Video

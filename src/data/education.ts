@@ -24,7 +24,7 @@ const education = [
       ta: '24-நவம்பர்-21 முதல் 28-ஏப்ரல்-25 வரை',
     },
     link: 'https://velammal.edu.in/',
-    link2: 'https://drive.google.com/file/d/18JS02K84fNd60m3z6KEA2jY-zt1TI-oC/view?usp=sharing',
+    link2: 'https://drive.google.com/file/d/1JYhgLgm_xAYsVkEZ1fRrwUel4UpSY_4g/view?usp=sharing',
   },
   {
     id: 2,
@@ -51,7 +51,6 @@ const education = [
       ta: '03-ஜூன்-07 முதல் 22-மே-21 வரை',
     },
     link: 'https://sethubhaskara.co.in/',
-    link2: 'https://drive.google.com/file/d/1EjsZ4Lq3nNRdcazsItUIeu1PzwOAXM6w/view?usp=sharing',
   },
 ];
 

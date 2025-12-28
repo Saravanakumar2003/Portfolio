@@ -29,7 +29,7 @@ const publications = [
         en: 'ICSIE 2025',
         ta: 'ICSIE 2025',
       },
-      link: 'https://drive.google.com/file/d/1MbGyiradz5JQ0Evprm2lY_hH2IG8Bt45/view?usp=sharing',
+      link: 'https://drive.google.com/file/d/1NFLZUYO0LYsaZFqKAjOXXDgsQk2SPZEl/view?usp=sharing',
 
     },
     // {

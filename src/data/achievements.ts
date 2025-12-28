@@ -18,7 +18,7 @@ const Achievements = [
             en: 'Rs.5000 & Certificate',
             ta: 'ரூ.5000 மற்றும் சான்றிதழ்',
         },
-        url: 'https://drive.google.com/file/d/1DEgYalgGcs5j5ZRcRZ7Wdfnw37ww3b4Z/view?usp=sharing'
+        url: 'https://drive.google.com/file/d/1xtxaCkawi_DHz20WCv_3MAmaLPrUNiOo/view?usp=sharing'
     },
     {
         id: 2,
@@ -39,7 +39,7 @@ const Achievements = [
             en: 'Rs.15000 & Certificate',
             ta: 'ரூ.15000 மற்றும் சான்றிதழ்',
         },
-        url: 'https://drive.google.com/file/d/1xvUpa02LIx7qYksSwhkdhP_xJPRvlnfx/view?usp=sharing'
+        url: 'https://drive.google.com/file/d/1-S34sbuW418OY7UMh7It3konit1qsvPX/view?usp=sharing'
     },
     {
         id: 3,
@@ -60,7 +60,7 @@ const Achievements = [
             en: 'Certificate and Shield',
             ta: 'சான்றிதழ் மற்றும் கவசம்',
         },
-        url: 'https://drive.google.com/file/d/1ZbK0MuuLRjvQWeVqNK7L7OnDAz4lPguK/view?usp=sharing'
+        url: 'https://drive.google.com/file/d/1VBx0p6PEXm4bHOEpLL6E3AqxMUMXkGBU/view?usp=sharing'
     },
 ];
 
